@@ -26,7 +26,6 @@ public partial class pdf : System.Web.UI.Page
         if (!Page.IsPostBack) {
             using (SqlDataReader reader = SQL.ExecuteQuery("SELECT a.* FROM inventory a WHERE a.inventoryid=@1", inspectionid)) {
                 if (reader.Read()) {
-
                     inspectionno.Text = reader.GetString(reader.GetOrdinal("inspectionno"));
                     description.Text = reader.GetString(reader.GetOrdinal("description"));
                     damagetype.Text = reader.GetString(reader.GetOrdinal("damagetype"));
