@@ -1,0 +1,84 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="Scripts/jquery-1.7.1.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Oswald|Open+Sans:300italic,400italic,400,300,700' rel='stylesheet' type='text/css'>
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+    </head>
+<body>
+    <form runat="server">
+        <div id="header">
+            <div class="wrapper">
+                <a href="Default.aspx"><div id="logo">eaztimate</div></a>
+                <div id="nav">
+                    <ul>
+                        <li><a href="Default.aspx" runat="server" id="menu1" class="active">Home</a></li>
+                        <li><a href="create_inspection.aspx" runat="server" id="menu2">Create</a></li>
+                        <li><a href="open_inspection.aspx" runat="server" id="menu3">Open</a></li>
+                        <li><a href="inspect_object.aspx" runat="server" id="menu4">Manage</a></li>
+                        <li><a href="contact.aspx" runat="server" id="menu5">Contact</a></li>
+                        <li><a href="pdf.aspx" runat="server" id="pdf">pdf (remove)</a></li>
+                    </ul>
+
+                </div>
+                <div style="clear: both"></div>
+            </div>
+        </div>
+        <div id="slider" runat="server" visible="true">
+            <div class="wrapper">
+                <div id="slider_text">
+                    <%--<h2>Eaztimate</h2>
+                    <p>work work!</p>--%>
+                </div>
+                <div id="start_boxes">
+                    <ul>
+                        <li class="box1">
+                            <h3>Recent inspections</h3>
+                            <h4>Latest Update</h4>
+                            
+                                <p>Lorem ipsum</p>
+                            
+                            <span class="button">More &raquo;</span>
+                        </li>
+                        <li class="box2">
+                            <h3>Create inspection</h3>
+                            <h4>Create inspection</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet velit vel sem imperdiet condimentum sit amet blandit nisi. Sed ornare accumsan pellentesque. Morbi sodales scelerisque lacus, a posuere lacus </p>
+                            <span class="button">Create &raquo;</span>
+                        </li>
+                        <li class="box3">
+                            <h3>Open inspection</h3>
+                            <h4>Open inspection</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet velit vel sem imperdiet condimentum sit amet blandit nisi. Sed ornare accumsan pellentesque. Morbi sodales scelerisque lacus, a posuere lacus </p>
+                            <span class="button">Open &raquo;</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="content">
+
+            <div class="wrapper">
+                <asp:ContentPlaceHolder runat="server" ID="MainContent">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="wrapper"></div>
+        </div>
+
+
+
+    </form>
+</body>
+</html>

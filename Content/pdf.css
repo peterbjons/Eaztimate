@@ -1,0 +1,166 @@
+﻿
+
+/* PDF */       
+.testklass {
+    background-color: #900;
+}
+    .inspection_number {
+        background-color: #000;
+        color: #fff;
+        font-weight: 300;
+        font-size: 10pt;
+        padding: 5px 7px;
+        width: 205px;
+        margin-top: 100px;
+        margin-bottom: 30px;
+    }
+
+    .a4_paper ul {
+        list-style-type: none;
+        margin-top: 30px;
+    }
+
+        .a4_paper ul li {
+            float: left;
+            width: 205px;
+            margin-right: 20px;
+        }
+
+            .a4_paper ul li:last-child {
+                margin-right: 0px;
+            }
+
+            .a4_paper ul li h4 {
+                padding: 5px 7px;
+                color: #fff;
+                font-weight: 300;
+                font-size: 10pt;
+                margin-bottom: 10px;
+            }
+
+            .a4_paper ul li p { padding-left:5px;
+            }
+
+        .a4_paper ul.light li h4 {
+            background-color: #85c8e0;
+        }
+
+        .a4_paper ul.dark li h4 {
+            background-color: #1c80aa;
+        }
+
+.saneringsbara_value, .non_saneringsbara_value {
+    float: left;
+    line-height: 14px;
+}
+
+.saneringsbara_color, .non_saneringsbara_color {
+    height: 14px;
+    width: 14px;
+    margin-right: 10px;
+    float: left;
+    margin-bottom: 10px;
+}
+.a4_paper .line {border-top:1px solid #D1D3D4 ; padding-top:4px;}
+
+.room_h2 {margin-top: 100px;}
+
+.room_images {
+    height: 150px;
+    margin-bottom:50px;
+}
+
+.room_images img {
+    height: 150px;
+    margin-right:20px;
+}
+
+.room_paper table thead tr td {
+   
+    padding: 5px 7px;
+color: white;
+font-weight: 300;
+font-size: 10pt;
+background-color: #1c80aa;
+
+}
+
+.room_paper table thead tr td.comment {
+    width: 317px;
+}
+.room_paper table thead tr td.id {
+    width: 30px;
+    
+}
+.room_paper table thead tr td.type {
+    width: 50px;
+}
+.room_paper table thead tr td.price {
+    width: 50px;
+    
+}
+.room_paper tbody tr td {
+    padding: 5px 0px 0px 0px;
+}
+.room_paper tbody tr:first-child td {
+    padding-top:10px;
+   
+}
+
+.room_paper tbody tr:last-child td {
+    padding-bottom:5px;
+}
+.room_paper tbody tr td:first-child {
+     padding-left:5px;
+}
+.room_paper table {
+    margin-top: 30px;
+    border:0px;
+    padding:0px;
+}
+tfoot tr td {
+    padding-top: 4px;
+    border-top: 1px solid #D1D3D4;
+}
+.room_paper td.accepted_prize{
+    /*background-color: #88ca91;*/
+
+}
+
+thead tr.tr_green td{background-color: #39B54A !important ;}
+thead tr.tr_red td{background-color: #ED1C24 !important;}
+
+.text-align-center {
+    text-align: center;
+}
+
+.orrpon {
+    width: 100%;
+    background-color: #85C8E0;
+    text-align:left;
+    
+    
+}
+.orrpon tr td {
+    padding: 4px;
+}
+.orrpon th a{
+
+    padding: 5px 7px;
+    font-size: 12pt;
+    color:#fff;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.gridviewtable {
+width: 100%;
+border: 0px;
+}
+
+.gridviewtable tr td {
+    padding: 3px 0px 0px 5px;
+}
+.grdiviewtable tr td {
+    padding: 5px 7px;
+}
