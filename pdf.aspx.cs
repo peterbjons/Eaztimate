@@ -43,7 +43,7 @@ public partial class pdf : System.Web.UI.Page
     protected void printbutton_Click(object sender, EventArgs e) {
         // Create a Document object
 
-        Document document = new Document(PageSize.A4, 10, 10, 10, 10);
+        Document document = new Document(PageSize.A4, 20, 20, 30, 20);
         string contents = string.Empty;
 
         //string contents = File.ReadAllText(Server.MapPath("~/pdftest.html"));
@@ -51,7 +51,7 @@ public partial class pdf : System.Web.UI.Page
 
         MemoryStream ms = new MemoryStream();
         using (StringWriter sw = new StringWriter()) {
-            Server.Execute("pdf2.aspx", sw);
+            Server.Execute("Documents/report.aspx", sw);
             contents = sw.ToString();
             sw.Close();
         }
