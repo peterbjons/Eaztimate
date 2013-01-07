@@ -64,6 +64,11 @@ public partial class pdf : System.Web.UI.Page
         try {
             PdfWriter pw = PdfWriter.GetInstance(document, ms);
 
+            //string fontpath = Server.MapPath("Fonts/");
+            //BaseFont customfont = BaseFont.CreateFont(fontpath + "OpenSans-Regular.ttf", BaseFont.CP1250, BaseFont.EMBEDDED);
+            //iTextSharp.text.Font regular = new iTextSharp.text.Font(customfont, 12);
+            //string s = "My expensive custom font.";            
+
             //using(FileStream fshtml = new FileStream(Server.MapPath("~/pdftest.html"), FileMode.Open, FileAccess.Read, FileShare.Read)) {
             using (StringReader sr = new StringReader(contents)) {
 
@@ -71,12 +76,15 @@ public partial class pdf : System.Web.UI.Page
                 //using(FileStream fscss = new FileStream(Server.MapPath("~/Content/pdf.css"), FileMode.Open, FileAccess.Read, FileShare.Read)) {
                 //FileStream fs = new FileStream(Server.MapPath("~/Content/Site.css"), fs.CanRead);
                 //using (StreamReader stream = new StreamReader(Server.MapPath("~/Content/Site.css"))) {
-                    document.Open();
+                document.Open();
+                    
+                XMLWorkerHelper.GetInstance().ParseXHtml(pw, document, sr);
 
-                    XMLWorkerHelper.GetInstance().ParseXHtml(pw, document, sr);
-                    //XMLWorkerHelper.GetInstance().ParseXHtml(pw, document, fshtml, fscss);
+                FontFactory.RegisterDirectory(Server.MapPath("Fonts/"));
 
-                    document.Close();
+                //XMLWorkerHelper.GetInstance().ParseXHtml(pw, document, fshtml, fscss);
+                //document.Add(new Paragraph(s, regular));
+                document.Close();
                 //}
                 Response.ContentType = "application/pdf";
                 Response.AddHeader("Content-Disposition", string.Format("attachment;filename=File-{0}.pdf", 1));
