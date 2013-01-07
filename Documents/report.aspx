@@ -21,6 +21,8 @@
             font-weight: 300;
             margin-bottom: 50px;
             font-size: 34pt;
+            font-family: 'Open Sans';
+            
         }
 
         .block {
@@ -59,7 +61,7 @@
         </div>
         <h1>
             <asp:Literal ID="description" runat="server">Description</asp:Literal></h1>
-
+        <!-- Block light ROW: 1 -->
         <div class="block light">Skadetyp</div>
         <div class="divider-side"></div>
         <div class="block light">Skadeplats</div>
@@ -84,7 +86,7 @@
         <div class="block">4000kr</div>
         <div style="clear: both"></div>
         <div class="divider-bottom"></div>
-
+        <!-- Block light ROW: 2 -->
         <div class="block light">Typ av byggnad</div>
         <div class="divider-side"></div>
         <div class="block light">Storlek</div>
@@ -108,10 +110,68 @@
         </div>
         <div class="divider-side"></div>
         <div class="block">
-            <asp:Literal ID="insurance" runat="server" /></div>
+            <asp:Literal ID="insurance" runat="server" />
+        </div>
         <div style="clear: both"></div>
         <div class="divider-bottom"></div>
+        <!-- Block light ROW: 3 -->
+        <div class="block dark">Försäkringstagare</div>
+        <div class="divider-side"></div>
+        <div class="block dark">Anmälare</div>
+        <div class="divider-side"></div>
+        <div class="block dark">Kontaktperson</div>
+        <div class="divider-side"></div>
+        <div class="block dark">Försäkringsbolag</div>
+        <div style="clear: both"></div>
 
+        <div class="block">Per Persson<br />
+                        Box 3<br />
+                        791 21 Falun<br />
+                        070- 123 33 66<br />
+                        023-454 21
+        </div>
+        <div class="divider-side"></div>
+        <div class="block"> Greta Svärd<br />
+                        023 - 123 23
+        </div>
+        <div class="divider-side"></div>
+        <div class="block">Greta Svärd<br />
+                        023 - 123 23
+        </div>
+        <div class="divider-side"></div>
+        <div class="block"> 03-453-99 LCR<br />
+                        Lotta Croner<br />
+                        023 - 930 10<br />
+                        skador@dalarnas.se
+        </div>
+        <div style="clear: both"></div>
+        <div class="divider-bottom"></div>
+        <!-- Block light ROW: 4 -->
+                <div class="block dark">Saneringsbara objekt</div>
+        <div class="divider-side"></div>
+        <div class="block dark">Icke saneringsbara object</div>
+        <div class="divider-side"></div>
+        <div class="block"></div>
+        <div class="divider-side"></div>
+        <div class="block dark">Totalt värde</div>
+        <div style="clear: both"></div>
+
+        <div class="block">2140st
+        </div>
+        <div class="divider-side"></div>
+        <div class="block"> 901st
+        </div>
+        <div class="divider-side"></div>
+        <div class="block">
+        </div>
+        <div class="divider-side"></div>
+        <div class="block"> 03-453-99 LCR<br />
+                        Lotta Croner<br />
+                        023 - 930 10<br />
+                        skador@dalarnas.se
+        </div>
+        <div style="clear: both"></div>
+        <div class="divider-bottom"></div>
 
     </form>
 </body>
