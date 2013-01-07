@@ -69,11 +69,17 @@
         <div class="block light">Självrisk</div>
         <div style="clear: both"></div>
 
-        <div class="block"><asp:Literal ID="damagetype" runat="server" /></div>
+        <div class="block">
+            <asp:Literal ID="damagetype" runat="server" />
+        </div>
         <div class="divider-side"></div>
-        <div class="block">tdst, 12345 aaaa</div>
+        <div class="block">
+            <asp:Literal ID="address" runat="server" />
+        </div>
         <div class="divider-side"></div>
-        <div class="block">2012-11-25</div>
+        <div class="block">
+            <asp:Literal ID="damagedate" runat="server" />
+        </div>
         <div class="divider-side"></div>
         <div class="block">4000kr</div>
         <div style="clear: both"></div>
@@ -88,6 +94,23 @@
         <div class="block light">Försäkringar</div>
         <div style="clear: both"></div>
 
+        <div class="block">
+            <asp:Literal ID="buildingtype" runat="server" />
+        </div>
+        <div class="divider-side"></div>
+        <div class="block">
+            <asp:Literal ID="size" runat="server" />
+            kvm
+        </div>
+        <div class="divider-side"></div>
+        <div class="block">
+            <asp:Literal ID="inhabitants" runat="server" />
+        </div>
+        <div class="divider-side"></div>
+        <div class="block">
+            <asp:Literal ID="insurance" runat="server" /></div>
+        <div style="clear: both"></div>
+        <div class="divider-bottom"></div>
 
 
     </form>
