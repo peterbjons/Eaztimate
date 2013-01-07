@@ -84,7 +84,7 @@ public partial class pdf : System.Web.UI.Page
 
             }
         } catch (Exception ex) {
-
+            Response.Write(ex.Message);
         }
     }
 }
