@@ -25,7 +25,7 @@
 
         .block {
             width: 170px;
-            
+            font-size: 8pt;
             float: left;
             padding: 2px 7px 5px 7px;
         }
@@ -39,6 +39,16 @@
             background-color: #1c80aa;
             color: #fff;
         }
+
+        .divider-bottom {
+            height: 20px;
+            width: 100%;
+        }
+
+        .divider-side {
+            width: 20px;
+            float: left;
+        }
     </style>
 </head>
 <body>
@@ -49,31 +59,36 @@
         </div>
         <h1>
             <asp:Literal ID="description" runat="server">Description</asp:Literal></h1>
-       
+
         <div class="block light">Skadetyp</div>
-        <div style="width: 20px; float: left"></div>
+        <div class="divider-side"></div>
         <div class="block light">Skadeplats</div>
-        <div style="width: 20px; float: left"></div>
+        <div class="divider-side"></div>
         <div class="block light">Skadedatum</div>
-        <div style="width: 20px; float: left"></div>
+        <div class="divider-side"></div>
         <div class="block light">Självrisk</div>
         <div style="clear: both"></div>
-        
-                <div class="block">brandskada</div>
-        <div style="width: 20px; float: left"></div>
+
+        <div class="block"><asp:Literal ID="damagetype" runat="server" /></div>
+        <div class="divider-side"></div>
         <div class="block">tdst, 12345 aaaa</div>
-        <div style="width: 20px; float: left"></div>
+        <div class="divider-side"></div>
         <div class="block">2012-11-25</div>
-        <div style="width: 20px; float: left"></div>
+        <div class="divider-side"></div>
         <div class="block">4000kr</div>
+        <div style="clear: both"></div>
+        <div class="divider-bottom"></div>
 
         <div class="block light">Typ av byggnad</div>
-        <div style="width: 20px; float: left"></div>
+        <div class="divider-side"></div>
         <div class="block light">Storlek</div>
-        <div style="width: 20px; float: left"></div>
+        <div class="divider-side"></div>
         <div class="block light">Antal och ålder på boende</div>
-        <div style="width: 20px; float: left"></div>
+        <div class="divider-side"></div>
         <div class="block light">Försäkringar</div>
+        <div style="clear: both"></div>
+
+
 
     </form>
 </body>
