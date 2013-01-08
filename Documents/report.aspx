@@ -37,7 +37,7 @@
                 </li>
                 <li>
                     <h4>Självrisk</h4>
-                    <p>4000kr</p>
+                    <p>40000kr</p>
                 </li>
 
             </ul>
