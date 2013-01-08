@@ -7,11 +7,16 @@
             background-color: #EFF3FB;
             cursor: pointer;
         }
-        .Normal:Hover
+        .Alternate
+        {
+            background-color: #f3e8f0;
+            cursor: pointer;
+        }
+        .Normal:Hover, .Alternate:hover
         {
             background-color: #D1DDF1;
             cursor: pointer;
-        }        
+        }
     </style>
 
 </asp:Content>
@@ -19,7 +24,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"/>
     <div class="inspect_object">
-        <h3><a href="inspect_object.aspx" class="breadcrumb"><asp:Literal ID="inspectno" runat="server"/></a></h3>
+        <h3><a href="inspect_object.aspx?id=<%=inspectionid %>" class="breadcrumb"><asp:Literal ID="inspectno" runat="server"/></a></h3>
         <h1><asp:Literal ID="description" runat="server"/></h1>
         <div class="col1">
             <div class="room_col">
@@ -51,6 +56,7 @@
                         <asp:GridView ID="objectgrid" runat="server" AllowSorting="true" AutoGenerateColumns="false" DataSourceID="SqlDataSource1" CssClass="gridviewtable" GridLines="none" OnRowDataBound="objectgrid_RowDataBound" >
                             <HeaderStyle CssClass="orrpon" Height="36"/>
                             <RowStyle CssClass="Normal" />
+                            <AlternatingRowStyle CssClass="Alternate" />
                             <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
                             <Columns>
                                 <asp:BoundField Visible="true" DataField="itemid" ReadOnly="true" />
