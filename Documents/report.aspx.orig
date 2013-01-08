@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link href="/Content/Site.css" rel="stylesheet" />
+    <link href="../Content/Site.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -37,7 +37,11 @@
                 </li>
                 <li>
                     <h4>Självrisk</h4>
+<<<<<<< HEAD
                     <p>400000kr</p>
+=======
+                    <p>40000kr</p>
+>>>>>>> d32496c15e6077b2b0dceded064075637f51328f
                 </li>
 
             </ul>
