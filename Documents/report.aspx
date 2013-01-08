@@ -11,6 +11,7 @@
 <body>
     <form id="form1" runat="server">
 
+
         <div class="a4_paper">
         <div class="damage_summary_paper">
             <div class="ensurance_company_logo">
