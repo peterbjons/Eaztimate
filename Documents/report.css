@@ -4,9 +4,9 @@
     font-family: 'Open Sans';
 }
 
-body {
+/*body {
     background-color: #efefef;
-}
+}*/
 
 /*a {
     color: #000;
@@ -609,7 +609,7 @@ ul.material {
 .a4_paper {
     background-color: #fff;
     width: 880px;
-    height: 1278px;
+    /*height: 1278px;*/
     margin-bottom: 20px;
     padding: 40px;
     font-size: 8pt;
