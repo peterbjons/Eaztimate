@@ -43,29 +43,46 @@ public partial class pdf : System.Web.UI.Page
         string contents = string.Empty;
 
         MemoryStream ms = new MemoryStream();
-        using (StringWriter sw = new StringWriter()) {
-            Server.Execute("Documents/report.aspx", sw);
-            contents = sw.ToString();
-            sw.Close();
-        }       
+        //using (StringWriter sw = new StringWriter()) {
+        //    Server.Execute("Documents/report.aspx", sw);
+        //    contents = sw.ToString();
+        //    sw.Close();
+        //}       
 
         try {
 
             Doc doc = new Doc();
-            doc.EmbedFont(Server.MapPath("Fonts/") + "OpenSans-Regular.ttf");
+            //int font = doc.EmbedFont(Server.MapPath("Fonts/") + "OpenSans-Regular.ttf", LanguageType.Unicode);
             doc.HtmlOptions.BrowserWidth = 960;
-            doc.AddImageUrl("http://" + Request.Url.Host + "/documents/report.aspx");
+            doc.HtmlOptions.FontEmbed = true;
+            doc.HtmlOptions.FontSubstitute = false;
+            int id = 0;
+            Random rnd = new Random();
+            id = doc.AddImageUrl("http://" + Request.Url.Host + "/documents/report.aspx?rnd=" + rnd.Next(50000));
+            while (true) {
+                //doc.FrameRect();
+                if (!doc.Chainable(id)) {
+                    break;
+                }
+                doc.Page = doc.AddPage();
+                id = doc.AddImageToChain(id);
+            }
+
+            for (int i = 0; i < doc.PageCount; i++) {
+                doc.PageNumber = i;
+                doc.Flatten();
+            }
+
             //doc.AddImageHtml(contents);
             //doc.Save(Server.MapPath("htmlimport.pdf"));
             doc.Save(ms);
             //doc.SaveOptions.
-            doc.Clear(); 
-
-
+            doc.Clear();
 
                 Response.ContentType = "application/pdf";
                 Response.AddHeader("Content-Disposition", string.Format("attachment;filename=File-{0}.pdf", 1));
                 Response.BinaryWrite(ms.ToArray());
+                Response.End();
 
             //}
         } catch (Exception ex) {
