@@ -54,8 +54,8 @@ public partial class pdf : System.Web.UI.Page
             Doc doc = new Doc();
             doc.EmbedFont(Server.MapPath("Fonts/") + "OpenSans-Regular.ttf");
             doc.HtmlOptions.BrowserWidth = 960;
-            //doc.AddImageUrl("http://192.168.1.100/documents/report.aspx");
-            doc.AddImageHtml(contents);
+            doc.AddImageUrl("http://" + Request.Url.Host + "/documents/report.aspx");
+            //doc.AddImageHtml(contents);
             //doc.Save(Server.MapPath("htmlimport.pdf"));
             doc.Save(ms);
             //doc.SaveOptions.
