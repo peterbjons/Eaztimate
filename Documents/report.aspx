@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    
+    <link href='http://fonts.googleapis.com/css?family=Oswald|Open+Sans:300italic,400italic,400,300,700' rel='stylesheet' type='text/css'>
     <link href="report.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -130,13 +130,13 @@
 
         <div class="a4_paper">
         <div class="room_paper">
-            <div class="ensurance_company_logo">
+     <%--       <div class="ensurance_company_logo">
                 <img src="Images/forsak1.png" />
             </div>
             <div class="sanerings_company_logo">
                 <img src="Images/forsak2.png" />
             </div>
-            <div style="clear: both"></div>
+            <div style="clear: both"></div>--%>
             <h2 class="room_h2">Thomas rum</h2>
             <div class="room_images">
                 <img src="Images/room1.png" /><img src="Images/room2.jpg" /><img src="Images/room3.jpg" /><img src="Images/room4.jpg" />
