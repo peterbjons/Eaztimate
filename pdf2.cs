@@ -9,10 +9,8 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using Eaztimate;
-using iTextSharp.tool.xml;
 using iTextSharp.text.pdf;
 using iTextSharp.text;
-using iTextSharp.tool.xml.pipeline.css;
 
 public partial class pdf : System.Web.UI.Page
 {
@@ -61,31 +59,6 @@ public partial class pdf : System.Web.UI.Page
 
         //string css = Server.MapPath("~/Content/Site.css");
         //resolver.AddCssFile(css, true);
-
-        try {
-            PdfWriter pw = PdfWriter.GetInstance(document, ms);
-
-            //using(FileStream fshtml = new FileStream(Server.MapPath("~/pdftest.html"), FileMode.Open, FileAccess.Read, FileShare.Read)) {
-            using (StringReader sr = new StringReader(contents)) {
-
-                //using (StringReader csssr = new StringReader(css)) {
-                //using(FileStream fscss = new FileStream(Server.MapPath("~/Content/pdf.css"), FileMode.Open, FileAccess.Read, FileShare.Read)) {
-                //FileStream fs = new FileStream(Server.MapPath("~/Content/Site.css"), fs.CanRead);
-                //using (StreamReader stream = new StreamReader(Server.MapPath("~/Content/Site.css"))) {
-                    document.Open();
-
-                    XMLWorkerHelper.GetInstance().ParseXHtml(pw, document, sr);
-                    //XMLWorkerHelper.GetInstance().ParseXHtml(pw, document, fshtml, fscss);
-
-                    document.Close();
-                //}
-                Response.ContentType = "application/pdf";
-                Response.AddHeader("Content-Disposition", string.Format("attachment;filename=File-{0}.pdf", 1));
-                Response.BinaryWrite(ms.ToArray());
-
-            }
-        } catch (Exception ex) {
-
-        }
+        
     }
 }

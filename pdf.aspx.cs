@@ -9,10 +9,8 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using Eaztimate;
-using iTextSharp.tool.xml;
-using iTextSharp.text.pdf;
-using iTextSharp.text;
-using iTextSharp.tool.xml.pipeline.css;
+using System.Collections;
+using WebSupergoo.ABCpdf9;
 
 public partial class pdf : System.Web.UI.Page
 {
@@ -41,56 +39,34 @@ public partial class pdf : System.Web.UI.Page
         }
     }
     protected void printbutton_Click(object sender, EventArgs e) {
-        // Create a Document object
 
-        Document document = new Document(PageSize.A4, 20, 20, 30, 20);
         string contents = string.Empty;
-
-        //string contents = File.ReadAllText(Server.MapPath("~/pdftest.html"));
-        //string css = File.ReadAllText(Server.MapPath("~/Content/Site.css"));
 
         MemoryStream ms = new MemoryStream();
         using (StringWriter sw = new StringWriter()) {
             Server.Execute("Documents/report.aspx", sw);
             contents = sw.ToString();
             sw.Close();
-        }
+        }       
 
-        //ICSSResolver resolver = XMLWorkerHelper.GetInstance().GetDefaultCssResolver(true);
+        try {            
 
-        //string css = Server.MapPath("~/Content/Site.css");
-        //resolver.AddCssFile(css, true);
+            Doc doc = new Doc();
+            doc.EmbedFont(Server.MapPath("Fonts/") + "OpenSans-Regular.ttf");
+            doc.HtmlOptions.BrowserWidth = 960;
+            //theDoc.AddImageUrl("http://192.168.1.100/pdf2.aspx");
+            doc.AddImageHtml(contents);
+            doc.Save(Server.MapPath("htmlimport.pdf"));
+            //doc.SaveOptions.
+            doc.Clear(); 
 
-        try {
-            PdfWriter pw = PdfWriter.GetInstance(document, ms);
 
-            //string fontpath = Server.MapPath("Fonts/");
-            //BaseFont customfont = BaseFont.CreateFont(fontpath + "OpenSans-Regular.ttf", BaseFont.CP1250, BaseFont.EMBEDDED);
-            //iTextSharp.text.Font regular = new iTextSharp.text.Font(customfont, 12);
-            //string s = "My expensive custom font.";            
 
-            //using(FileStream fshtml = new FileStream(Server.MapPath("~/pdftest.html"), FileMode.Open, FileAccess.Read, FileShare.Read)) {
-            using (StringReader sr = new StringReader(contents)) {
+                //Response.ContentType = "application/pdf";
+                //Response.AddHeader("Content-Disposition", string.Format("attachment;filename=File-{0}.pdf", 1));
+                //Response.BinaryWrite(ms.ToArray());
 
-                //using (StringReader csssr = new StringReader(css)) {
-                //using(FileStream fscss = new FileStream(Server.MapPath("~/Content/pdf.css"), FileMode.Open, FileAccess.Read, FileShare.Read)) {
-                //FileStream fs = new FileStream(Server.MapPath("~/Content/Site.css"), fs.CanRead);
-                //using (StreamReader stream = new StreamReader(Server.MapPath("~/Content/Site.css"))) {
-                document.Open();
-                    
-                XMLWorkerHelper.GetInstance().ParseXHtml(pw, document, sr);
-
-                FontFactory.RegisterDirectory(Server.MapPath("Fonts/"));
-
-                //XMLWorkerHelper.GetInstance().ParseXHtml(pw, document, fshtml, fscss);
-                //document.Add(new Paragraph(s, regular));
-                document.Close();
-                //}
-                Response.ContentType = "application/pdf";
-                Response.AddHeader("Content-Disposition", string.Format("attachment;filename=File-{0}.pdf", 1));
-                Response.BinaryWrite(ms.ToArray());
-
-            }
+            //}
         } catch (Exception ex) {
             Response.Write(ex.Message);
         }
