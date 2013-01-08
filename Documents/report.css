@@ -11,12 +11,14 @@
   font-style: normal;
   font-weight: 400;
   src: local('Open Sans'), local('OpenSans'), url(OpenSans-Regular.ttf) format('ttf');
+
 }
 
 *, body {
     margin: 0px;
     padding: 0px;
     font-family: 'Open Sans';
+    /* ändring */
 }
 
 /*body {
