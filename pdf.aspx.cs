@@ -52,7 +52,8 @@ public partial class pdf : System.Web.UI.Page
         try {
 
             Doc doc = new Doc();
-            //int font = doc.EmbedFont(Server.MapPath("Fonts/") + "OpenSans-Regular.ttf", LanguageType.Unicode);
+            int font = doc.EmbedFont(Server.MapPath("Documents/") + "OpenSans-Regular-webfont.ttf", LanguageType.Unicode);
+            font = doc.EmbedFont(Server.MapPath("Documents/") + "OpenSans-Light-webfont.ttf", LanguageType.Unicode);       
             doc.HtmlOptions.BrowserWidth = 960;
             doc.HtmlOptions.FontEmbed = true;
             doc.HtmlOptions.FontSubstitute = false;

@@ -6,12 +6,10 @@
 <head runat="server">
     <title></title>
     
-    <link href="report.css" rel="stylesheet" type="text/css" />
+    <link href="report.css?asdf=1" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
-
-
         <div class="a4_paper">
         <div class="damage_summary_paper">
             <div class="ensurance_company_logo">
