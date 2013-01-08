@@ -56,6 +56,7 @@ public partial class pdf : System.Web.UI.Page
             doc.HtmlOptions.BrowserWidth = 960;
             doc.HtmlOptions.FontEmbed = true;
             doc.HtmlOptions.FontSubstitute = false;
+            doc.HtmlOptions.FontProtection = false;
             int id = 0;
             Random rnd = new Random();
             id = doc.AddImageUrl("http://" + Request.Url.Host + "/documents/report.aspx?rnd=" + rnd.Next(50000));
