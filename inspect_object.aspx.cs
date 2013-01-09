@@ -11,6 +11,7 @@ using Eaztimate;
 public partial class inspect_object : System.Web.UI.Page
 {
     public int inspectionid = 0;
+    public int sortorder = 0;
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!int.TryParse((Request.QueryString["id"] ?? ""), out inspectionid)) {
@@ -18,7 +19,7 @@ public partial class inspect_object : System.Web.UI.Page
         }
         string othertype = GetGlobalResourceObject("Strings", "other").ToString();
 
-        SqlDataSource1.SelectCommand = "SELECT a.itemid,(CASE WHEN b.title LIKE '" + othertype + "' THEN (CASE WHEN a.alttype IS NULL THEN LEFT(a.title, 50) ELSE a.alttype END) ELSE b.title END)  itemtitle, c.title grouptitle,d.title categorytitle FROM item a LEFT JOIN type b ON a.typeid=b.typeid LEFT JOIN grupp c ON b.groupid=c.groupid LEFT JOIN category d ON c.categoryid=d.categoryid WHERE a.inventoryid=" + inspectionid.ToString();
+        //SqlDataSource1.SelectCommand = "SELECT a.itemid,(CASE WHEN b.title LIKE '" + othertype + "' THEN (CASE WHEN a.alttype IS NULL THEN LEFT(a.title, 50) ELSE a.alttype END) ELSE b.title END)  itemtitle, c.title grouptitle,d.title categorytitle FROM item a LEFT JOIN type b ON a.typeid=b.typeid LEFT JOIN grupp c ON b.groupid=c.groupid LEFT JOIN category d ON c.categoryid=d.categoryid WHERE a.inventoryid=" + inspectionid.ToString();
         if (!Page.IsPostBack) {
             ((HtmlGenericControl)Master.FindControl("slider")).Visible = false;
             
@@ -53,8 +54,8 @@ public partial class inspect_object : System.Web.UI.Page
 
         string othertype = GetGlobalResourceObject("Strings", "other").ToString();
 
-        SqlDataSource1.SelectCommand = "SELECT a.itemid,(CASE WHEN b.title LIKE '" + othertype + "' THEN (CASE WHEN a.alttype IS NULL THEN LEFT(a.title, 50) ELSE a.alttype END) ELSE b.title END)  itemtitle, c.title grouptitle,d.title categorytitle FROM item a LEFT JOIN type b ON a.typeid=b.typeid LEFT JOIN grupp c ON b.groupid=c.groupid LEFT JOIN category d ON c.categoryid=d.categoryid WHERE a.inventoryid=" + inspectionid.ToString() + (roomid > 0 ? " AND a.roomid=" + roomid.ToString() : "");
-        objectgrid.DataBind();
+        //SqlDataSource1.SelectCommand = "SELECT a.itemid,(CASE WHEN b.title LIKE '" + othertype + "' THEN (CASE WHEN a.alttype IS NULL THEN LEFT(a.title, 50) ELSE a.alttype END) ELSE b.title END)  itemtitle, c.title grouptitle,d.title categorytitle FROM item a LEFT JOIN type b ON a.typeid=b.typeid LEFT JOIN grupp c ON b.groupid=c.groupid LEFT JOIN category d ON c.categoryid=d.categoryid WHERE a.inventoryid=" + inspectionid.ToString() + (roomid > 0 ? " AND a.roomid=" + roomid.ToString() : "");
+        //objectgrid.DataBind();
         //using (SqlDataReader reader = SQL.ExecuteQuery("SELECT a.itemid,b.title type FROM item a LEFT JOIN type b ON a.typeid=b.typeid WHERE a.inventoryid=@1"+ (roomid > 0 ? " AND a.roomid=@2" : ""), inspectionid, roomid)) {
         //    objects.DataSource = reader;
         //    objects.DataBind();

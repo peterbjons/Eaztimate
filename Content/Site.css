@@ -212,6 +212,10 @@ a.button {
     float: left;
     width: 240px;
     margin-right: 20px;
+    
+}
+#inspection_sort a {
+    text-decoration: none;
 }
 
 #inspection_help {
