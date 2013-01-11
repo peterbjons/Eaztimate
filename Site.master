@@ -23,13 +23,37 @@
                 <div id="nav">
                     <ul>
                         <li><a href="Default.aspx" runat="server" id="menu1" class="active">Home</a></li>
-                        <li><a href="create_inspection.aspx" runat="server" id="menu2">Create</a></li>
-                        <li><a href="open_inspection.aspx" runat="server" id="menu3">Open</a></li>
-                        <li><a href="inspect_object.aspx" runat="server" id="menu4">Manage</a></li>
-                        <li><a href="contact.aspx" runat="server" id="menu5">Contact</a></li>
-                        <li><a href="pdf.aspx" runat="server" id="pdf">pdf (remove)</a></li>
+                        <asp:LoginView runat="server">
+                            <AnonymousTemplate>
+                                <li><a href="login.aspx" runat="server" id="menu2">Login</a></li>
+                            </AnonymousTemplate>
+                            <RoleGroups>
+                                <asp:RoleGroup Roles="Users">
+                                    <ContentTemplate>
+                                        <li><a href="create_inspection.aspx" runat="server" id="menu2">Create</a></li>
+                                        <li><a href="open_inspection.aspx" runat="server" id="menu3">Open</a></li>
+                                        <li><a href="inspect_object.aspx" runat="server" id="menu4">Manage</a></li>
+                                        <li><a href="contact.aspx" runat="server" id="menu5">Contact</a></li>
+                                        <li><a href="pdf.aspx" runat="server" id="pdf">pdf (remove)</a></li>
+                                    </ContentTemplate>
+                                </asp:RoleGroup>
+                            </RoleGroups>
+                        </asp:LoginView> 
+                        <asp:LoginView ID="LoginView1" runat="server">
+                            <RoleGroups>
+                                <asp:RoleGroup Roles="Admnistrator">
+                                    <ContentTemplate>
+                                        <li><a href="admin.aspx" runat="server" id="A1">Adminlink</a></li>
+                                    </ContentTemplate>
+                                </asp:RoleGroup>
+                            </RoleGroups>
+                        </asp:LoginView>
+                        <asp:LoginView runat="server">
+                            <LoggedInTemplate>
+                                <li><a href="?a=logout" runat="server" id="logout">Log out</a></li>
+                            </LoggedInTemplate>
+                        </asp:LoginView>
                     </ul>
-
                 </div>
                 <div style="clear: both"></div>
             </div>
