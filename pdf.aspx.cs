@@ -60,7 +60,9 @@ public partial class pdf : System.Web.UI.Page
             doc.HtmlOptions.FontProtection = false;
             int id = 0;
             Random rnd = new Random();
-            id = doc.AddImageUrl("http://" + Request.Url.Host + "/documents/report.aspx?rnd=" + rnd.Next(50000));
+            //id = doc.AddImageUrl("http://" + Request.Url.Host + "/documents/bygg.aspx?rnd=" + rnd.Next(50000));
+            id = doc.AddImageUrl("http://localhost:50030/Documents/bygg.aspx?rnd=" + rnd.Next(50000));
+            
             while (true) {
                 //doc.FrameRect();
                 if (!doc.Chainable(id)) {
