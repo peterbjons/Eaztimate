@@ -105,7 +105,7 @@
                       
 
                             <div id="inspection_list">
-        <h4>Inspections</h4>
+        <h4>Objects</h4>
         <ul>
             
                 
@@ -148,9 +148,9 @@
     </div>
     <div id="inspection_sort">
         <h4>Sort</h4>
-        <a href="?so=0"><div class="inspection_item <%=(sortorder == 0 ? "blue" : "white") %>">Date</div></a>
-        <a href="?so=1"><div class="inspection_item <%=(sortorder == 1 ? "blue" : "white") %>">Status</div></a>
-        <a href="?so=2"><div class="inspection_item <%=(sortorder == 2 ? "blue" : "white") %>">Inspection number</div></a>
+        <a href="?so=0&id=<%=inspectionid %>"><div class="inspection_item <%=(sortorder == 0 ? "blue" : "white") %>">Date</div></a>
+        <a href="?so=1&id=<%=inspectionid %>"><div class="inspection_item <%=(sortorder == 1 ? "blue" : "white") %>">Status</div></a>
+        <a href="?so=2&id=<%=inspectionid %>"><div class="inspection_item <%=(sortorder == 2 ? "blue" : "white") %>">Inspection number</div></a>
     </div>
     <div id="inspection_help">
         <h4>Description</h4>
