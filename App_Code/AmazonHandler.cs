@@ -22,4 +22,16 @@ public static class AmazonHandler
            return client.GetPreSignedURL(request);
         }
     }
+
+    public static string GetPrivateImageOcab(string filename) {
+        string accessKeyID = Conf.AppSettings["AWSAccessKeyOcab"];
+        string secretAccessKeyID = Conf.AppSettings["AWSSecretKeyOcab"];
+        using (AmazonS3 client = Amazon.AWSClientFactory.CreateAmazonS3Client(accessKeyID, secretAccessKeyID)) {
+            GetPreSignedUrlRequest request = new GetPreSignedUrlRequest()
+                .WithBucketName(Conf.AppSettings["BucketJobb"])
+                .WithKey(filename)
+                .WithExpires(DateTime.Now.Add(new TimeSpan(0, 24, 0, 0)));
+            return client.GetPreSignedURL(request);
+        }
+    }
 }
