@@ -221,7 +221,9 @@ mot entré med lika ytskikt.
                         <tr>
                             <td>Ej berörd av skadan</td>
                             <td>11,89 m<sup>2</sup></td>
-                            <td>Ej berörd av skadan</td>
+                            <td>Ej berörd av 
+
+                            </td>
                         </tr>
                         
                     </tbody>
