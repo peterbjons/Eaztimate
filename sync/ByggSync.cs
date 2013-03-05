@@ -11,42 +11,55 @@ using System.Web.UI.WebControls;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-public partial class Sync_Sync : System.Web.UI.Page
+public partial class Sync_ByggSync : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        String data;
+        if (Request.RequestType == "POST") {
+            using (StreamReader sr = new StreamReader(Request.InputStream)) {
+                data = sr.ReadToEnd();
+            }
+        }
+
+        // do some with the requestStream
+
+
+        
         if (Request.Form["data"] != null) {
             bool error= false;
             var jsonSerializer = new JsonSerializer();
-            JObject inventory = JObject.Parse(Request.Form["data"]);
-            string invid = inventory["inventoryid"].ToString();
+            JObject constructioncase = JObject.Parse(Request.Form["data"]);
+            string invid = constructioncase["inventoryid"].ToString();
+
+            /*
             
             //UPDATE OR INSERT INVENTORY
             try {
-                string damagetype = inventory["damagetype"].ToString();
-                string description = inventory["description"].ToString();
-                string address = inventory["customeradress"].ToString();
-                string zip = inventory["customerzip"].ToString();
+                string damagetype = constructioncase["damagetype"].ToString();
+                string description = constructioncase["description"].ToString();
+                string address = constructioncase["customeradress"].ToString();
+                string zip = constructioncase["customerzip"].ToString();
 
                 DateTime datedamage;
-                DateTime.TryParse((inventory["datedamage"] != null ? inventory["datedamage"].ToString() : ""), out datedamage);
+                DateTime.TryParse((constructioncase["datedamage"] != null ? constructioncase["datedamage"].ToString() : ""), out datedamage);
                 if (datedamage < (DateTime)SqlDateTime.MinValue) {
                     datedamage = DateTime.Now;
                 }
-                string terms = inventory["terms"].ToString();
-                string city = inventory["customercity"].ToString();
-                string tel = inventory["customertel"].ToString();
-                string areatype = inventory["areatype"].ToString();
-                string icompany = inventory["insurancecompany"].ToString();
-                string icontact = inventory["insurancecontact"].ToString();
-                string iemail = inventory["insuranceemail"].ToString();
-                string itel = inventory["insurancetel"].ToString();
+                string terms = constructioncase["terms"].ToString();
+                string city = constructioncase["customercity"].ToString();
+                string tel = constructioncase["customertel"].ToString();
+                string areatype = constructioncase["areatype"].ToString();
+                string icompany = constructioncase["insurancecompany"].ToString();
+                string icontact = constructioncase["insurancecontact"].ToString();
+                string iemail = constructioncase["insuranceemail"].ToString();
+                string itel = constructioncase["insurancetel"].ToString();
                 int area1 = 0, area2 = 0, adults = 0, teens = 0, kids = 0;
-                int.TryParse(inventory["area1"].ToString(), out area1);
-                int.TryParse(inventory["area2"].ToString(), out area2);
-                int.TryParse(inventory["adults"].ToString(), out adults);
-                int.TryParse(inventory["teens"].ToString(), out teens);
-                int.TryParse(inventory["kids"].ToString(), out kids);
+                int.TryParse(constructioncase["area1"].ToString(), out area1);
+                int.TryParse(constructioncase["area2"].ToString(), out area2);
+                int.TryParse(constructioncase["adults"].ToString(), out adults);
+                int.TryParse(constructioncase["teens"].ToString(), out teens);
+                int.TryParse(constructioncase["kids"].ToString(), out kids);
 
                 Eaztimate.SQL.ExecuteProcedureNoReader("inventorycontrol", "@Damagetype", damagetype, "@InspectionNo", invid, "@Description", description,
                     "@Address", address, "@Zip", zip, "@Damagedate", datedamage, "@City", city,
@@ -83,7 +96,7 @@ public partial class Sync_Sync : System.Web.UI.Page
 
 
             //LOOP TROUGH ROOM
-            JArray rooms = (JArray)inventory["rooms"];
+            JArray rooms = (JArray)constructioncase["rooms"];
             foreach (JObject room in rooms) {
                 int roomtype = int.Parse(room["roomtype"].ToString());
                 int floor = int.Parse(room["floor"].ToString());
@@ -105,6 +118,7 @@ public partial class Sync_Sync : System.Web.UI.Page
                     "@RoomTypeId", roomtype,
                     "@Damage", damage,
                     "@Size", size);
+
 
                 //ROOM IMAGES
                 JArray images = (JArray)room["images"];
@@ -200,12 +214,12 @@ public partial class Sync_Sync : System.Web.UI.Page
                     error = true;
                 }                
             }
-
+            */
             if (!error) {
                 Response.StatusCode = (int)HttpStatusCode.OK;
                 Response.End();
-            }
-        }
+            }             
+        } 
         Response.StatusCode = (int)HttpStatusCode.BadRequest;
         Response.End();
     }

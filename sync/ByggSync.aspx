@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ByggSync.cs" Inherits="Sync_ByggSync" %>

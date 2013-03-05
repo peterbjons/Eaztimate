@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -9,6 +10,13 @@ public partial class _Default : Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        string test="10381222013-01-22fcfyhcHGFCrt5fggfcghfcr645dhgfd";
+        byte[] data = new byte[test.Length];
+        byte[] result;
 
+        using(SHA1 shaM = new SHA1Managed()) {
+            result = shaM.ComputeHash(data);
+        }
+        //Response.Write(BitConverter.ToString(result));
     }
 }

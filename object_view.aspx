@@ -29,7 +29,6 @@
 		<h3><a href="inspect_object.aspx?id=<%=inspectionid %>" class="breadcrumb"><asp:Literal ID="inspectionno" runat="server" /></a> / <a href="room_view.aspx?id=<%=roomid %>" class="breadcrumb"><asp:Literal ID="roomname" runat="server" /></a></h3>
 		<h1><asp:Literal ID="typename" runat="server" /></h1>
 
-
 		<div class="col1">
 			<div class="room_col">
 
