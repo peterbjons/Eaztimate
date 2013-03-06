@@ -12,7 +12,7 @@ using Eaztimate;
 using System.Collections;
 using WebSupergoo.ABCpdf9;
 
-public partial class pdf : System.Web.UI.Page
+public partial class bygg : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
