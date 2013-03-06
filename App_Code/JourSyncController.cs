@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -57,6 +58,8 @@ public class JourSyncController : ApiController
                 string journo = jour["caseid"].ToString();
                 string pw = jour["password"].ToString();
 
+                int customerid = 1; //fix later
+
                 string contactname = jour["contactname"].ToString();
                 string contactaddress = jour["contactaddress1"].ToString();
                 string contactaddress2 = jour["contactaddress2"].ToString();
@@ -90,16 +93,16 @@ public class JourSyncController : ApiController
                 bool action_cash = (jour["action_cash"] != null ? (bool)jour["action_cash"] : false);
 
                 //INSERT INTO jour
-                using (SQL.ExecuteQuery("INSERT INTO jour(journo,syncemail,datecreated,dateupdated,contactname,contactaddress,contactaddress2,contactzipcode,contactcity,contactpersonalnumber,insurancenumber,insurancetype,damagetype,actiondescription,externalentrepeneur,damagedescription,contactinformed,contactaction,action_otherliving,action_cash,action_transport,action_helpcontract,building_power,building_lockable,building_climatesafe,building_function)" +
-                    " VALUES(@1,@2,GETDATE(),GETDATE(),@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@16,@17,@18,@19,@20,@21,@22,@23,@24)",
+                using (SQL.ExecuteQuery("INSERT INTO jour(journo,syncemail,datecreated,dateupdated,contactname,contactaddress,contactaddress2,contactzipcode,contactcity,contactpersonalnumber,insurancenumber,insurancetype,damagetype,actiondescription,externalentrepeneur,damagedescription,contactinformed,contactaction,action_otherliving,action_cash,action_transport,action_helpcontact,building_power,building_lockable,building_climatesafe,building_function,customerid)" +
+                    " VALUES(@1,@2,GETDATE(),GETDATE(),@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@16,@17,@18,@19,@20,@21,@22,@23,@24,@25)",
                     journo, email, contactname, contactaddress, contactaddress2, contactzipcode, contactcity, contactpersonalnumber, insurancenumber,
                     insurancetype, damagetype, actiondescription, externalentrepeneur, damagedescription, contactinformed, action,
-                    action_otherliving, action_cash, action_transport, action_helpcontact, building_power, building_lockable, building_climatesafe, building_function)) { }
+                    action_otherliving, action_cash, action_transport, action_helpcontact, building_power, building_lockable, building_climatesafe, building_function,customerid)) { }
 
 
                 JArray images = (JArray)jour["images"];
                 foreach (String image in images) {
-                    using (SQL.ExecuteQuery("INSERT INTO jourimage (jourid,image) SELECT jourid ,@2 FROM jour WHERE journo LIKE @1", journo, image)) { }                    
+                    using (SQL.ExecuteQuery("INSERT INTO jourimage (jourid,image) SELECT jourid ,@2 FROM jour WHERE journo LIKE @1", journo, new FileInfo(image).Name)) { }                    
                 }
 
                 JArray rooms = (JArray)jour["rooms"];
@@ -108,10 +111,10 @@ public class JourSyncController : ApiController
                     string roomid = room["roomid"].ToString();
                     string title = room["title"].ToString();
 
-                    bool humidity = (jour["roomhumidity"] != null ? (bool)jour["roomhumidity"] : false);
-                    bool odor = (jour["roomodor"] != null ? (bool)jour["roomodor"] : false);
-                    bool water = (jour["roomwater"] != null ? (bool)jour["roomwater"] : false);
-                    bool contamination = (jour["roomcontamination"] != null ? (bool)jour["roomcontamination"] : false);
+                    bool humidity = (room["roomhumidity"] != null ? (bool)room["roomhumidity"] : false);
+                    bool odor = (room["roomodor"] != null ? (bool)room["roomodor"] : false);
+                    bool water = (room["roomwater"] != null ? (bool)room["roomwater"] : false);
+                    bool contamination = (room["roomcontamination"] != null ? (bool)room["roomcontamination"] : false);
 
                     using (SQL.ExecuteQuery("INSERT INTO jour_room (jourid,uuid,datecreated,dateupdated,title,description,problem_water,problem_humidity,problem_odor,problem_contamination)" +
                         " SELECT jourid, @2, GETDATE(), GETDATE(), @3,@4,@5,@6,@7,@8 FROM jour WHERE journo LIKE @1",
@@ -119,9 +122,23 @@ public class JourSyncController : ApiController
 
                     JArray roomimages = (JArray)room["images"];
                     foreach (String image in roomimages) {
-                        using (SQL.ExecuteQuery("INSERT INTO jour_roomimage (roomid,image) SELECT roomid ,@2 FROM jour_room WHERE uuid LIKE @1", journo, image)) { }
+                        using (SQL.ExecuteQuery("INSERT INTO jour_roomimage (roomid,image) SELECT roomid ,@2 FROM jour_room WHERE uuid LIKE @1", roomid, new FileInfo(image).Name)) { }
                     }
-                }               
+                }
+
+                DateTime timestamp;
+
+                JArray logs = (JArray)jour["loglist"];
+                foreach (JObject log in logs) {
+                    DateTime.TryParse((log["timestamp"] != null ? log["timestamp"].ToString() : ""), out timestamp);
+                    if (timestamp < (DateTime)SqlDateTime.MinValue) {
+                        timestamp = DateTime.Now;
+                    }
+                    string activity = log["activity"].ToString();
+                    string comment = log["comment"].ToString();
+
+                    using (SQL.ExecuteQuery("INSERT INTO jour_log (jourid,timestamp,dateupdated,activity,comment) SELECT jourid ,@2, GETDATE(),@3,@4 FROM jour WHERE journo LIKE @1", journo, timestamp, activity, comment)) { }
+                }
 
                 counter.success = "OK";
                 counter.message = "Success";
