@@ -118,7 +118,7 @@
                             </div>
                             <div class="inspection_row_2" style="display:none">
                                 <div class="inspection_col3">
-                                    <div class="inspection_item_objects">
+                                    <div class="inspection_item_image">
                                         
                                     </div>
                                 </div>

@@ -1,0 +1,221 @@
+﻿
+*, body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Open Sans Light';
+    /* ändring */
+    
+}
+
+
+
+.red {
+    background-color: #ED1C24;
+}
+
+.green2 {
+    background-color: #39B54A;
+}
+
+
+
+
+
+
+
+/* PDF */
+
+.a4_paper {
+    background-color: #fff;
+    width: 880px;
+    /*height: 1278px;*/
+    margin-bottom: 20px;
+    padding: 40px 40px 0px 40px;
+    font-size: 8pt;
+}
+.a4_paper.a4_height{
+    
+}
+.damage_summary_paper {
+}
+
+    .damage_summary_paper h2, .room_paper h2 {
+        margin-bottom: 50px !important;
+        font-size: 36pt!important;
+        font-weight: 300;
+    }
+
+.ensurance_company_logo {
+    height: 150px;
+    width: 300px;
+    float: left;
+}
+
+.sanerings_company_logo {
+    height: 150px;
+    width: 300px;
+    float: right;
+}
+
+    .ensurance_company_logo img, .sanerings_company_logo img {
+        max-width: 300px;
+    }
+
+.damage_summary_paper .inspection_number {
+    background-color: #000;
+    color: #fff;
+    font-weight: 300;
+    font-size: 10pt;
+    padding: 5px 7px;
+    width: 205px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+
+.a4_paper ul {
+    list-style-type: none;
+    margin-top: 30px;
+}
+
+    .a4_paper ul li {
+        float: left;
+        width: 205px;
+        margin-right: 20px;
+    }
+
+        .a4_paper ul li:last-child {
+            margin-right: 0px;
+        }
+
+        .a4_paper ul li h4 {
+            padding: 5px 7px;
+            color: #fff;
+            font-weight: 300;
+            font-size: 10pt;
+            margin-bottom: 10px;
+        }
+
+        .a4_paper ul li p {
+            padding-left: 5px;
+        }
+
+    .a4_paper ul.light li h4 {
+        background-color: #85c8e0;
+    }
+
+    .a4_paper ul.dark li h4 {
+        background-color: #1c80aa;
+    }
+
+
+
+
+/* BYGG PDF*/
+.header {
+    
+}
+.header.height150 {
+    height: 150px;
+}
+.header.height60 {
+    height: 60px;
+}
+
+.header_text {
+    height: 70px;
+    font-size: 36px;
+}
+
+.logo {
+    float: left;
+}
+
+    .height150 .logo img {
+        /*width: 250px;*/
+        height: 80px;
+    }
+    .height60 .logo img {
+        /*width: 100px;*/
+        height: 35px;
+    }
+
+
+.inspection_number {
+    background-color: #000;
+    color: #fff;
+    font-weight: 300;
+    font-size: 10pt;
+    padding: 5px 7px;
+    width: 205px;
+  
+    float: right;
+}
+
+.col {
+    float: left;
+    min-height: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background: #fff; /*ta bort sen*/
+
+    
+}
+
+    .col h2 {
+        padding: 5px 7px;
+        color: #fff;
+        font-weight: 300;
+        font-size: 10pt;
+        margin-bottom: 10px;
+    }
+
+        .col h2.light {
+            background-color: #85c8e0;
+        }
+
+        .col h2.dark {
+            background-color: #1c80aa;
+        }
+
+    .col.last {
+        margin-right: 0px;
+    }
+
+.col_430 {
+    width: 430px;
+}
+
+.col_205 {
+    width: 205px;
+}
+.col_655 {
+    width: 655px;
+}
+.col_880 {
+    width: 880px;
+}
+.col_430 img {
+    width: 430px;
+}
+
+.col_205 img {
+    width: 205px;
+}
+.col_655 img {
+    width: 655px;
+}
+.col_880 img {
+    width: 880px;
+}
+
+.a4_paper table thead {
+    font-size: 12pt;
+}
+
+.a4_paper table tbody tr td {
+    width: 200px;
+}
+.a4_paper table tbody tr td:first-child {
+    width: 225px!important;
+}
+

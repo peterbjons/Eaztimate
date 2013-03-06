@@ -2,7 +2,7 @@
 *, body {
     margin: 0px;
     padding: 0px;
-    font-family: 'Open Sans';
+    font-family: 'Open Sans Light';
     /* ändring */
 }
 
@@ -609,7 +609,7 @@ ul.material {
 /* PDF */
 
 .a4_paper {
-    background-color: #fff;
+    background-color: #ddd;
     width: 880px;
     /*height: 1278px;*/
     margin-bottom: 20px;

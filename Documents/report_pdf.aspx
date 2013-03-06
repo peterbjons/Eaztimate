@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="report.cs" Inherits="Documents_report" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="report_pdf.aspx.cs" Inherits="Documents_report_pdf" %>
 
 <!DOCTYPE html>
 

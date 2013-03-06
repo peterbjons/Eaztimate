@@ -262,7 +262,13 @@ a.button {
 }
 
 
-
+.inspection_item_image {
+background-color: #85c8e0;
+margin-top: 5px;
+    height: 150px;
+    width: 130px;
+    color: #fff;
+}
 
 
 .inspection_item_objects {
