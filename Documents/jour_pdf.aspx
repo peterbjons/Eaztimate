@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="jour_pdf.cs" Inherits="Documents_jour_pdf" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="jour_pdf.aspx.cs" Inherits="Documents_jour_pdf" %>
 
 <!DOCTYPE html>
 
