@@ -1,392 +1,204 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="jour.aspx.cs" Inherits="jour" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
+    <link href="Documents/jour.css?asdf=1" rel="stylesheet" type="text/css" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
-    <div class="a4_paper">
-        <div class="damage_summary_paper">
-            <div class="ensurance_company_logo">
-                <img src="Images/forsak1.png" />
+     <div class="a4_paper ">
+            <div class="header height60">
+                <div class="logo">
+                    <img src="../Images/forsak2.png" />
+                </div>
+                <div class="inspection_number">03-14917-12 NUS  <span style="float: right">sid 2/4</span></div>
+                <div style="clear: both"></div>
             </div>
-            <div class="sanerings_company_logo">
-                <img src="Images/forsak2.png" />
+            <div class="header_text">Insatsrapport - Jour</div>
+            <div class="col col_205">
+                <h2 class="dark rubrik">Försäkringsnummer</h2>
+                111 222-99-13
+            </div>
+            <div class="col col_205">
+                <h2 class="dark rubrik">Typ av försäkring</h2>
+                Villahem
+            </div>
+            <div class="col col_205">
+                <h2 class="dark rubrik">Händelse</h2>
+                Brand i tvättstuga
+            </div>
+            <div class="col col_205 last">
+                <h2 class="dark rubrik">Insatsdatum</h2>
+                2013-02-18
             </div>
             <div style="clear: both"></div>
-            <div class="inspection_number"><asp:Literal ID="inspectionno" runat="server" /></div>
-            <h2><asp:Literal ID="description" runat="server" /></h2>
+            <div class="col col_205">
+                <h2 class="dark rubrik">Försäkringstagare</h2>
+                August Svensson<br />
+                Bygatan 12<br />
+                784 34 Borlänge<br />
+                0243 - 111 22<br />
+                070 - 111 22 33<br />
+                august@home.se
+            </div>
+            <div class="col col_205">
+                <h2 class="dark rubrik">Ansvarig Ocab</h2>
+                Lars-Tore Hagbohm<br />
+                023 - 79 24 40<br />
+                070 - 521 34 40<br />
+                lars.hagbohm@ocab.se
+            </div>
+            <div style="clear: both"></div>
+            <div class="col col_430">
+                <img src="../Images/bygg1.jpg" />
+            </div>
+            <div class="col col_430 last">
+                <img src="../Images/bygg1.jpg" />
+            </div>
+            <div style="clear: both"></div>
+            <div class="col col_880">
+                <h2 class="light rubrik">Beskrivning av skadan</h2>
+                Oisolerat kallvattenrör har orsakat kondens som droppat ned i elcentral och orsakat kortslutning med mindre brand som följd. Brand spridit sig i vägg/tak. Släckt med vatten. Fritt vatten på alla golv i källarplan.
+Golvbrunnanar i tvättastuga, bastu och pannrum. Lätt sot alla plana ytor.
+            </div>
 
-            <ul class="light">
-                <li>
-                    <h4>Skadetyp</h4>
-                    <p><asp:Literal ID="damagetype" runat="server" /></p>
-                </li>
-                <li>
-                    <h4>Skadeplats</h4>
-                    <p><asp:Literal ID="address" runat="server" /></p>
-                </li>
-                <li>
-                    <h4>Skadedatum</h4>
-                    <p><asp:Literal ID="damagedate" runat="server" /></p>
-                </li>
-                <li>
-                    <h4>Självrisk</h4>
-                    <p>4000kr</p>
-                </li>
-
-            </ul>
-            <div style="clear: both"></div>
-            <ul class="light">
-                <li>
-                    <h4>Typ av byggnad</h4>
-                    <p>Enplans med källare</p>
-                </li>
-                <li>
-                    <h4>Storlek</h4>
-                    <p><asp:Literal ID="size" runat="server"/> kvm</p>
-                </li>
-                <li>
-                    <h4>Antal och ålder på boende</h4>
-                    <p><asp:Literal id="inhabitants" runat="server" /></p>
-                </li>
-                <li>
-                    <h4>Försäkringar</h4>
-                    <p><asp:Literal ID="insurance" runat="server" /></p>
-                </li>
-            </ul>
-            <div style="clear: both"></div>
-            <ul class="dark">
-                <li>
-                    <h4>Försäkringstagare</h4>
-                    <p>
-                        Per Persson<br />
-                        Box 3<br />
-                        791 21 Falun<br />
-                        070- 123 33 66<br />
-                        023-454 21
-                    </p>
-                </li>
-                <li>
-                    <h4>Anmälare</h4>
-                    <p>
-                        Greta Svärd<br />
-                        023 - 123 23
-                    </p>
-                </li>
-                <li>
-                    <h4>Kontaktperson</h4>
-                    <p>
-                        Greta Svärd<br />
-                        023 - 123 23
-                    </p>
-                </li>
-                <li>
-                    <h4>Försäkringsbolag</h4>
-                    <p>
-                        03-453-99 LCR<br />
-                        Lotta Croner<br />
-                        023 - 930 10<br />
-                        skador@dalarnas.se
-                    </p>
-                </li>
-            </ul>
-            <div style="clear: both"></div>
-            <ul class="dark">
-                <li>
-                    <h4>Saneringsbara objekt</h4>
-                    <p>2140st</p>
-                </li>
-                <li>
-                    <h4>Icke saneringsbara object</h4>
-                    <p>901st</p>
-                </li>
-                <li>&nbsp;
-                </li>
-                <li>
-                    <h4>Totalt värde</h4>
-                    <div class="saneringsbara_color red"></div>
-                    <div class="saneringsbara_value">21243kr</div>
-                    <div style="clear: both"></div>
-                    <div class="non_saneringsbara_color green2"></div>
-                    <div class="non_saneringsbara_value">24013kr</div>
-                    <div style="clear: both"></div>
-                    <div class="line">
-                        <div class="saneringsbara_color"></div>
-                        <div class="saneringsbara_value">43200kr</div>
-                    </div>
-                </li>
-            </ul>
-            <div style="clear: both"></div>
         </div>
-    </div>
-    <div class="a4_paper">
-        <div class="room_paper">
-            <div class="ensurance_company_logo">
-                <img src="Images/forsak1.png" />
-            </div>
-            <div class="sanerings_company_logo">
-                <img src="Images/forsak2.png" />
-            </div>
-            <div style="clear: both"></div>
-            <h2 class="room_h2">Thomas rum</h2>
-            <div class="room_images">
-                <img src="Images/room1.png" /><img src="Images/room2.jpg" /><img src="Images/room3.jpg" /><img src="Images/room4.jpg" />
-            </div>
-            <ul class="dark">
-                <li>
-                    <h4>Rumstyp</h4>
-                    <p>Sovrum</p>
-                </li>
-                <li>
-                    <h4>Skadegrad</h4>
-                    <p>Tungt nedsmutsat</p>
-                </li>
-                <li>
-                    <h4>Storlek</h4>
-                    <p>24kvm</p>
-                </li>
-                <li>
-                    <h4>Antal objekt</h4>
-                    <p>42</p>
-                </li>
 
-            </ul>
-            <div style="clear: both"></div>
-            <ul class="dark">
-                <li>
-                    <h4>Saneringsbara objekt</h4>
-                    <p>2140st</p>
-                </li>
-                <li>
-                    <h4>Icke saneringsbara object</h4>
-                    <p>901st</p>
-                </li>
-                <li>&nbsp;
-                </li>
-                <li>
-                    <h4>Totalt värde</h4>
-                    <div class="saneringsbara_color red"></div>
-                    <div class="saneringsbara_value">21243kr</div>
-                    <div style="clear: both"></div>
-                    <div class="non_saneringsbara_color green2"></div>
-                    <div class="non_saneringsbara_value">24013kr</div>
-                    <div style="clear: both"></div>
-                    <div class="line">
-                        <div class="saneringsbara_color"></div>
-                        <div class="saneringsbara_value">43200kr</div>
-                    </div>
-                </li>
-            </ul>
-            <div style="clear: both"></div>
-            <table cellpadding="0px" cellspacing="0px">
+        <div style="page-break-before: always">&nbsp;</div>
+
+        <div class="a4_paper ">
+            <div class="header height60">
+                <div class="logo">
+                    <img src="../Images/forsak2.png" />
+                </div>
+                <div class="inspection_number">03-14917-12 NUS  <span style="float: right">sid 2/4</span></div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="header_text">Insatsrapport - Jour</div>
+            <table class="jourtable">
                 <thead>
-                    <tr class="tr_green">
-                        <td class="id">ID</td>
-                        <td style="width: 6px;"></td>
-                        <td class="type">Möbler</td>
-                        <td style="width: 6px;"></td>
-                        <td>Antal</td>
-                        <td style="width: 6px;"></td>
-                        <td class="comment">Beskrivning</td>
-                        <td style="width: 6px;"></td>
-                        <td>Inköpsår</td>
-                        <td style="width: 6px;"></td>
-                        <td class="price">Pris</td>
-                        <td style="width: 6px;"></td>
-                        <td class="price">Pris</td>
-                        <td style="width: 6px;"></td>
-                        <td class="price">Pris</td>
+                    <tr>
+                        <th style="width: 126px" class="dark">Klockslag</th>
+                        <th style="width: 6px">&nbsp;</th>
+                        <th style="width: 206px" class="dark">Händelse</th>
+                        <th style="width: 6px">&nbsp;</th>
+                        <th style="width: 466px" class="dark">Kommentar</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>001</td>
+                        <td>20.47</td>
                         <td></td>
-                        <td>Stol</td>
+                        <td>LC-larm</td>
                         <td></td>
-                        <td class="text-align-center">1</td>
-                        <td></td>
-                        <td>Ful som fan men säkert skön</td>
-                        <td></td>
-                        <td class="text-align-center">1999</td>
-                        <td></td>
-                        <td>1200kr</td>
-                        <td></td>
-                        <td>1200kr</td>
-                        <td></td>
-                        <td>1200kr</td>
-
+                        <td>Uppgifter mottagna enligt ovan</td>
                     </tr>
                     <tr>
-                        <td>001</td>
+                        <td>20.47</td>
                         <td></td>
-                        <td>Stol</td>
+                        <td>Påbörjar akuta skadebegränsande insatser Påbörjar akuta skadebegränsande insatser</td>
                         <td></td>
-                        <td class="text-align-center">1</td>
-                        <td></td>
-                        <td>Ful som fan men säkert skön</td>
-                        <td></td>
-                        <td class="text-align-center">1999</td>
-                        <td></td>
-                        <td>1200kr</td>
-                        <td></td>
-                        <td>1200kr</td>
-                        <td></td>
-                        <td>1200kr</td>
-
-
-                    </tr>
-                    <tr>
-                        <td>001</td>
-                        <td></td>
-                        <td>Stol</td>
-                        <td></td>
-                        <td class="text-align-center">1</td>
-                        <td></td>
-                        <td>Ful som fan men säkert skön</td>
-                        <td></td>
-                        <td class="text-align-center">1999</td>
-                        <td></td>
-                        <td>1200kr</td>
-                        <td></td>
-                        <td>1200kr</td>
-                        <td></td>
-                        <td>1200kr</td>
-
-
-                    </tr>
-                    <tr>
-                        <td>001</td>
-                        <td></td>
-                        <td>Stol</td>
-                        <td></td>
-                        <td class="text-align-center">1</td>
-                        <td></td>
-                        <td>Ful som fan men säkert skön</td>
-                        <td></td>
-                        <td class="text-align-center">1999</td>
-                        <td></td>
-                        <td>1200kr</td>
-                        <td></td>
-                        <td>1200kr</td>
-                        <td></td>
-                        <td>1200kr</td>
-
-
+                        <td>Uppgifter mottagna enligt ovan</td>
                     </tr>
                 </tbody>
-
-                <tfoot>
-                    <tr>
-                        <td colspan="14"></td>
-                        <td>1200kr</td>
-                    </tr>
-                </tfoot>
             </table>
-            <table cellpadding="0px" cellspacing="0px">
-                <thead>
-                    <tr class="tr_red">
-                        <td class="id">ID</td>
-                        <td style="width: 6px;"></td>
-                        <td class="type">Möbler</td>
-                        <td style="width: 6px;"></td>
-                        <td>Antal</td>
-                        <td style="width: 6px;"></td>
-                        <td class="comment">Beskrivning</td>
-                        <td style="width: 6px;"></td>
-                        <td>Inköpsår</td>
-                        <td style="width: 6px;"></td>
-                        <td class="price">Pris</td>
-                        <td style="width: 6px;"></td>
-                        <td class="price">Pris</td>
-                        <td style="width: 6px;"></td>
-                        <td class="price">Pris</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>001</td>
-                        <td></td>
-                        <td>Stol</td>
-                        <td></td>
-                        <td class="text-align-center">1</td>
-                        <td></td>
-                        <td>Ful som fan men säkert skön</td>
-                        <td></td>
-                        <td class="text-align-center">1999</td>
-                        <td></td>
-                        <td>1200kr</td>
-                        <td></td>
-                        <td>1200kr</td>
-                        <td></td>
-                        <td>1200kr</td>
 
-                    </tr>
-                    <tr>
-                        <td>001</td>
-                        <td></td>
-                        <td>Stol</td>
-                        <td></td>
-                        <td class="text-align-center">1</td>
-                        <td></td>
-                        <td>Ful som fan men säkert skön</td>
-                        <td></td>
-                        <td class="text-align-center">1999</td>
-                        <td></td>
-                        <td>1200kr</td>
-                        <td></td>
-                        <td>1200kr</td>
-                        <td></td>
-                        <td>1200kr</td>
 
-                    </tr>
-                    <tr>
-                        <td>001</td>
-                        <td></td>
-                        <td>Stol</td>
-                        <td></td>
-                        <td class="text-align-center">1</td>
-                        <td></td>
-                        <td>Ful som fan men säkert skön</td>
-                        <td></td>
-                        <td class="text-align-center">1999</td>
-                        <td></td>
-                        <td>1200kr</td>
-                        <td></td>
-                        <td>1200kr</td>
-                        <td></td>
-                        <td>1200kr</td>
+            <div class="footer">
+                <div class="col col_205">
+                    Ocab i Dalarna<br />
+                    Rissgårdsvägen 3<br />
+                    791 77 Falun
 
-                    </tr>
-                    <tr>
-                        <td>001</td>
-                        <td></td>
-                        <td>Stol</td>
-                        <td></td>
-                        <td class="text-align-center">1</td>
-                        <td></td>
-                        <td>Ful som fan men säkert skön</td>
-                        <td></td>
-                        <td class="text-align-center">1999</td>
-                        <td></td>
-                        <td>1200kr</td>
-                        <td></td>
-                        <td>1200kr</td>
-                        <td></td>
-                        <td class="accepted_prize">1200kr</td>
+                </div>
+                <div class="col col_205">
+                    Växel: 023-79 24 40<br />
+                    Direkt: 023-79 24 41<br />
+                    Telefax: 023-635 40
 
-                    </tr>
-                </tbody>
+                </div>
+                <div class="col col_205">
+                    Lars Hagbohm<br />
+                    Mobil: 070-521 34 40<br />
+                    lars.hagbohm@ocab.se
 
-                <tfoot>
-                    <tr>
-                        <td colspan="14"></td>
-                        <td>1200kr</td>
-                    </tr>
-                </tfoot>
-            </table>
+                </div>
+                
+            </div>
+
+
         </div>
+
+        <div style="page-break-before: always">&nbsp;</div>
+
+        <div class="a4_paper ">
+            <div class="header height60">
+                <div class="logo">
+                    <img src="../Images/forsak2.png" />
+                </div>
+                <div class="inspection_number">03-14917-12 NUS  <span style="float: right">sid 2/4</span></div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="header_text">Insatsrapport - Rum</div>
+            <div class="col col_205">
+                <h2 class="dark rubrik">Rum</h2>
+                Kök
+            </div>
+            <div class="col col_205">
+                <h2 class="dark rubrik">Upptäckta problem</h2>
+                Fritt vatten<br />
+Extrem luftfuktighet<br />
+Luktproblem<br />
+Avloppsvatten/smitta
+            </div>
+            <div class="col col_205">
+                <img src="../Images/bygg1.jpg" />
+            </div>
+            <div class="col col_205 last">
+                <img src="../Images/bygg1.jpg" />
+            </div>
+            <div class="col col_430">
+                <h2 class="light rubrik">Rumsbeskrivning</h2>
+                Spik som föregående ägare använt när han fäst sockeln på baksidan av  underskåpen (2007), var så långa att de skadade avloppsslangen till diskmaskinen. När FT demonterade listen (och spiken) i samband med att den skulle bytas började det att läcka.
+            </div>
+            <div class="col col_205">
+                <img src="../Images/bygg1.jpg" />
+            </div>
+            <div class="col col_205 last">
+                <img src="../Images/bygg1.jpg" />
+
+            </div>
+
+            <div style="clear:both; height:100px;"></div>
+            
+            <div class="col col_205">
+                <h2 class="dark rubrik">Rum</h2>
+                Kök
+            </div>
+            <div class="col col_205">
+                <h2 class="dark rubrik">Upptäckta problem</h2>
+                Fritt vatten<br />
+Extrem luftfuktighet<br />
+Luktproblem<br />
+Avloppsvatten/smitta
+            </div>
+            <div class="col col_205">
+                <img src="../Images/bygg1.jpg" />
+            </div>
+            <div class="col col_205 last">
+                <img src="../Images/bygg1.jpg" />
+            </div>
+            <div class="col col_430">
+                <h2 class="light">Rumsbeskrivning</h2>
+                Spik som föregående ägare använt när han fäst sockeln på baksidan av  underskåpen (2007), var så långa att de skadade avloppsslangen till diskmaskinen. När FT demonterade listen (och spiken) i samband med att den skulle bytas började det att läcka.
+            </div>
+            <div class="col col_205">
+                <img src="../Images/bygg1.jpg" />
+            </div>
+            <div class="col col_205 last">
+                <img src="../Images/bygg1.jpg" />
+
+            </div>
         <asp:Button ID="printbutton" runat="server" Text="Print" OnClick="printbutton_Click" />
-    </div>
+    
 </asp:Content>
 
