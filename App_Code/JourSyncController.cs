@@ -93,12 +93,11 @@ public class JourSyncController : ApiController
                 bool action_cash = (jour["action_cash"] != null ? (bool)jour["action_cash"] : false);
 
                 //INSERT INTO jour
-                using (SQL.ExecuteQuery("INSERT INTO jour(journo,syncemail,datecreated,dateupdated,contactname,contactaddress,contactaddress2,contactzipcode,contactcity,contactpersonalnumber,insurancenumber,insurancetype,damagetype,actiondescription,externalentrepeneur,damagedescription,contactinformed,contactaction,action_otherliving,action_cash,action_transport,action_helpcontact,building_power,building_lockable,building_climatesafe,building_function,customerid)" +
-                    " VALUES(@1,@2,GETDATE(),GETDATE(),@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@16,@17,@18,@19,@20,@21,@22,@23,@24,@25)",
+                using (SQL.ExecuteQuery("INSERT INTO jour(journo,syncemail,datecreated,dateupdated,contactname,contactaddress,contactaddress2,contactzipcode,contactcity,contactpersonalnumber,insurancenumber,insurancetype,damagetype,actiondescription,externalentrepeneur,damagedescription,contactinformed,contactaction,action_otherliving,action_cash,action_transport,action_helpcontact,building_power,building_lockable,building_climatesafe,building_function,customerid,contactphone1,contactphone2)" +
+                    " VALUES(@1,@2,GETDATE(),GETDATE(),@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@16,@17,@18,@19,@20,@21,@22,@23,@24,@25,@26,@27)",
                     journo, email, contactname, contactaddress, contactaddress2, contactzipcode, contactcity, contactpersonalnumber, insurancenumber,
                     insurancetype, damagetype, actiondescription, externalentrepeneur, damagedescription, contactinformed, action,
-                    action_otherliving, action_cash, action_transport, action_helpcontact, building_power, building_lockable, building_climatesafe, building_function,customerid)) { }
-
+                    action_otherliving, action_cash, action_transport, action_helpcontact, building_power, building_lockable, building_climatesafe, building_function, customerid, contactphone1, contactphone2)) { }
 
                 JArray images = (JArray)jour["images"];
                 foreach (String image in images) {

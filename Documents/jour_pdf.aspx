@@ -20,49 +20,46 @@
             <div class="header_text">Insatsrapport - Jour</div>
             <div class="col col_205">
                 <h2 class="dark">Försäkringsnummer</h2>
-                111 222-99-13
+                <asp:Literal id="insuranceno" runat="server" />
             </div>
             <div class="col col_205">
                 <h2 class="dark">Typ av försäkring</h2>
-                Villahem
+                <asp:Literal id="insurancetype" runat="server" />
             </div>
             <div class="col col_205">
                 <h2 class="dark">Händelse</h2>
-                Brand i tvättstuga
+                <asp:Literal id="damagetype" runat="server" />
             </div>
             <div class="col col_205 last">
                 <h2 class="dark">Insatsdatum</h2>
-                2013-02-18
+                <asp:Literal id="jourdate" runat="server" />
             </div>
             <div style="clear: both"></div>
             <div class="col col_205">
                 <h2 class="dark">Försäkringstagare</h2>
-                August Svensson<br />
-                Bygatan 12<br />
-                784 34 Borlänge<br />
-                0243 - 111 22<br />
-                070 - 111 22 33<br />
-                august@home.se
+                <asp:Literal id="contactname" runat="server" /><br />
+                <asp:Literal id="contactaddress" runat="server" /><br />
+                <asp:Literal id="contactaddress2" runat="server" />
+                <asp:Literal id="contactzipcode" runat="server" /> <asp:Literal id="contactcity" runat="server" /><br />
+                <asp:Literal id="contactphone1" runat="server" />
+                <asp:Literal id="contactphone2" runat="server" />
             </div>
             <div class="col col_205">
-                <h2 class="dark">Ansvarig Ocab</h2>
-                Lars-Tore Hagbohm<br />
-                023 - 79 24 40<br />
-                070 - 521 34 40<br />
-                lars.hagbohm@ocab.se
+                <h2 class="dark">Ansvarig Ocab</h2>                
+                <asp:Literal id="syncemail" runat="server" />
             </div>
             <div style="clear: both"></div>
-            <div class="col col_430">
-                <img src="../Images/bygg1.jpg" />
-            </div>
-            <div class="col col_430 last">
-                <img src="../Images/bygg1.jpg" />
-            </div>
+            <asp:Repeater ID="jourimagerepeater" runat="server">
+                <ItemTemplate>                    
+                    <div class="col col_205 <%#Container.ItemIndex % 4 == 0 ? "last" : "" %>">
+                        <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" />
+                    </div>                        
+                </ItemTemplate>
+            </asp:Repeater>
             <div style="clear: both"></div>
             <div class="col col_880">
                 <h2 class="light">Beskrivning av skadan</h2>
-                Oisolerat kallvattenrör har orsakat kondens som droppat ned i elcentral och orsakat kortslutning med mindre brand som följd. Brand spridit sig i vägg/tak. Släckt med vatten. Fritt vatten på alla golv i källarplan.
-Golvbrunnanar i tvättastuga, bastu och pannrum. Lätt sot alla plana ytor.
+                <asp:Literal id="damagedescription" runat="server" />
             </div>
 
         </div>
@@ -89,20 +86,17 @@ Golvbrunnanar i tvättastuga, bastu och pannrum. Lätt sot alla plana ytor.
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>20.47</td>
-                        <td></td>
-                        <td>LC-larm</td>
-                        <td></td>
-                        <td>Uppgifter mottagna enligt ovan</td>
-                    </tr>
-                    <tr>
-                        <td>20.47</td>
-                        <td></td>
-                        <td>Påbörjar akuta skadebegränsande insatser Påbörjar akuta skadebegränsande insatser</td>
-                        <td></td>
-                        <td>Uppgifter mottagna enligt ovan</td>
-                    </tr>
+                    <asp:Repeater ID="logrepeater" runat="server">
+                        <ItemTemplate>
+                            <tr>
+                                <td><%#((DateTime)DataBinder.Eval(Container.DataItem, "timestamp")).ToString("HH:mm")%></td>
+                                <td></td>
+                                <td><%#DataBinder.Eval(Container.DataItem, "activity")%></td>
+                                <td></td>
+                                <td><%#DataBinder.Eval(Container.DataItem, "comment")%></td>
+                            </tr>
+                        </ItemTemplate>
+                    </asp:Repeater>                                        
                 </tbody>
             </table>
 

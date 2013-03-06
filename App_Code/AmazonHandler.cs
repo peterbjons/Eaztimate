@@ -34,4 +34,16 @@ public static class AmazonHandler
             return client.GetPreSignedURL(request);
         }
     }
+
+    public static string GetPrivateImageJour(string filename) {
+        string accessKeyID = Conf.AppSettings["AWSAccessKey"];
+        string secretAccessKeyID = Conf.AppSettings["AWSSecretKey"];
+        using (AmazonS3 client = Amazon.AWSClientFactory.CreateAmazonS3Client(accessKeyID, secretAccessKeyID)) {
+            GetPreSignedUrlRequest request = new GetPreSignedUrlRequest()
+                .WithBucketName(Conf.AppSettings["bucketJour"])
+                .WithKey(filename)
+                .WithExpires(DateTime.Now.Add(new TimeSpan(0, 24, 0, 0)));
+            return client.GetPreSignedURL(request);
+        }
+    }
 }
