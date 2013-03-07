@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="bygg_pdf.cs" Inherits="Documents_bygg_pdf" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="bygg_pdf.aspx.cs" Inherits="Documents_bygg_pdf" %>
 
 
 <!DOCTYPE html>

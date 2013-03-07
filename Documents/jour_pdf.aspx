@@ -135,67 +135,58 @@
                 </div>
                 <div class="inspection_number">03-14917-12 NUS  <span style="float: right">sid 2/4</span></div>
                 <div style="clear: both"></div>
-            </div>
-            <div class="header_text">Insatsrapport - Rum</div>
-            <div class="col col_205">
-                <h2 class="dark">Rum</h2>
-                Kök
-            </div>
-            <div class="col col_205">
-                <h2 class="dark">Upptäckta problem</h2>
-                Fritt vatten<br />
-Extrem luftfuktighet<br />
-Luktproblem<br />
-Avloppsvatten/smitta
-            </div>
-            <div class="col col_205">
-                <img src="../Images/bygg1.jpg" />
-            </div>
-            <div class="col col_205 last">
-                <img src="../Images/bygg1.jpg" />
-            </div>
-            <div class="col col_430">
-                <h2 class="light">Rumsbeskrivning</h2>
-                Spik som föregående ägare använt när han fäst sockeln på baksidan av  underskåpen (2007), var så långa att de skadade avloppsslangen till diskmaskinen. När FT demonterade listen (och spiken) i samband med att den skulle bytas började det att läcka.
-            </div>
-            <div class="col col_205">
-                <img src="../Images/bygg1.jpg" />
-            </div>
-            <div class="col col_205 last">
-                <img src="../Images/bygg1.jpg" />
+            </div>            
+            <asp:Repeater ID="roomrepeater" runat="server" OnItemDataBound="roomrepeater_ItemDataBound">
+                <HeaderTemplate>
+                    <div class="header_text">Insatsrapport - Rum</div>
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <div class="col col_430">
+                        <div class="col col_205">
+                            <h2 class="dark">Rum</h2>
+                            <asp:HiddenField ID="roomidHidden" runat="server" Value='<%#DataBinder.Eval(Container.DataItem, "roomid")%>' />
+                            <%#DataBinder.Eval(Container.DataItem, "title")%>
+                        </div>
+                        <div class="col col_205 last">
+                            <h2 class="dark">Upptäckta problem</h2>
+                            <%#(bool)DataBinder.Eval(Container.DataItem, "problem_water") ? "Fritt vatten<br/>" : "" %>
+                            <%#(bool)DataBinder.Eval(Container.DataItem, "problem_humidity") ? "Extrem luftfuktighet<br/>" : "" %>
+                            <%#(bool)DataBinder.Eval(Container.DataItem, "problem_odor") ? "Luktproblem<br/>" : "" %>
+                            <%#(bool)DataBinder.Eval(Container.DataItem, "problem_contamination") ? "Avloppsvatten/smitta<br/>" : "" %>
+                        </div>
 
-            </div>
+                        <div class="col col_430 last">
+                            <h2 class="light">Rumsbeskrivning</h2>
+                            <%#DataBinder.Eval(Container.DataItem, "description")%>
+                        </div>
+                    </div>
+                    <div class="col col_430 last">
+                        <asp:Repeater ID="roomimagerepeater" runat="server" OnItemDataBound="roomrepeater_ItemDataBound">
+                            <ItemTemplate>
+                                <div class="col col_205 <%#Container.ItemIndex % 2 == 0 ? "last" : "" %>">
+                                    <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" />
+                                </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                        
+                        <%--<div class="col col_205 last">
+                            <img src="../Images/bygg1.jpg" />
+                        </div>
+                        
+                        <div class="col col_205">
+                            <img src="../Images/bygg1.jpg" />
+                        </div>
+                        <div class="col col_205 last">
+                            <img src="../Images/bygg1.jpg" />
 
-            <div style="clear:both; height:100px;"></div>
-            
-            <div class="col col_205">
-                <h2 class="dark">Rum</h2>
-                Kök
-            </div>
-            <div class="col col_205">
-                <h2 class="dark">Upptäckta problem</h2>
-                Fritt vatten<br />
-Extrem luftfuktighet<br />
-Luktproblem<br />
-Avloppsvatten/smitta
-            </div>
-            <div class="col col_205">
-                <img src="../Images/bygg1.jpg" />
-            </div>
-            <div class="col col_205 last">
-                <img src="../Images/bygg1.jpg" />
-            </div>
-            <div class="col col_430">
-                <h2 class="light">Rumsbeskrivning</h2>
-                Spik som föregående ägare använt när han fäst sockeln på baksidan av  underskåpen (2007), var så långa att de skadade avloppsslangen till diskmaskinen. När FT demonterade listen (och spiken) i samband med att den skulle bytas började det att läcka.
-            </div>
-            <div class="col col_205">
-                <img src="../Images/bygg1.jpg" />
-            </div>
-            <div class="col col_205 last">
-                <img src="../Images/bygg1.jpg" />
+                        </div>--%>
+                    </div>
+                    <div style="clear:both; height:100px;"></div>
 
-            </div>
+                    <%#Container.ItemIndex % 2 == 0 ? "<div style=\"page-break-before: always\">&nbsp;</div>" : "" %>
+
+                </ItemTemplate>
+            </asp:Repeater>
     </form>
 </body>
 </html>
