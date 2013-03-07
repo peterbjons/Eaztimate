@@ -51,7 +51,7 @@
             <div style="clear: both"></div>
             <asp:Repeater ID="jourimagerepeater" runat="server">
                 <ItemTemplate>                    
-                    <div class="col col_205 <%#Container.ItemIndex % 4 == 0 ? "last" : "" %>">
+                    <div class="col col_205 <%#(Container.ItemIndex+1) % 4 == 0 ? "last" : "" %>">
                         <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" />
                     </div>                        
                 </ItemTemplate>
@@ -163,7 +163,7 @@
                     <div class="col col_430 last">
                         <asp:Repeater ID="roomimagerepeater" runat="server" OnItemDataBound="roomrepeater_ItemDataBound">
                             <ItemTemplate>
-                                <div class="col col_205 <%#Container.ItemIndex % 2 == 0 ? "last" : "" %>">
+                                <div class="col col_205 <%#(Container.ItemIndex+1) % 2 == 0 ? "last" : "" %>">
                                     <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" />
                                 </div>
                             </ItemTemplate>

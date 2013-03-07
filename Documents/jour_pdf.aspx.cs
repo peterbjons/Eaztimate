@@ -13,7 +13,7 @@ public partial class Documents_jour_pdf : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         int jourid= 0;
-        int.TryParse(Request.QueryString["id"] ?? "24", out jourid);
+        int.TryParse(Request.QueryString["id"] ?? "32", out jourid);
 
         using (SqlDataReader reader = Eaztimate.SQL.ExecuteQuery("SELECT *,(SELECT TOP 1 timestamp FROM jour_log WHERE jourid=@1 ORDER BY timestamp ASC) timestamp FROM jour WHERE jourid=@1", jourid)) {
             if (reader.Read()) {
