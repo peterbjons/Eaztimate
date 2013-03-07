@@ -183,7 +183,7 @@
                     </div>
                     <div style="clear:both; height:100px;"></div>
 
-                    <%#Container.ItemIndex % 2 == 0 ? "<div style=\"page-break-before: always\">&nbsp;</div>" : "" %>
+                    <%#(Container.ItemIndex+1) % 2 == 0 ? "<div style=\"page-break-before: always\">&nbsp;</div>" : "" %>
 
                 </ItemTemplate>
             </asp:Repeater>
