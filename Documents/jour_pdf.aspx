@@ -14,7 +14,7 @@
                 <div class="logo">
                     <img src="../Images/forsak2.png" />
                 </div>
-                <div class="inspection_number">03-14917-12 NUS  <span style="float: right">sid 2/4</span></div>
+                <%--<div class="inspection_number">03-14917-12 NUS  <span style="float: right">sid 2/4</span></div>--%>
                 <div style="clear: both"></div>
             </div>
             <div class="header_text">Insatsrapport - Jour</div>
@@ -91,7 +91,7 @@
                 <div class="logo">
                     <img src="../Images/forsak2.png" />
                 </div>
-                <div class="inspection_number">03-14917-12 NUS  <span style="float: right">sid 2/4</span></div>
+                <%--<div class="inspection_number">03-14917-12 NUS  <span style="float: right">sid 2/4</span></div>--%>
                 <div style="clear: both"></div>
             </div>
             <div class="header_text">Insatsrapport - Jour</div>
@@ -133,7 +133,7 @@
                 <div class="logo">
                     <img src="../Images/forsak2.png" />
                 </div>
-                <div class="inspection_number">03-14917-12 NUS  <span style="float: right">sid 2/4</span></div>
+                <%--<div class="inspection_number">03-14917-12 NUS  <span style="float: right">sid 2/4</span></div>--%>
                 <div style="clear: both"></div>
             </div>            
             <asp:Repeater ID="roomrepeater" runat="server" OnItemDataBound="roomrepeater_ItemDataBound">
