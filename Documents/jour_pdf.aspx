@@ -48,6 +48,10 @@
                 <h2 class="dark">Ansvarig Ocab</h2>                
                 <asp:Literal id="syncemail" runat="server" />
             </div>
+            <div class="col col_205">
+                <h2 class="dark">Åtgärd</h2>                
+                <asp:Literal id="action" runat="server" />
+            </div>
             <div style="clear: both"></div>
             <asp:Repeater ID="jourimagerepeater" runat="server">
                 <ItemTemplate>                    
