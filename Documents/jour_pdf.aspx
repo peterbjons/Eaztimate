@@ -125,10 +125,10 @@
 
 
         </div>
-
+        <div id="room_pages" runat="server">
         <div style="page-break-before: always">&nbsp;</div>
 
-        <div class="a4_paper ">
+        <div class="a4_paper">
             <div class="header height60">
                 <div class="logo">
                     <img src="../Images/forsak2.png" />
@@ -187,6 +187,8 @@
 
                 </ItemTemplate>
             </asp:Repeater>
+            </div>
+            </div>
     </form>
 </body>
 </html>
