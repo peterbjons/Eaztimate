@@ -57,11 +57,12 @@
                 </ItemTemplate>
             </asp:Repeater>
             <div style="clear: both"></div>
-            <div class="col col_880">
+            <div class="col col_430">
                 <h2 class="light">Beskrivning av skadan</h2>
                 <asp:Literal id="damagedescription" runat="server" />
             </div>
-            <div class="col col_430" >
+            
+            <div class="col col_430 last" >
                 <h2 class="light">Övriga behov</h2>
                 <ol class="needs">
                     <asp:Literal ID="otherneeds" runat="server"/>
@@ -70,8 +71,12 @@
                     <li>MAssor med kontanter</li>
                 </ol>
             </div>
+            <div class="col col_430">
+                <h2 class="light">Beskrivning av åtgärd</h2>
+                <asp:Literal id="actiondesc" runat="server" />
+            </div>
             <div class="col col_430 last" id="entrepreneur" runat="server">
-                <h2 class="light">Kontaktuppgifter annan entrepreneur</h2>
+                <h2 class="light">Kontaktad entreprenör</h2>
                 Lindstrumps Elektriska<br />
                 Styraregatan 28<br />
                 709 23 Falun<br /><br />

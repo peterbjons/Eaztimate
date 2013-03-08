@@ -242,3 +242,11 @@ font-size: 10pt;
     background-repeat:no-repeat;
     background-position: center top;
 }
+
+ol.needs {
+    padding-left: 20px;
+    list-style-image: url('../Images/sq.png');
+}
+ol.needs li {
+    margin-bottom:5px;
+}
