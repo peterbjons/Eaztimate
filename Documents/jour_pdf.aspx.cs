@@ -25,6 +25,7 @@ public partial class Documents_jour_pdf : System.Web.UI.Page
                 jourdate.Text = reader.GetDateTime(reader.GetOrdinal("timestamp")).ToString("yyyy-MM-dd");
                 contactname.Text = reader.GetString(reader.GetOrdinal("contactname"));
                 contactaddress.Text = reader.GetString(reader.GetOrdinal("contactaddress"));
+                contactpn.Text = reader.GetString(reader.GetOrdinal("contactpersonalnumber"));
                 if (reader.GetString(reader.GetOrdinal("contactaddress2")).Length > 1) {
                     contactaddress2.Text = reader.GetString(reader.GetOrdinal("contactaddress2")) + "<br/>";
                 }

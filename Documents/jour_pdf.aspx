@@ -38,6 +38,7 @@
             <div class="col col_205">
                 <h2 class="dark">Försäkringstagare</h2>
                 <asp:Literal id="contactname" runat="server" /><br />
+                <asp:Literal id="contactpn" runat="server" /><br />
                 <asp:Literal id="contactaddress" runat="server" /><br />
                 <asp:Literal id="contactaddress2" runat="server" />
                 <asp:Literal id="contactzipcode" runat="server" /> <asp:Literal id="contactcity" runat="server" /><br />
