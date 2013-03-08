@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -14,7 +15,7 @@ public partial class Documents_jour_pdf : System.Web.UI.Page
     {
         int jourid= 0;
         int contactaction = 0;
-        int.TryParse(Request.QueryString["id"] ?? "33", out jourid);
+        int.TryParse(Request.QueryString["id"] ?? "32", out jourid);
 
         using (SqlDataReader reader = Eaztimate.SQL.ExecuteQuery("SELECT *,(SELECT TOP 1 timestamp FROM jour_log WHERE jourid=@1 ORDER BY timestamp ASC) timestamp FROM jour WHERE jourid=@1", jourid)) {
             if (reader.Read()) {
@@ -40,6 +41,24 @@ public partial class Documents_jour_pdf : System.Web.UI.Page
 
                 contactaction = reader.GetInt32(reader.GetOrdinal("contactaction"));
 
+                actiondesc.Text = reader.GetString(reader.GetOrdinal("actiondescription"));
+                entrepeneur.Text = reader.GetString(reader.GetOrdinal("externalentrepeneur"));
+
+                StringBuilder sb = new StringBuilder();
+                if (reader.GetBoolean(reader.GetOrdinal("action_otherliving"))) {
+                    sb.Append("<li>Tillfälligt boende</li>");
+                }
+                if (reader.GetBoolean(reader.GetOrdinal("action_cash"))) {
+                    sb.Append("<li>Kontanter</li>");
+                }
+                if (reader.GetBoolean(reader.GetOrdinal("action_transport"))) {
+                    sb.Append("<li>Transport</li>");
+                }
+                if (reader.GetBoolean(reader.GetOrdinal("action_helpcontact"))) {
+                    sb.Append("<li>Förmedling av kontakt vid ej ersättningsbar skada</li>");
+                }
+                otherneeds.Text = sb.ToString();
+
             }
         }
 
@@ -64,8 +83,13 @@ public partial class Documents_jour_pdf : System.Web.UI.Page
                 roomrepeater.DataSource = reader;
                 roomrepeater.DataBind();
             }
+            actiondescdiv.Visible = false;
+            entrepreneurdiv.Visible = false;
         } else {
             room_pages.Visible = false;
+            if (contactaction != 4) {
+                entrepreneurdiv.Visible = false;
+            }
         }
 
     }

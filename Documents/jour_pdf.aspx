@@ -56,7 +56,7 @@
                     </div>                        
                 </ItemTemplate>
             </asp:Repeater>
-            <div style="clear: both"></div>
+            <div style="clear:both; height:100px;"></div>
             <div class="col col_430">
                 <h2 class="light">Beskrivning av skadan</h2>
                 <asp:Literal id="damagedescription" runat="server" />
@@ -65,24 +65,16 @@
             <div class="col col_430 last" >
                 <h2 class="light">Övriga behov</h2>
                 <ol class="needs">
-                    <asp:Literal ID="otherneeds" runat="server"/>
-                    <li>Kontanter</li>
-                    <li>Mer kontanter</li>
-                    <li>MAssor med kontanter</li>
+                    <asp:Literal ID="otherneeds" runat="server"/>                 
                 </ol>
             </div>
-            <div class="col col_430">
+            <div class="col col_430" id="actiondescdiv" runat="server">
                 <h2 class="light">Beskrivning av åtgärd</h2>
                 <asp:Literal id="actiondesc" runat="server" />
             </div>
-            <div class="col col_430 last" id="entrepreneur" runat="server">
+            <div class="col col_430 last" id="entrepreneurdiv" runat="server">
                 <h2 class="light">Kontaktad entreprenör</h2>
-                Lindstrumps Elektriska<br />
-                Styraregatan 28<br />
-                709 23 Falun<br /><br />
-                Lindstrumps Elektriska<br />
-                Styraregatan 28<br />
-                709 23 Falun<br /><br />
+                <asp:Literal id="entrepeneur" runat="server" />
             </div>
 
         </div>
@@ -190,19 +182,7 @@
                                     <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" />
                                 </div>
                             </ItemTemplate>
-                        </asp:Repeater>
-                        
-                        <%--<div class="col col_205 last">
-                            <img src="../Images/bygg1.jpg" />
-                        </div>
-                        
-                        <div class="col col_205">
-                            <img src="../Images/bygg1.jpg" />
-                        </div>
-                        <div class="col col_205 last">
-                            <img src="../Images/bygg1.jpg" />
-
-                        </div>--%>
+                        </asp:Repeater>                                               
                     </div>
                     <div style="clear:both; height:100px;"></div>
 
