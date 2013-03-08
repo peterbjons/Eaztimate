@@ -59,6 +59,21 @@ public partial class Documents_jour_pdf : System.Web.UI.Page
                 }
                 otherneeds.Text = sb.ToString();
 
+                switch (contactaction) {
+                    case 1:
+                        action.Text = "Telefonsupport";
+                        break;
+                    case 2:
+                        action.Text = "Försäkringstagaren löser problemet";
+                        break;
+                    case 3:
+                        action.Text = "Insats Ocab";
+                        break;
+                    case 4:
+                        action.Text = "Insats annan entrepenör";
+                        break;
+                }
+
             }
         }
 
@@ -91,7 +106,6 @@ public partial class Documents_jour_pdf : System.Web.UI.Page
                 entrepreneurdiv.Visible = false;
             }
         }
-
     }
    
     protected void roomrepeater_ItemDataBound(object sender, RepeaterItemEventArgs e) {
