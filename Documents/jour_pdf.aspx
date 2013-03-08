@@ -61,6 +61,21 @@
                 <h2 class="light">Beskrivning av skadan</h2>
                 <asp:Literal id="damagedescription" runat="server" />
             </div>
+            <div class="col col_430" >
+                <h2 class="light">Övriga behov</h2>
+                <ol class="needs">
+                    <li>Kontanter</li>
+                </ol>
+            </div>
+            <div class="col col_430 last" id="entrepreneur" runat="server">
+                <h2 class="light">Kontaktuppgifter annan entrepreneur</h2>
+                Lindstrumps Elektriska<br />
+                Styraregatan 28</br />
+                709 23 Falun<br /><br />
+                Lindstrumps Elektriska<br />
+                Styraregatan 28</br />
+                709 23 Falun<br /><br />
+            </div>
 
         </div>
 
