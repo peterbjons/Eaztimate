@@ -13,7 +13,8 @@ public partial class Documents_jour_pdf : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         int jourid= 0;
-        int.TryParse(Request.QueryString["id"] ?? "32", out jourid);
+        int contactaction = 0;
+        int.TryParse(Request.QueryString["id"] ?? "33", out jourid);
 
         using (SqlDataReader reader = Eaztimate.SQL.ExecuteQuery("SELECT *,(SELECT TOP 1 timestamp FROM jour_log WHERE jourid=@1 ORDER BY timestamp ASC) timestamp FROM jour WHERE jourid=@1", jourid)) {
             if (reader.Read()) {
@@ -36,6 +37,9 @@ public partial class Documents_jour_pdf : System.Web.UI.Page
                 }
                 syncemail.Text = reader.GetString(reader.GetOrdinal("syncemail"));
                 damagedescription.Text = reader.GetString(reader.GetOrdinal("damagedescription"));
+
+                contactaction = reader.GetInt32(reader.GetOrdinal("contactaction"));
+
             }
         }
 
@@ -55,9 +59,13 @@ public partial class Documents_jour_pdf : System.Web.UI.Page
             logrepeater.DataBind();
         }
 
-        using (SqlDataReader reader = Eaztimate.SQL.ExecuteQuery("SELECT * FROM jour_room WHERE jourid=@1 ORDER BY roomid ASC", jourid)) {
-            roomrepeater.DataSource = reader;
-            roomrepeater.DataBind();
+        if (contactaction == 3) {
+            using (SqlDataReader reader = Eaztimate.SQL.ExecuteQuery("SELECT * FROM jour_room WHERE jourid=@1 ORDER BY roomid ASC", jourid)) {
+                roomrepeater.DataSource = reader;
+                roomrepeater.DataBind();
+            }
+        } else {
+            room_pages.Visible = false;
         }
 
     }

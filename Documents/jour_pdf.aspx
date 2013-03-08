@@ -64,7 +64,7 @@
             <div class="col col_430" >
                 <h2 class="light">Övriga behov</h2>
                 <ol class="needs">
-                    <li>Kontanter</li>
+                    <asp:Literal ID="otherneeds" runat="server"/>
                 </ol>
             </div>
             <div class="col col_430 last" id="entrepreneur" runat="server">
