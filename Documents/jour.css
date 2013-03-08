@@ -28,7 +28,7 @@
 .a4_paper {
     background-color: #fff;
     width: 880px;
-    height: 1278px;
+    /*height: 1278px;*/
     margin-bottom: 20px;
     padding: 40px 40px 0px 40px;
     font-size: 8pt;
