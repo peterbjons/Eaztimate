@@ -1,16 +1,24 @@
 ﻿<%@ Page Title="Log in" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="login.aspx.cs" Inherits="Account_Login" %>
 <%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
 
+<asp:Content runat="server" ContentPlaceHolderID="HeadContent">
+    <script src="Scripts/html5placeholder.jquery.js"></script>
+        <script>
+            $(function () {
+                $(':input[placeholder]').placeholder();
+            });
+    </script>
+</asp:Content>
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <hgroup class="title">
-        <h1><%: Title %>.</h1>
+        <h1><%: Title %></h1>
     </hgroup>
     
     <section id="loginForm">
-        <h2>Use a local account to log in.</h2>
+        <h2>Use a local account to log in</h2>
         <asp:Login runat="server" ViewStateMode="Disabled" RenderOuterTable="false">
             <LayoutTemplate>
-                <div class="login">
+                <div class="forms">
                 <p class="validation-summary-errors">
                     <asp:Literal runat="server" ID="FailureText" />
                 </p>

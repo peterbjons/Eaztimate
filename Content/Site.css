@@ -812,17 +812,7 @@ border: 0px;
     padding: 5px 7px;
 }
 
-.login input[type=text] {
-        display: block;
-        padding: 10px;
-        font-size: 14pt;
-        font-weight: 300;
-        font-family: 'Open Sans';
-        width: 410px;
-        margin: 5px 0px 25px 0px;
-    }
-
-.login input[type=password] {
+.forms input[type=text] {
         display: block;
         padding: 10px;
         font-size: 14pt;
@@ -832,7 +822,17 @@ border: 0px;
         margin: 5px 0px 15px 0px;
     }
 
-.login input[type=submit] {
+.forms input[type=password] {
+        display: block;
+        padding: 10px;
+        font-size: 14pt;
+        font-weight: 300;
+        font-family: 'Open Sans';
+        width: 410px;
+        margin: 5px 0px 15px 0px;
+    }
+
+.forms input[type=submit] {
         display: block;
         background-color: #000;
         font-size: 14pt;
