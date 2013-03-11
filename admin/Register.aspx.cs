@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Membership.OpenAuth;
 
@@ -11,18 +12,20 @@ public partial class Account_Register : Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        ((HtmlGenericControl)Master.FindControl("slider")).Visible = false;
         RegisterUser.ContinueDestinationPageUrl = Request.QueryString["ReturnUrl"];
     }
 
     protected void RegisterUser_CreatedUser(object sender, EventArgs e)
     {
-        FormsAuthentication.SetAuthCookie(RegisterUser.UserName, createPersistentCookie: false);
+        
+        //FormsAuthentication.SetAuthCookie(RegisterUser.UserName, createPersistentCookie: false);
 
-        string continueUrl = RegisterUser.ContinueDestinationPageUrl;
-        if (!OpenAuth.IsLocalUrl(continueUrl))
-        {
-            continueUrl = "~/";
-        }
-        Response.Redirect(continueUrl);
+        //string continueUrl = RegisterUser.ContinueDestinationPageUrl;
+        //if (!OpenAuth.IsLocalUrl(continueUrl))
+        //{
+        //    continueUrl = "~/";
+        //}
+        //Response.Redirect(continueUrl);
     }
 }

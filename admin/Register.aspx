@@ -21,9 +21,7 @@
                     </p>
 
                     <div class="forms">
-                        
-                        
-                            
+
                                 <%--<asp:Label runat="server" AssociatedControlID="UserName">User name</asp:Label>--%>
                                 <asp:TextBox runat="server" ID="UserName" placeholder="User name"/>
                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName"
