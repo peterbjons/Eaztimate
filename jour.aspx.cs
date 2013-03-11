@@ -16,10 +16,12 @@ using System.Data;
 
 public partial class jour : System.Web.UI.Page
 {
+    protected int jourid = 0;
+
     protected void Page_Load(object sender, EventArgs e)
     {
         ((HtmlGenericControl)Master.FindControl("slider")).Visible = false;
-        int jourid = 0;
+        
         int contactaction = 0;
         int.TryParse(Request.QueryString["id"] ?? "32", out jourid);
 
@@ -193,7 +195,7 @@ public partial class jour : System.Web.UI.Page
             int id = 0;
             Random rnd = new Random();
             //id = doc.AddImageUrl("http://" + Request.Url.Host + "/documents/bygg.aspx?rnd=" + rnd.Next(50000));
-            id = doc.AddImageUrl("http://localhost:50030/Documents/jour.aspx?rnd=" + rnd.Next(50000));
+            id = doc.AddImageUrl("http://" + Request.Url.Host + "/Documents/jour_pdf.aspx?id=" + jourid.ToString() + "&rnd=" + rnd.Next(50000));
             
             while (true) {
                 //doc.FrameRect();
@@ -203,6 +205,19 @@ public partial class jour : System.Web.UI.Page
                 doc.Page = doc.AddPage();
                 id = doc.AddImageToChain(id);
             }
+
+            doc.Rect.String = "10 0 595 100";
+            doc.HPos = 0.5;
+            doc.VPos = 1.0;
+            //doc.FontSize = 36;
+            for (int i = 1; i <= doc.PageCount; i++) {
+                doc.PageNumber = i;
+                id = doc.AddImageUrl("http://" + Request.Url.Host + "/Documents/footer.aspx?rnd=" + rnd.Next(50000));
+                //doc.AddText("Page " + i.ToString() + " of " + doc.PageCount.ToString());
+                //doc.FrameRect();
+            }
+
+
 
             for (int i = 0; i < doc.PageCount; i++) {
                 doc.PageNumber = i;

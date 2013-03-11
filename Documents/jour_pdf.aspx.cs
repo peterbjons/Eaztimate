@@ -74,7 +74,6 @@ public partial class Documents_jour_pdf : System.Web.UI.Page
                         action.Text = "Insats annan entrepenör";
                         break;
                 }
-
             }
         }
 
