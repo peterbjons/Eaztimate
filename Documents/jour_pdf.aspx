@@ -10,7 +10,13 @@
 <body>
     <form id="form1" runat="server">
         <div class="a4_paper ">
-            
+            <div class="header height150">
+                <div class="logo">
+                    <img src="../Images/forsak2.png" />
+                </div>
+                <div class="inspection_number">Adress_FIXA MATTIAS :D</div>
+                <div style="clear: both"></div>
+            </div>
             <div class="header_text">Insatsrapport - Jour</div>
             <div class="col col_205">
                 <h2 class="dark">Försäkringsnummer</h2>
