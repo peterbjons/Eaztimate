@@ -21,7 +21,7 @@
                     </p>
 
                     <div class="forms">
-
+                        <div style="float: left; width: 50%;">
                                 <%--<asp:Label runat="server" AssociatedControlID="UserName">User name</asp:Label>--%>
                                 <asp:TextBox runat="server" ID="UserName" placeholder="User name"/>
                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName"
@@ -47,10 +47,14 @@
                                      CssClass="field-validation-error" Display="Dynamic" ErrorMessage="The password and confirmation password do not match." />
                             
                         <asp:Button runat="server" CommandName="MoveNext" Text="Register" />
+                        </div>                        
                     </div>
                 </ContentTemplate>
                 <CustomNavigationTemplate />
             </asp:CreateUserWizardStep>
         </WizardSteps>
     </asp:CreateUserWizard>
+    <div style="float: right; width: 50%;">
+        <asp:ListBox ID="rolesBox" SelectionMode="Multiple" runat="server" />
+    </div>
 </asp:Content>

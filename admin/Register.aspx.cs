@@ -14,11 +14,16 @@ public partial class Account_Register : Page
     {
         ((HtmlGenericControl)Master.FindControl("slider")).Visible = false;
         RegisterUser.ContinueDestinationPageUrl = Request.QueryString["ReturnUrl"];
+        if (!Page.IsPostBack) {
+            rolesBox.SelectedIndex = -1;
+            rolesBox.DataSource = Roles.GetAllRoles();
+            rolesBox.DataBind();
+        }
     }
 
     protected void RegisterUser_CreatedUser(object sender, EventArgs e)
     {
-        
+        Roles.AddUserToRole(RegisterUser.UserName, rolesBox.SelectedValue);
         //FormsAuthentication.SetAuthCookie(RegisterUser.UserName, createPersistentCookie: false);
 
         //string continueUrl = RegisterUser.ContinueDestinationPageUrl;

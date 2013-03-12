@@ -22,7 +22,7 @@ public partial class Documents_jour_pdf : System.Web.UI.Page
                 insuranceno.Text = reader.GetString(reader.GetOrdinal("insurancenumber"));
                 insurancetype.Text = reader.GetString(reader.GetOrdinal("insurancetype"));
                 damagetype.Text = reader.GetString(reader.GetOrdinal("damagetype"));
-                jourdate.Text = reader.GetDateTime(reader.GetOrdinal("timestamp")).ToString("yyyy-MM-dd");
+                jourdate.Text = logdate.Text = reader.GetDateTime(reader.GetOrdinal("timestamp")).ToString("yyyy-MM-dd");
                 contactname.Text = reader.GetString(reader.GetOrdinal("contactname"));
                 contactaddress.Text = reader.GetString(reader.GetOrdinal("contactaddress"));
                 contactpn.Text = reader.GetString(reader.GetOrdinal("contactpersonalnumber"));

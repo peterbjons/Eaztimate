@@ -94,7 +94,7 @@
                 <%--<div class="inspection_number">03-14917-12 NUS  <span style="float: right">sid 2/4</span></div>--%>
                 <div style="clear: both"></div>
             </div>
-            <div class="header_text">Insatsrapport - Jour</div>
+            <div class="header_text">Insatsrapport - Jour <asp:Literal ID="logdate" runat="server" /></div>
             <table class="jourtable">
                 <thead>
                     <tr>

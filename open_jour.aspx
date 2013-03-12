@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="open_jour.cs" Inherits="openjour" %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="open_jour.aspx.cs" Inherits="openjour" %>
 
 <asp:Content runat="server" ID="Content1" ContentPlaceHolderID="HeadContent">
     <script type="text/javascript">
