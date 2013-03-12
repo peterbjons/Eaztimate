@@ -10,13 +10,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="a4_paper ">
-            <div class="header height60">
-                <div class="logo">
-                    <img src="../Images/forsak2.png" />
-                </div>
-                <%--<div class="inspection_number">03-14917-12 NUS  <span style="float: right">sid 2/4</span></div>--%>
-                <div style="clear: both"></div>
-            </div>
+            
             <div class="header_text">Insatsrapport - Jour</div>
             <div class="col col_205">
                 <h2 class="dark">Försäkringsnummer</h2>
@@ -54,14 +48,7 @@
                 <asp:Literal id="action" runat="server" />
             </div>
             <div style="clear: both"></div>
-            <asp:Repeater ID="jourimagerepeater" runat="server">
-                <ItemTemplate>                    
-                    <div class="col col_205 <%#(Container.ItemIndex+1) % 4 == 0 ? "last" : "" %>">
-                        <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" />
-                    </div>                        
-                </ItemTemplate>
-            </asp:Repeater>
-            <div style="clear:both; height:100px;"></div>
+            
             <div class="col col_430">
                 <h2 class="light">Beskrivning av skadan</h2>
                 <asp:Literal id="damagedescription" runat="server" />
@@ -81,6 +68,14 @@
                 <h2 class="light">Kontaktad entreprenör</h2>
                 <asp:Literal id="entrepeneur" runat="server" />
             </div>
+            <asp:Repeater ID="jourimagerepeater" runat="server">
+                <ItemTemplate>                    
+                    <div class="col col_430 <%#(Container.ItemIndex+1) % 2 == 0 ? "last" : "" %>">
+                        <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" />
+                    </div>                        
+                </ItemTemplate>
+            </asp:Repeater>
+            <div style="clear:both; height:100px;"></div>
 
         </div>
 
