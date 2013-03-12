@@ -1,0 +1,22 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="AdminMaster.master.cs" Inherits="AdminMaster" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
+    <div id="AdminPage">
+    <div class="left_col">
+        <asp:ContentPlaceHolder runat="server" ID="AdminMainContent" />
+
+    </div>
+    <div class="right_col">
+        <div style="height: 90px;"></div>
+                <h2>Menu</h2>
+        <ul>
+            <li>Skapa användare</li>
+            <li>Skapa företag</li>
+            <li>Hantera användargrupper</li>
+            <li>Lista företag</li>
+        </ul>
+    </div></div>
+</asp:Content>
+

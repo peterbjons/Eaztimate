@@ -189,7 +189,7 @@ a.button {
 
     #content h2 {
         font-weight: 300;
-        font-size: 26pt;
+        font-size: 20pt;
         margin-bottom: 10px;
     }
 
@@ -828,7 +828,7 @@ border: 0px;
         font-size: 14pt;
         font-weight: 300;
         font-family: 'Open Sans';
-        width: 410px;
+        width: 310px;
         margin: 5px 0px 15px 0px;
     }
 
@@ -838,7 +838,7 @@ border: 0px;
         font-size: 14pt;
         font-weight: 300;
         font-family: 'Open Sans';
-        width: 410px;
+        width: 310px;
         margin: 5px 0px 15px 0px;
     }
 
@@ -848,7 +848,7 @@ border: 0px;
         font-size: 14pt;
         font-weight: 300;
         font-family: 'Open Sans';
-        width: 434px;
+        width: 334px;
         text-align: center;
         border: none;
         color: #fff;
@@ -856,3 +856,34 @@ border: 0px;
         margin-top: 5px;
         margin-bottom: 15px;
     }
+
+.forms select[size], .forms select[multiple], .forms select[size][multiple] {
+            display: block;
+        padding: 10px;
+        font-size: 14pt;
+        font-weight: 300;
+        font-family: 'Open Sans';
+        width: 310px;
+        margin: 5px 0px 15px 0px;
+        height: 115px;
+}
+.forms .message-info {
+    width: 333px;
+    font-size: 9pt;
+}
+
+
+
+#AdminPage .left_col {
+    float:left;
+    width: 760px;
+}
+
+#AdminPage .right_col {
+    float:right;
+    width: 180px;
+
+}
+#AdminPage .right_col ul {
+    list-style: none;
+}

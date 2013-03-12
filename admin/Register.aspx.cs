@@ -12,7 +12,7 @@ public partial class Account_Register : Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        ((HtmlGenericControl)Master.FindControl("slider")).Visible = false;
+       
         RegisterUser.ContinueDestinationPageUrl = Request.QueryString["ReturnUrl"];
         if (!Page.IsPostBack) {
             rolesBox.SelectedIndex = -1;

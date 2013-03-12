@@ -1,6 +1,6 @@
-﻿<%@ Page Title="Register" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Register.aspx.cs" Inherits="Account_Register" %>
+﻿<%@ Page Title="Register" Language="C#" MasterPageFile="~/AdminMaster.Master" AutoEventWireup="true" CodeFile="Register.aspx.cs" Inherits="Account_Register" %>
 
-<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
+<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="AdminMainContent"><div class="forms">
     <hgroup class="title">
         <h1><%: Title %></h1>
         <h2>Use the form below to create a new account</h2>
@@ -20,7 +20,7 @@
                         <asp:Literal runat="server" ID="ErrorMessage" />
                     </p>
 
-                    <div class="forms">
+                    
                         <div style="float: left; width: 50%;">
                                 <%--<asp:Label runat="server" AssociatedControlID="UserName">User name</asp:Label>--%>
                                 <asp:TextBox runat="server" ID="UserName" placeholder="User name"/>
@@ -48,13 +48,13 @@
                             
                         <asp:Button runat="server" CommandName="MoveNext" Text="Register" />
                         </div>                        
-                    </div>
+                    
                 </ContentTemplate>
                 <CustomNavigationTemplate />
             </asp:CreateUserWizardStep>
         </WizardSteps>
     </asp:CreateUserWizard>
-    <div style="float: right; width: 50%;">
+    <div style="float: left;">
         <asp:ListBox ID="rolesBox" SelectionMode="Multiple" runat="server" />
-    </div>
+    </div></div>
 </asp:Content>
