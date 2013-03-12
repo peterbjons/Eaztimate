@@ -229,6 +229,7 @@ font-size: 14pt; /* was 10pt*/
 .jourtable tbody td{
     height: 20px;
     vertical-align: top;
+    padding: 2px 0px;
 }
 .jourtable {
     width: 880px;
