@@ -139,16 +139,14 @@
             </div>            
             <asp:Repeater ID="roomrepeater" runat="server" OnItemDataBound="roomrepeater_ItemDataBound">
                 <HeaderTemplate>
-                    <div class="header_text">Insatsrapport - Rum</div>
+                    
                 </HeaderTemplate>
                 <ItemTemplate>
-                    <div class="col col_430">
-                        <div class="col col_205">
-                            <h2 class="dark">Rum</h2>
-                            <asp:HiddenField ID="roomidHidden" runat="server" Value='<%#DataBinder.Eval(Container.DataItem, "roomid")%>' />
-                            <%#DataBinder.Eval(Container.DataItem, "title")%>
-                        </div>
-                        <div class="col col_205 last">
+                    <div class="header_text">Insatsrapport - <asp:HiddenField ID="roomidHidden" runat="server" Value='<%#DataBinder.Eval(Container.DataItem, "roomid")%>' />
+                            <%#DataBinder.Eval(Container.DataItem, "title")%></div>
+                    <div class="col col_880">
+                        
+                        <div class="col col_430">
                             <h2 class="dark">Upptäckta problem</h2>
                             <%#(bool)DataBinder.Eval(Container.DataItem, "problem_water") ? "Fritt vatten<br/>" : "" %>
                             <%#(bool)DataBinder.Eval(Container.DataItem, "problem_humidity") ? "Extrem luftfuktighet<br/>" : "" %>
@@ -161,10 +159,13 @@
                             <%#DataBinder.Eval(Container.DataItem, "description")%>
                         </div>
                     </div>
+                    <div class="col col_430">
+                     <img src="../Images/bygg1.jpg" />                                           
+                    </div>
                     <div class="col col_430 last">
                         <asp:Repeater ID="roomimagerepeater" runat="server" OnItemDataBound="roomrepeater_ItemDataBound">
                             <ItemTemplate>
-                                <div class="col col_205 <%#(Container.ItemIndex+1) % 2 == 0 ? "last" : "" %>">
+                                <div class="col col_205 <%#(Container.ItemIndex+1) % 2 == 0 ? "last" : "" %>" style="margin-bottom:13px">
                                     <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" />
                                 </div>
                             </ItemTemplate>
