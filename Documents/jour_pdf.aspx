@@ -10,13 +10,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="a4_paper ">
-            <div class="header height150">
-                <div class="logo">
-                    <img src="../Images/forsak2.png" />
-                </div>
-                <div class="inspection_number">Adress_FIXA MATTIAS :D</div>
-                <div style="clear: both"></div>
-            </div>
+
             <div class="header_text">Insatsrapport - Jour</div>
             <div class="col col_205">
                 <h2 class="dark">Försäkringsnummer</h2>
@@ -88,13 +82,7 @@
         <div style="page-break-before: always">&nbsp;</div>
 
         <div class="a4_paper ">
-            <div class="header height60">
-                <div class="logo">
-                    <img src="../Images/forsak2.png" />
-                </div>
-                <%--<div class="inspection_number">03-14917-12 NUS  <span style="float: right">sid 2/4</span></div>--%>
-                <div style="clear: both"></div>
-            </div>
+  
             <div class="header_text">Insatsrapport - Jour <asp:Literal ID="logdate" runat="server" /></div>
             <table class="jourtable">
                 <thead>
@@ -130,13 +118,7 @@
         <div style="page-break-before: always">&nbsp;</div>
 
         <div class="a4_paper">
-            <div class="header height60">
-                <div class="logo">
-                    <img src="../Images/forsak2.png" />
-                </div>
-                <%--<div class="inspection_number">03-14917-12 NUS  <span style="float: right">sid 2/4</span></div>--%>
-                <div style="clear: both"></div>
-            </div>            
+                    
             <asp:Repeater ID="roomrepeater" runat="server" OnItemDataBound="roomrepeater_ItemDataBound">
                 <HeaderTemplate>
                     
@@ -155,10 +137,14 @@
                         </div>
 
                         <div class="col col_430 last">
-                            <h2 class="light">Rumsbeskrivning</h2>
+                            <h2 class="dark">Åtgärd</h2>
                             <%#DataBinder.Eval(Container.DataItem, "description")%>
                         </div>
                     </div>
+                    <div class="col col_880">
+                        <h2 class="light">Rumsbeskrivning</h2>
+                            <%#DataBinder.Eval(Container.DataItem, "description")%>
+                        </div>
                     <div class="col col_430">
                      <img src="../Images/bygg1.jpg" />                                           
                     </div>
