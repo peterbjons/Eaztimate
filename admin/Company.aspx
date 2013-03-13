@@ -14,8 +14,10 @@
         <asp:TextBox runat="server" ID="CompanyPhoneText" placeholder="Phone" />
         <asp:Button ID="CompanyCreate" runat="server" Text="Create company" /></div>
         <div style="clear:both"></div><h2 style="margin-top:20px;">List of people in this company</h2>
-        <table>
-            <tr><td>Name</td><td>Email</td><td>Bulle</td><td>Kaka</td><td>Ansjovis</td></tr>
+        <table class="companycreate">
+            <thead>
+            <tr><td>Name</td><td>Email</td><td>Bulle</td><td>Kaka</td><td>Fisk</td></tr></thead>
+            <tr><td>Märtin Rossvalds</td><td>m.rossvalds@tele2.se</td><td>Kanel</td><td>Ballerina</td><td>Ansjovis</td></tr>
             
         </table>
     </div>
