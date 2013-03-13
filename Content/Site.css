@@ -29,6 +29,9 @@ a {
     background-color: #fff;
     height: 50px;
     padding: 10px 10px 0px 10px;
+    margin-left: 40px;
+    margin-top:20px;
+    margin-right: 40px;
 }
 
 #logo {
