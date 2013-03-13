@@ -145,7 +145,7 @@
                         <h2 class="light">Rumsbeskrivning</h2>
                             <%#DataBinder.Eval(Container.DataItem, "description")%>
                         </div>
-                        <div class="diver"></div>
+                        <div class="divider"></div>
                     <div class="col col_430">
                      <img src="../Images/bygg1.jpg" />                                           
                     </div>
