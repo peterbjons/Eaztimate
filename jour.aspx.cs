@@ -17,6 +17,8 @@ using System.Data;
 public partial class jour : System.Web.UI.Page
 {
     protected int jourid = 0;
+    protected string journo = string.Empty;
+    protected bool pdf_synced = false;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -29,6 +31,8 @@ public partial class jour : System.Web.UI.Page
         {
             if (reader.Read())
             {
+                pdf_synced = reader.GetBoolean(reader.GetOrdinal("pdf_synced"));
+                journo = reader.GetString(reader.GetOrdinal("journo"));
                 insuranceno.Text = reader.GetString(reader.GetOrdinal("insurancenumber"));
                 insurancetype.Text = reader.GetString(reader.GetOrdinal("insurancetype"));
                 damagetype.Text = reader.GetString(reader.GetOrdinal("damagetype"));
@@ -174,70 +178,84 @@ public partial class jour : System.Web.UI.Page
     
     protected void printbutton_Click(object sender, EventArgs e) {
 
-        string contents = string.Empty;
+        //if (pdf_synced) {
 
-        MemoryStream ms = new MemoryStream();
-        //using (StringWriter sw = new StringWriter()) {
-        //    Server.Execute("Documents/report.aspx", sw);
-        //    contents = sw.ToString();
-        //    sw.Close();
-        //}
+        //} else {
+            string contents = string.Empty;
 
-        try {
+            MemoryStream ms = new MemoryStream();
 
-            Doc doc = new Doc();
-            //int font = doc.EmbedFont(Server.MapPath("Documents/") + "OpenSans-Regular-webfont.ttf", LanguageType.Unicode);
-            //font = doc.EmbedFont(Server.MapPath("Documents/") + "OpenSans-Light-webfont.ttf", LanguageType.Unicode);       
-            doc.HtmlOptions.BrowserWidth = 960;
-            doc.HtmlOptions.FontEmbed = true;
-            doc.HtmlOptions.FontSubstitute = false;
-            doc.HtmlOptions.FontProtection = false;
-            int id = 0;
-            Random rnd = new Random();
-            //id = doc.AddImageUrl("http://" + Request.Url.Host + "/documents/bygg.aspx?rnd=" + rnd.Next(50000));
-            id = doc.AddImageUrl("http://" + Request.Url.Host + "/Documents/jour_pdf.aspx?id=" + jourid.ToString() + "&rnd=" + rnd.Next(50000));
-            
-            while (true) {
-                //doc.FrameRect();
-                if (!doc.Chainable(id)) {
-                    break;
+            try {
+
+                Doc doc = new Doc();
+
+                doc.HtmlOptions.BrowserWidth = 960;
+                doc.HtmlOptions.FontEmbed = true;
+                doc.HtmlOptions.FontSubstitute = false;
+                doc.HtmlOptions.FontProtection = false;
+                doc.HtmlOptions.ImageQuality = 33;
+                int id = 0;
+                Random rnd = new Random();
+                //id = doc.AddImageUrl("http://" + Request.Url.Host + "/documents/bygg.aspx?rnd=" + rnd.Next(50000));
+                id = doc.AddImageUrl("http://" + Request.Url.Host + "/Documents/jour_pdf.aspx?id=" + jourid.ToString() + "&rnd=" + rnd.Next(50000));
+
+                while (true) {
+                    //doc.FrameRect();
+                    if (!doc.Chainable(id)) {
+                        break;
+                    }
+                    doc.Page = doc.AddPage();
+                    id = doc.AddImageToChain(id);
                 }
-                doc.Page = doc.AddPage();
-                id = doc.AddImageToChain(id);
+
+                doc.Rect.String = "10 750 595 840";
+                doc.HPos = 0.5;
+                doc.VPos = 0.0;
+                doc.Color.String = "0 255 0";
+                doc.FontSize = 36;
+                for (int i = 1; i <= doc.PageCount; i++) {
+                    doc.PageNumber = i;
+                    id = doc.AddImageUrl("http://" + Request.Url.Host + "/Documents/header.aspx?rnd=" + rnd.Next(50000));                    
+                }
+
+
+
+
+
+                doc.Rect.String = "10 0 595 100";
+                doc.HPos = 0.5;
+                doc.VPos = 1.0;
+                //doc.FontSize = 36;
+                //for (int i = 1; i <= doc.PageCount; i++) {
+                    doc.PageNumber = 1;
+                    id = doc.AddImageUrl("http://" + Request.Url.Host + "/Documents/footer.aspx?rnd=" + rnd.Next(50000));
+                    //doc.AddText("Page " + i.ToString() + " of " + doc.PageCount.ToString());
+                    //doc.FrameRect();
+                //}
+
+                for (int i = 0; i < doc.PageCount; i++) {
+                    doc.PageNumber = i;
+                    doc.Flatten();
+                }
+
+                //doc.AddImageHtml(contents);
+                //doc.Save(Server.MapPath("htmlimport.pdf"));
+                doc.Save(ms);
+                //doc.SaveOptions.
+                doc.Clear();
+
+                bool success = AmazonHandler.PutPdfJour(ms, journo);
+
+                if (success) {
+                    Response.Write("SUCCESS!!!!");
+                } else {
+                    Response.Write("FAIL!!!!");
+                }
+
+                //}
+            } catch (Exception ex) {
+                Response.Write(ex.Message);
             }
-
-            doc.Rect.String = "10 0 595 100";
-            doc.HPos = 0.5;
-            doc.VPos = 1.0;
-            //doc.FontSize = 36;
-            for (int i = 1; i <= doc.PageCount; i++) {
-                doc.PageNumber = i;
-                id = doc.AddImageUrl("http://" + Request.Url.Host + "/Documents/footer.aspx?rnd=" + rnd.Next(50000));
-                //doc.AddText("Page " + i.ToString() + " of " + doc.PageCount.ToString());
-                //doc.FrameRect();
-            }
-
-
-
-            for (int i = 0; i < doc.PageCount; i++) {
-                doc.PageNumber = i;
-                doc.Flatten();
-            }
-
-            //doc.AddImageHtml(contents);
-            //doc.Save(Server.MapPath("htmlimport.pdf"));
-            doc.Save(ms);
-            //doc.SaveOptions.
-            doc.Clear();
-
-                Response.ContentType = "application/pdf";
-                Response.AddHeader("Content-Disposition", string.Format("attachment;filename=File-{0}.pdf", 1));
-                Response.BinaryWrite(ms.ToArray());
-                Response.End();
-
-            //}
-        } catch (Exception ex) {
-            Response.Write(ex.Message);
-        }
+        //}
     }
 }
