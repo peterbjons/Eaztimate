@@ -190,14 +190,13 @@ public partial class jour : System.Web.UI.Page
                 Doc doc = new Doc();
 
                 doc.MediaBox.String = "A4";
-                doc.HtmlOptions.BrowserWidth = 960;
+                doc.HtmlOptions.BrowserWidth = 980;
                 doc.HtmlOptions.FontEmbed = true;
                 doc.HtmlOptions.FontSubstitute = false;
                 doc.HtmlOptions.FontProtection = false;
                 doc.HtmlOptions.ImageQuality = 33;
                 int id = 0;
                 Random rnd = new Random();
-                //id = doc.AddImageUrl("http://" + Request.Url.Host + "/documents/bygg.aspx?rnd=" + rnd.Next(50000));
                 id = doc.AddImageUrl("http://" + Request.Url.Host + "/Documents/jour_pdf.aspx?id=" + jourid.ToString() + "&rnd=" + rnd.Next(50000));
 
                 while (true) {
@@ -209,7 +208,7 @@ public partial class jour : System.Web.UI.Page
                     id = doc.AddImageToChain(id);
                 }
 
-                doc.Rect.String = "10 790 595 840";
+                doc.Rect.String = "10 780 595 840";
                 doc.HPos = 0.5;
                 doc.VPos = 0.0;
                 doc.Color.String = "0 255 0";
@@ -218,10 +217,6 @@ public partial class jour : System.Web.UI.Page
                     doc.PageNumber = i;
                     id = doc.AddImageUrl("http://" + Request.Url.Host + "/Documents/header.aspx?rnd=" + rnd.Next(50000));                    
                 }
-
-
-
-
 
                 doc.Rect.String = "10 0 585 100";
                 doc.HPos = 0.5;

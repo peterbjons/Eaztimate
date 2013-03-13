@@ -114,8 +114,7 @@
 
 
         </div>
-        <div id="room_pages" runat="server">
-        <div style="page-break-before: always">&nbsp;</div>
+        <div id="room_pages" runat="server">        
 
         <div class="a4_paper">
                     
@@ -124,6 +123,8 @@
                     
                 </HeaderTemplate>
                 <ItemTemplate>
+                    <div style="page-break-before: always">&nbsp;</div>
+
                     <div class="header_text">Insatsrapport - <asp:HiddenField ID="roomidHidden" runat="server" Value='<%#DataBinder.Eval(Container.DataItem, "roomid")%>' />
                             <%#DataBinder.Eval(Container.DataItem, "title")%></div>
                     <div class="col col_880">
@@ -158,9 +159,6 @@
                         </asp:Repeater>                                               
                     </div>
                     <div style="clear:both; height:20px;"></div>
-
-                    <%#(Container.ItemIndex+1) % 2 == 0 ? "<div style=\"page-break-before: always\">&nbsp;</div>" : ""%>
-
                 </ItemTemplate>
             </asp:Repeater>
             </div>
