@@ -141,6 +141,7 @@
                             <%#DataBinder.Eval(Container.DataItem, "description")%>
                         </div>
                     </div>
+                    <div class="divider"></div>
                     <div class="col col_880">
                         <h2 class="light">Rumsbeskrivning</h2>
                             <%#DataBinder.Eval(Container.DataItem, "description")%>
