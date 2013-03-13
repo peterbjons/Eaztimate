@@ -12,14 +12,10 @@
                 } else {
 
                 }
-
             });
-
-
         });
     </script>
 </asp:Content>
-
 
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
@@ -28,29 +24,29 @@
     <div id="inspection_list">
         <h2>Cases</h2>
         <ul>
-            <asp:Repeater ID="inspectionrepeater" runat="server" OnItemCommand="inspectionrepeater_ItemCommand">
+            <asp:Repeater ID="jourrepeater" runat="server" OnItemCommand="jourrepeater_ItemCommand">
                 <ItemTemplate>
                     <li>
-                        <div class="inspection_item <%#setColor((int)DataBinder.Eval(Container.DataItem, "status"))%>">
+                        <div class="inspection_item <%#setColor((bool)DataBinder.Eval(Container.DataItem, "pdf_synced"))%>">
                             <div class="inspection_row_1">
-                                <div class="inspection_row_col1">10-1234-63</div>
-                                <div class="inspection_row_col2">Kaserngården 4, Falun</div>
+                                <div class="inspection_row_col1"><%#DataBinder.Eval(Container.DataItem, "jourid") %></div>
+                                <div class="inspection_row_col2"><%#DataBinder.Eval(Container.DataItem, "contactaddress") %>, <%#DataBinder.Eval(Container.DataItem, "contactcity") %></div>
                                 <div style="clear: both"></div>
                             </div>
                             <div class="inspection_row_2" style="display:none">
                                 <div class="inspection_col3">
-                                  <div class="inspection_item_image"><img src="Images/bygg1.jpg" /> </div>
+                                  <div class="inspection_item_image"><img src="<%#AmazonHandler.GetPrivateImageJour((string)DataBinder.Eval(Container.DataItem, "image") ?? "") %>" /> </div>
                                 </div>
                                 <div class="inspection_col4b">
-                                    <p>Per Karlsson</p>
-                                    <small>073 934 64 70</small><br />
-                                    <small>023 123 45</small>
-                                    <p style="margin-top:25px;">Företag / Vatten / Insats ocab</p>
+                                    <p><%#DataBinder.Eval(Container.DataItem, "contactname") %></p>
+                                    <small><%#DataBinder.Eval(Container.DataItem, "contactphone1") %></small><br />
+                                    <small><%#DataBinder.Eval(Container.DataItem, "contactphone2") %></small>
+                                    <p style="margin-top:25px;"><%#DataBinder.Eval(Container.DataItem, "insurancetype") %> / <%#DataBinder.Eval(Container.DataItem, "damagetype") %> / Insats ocab</p>
                                 </div>
                                 <div style="clear: both"></div>
                                 <div class="inspection_item_bottom">
                                     <small>Last change: <%#((DateTime)DataBinder.Eval(Container.DataItem, "dateupdated")).ToString("yyyy-MM-dd")%><br /></small>
-                                    <asp:LinkButton style="margin-left: 5px;" class="button" CommandArgument='<%# Eval("inventoryid") %>' CommandName="Open" runat="server">Open &raquo;</asp:LinkButton>
+                                    <asp:LinkButton style="margin-left: 5px;" class="button" CommandArgument='<%# Eval("jourid") %>' CommandName="Open" runat="server">Open &raquo;</asp:LinkButton>
                                     <a class="button" >PDF &raquo;</a>
                                 </div>
                                 <div style="clear: both"></div>

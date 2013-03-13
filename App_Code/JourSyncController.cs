@@ -58,7 +58,9 @@ public class JourSyncController : ApiController
                 string journo = jour["caseid"].ToString();
                 string pw = jour["password"].ToString();
 
+                //---------------------------------------------------------------------
                 int customerid = 1; //fix later
+                //---------------------------------------------------------------------
 
                 string contactname = jour["contactname"].ToString();
                 string contactaddress = jour["contactaddress1"].ToString();

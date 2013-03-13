@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using Amazon.S3;
 using Amazon.S3.Model;
+using System.IO;
 
 /// <summary>
 /// Summary description for AmazonHandler
@@ -47,15 +48,27 @@ public static class AmazonHandler
         }
     }
 
-    public static string PutPdpJour(string filename) {
+    public static bool PutPdfJour(MemoryStream ms, String filename) {
         string accessKeyID = Conf.AppSettings["AWSAccessKey"];
-        string secretAccessKeyID = Conf.AppSettings["AWSSecretKey"];
-        using (AmazonS3 client = Amazon.AWSClientFactory.CreateAmazonS3Client(accessKeyID, secretAccessKeyID)) {
-            GetPreSignedUrlRequest request = new GetPreSignedUrlRequest()
-                .WithBucketName(Conf.AppSettings["bucketJour"])
-                .WithKey(filename)
-                .WithExpires(DateTime.Now.Add(new TimeSpan(0, 24, 0, 0)));
-            return client.GetPreSignedURL(request);
-        }
+        string secretAccessKeyID = Conf.AppSettings["AWSSecretKey"];        
+        try {
+            using (AmazonS3 client = Amazon.AWSClientFactory.CreateAmazonS3Client(accessKeyID, secretAccessKeyID)) {
+                PutObjectRequest request = new PutObjectRequest();
+                //DirectoryInfo di = new DirectoryInfo(m_filePath + fileThumbs + @"\" + i[0].ToString());                    
+                //m_eventLog.WriteEntry("Uploading " + m_filePath + fileType + @"\" + i[0].ToString() + ext, EventLogEntryType.Information);
+                request.WithBucketName(Conf.AppSettings["bucketJour"]).WithKey(filename + "/report.pdf").WithTimeout(600000).WithInputStream(ms);
+                using (S3Response response = client.PutObject(request)) { }
+                using (Eaztimate.SQL.ExecuteQuery("UPDATE jour SET pdf_synced=1 WHERE journo=@1", filename)) { }
+                return true;
+            }
+        } catch (AmazonS3Exception amazonS3Exception) {
+            if (amazonS3Exception.ErrorCode != null &&
+                (amazonS3Exception.ErrorCode.Equals("InvalidAccessKeyId") ||
+                amazonS3Exception.ErrorCode.Equals("InvalidSecurity"))) {
+                    return false;
+            } else {
+                return false;
+            }
+        }        
     }
 }

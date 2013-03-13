@@ -157,14 +157,9 @@
                             </ItemTemplate>
                         </asp:Repeater>                                               
                     </div>
-                    <div style="clear:both; height:100px;"></div>
+                    <div style="clear:both; height:20px;"></div>
 
-                    <%#(Container.ItemIndex+1) % 2 == 0 ? "<div style=\"page-break-before: always\">&nbsp;</div><div class=\"header height60\">"+
-                        "<div class=\"logo\">" +
-                        "<img src=\"../Images/forsak2.png\" />" +
-                        "</div>" +                
-                        "<div style=\"clear: both\"></div>" +
-                        "</div><div class=\"header_text\">Insatsrapport - Rum</div>" : "" %>
+                    <%#(Container.ItemIndex+1) % 2 == 0 ? "<div style=\"page-break-before: always\">&nbsp;</div>" : ""%>
 
                 </ItemTemplate>
             </asp:Repeater>

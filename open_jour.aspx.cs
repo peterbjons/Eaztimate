@@ -21,18 +21,18 @@ public partial class openjour : Page
                 sort = "ORDER BY datecreated DESC";
                 break;
             case 1:
-                sort = "ORDER BY status DESC";
+                sort = "ORDER BY pdf_synced";
                 break;
             case 2:
-                sort = "ORDER BY inspectionno";                
+                sort = "ORDER BY jourid";                
                 break;
         }
-        using (SqlDataReader reader = SQL.ExecuteQuery("SELECT a.*,(SELECT COUNT(*) FROM item x WHERE x.inventoryid=a.inventoryid) objects FROM inventory a WHERE a.datedeleted IS NULL " + sort)) {
-            inspectionrepeater.DataSource = reader;
-            inspectionrepeater.DataBind();
+        using (SqlDataReader reader = SQL.ExecuteQuery("SELECT a.*,ISNULL((SELECT TOP 1 image FROM jourimage x WHERE x.jourid=a.jourid), 'empty') image FROM jour a WHERE a.datedeleted IS NULL " + sort)) {
+            jourrepeater.DataSource = reader;
+            jourrepeater.DataBind();
         }
     }
-    protected void inspectionrepeater_ItemCommand(object source, RepeaterCommandEventArgs e) {
+    protected void jourrepeater_ItemCommand(object source, RepeaterCommandEventArgs e) {
         if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem) {
             int inventoryid = 0;
             if (int.TryParse(e.CommandArgument.ToString(), out inventoryid)) {
@@ -45,13 +45,11 @@ public partial class openjour : Page
         }
     }
 
-    protected String setColor(int status) {
+    protected String setColor(bool status) {
         switch (status) {
-            case 0:
-                return "blue";
-            case 1:
+            case false:                
                 return "orange";
-            case 2:
+            case true:
                 return "green";
             default:
                 return "white";
