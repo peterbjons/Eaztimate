@@ -5,9 +5,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     <div class="contact">
         <h1>Contact</h1>
-        <p>
+        <h2>
             If you need to come in contact with us, please contact one of the following persons
-        </p>
+        </h2>
         <div class="contact_item">
             <div class="contact_photo">
                 <img src="Images/micke.jpg" /></div>
