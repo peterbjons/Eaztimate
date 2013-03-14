@@ -19,16 +19,16 @@
     <h1>Create inspection</h1>
     <div id="create_inspection">
         <div class="col1">
-            Contact Details<input type="text" id="contact_name" runat="server" placeholder="Name" />
+            <h2>Contact Details</h2><input type="text" id="contact_name" runat="server" placeholder="Name" />
             <input type="text" id="contact_phone" runat="server" placeholder="Phone" />
-            Adress<input type="text" id="adress_line1" runat="server" placeholder="Adress line 1" />
+            <h2>Adress</h2><input type="text" id="adress_line1" runat="server" placeholder="Adress line 1" />
             <input type="text" id="adress_line2" runat="server" placeholder="Adress line 2" />
             <input type="text" id="adress_line3" runat="server" placeholder="Zip code" />
             <input type="text" id="adress_line4" runat="server" placeholder="City" />
 
         </div>
         <div class="col2">
-            Damage<input type="text" id="inspection_damage_type" runat="server" placeholder="Damage Type" />
+            <h2>Damage</h2><input type="text" id="inspection_damage_type" runat="server" placeholder="Damage Type" />
             <input type="text" id="inspection_building_type" runat="server" placeholder="Building Type" />
             <input type="text" id="inspection_size" runat="server" placeholder="Size (m&sup2;)" />
             <input type="text" id="inspection_adults" runat="server" placeholder="Adults" class="input_third" />

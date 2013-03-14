@@ -583,7 +583,7 @@ ul.material {
 
 /*CONTACT*/
 .contact_item {
-    height: 280px;
+    height: 250px;
 }
 
 .contact_photo {
@@ -921,7 +921,7 @@ thead tr.tr_red td {
 }
 
 .jourtable {
-    width: 960px;
+    width: 100%;
 }
 
 .light {

@@ -1,10 +1,10 @@
-﻿<%@ Page Title="Register" Language="C#" MasterPageFile="~/AdminMaster.Master" AutoEventWireup="true" CodeFile="Register.aspx.cs" Inherits="Account_Register" %>
+﻿<%@ Page Title="Create user" Language="C#" MasterPageFile="~/AdminMaster.Master" AutoEventWireup="true" CodeFile="Register.aspx.cs" Inherits="Account_Register" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="AdminMainContent">
     <div class="forms">
         <hgroup class="title">
             <h1><%: Title %></h1>
-            <h2>Use the form below to create a new account</h2>
+            <h2>Use the form below to create a new user</h2>
         </hgroup>
 
         <asp:CreateUserWizard runat="server" ID="RegisterUser" ViewStateMode="Disabled" OnCreatedUser="RegisterUser_CreatedUser">
@@ -47,7 +47,7 @@
                             <asp:CompareValidator runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword"
                                 CssClass="field-validation-error" Display="Dynamic" ErrorMessage="The password and confirmation password do not match." />
 
-                            <asp:Button runat="server" CommandName="MoveNext" Text="Register" />
+                            <asp:Button runat="server" CommandName="MoveNext" Text="Create user" />
                         </div>
 
                     </ContentTemplate>
