@@ -29,9 +29,7 @@ a {
     background-color: #fff;
     height: 50px;
     padding: 10px 10px 0px 10px;
-    margin-left: 40px;
-    margin-top:20px;
-    margin-right: 40px;
+
 }
 
 #logo {
@@ -155,8 +153,7 @@ a.button {
     float: right;
     margin-top: 0px;
     cursor: pointer;
-    text-decoration:none;
-    
+    text-decoration: none;
 }
 
     a.button:hover {
@@ -216,11 +213,11 @@ a.button {
     float: left;
     width: 240px;
     margin-right: 20px;
-    
 }
-#inspection_sort a {
-    text-decoration: none;
-}
+
+    #inspection_sort a {
+        text-decoration: none;
+    }
 
 #inspection_help {
     float: left;
@@ -267,16 +264,12 @@ a.button {
 
 
 .inspection_item_image {
-
     height: 100px;
-    
-
-   
 }
 
-.inspection_item_image img {
-    height:100px;
-}
+    .inspection_item_image img {
+        height: 100px;
+    }
 
 
 .inspection_item_objects {
@@ -303,9 +296,9 @@ a.button {
         line-height: 10pt;
     }
 
-    .inspection_row_1 {
-        cursor:pointer;
-    }
+.inspection_row_1 {
+    cursor: pointer;
+}
 
 .inspection_row_col1 {
     float: left;
@@ -335,6 +328,7 @@ a.button {
     padding-top: 20px;
     font-size: 10pt;
 }
+
 .inspection_col4b {
     float: left;
     padding-left: 5px;
@@ -347,9 +341,11 @@ a.button {
     color: #a2a2a2;
     height: 30px;
 }
-.inspection_item_bottom small {
-    float:left;
-}
+
+    .inspection_item_bottom small {
+        float: left;
+    }
+
 #inspection_sort .inspection_item, #inspection_help .inspection_item {
     font-weight: 300 !important;
     font-size: 10pt !important;
@@ -493,9 +489,9 @@ a.button {
     width: 310px;
 }
 
-.inspect_object .full_col{
+.inspect_object .full_col {
     width: 660px;
-    float:left;
+    float: left;
 }
 
 #MainContent_rooms {
@@ -505,7 +501,7 @@ a.button {
     background: #efefef;
     border: 0px;
     padding: 4px;
-    font-size:12pt;
+    font-size: 12pt;
 }
 
 #MainContent_categories, #MainContent_objects {
@@ -641,73 +637,72 @@ ul.material {
 .damage_summary_paper {
 }
 
-    .damage_summary_paper h2,.room_paper h2 {
+    .damage_summary_paper h2, .room_paper h2 {
         margin-bottom: 50px !important;
         font-size: 36pt!important;
     }
 
-   .ensurance_company_logo {
-        
-        height: 150px;
-        width: 300px;
-        float: left;
-    }
+.ensurance_company_logo {
+    height: 150px;
+    width: 300px;
+    float: left;
+}
 
-    .sanerings_company_logo {
-        
-        height: 150px;
-        width: 300px;
-        float: right;
-    }
+.sanerings_company_logo {
+    height: 150px;
+    width: 300px;
+    float: right;
+}
+
     .ensurance_company_logo img, .sanerings_company_logo img {
- 
         max-width: 300px;
     }
 
-    .damage_summary_paper .inspection_number {
-        background-color: #000;
-        color: #fff;
-        font-weight: 300;
-        font-size: 10pt;
-        padding: 5px 7px;
+.damage_summary_paper .inspection_number {
+    background-color: #000;
+    color: #fff;
+    font-weight: 300;
+    font-size: 10pt;
+    padding: 5px 7px;
+    width: 205px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+
+.a4_paper ul {
+    list-style-type: none;
+    margin-top: 30px;
+}
+
+    .a4_paper ul li {
+        float: left;
         width: 205px;
-        margin-top: 100px;
-        margin-bottom: 30px;
+        margin-right: 20px;
     }
 
-    .a4_paper ul {
-        list-style-type: none;
-        margin-top: 30px;
+        .a4_paper ul li:last-child {
+            margin-right: 0px;
+        }
+
+        .a4_paper ul li h4 {
+            padding: 5px 7px;
+            color: #fff;
+            font-weight: 300;
+            font-size: 10pt;
+            margin-bottom: 10px;
+        }
+
+        .a4_paper ul li p {
+            padding-left: 5px;
+        }
+
+    .a4_paper ul.light li h4 {
+        background-color: #85c8e0;
     }
 
-        .a4_paper ul li {
-            float: left;
-            width: 205px;
-            margin-right: 20px;
-        }
-
-            .a4_paper ul li:last-child {
-                margin-right: 0px;
-            }
-
-            .a4_paper ul li h4 {
-                padding: 5px 7px;
-                color: #fff;
-                font-weight: 300;
-                font-size: 10pt;
-                margin-bottom: 10px;
-            }
-
-            .a4_paper ul li p { padding-left:5px;
-            }
-
-        .a4_paper ul.light li h4 {
-            background-color: #85c8e0;
-        }
-
-        .a4_paper ul.dark li h4 {
-            background-color: #1c80aa;
-        }
+    .a4_paper ul.dark li h4 {
+        background-color: #1c80aa;
+    }
 
 .saneringsbara_value, .non_saneringsbara_value {
     float: left;
@@ -721,74 +716,88 @@ ul.material {
     float: left;
     margin-bottom: 10px;
 }
-.a4_paper .line {border-top:1px solid #D1D3D4 ; padding-top:4px;}
 
-.room_h2 {margin-top: 100px;}
+.a4_paper .line {
+    border-top: 1px solid #D1D3D4;
+    padding-top: 4px;
+}
+
+.room_h2 {
+    margin-top: 100px;
+}
 
 .room_images {
     height: 150px;
-    margin-bottom:50px;
+    margin-bottom: 50px;
 }
 
-.room_images img {
-    height: 150px;
-    margin-right:20px;
-}
+    .room_images img {
+        height: 150px;
+        margin-right: 20px;
+    }
 
 .room_paper table thead tr td {
-   
     padding: 5px 7px;
-color: white;
-font-weight: 300;
-font-size: 10pt;
-background-color: #1c80aa;
-
+    color: white;
+    font-weight: 300;
+    font-size: 10pt;
+    background-color: #1c80aa;
 }
 
-.room_paper table thead tr td.comment {
-    width: 317px;
-}
-.room_paper table thead tr td.id {
-    width: 30px;
-    
-}
-.room_paper table thead tr td.type {
-    width: 50px;
-}
-.room_paper table thead tr td.price {
-    width: 50px;
-    
-}
+    .room_paper table thead tr td.comment {
+        width: 317px;
+    }
+
+    .room_paper table thead tr td.id {
+        width: 30px;
+    }
+
+    .room_paper table thead tr td.type {
+        width: 50px;
+    }
+
+    .room_paper table thead tr td.price {
+        width: 50px;
+    }
+
 .room_paper tbody tr td {
     padding: 5px 0px 0px 0px;
 }
+
 .room_paper tbody tr:first-child td {
-    padding-top:10px;
-   
+    padding-top: 10px;
 }
 
 .room_paper tbody tr:last-child td {
-    padding-bottom:5px;
+    padding-bottom: 5px;
 }
+
 .room_paper tbody tr td:first-child {
-     padding-left:5px;
+    padding-left: 5px;
 }
+
 .room_paper table {
     margin-top: 30px;
-    border:0px;
-    padding:0px;
+    border: 0px;
+    padding: 0px;
 }
+
 tfoot tr td {
     padding-top: 4px;
     border-top: 1px solid #D1D3D4;
 }
-.room_paper td.accepted_prize{
-    /*background-color: #88ca91;*/
 
+.room_paper td.accepted_prize {
+    /*background-color: #88ca91;*/
 }
 
-thead tr.tr_green td{background-color: #39B54A !important ;}
-thead tr.tr_red td{background-color: #ED1C24 !important;}
+thead tr.tr_green td {
+    background-color: #39B54A !important;
+}
+
+thead tr.tr_red td {
+    background-color: #ED1C24 !important;
+}
 
 .text-align-center {
     text-align: center;
@@ -797,79 +806,80 @@ thead tr.tr_red td{background-color: #ED1C24 !important;}
 .orrpon {
     width: 100%;
     background-color: #85C8E0;
-    text-align:left;
-    
-    
+    text-align: left;
 }
-.orrpon tr td {
-    padding: 4px;
-}
-.orrpon th a{
 
-    padding: 5px 7px;
-    font-size: 12pt;
-    color:#fff;
-    text-decoration: none;
-    font-weight: 300;
-}
+    .orrpon tr td {
+        padding: 4px;
+    }
+
+    .orrpon th a {
+        padding: 5px 7px;
+        font-size: 12pt;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 300;
+    }
 
 .gridviewtable {
-width: 100%;
-border: 0px;
+    width: 100%;
+    border: 0px;
 }
 
-.gridviewtable tr td {
-    padding: 3px 0px 0px 5px;
-}
+    .gridviewtable tr td {
+        padding: 3px 0px 0px 5px;
+    }
+
 .grdiviewtable tr td {
     padding: 5px 7px;
 }
 
 .forms input[type=text] {
-        display: block;
-        padding: 10px;
-        font-size: 14pt;
-        font-weight: 300;
-        font-family: 'Open Sans';
-        width: 310px;
-        margin: 5px 0px 15px 0px;
-    }
+    display: block;
+    padding: 10px;
+    font-size: 14pt;
+    font-weight: 300;
+    font-family: 'Open Sans';
+    width: 310px;
+    margin: 5px 0px 15px 0px;
+}
 
 .forms input[type=password] {
-        display: block;
-        padding: 10px;
-        font-size: 14pt;
-        font-weight: 300;
-        font-family: 'Open Sans';
-        width: 310px;
-        margin: 5px 0px 15px 0px;
-    }
+    display: block;
+    padding: 10px;
+    font-size: 14pt;
+    font-weight: 300;
+    font-family: 'Open Sans';
+    width: 310px;
+    margin: 5px 0px 15px 0px;
+}
 
 .forms input[type=submit] {
-        display: block;
-        background-color: #000;
-        font-size: 14pt;
-        font-weight: 300;
-        font-family: 'Open Sans';
-        width: 334px;
-        text-align: center;
-        border: none;
-        color: #fff;
-        padding: 10px;
-        margin-top: 5px;
-        margin-bottom: 15px;
-    }
+    display: block;
+    background-color: #000;
+    font-size: 14pt;
+    font-weight: 300;
+    font-family: 'Open Sans';
+    width: 334px;
+    text-align: center;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
 
 .forms select[size], .forms select[multiple], .forms select[size][multiple] {
-            display: block;
-        padding: 10px;
-        font-size: 14pt;
-        font-weight: 300;
-        font-family: 'Open Sans';
-        width: 310px;
-        margin: 5px 0px 15px 0px;
-        height: 115px;
+    display: block;
+    padding: 10px;
+    font-size: 14pt;
+    font-weight: 300;
+    font-family: 'Open Sans';
+    width: 310px;
+    margin: 5px 0px 15px 0px;
+    height: 115px;
 }
+
 .forms .message-info {
     width: 333px;
     font-size: 9pt;
@@ -878,15 +888,64 @@ border: 0px;
 
 
 #AdminPage .left_col {
-    float:left;
+    float: left;
     width: 760px;
 }
 
 #AdminPage .right_col {
-    float:right;
+    float: right;
     width: 180px;
-
 }
-#AdminPage .right_col ul {
-    list-style: none;
+
+    #AdminPage .right_col ul {
+        list-style: none;
+    }
+
+.jourtable tbody tr:first-child td {
+    padding-top: 5px;
+}
+
+
+.jourtable thead th {
+    text-align: left;
+    padding: 5px 7px;
+    color: #fff;
+    font-weight: 300;
+    font-size: 14pt; /* was 10pt*/
+}
+
+.jourtable tbody td {
+    height: 20px;
+    vertical-align: top;
+    padding: 2px 0px;
+}
+
+.jourtable {
+    width: 960px;
+}
+
+.light {
+    background-color: #85c8e0;
+}
+
+.dark {
+    background-color: #1c80aa;
+}
+
+table.companycreate tr.user_level1 td {
+    font-weight: bold;
+    color: #1c80aa;
+}
+
+table.companycreate tr.user_level2 td {
+    font-weight: bold;
+    color: #000;
+}
+
+table.companycreate tr.user_level3 td {
+    color: #1c80aa;
+}
+
+table.companycreate tr.user_level4 td {
+    color: #000;
 }
