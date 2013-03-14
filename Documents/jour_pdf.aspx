@@ -138,7 +138,9 @@
 
                         <div class="col col_430 last">
                             <h2 class="dark">Åtgärd</h2>
-                            <%#DataBinder.Eval(Container.DataItem, "description")%>
+                            <ul style="margin-top: 0px;">
+                                <%#formatRoomAction((string)DataBinder.Eval(Container.DataItem, "roomaction"))%>
+                            </ul>                            
                         </div>
                     </div>
                     <div class="divider"></div>

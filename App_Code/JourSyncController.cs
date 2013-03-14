@@ -7,16 +7,20 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Security.Cryptography;
+using System.Text;
 using System.Web.Http;
 using System.Web.Security;
 using Eaztimate;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using WebSupergoo.ABCpdf9;
 
 public class JourSyncController : ApiController
 {
 
     private static string SYNCCODE = "sdjfgjkdsgh4y87sh7f783g673gyag";
+
+    private string journo = string.Empty;
 
     // GET api/<controller>/5
     public CounterObject GetById(string caseid, string sysid, string email, string sha, [FromBody]string value)
@@ -55,7 +59,7 @@ public class JourSyncController : ApiController
                 string data = Request.Content.ReadAsStringAsync().Result;
                 JObject jour = JObject.Parse(data);
 
-                string journo = jour["caseid"].ToString();
+                journo = jour["caseid"].ToString();
                 string pw = jour["password"].ToString();
 
                 //---------------------------------------------------------------------
@@ -117,9 +121,16 @@ public class JourSyncController : ApiController
                     bool water = (room["roomwater"] != null ? (bool)room["roomwater"] : false);
                     bool contamination = (room["roomcontamination"] != null ? (bool)room["roomcontamination"] : false);
 
-                    using (SQL.ExecuteQuery("INSERT INTO jour_room (jourid,uuid,datecreated,dateupdated,title,description,problem_water,problem_humidity,problem_odor,problem_contamination)" +
-                        " SELECT jourid, @2, GETDATE(), GETDATE(), @3,@4,@5,@6,@7,@8 FROM jour WHERE journo LIKE @1",
-                        journo, roomid, title, desc, water, humidity, odor, contamination)) { }
+                    JArray actions = (JArray)room["roomactions"];
+                    StringBuilder actionsb = new StringBuilder();
+                    foreach (String roomaction in actions) {
+                        actionsb.Append(roomaction + "|");
+                    }
+
+
+                    using (SQL.ExecuteQuery("INSERT INTO jour_room (jourid,uuid,datecreated,dateupdated,title,description,problem_water,problem_humidity,problem_odor,problem_contamination,roomaction)" +
+                        " SELECT jourid, @2, GETDATE(), GETDATE(), @3,@4,@5,@6,@7,@8,@9 FROM jour WHERE journo LIKE @1",
+                        journo, roomid, title, desc, water, humidity, odor, contamination,actionsb.ToString())) { }
 
                     JArray roomimages = (JArray)room["images"];
                     foreach (String image in roomimages) {
@@ -188,5 +199,72 @@ public class JourSyncController : ApiController
         //}
 
         //return counter;
-    }    
+    }
+
+    private void createPdf(int id) {       
+        string contents = string.Empty;
+
+        MemoryStream ms = new MemoryStream();
+
+        try {
+
+            Doc doc = new Doc();
+
+            doc.MediaBox.String = "A4";
+            doc.HtmlOptions.BrowserWidth = 980;
+            doc.HtmlOptions.FontEmbed = true;
+            doc.HtmlOptions.FontSubstitute = false;
+            doc.HtmlOptions.FontProtection = false;
+            doc.HtmlOptions.ImageQuality = 33;
+            Random rnd = new Random();
+            id = doc.AddImageUrl("/Documents/jour_pdf.aspx?id=" + id.ToString() + "&rnd=" + rnd.Next(50000));
+
+            while (true) {
+                //doc.FrameRect();
+                if (!doc.Chainable(id)) {
+                    break;
+                }
+                doc.Page = doc.AddPage();
+                id = doc.AddImageToChain(id);
+            }
+
+            doc.Rect.String = "10 780 595 840";
+            doc.HPos = 0.5;
+            doc.VPos = 0.0;
+            doc.Color.String = "0 255 0";
+            doc.FontSize = 36;
+            for (int i = 1; i <= doc.PageCount; i++) {
+                doc.PageNumber = i;
+                id = doc.AddImageUrl("/Documents/header.aspx?id=" + id.ToString() +"&rnd=" + rnd.Next(50000));                    
+            }
+
+            doc.Rect.String = "10 0 585 100";
+            doc.HPos = 0.5;
+            doc.VPos = 1.0;
+            //doc.FontSize = 36;
+            //for (int i = 1; i <= doc.PageCount; i++) {
+                doc.PageNumber = 1;
+                id = doc.AddImageUrl("/Documents/footer.aspx?rnd=" + rnd.Next(50000));
+                //doc.AddText("Page " + i.ToString() + " of " + doc.PageCount.ToString());
+                //doc.FrameRect();
+            //}
+
+            for (int i = 0; i < doc.PageCount; i++) {
+                doc.PageNumber = i;
+                doc.Flatten();
+            }
+
+            //doc.AddImageHtml(contents);
+            //doc.Save(Server.MapPath("htmlimport.pdf"));
+            doc.Save(ms);
+            //doc.SaveOptions.
+            doc.Clear();
+
+            bool success = AmazonHandler.PutPdfJour(ms, journo);                
+
+            //}
+        } catch (Exception ex) {
+                
+        }
+    }
 }

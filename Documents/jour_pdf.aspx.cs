@@ -135,4 +135,13 @@ public partial class Documents_jour_pdf : System.Web.UI.Page
 
         }
     }
+
+    protected string formatRoomAction(string s) {
+        string[] strarray = s.Split('|');
+        StringBuilder sb = new StringBuilder();
+        foreach (string str in strarray) {
+            sb.Append("<li>" + str + "</li>");
+        }
+        return sb.ToString();
+    }
 }
