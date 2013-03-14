@@ -147,19 +147,24 @@
                             <%#DataBinder.Eval(Container.DataItem, "description")%>
                         </div>
                         <div class="divider"></div>
-                    <div class="col col_430">
-                     <img src="../Images/bygg1.jpg" />                                           
-                    </div>
-                    <div class="col col_430 last">
-                        <asp:Repeater ID="roomimagerepeater" runat="server" OnItemDataBound="roomrepeater_ItemDataBound">
+                    
+                        <asp:Repeater ID="roomimagerepeater" runat="server">
                             <ItemTemplate>
-                                <div class="col col_205 <%#(Container.ItemIndex+1) % 2 == 0 ? "last" : "" %>" style="margin-bottom:13px">
-                                    <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" />
-                                </div>
+                                <div runat="server" Visible="<%# (Container.ItemIndex == 0) %>">
+                                    <div class="col col_430">
+                                        <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" />
+                                    </div>
+                                </div >
+                                <%#(Container.ItemIndex) == 1 ? "<div class=\"col col_430 last\">" : "" %>
+                                    <asp:Panel runat="server" Visible="<%# (Container.ItemIndex != 0) %>">                                    
+                                        <div class="col col_205 <%#(Container.ItemIndex) % 2 == 0 ? "last" : "" %>" style="margin-bottom:13px">
+                                            <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" />
+                                        </div>
+                                    </asp:Panel>
                             </ItemTemplate>
-                        </asp:Repeater>                                               
-                    </div>
-                    <div style="clear:both; height:20px;"></div>
+                        </asp:Repeater>
+                        </div>
+                        <div style="clear:both; height:20px;"></div>
                         </div>
                 </ItemTemplate>
             </asp:Repeater>

@@ -215,7 +215,7 @@ public partial class jour : System.Web.UI.Page
                 doc.FontSize = 36;
                 for (int i = 1; i <= doc.PageCount; i++) {
                     doc.PageNumber = i;
-                    id = doc.AddImageUrl("http://" + Request.Url.Host + "/Documents/header.aspx?rnd=" + rnd.Next(50000));                    
+                    id = doc.AddImageUrl("http://" + Request.Url.Host + "/Documents/header.aspx?id=" + jourid.ToString() +"&rnd=" + rnd.Next(50000));                    
                 }
 
                 doc.Rect.String = "10 0 585 100";

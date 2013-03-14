@@ -11,7 +11,7 @@
                 <div class="logo">
                     <img src="../Images/forsak2.png" />
                 </div>
-                <div style="float:right; text-align: right">123-456-789-0<br />Adress 1, City<br />2013-03-13</div>
+                <div style="float:right; text-align: right"><asp:Literal ID="insurancenumber" runat="server" /><br /><asp:Literal ID="address" runat="server" /><br /><asp:Literal ID="jourdate" runat="server" /></div>
                 <div style="clear: both"></div>
             </div>
 </body>
