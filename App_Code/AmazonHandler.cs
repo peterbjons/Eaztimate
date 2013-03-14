@@ -71,4 +71,16 @@ public static class AmazonHandler
             }
         }        
     }
+
+    public static string GetPdfJour(string jourid) {
+        string accessKeyID = Conf.AppSettings["AWSAccessKey"];
+        string secretAccessKeyID = Conf.AppSettings["AWSSecretKey"];
+        using (AmazonS3 client = Amazon.AWSClientFactory.CreateAmazonS3Client(accessKeyID, secretAccessKeyID)) {
+            GetPreSignedUrlRequest request = new GetPreSignedUrlRequest()
+                .WithBucketName(Conf.AppSettings["bucketJour"])
+                .WithKey(jourid+"/report.pdf")
+                .WithExpires(DateTime.Now.Add(new TimeSpan(0, 24, 0, 0)));
+            return client.GetPreSignedURL(request);
+        }
+    }
 }

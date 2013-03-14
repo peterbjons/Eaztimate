@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.IO;
@@ -8,6 +9,7 @@ using System.Net;
 using System.Net.Http;
 using System.Security.Cryptography;
 using System.Text;
+using System.Web;
 using System.Web.Http;
 using System.Web.Security;
 using Eaztimate;
@@ -19,8 +21,6 @@ public class JourSyncController : ApiController
 {
 
     private static string SYNCCODE = "sdjfgjkdsgh4y87sh7f783g673gyag";
-
-    private string journo = string.Empty;
 
     // GET api/<controller>/5
     public CounterObject GetById(string caseid, string sysid, string email, string sha, [FromBody]string value)
@@ -55,11 +55,12 @@ public class JourSyncController : ApiController
         if (hash.Equals(sha)) {
             try {            
                 var jsonSerializer = new JsonSerializer();
+                long id = 0;
                 
                 string data = Request.Content.ReadAsStringAsync().Result;
                 JObject jour = JObject.Parse(data);
 
-                journo = jour["caseid"].ToString();
+                string journo = jour["caseid"].ToString();
                 string pw = jour["password"].ToString();
 
                 //---------------------------------------------------------------------
@@ -99,61 +100,99 @@ public class JourSyncController : ApiController
                 bool action_cash = (jour["action_cash"] != null ? (bool)jour["action_cash"] : false);
 
                 //INSERT INTO jour
-                using (SQL.ExecuteQuery("INSERT INTO jour(journo,syncemail,datecreated,dateupdated,contactname,contactaddress,contactaddress2,contactzipcode,contactcity,contactpersonalnumber,insurancenumber,insurancetype,damagetype,actiondescription,externalentrepeneur,damagedescription,contactinformed,contactaction,action_otherliving,action_cash,action_transport,action_helpcontact,building_power,building_lockable,building_climatesafe,building_function,customerid,contactphone1,contactphone2)" +
-                    " VALUES(@1,@2,GETDATE(),GETDATE(),@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@16,@17,@18,@19,@20,@21,@22,@23,@24,@25,@26,@27)",
-                    journo, email, contactname, contactaddress, contactaddress2, contactzipcode, contactcity, contactpersonalnumber, insurancenumber,
-                    insurancetype, damagetype, actiondescription, externalentrepeneur, damagedescription, contactinformed, action,
-                    action_otherliving, action_cash, action_transport, action_helpcontact, building_power, building_lockable, building_climatesafe, building_function, customerid, contactphone1, contactphone2)) { }
 
-                JArray images = (JArray)jour["images"];
-                foreach (String image in images) {
-                    using (SQL.ExecuteQuery("INSERT INTO jourimage (jourid,image) SELECT jourid ,@2 FROM jour WHERE journo LIKE @1", journo, new FileInfo(image).Name)) { }                    
-                }
+                bool jourexists = false;
 
-                JArray rooms = (JArray)jour["rooms"];
-                foreach (JObject room in rooms) {
-                    string desc = room["description"].ToString();
-                    string roomid = room["roomid"].ToString();
-                    string title = room["title"].ToString();
-
-                    bool humidity = (room["roomhumidity"] != null ? (bool)room["roomhumidity"] : false);
-                    bool odor = (room["roomodor"] != null ? (bool)room["roomodor"] : false);
-                    bool water = (room["roomwater"] != null ? (bool)room["roomwater"] : false);
-                    bool contamination = (room["roomcontamination"] != null ? (bool)room["roomcontamination"] : false);
-
-                    JArray actions = (JArray)room["roomactions"];
-                    StringBuilder actionsb = new StringBuilder();
-                    foreach (String roomaction in actions) {
-                        actionsb.Append(roomaction + "|");
-                    }
-
-
-                    using (SQL.ExecuteQuery("INSERT INTO jour_room (jourid,uuid,datecreated,dateupdated,title,description,problem_water,problem_humidity,problem_odor,problem_contamination,roomaction)" +
-                        " SELECT jourid, @2, GETDATE(), GETDATE(), @3,@4,@5,@6,@7,@8,@9 FROM jour WHERE journo LIKE @1",
-                        journo, roomid, title, desc, water, humidity, odor, contamination,actionsb.ToString())) { }
-
-                    JArray roomimages = (JArray)room["images"];
-                    foreach (String image in roomimages) {
-                        using (SQL.ExecuteQuery("INSERT INTO jour_roomimage (roomid,image) SELECT roomid ,@2 FROM jour_room WHERE uuid LIKE @1", roomid, new FileInfo(image).Name)) { }
+                using (SqlDataReader reader = SQL.ExecuteQuery("SELECT jourid FROM jour WHERE journo LIKE @1", journo)) {
+                    if (reader.Read()) {
+                        jourexists = true;
+                        id = reader.GetInt64(0);                        
                     }
                 }
 
-                DateTime timestamp;
+               if (!jourexists) {
+                    using (SqlConnection con = SQL.CreateConnection()) {
+                        using (SqlTransaction trans = con.BeginTransaction(IsolationLevel.ReadCommitted)) {
+                            try {
+                                using (SqlDataReader reader = SQL.ExecuteTransQuery(con, trans, "INSERT INTO jour(journo,syncemail,datecreated,dateupdated,contactname,contactaddress,contactaddress2,contactzipcode,contactcity,contactpersonalnumber,insurancenumber,insurancetype,damagetype,actiondescription,externalentrepeneur,damagedescription,contactinformed,contactaction,action_otherliving,action_cash,action_transport,action_helpcontact,building_power,building_lockable,building_climatesafe,building_function,customerid,contactphone1,contactphone2)" +
+                                    " VALUES(@1,@2,GETDATE(),GETDATE(),@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@16,@17,@18,@19,@20,@21,@22,@23,@24,@25,@26,@27);SELECT CAST(@@IDENTITY AS BIGINT)",
+                                    journo, email, contactname, contactaddress, contactaddress2, contactzipcode, contactcity, contactpersonalnumber, insurancenumber,
+                                    insurancetype, damagetype, actiondescription, externalentrepeneur, damagedescription, contactinformed, action,
+                                    action_otherliving, action_cash, action_transport, action_helpcontact, building_power, building_lockable, building_climatesafe, building_function, customerid, contactphone1, contactphone2)) {
+                                    if (reader.Read()) {
+                                        id = reader.GetInt64(0);
+                                    }
+                                }
 
-                JArray logs = (JArray)jour["loglist"];
-                foreach (JObject log in logs) {
-                    DateTime.TryParse((log["timestamp"] != null ? log["timestamp"].ToString() : ""), out timestamp);
-                    if (timestamp < (DateTime)SqlDateTime.MinValue) {
-                        timestamp = DateTime.Now;
+                                JArray images = (JArray)jour["images"];
+                                foreach (String image in images) {
+                                    using (SQL.ExecuteTransQuery(con, trans, "INSERT INTO jourimage (jourid,image) SELECT jourid ,@2 FROM jour WHERE journo LIKE @1", journo, new FileInfo(image).Name)) { }
+                                }
+
+                                JArray rooms = (JArray)jour["rooms"];
+                                foreach (JObject room in rooms) {
+                                    string desc = room["description"].ToString();
+                                    string roomid = room["roomid"].ToString();
+                                    string title = room["title"].ToString();
+
+                                    bool humidity = (room["roomhumidity"] != null ? (bool)room["roomhumidity"] : false);
+                                    bool odor = (room["roomodor"] != null ? (bool)room["roomodor"] : false);
+                                    bool water = (room["roomwater"] != null ? (bool)room["roomwater"] : false);
+                                    bool contamination = (room["roomcontamination"] != null ? (bool)room["roomcontamination"] : false);
+
+                                    JArray actions = (JArray)room["roomactions"];
+                                    StringBuilder actionsb = new StringBuilder();
+                                    foreach (String roomaction in actions) {
+                                        actionsb.Append(roomaction + "|");
+                                    }
+
+
+                                    using (SQL.ExecuteTransQuery(con, trans, "INSERT INTO jour_room (jourid,uuid,datecreated,dateupdated,title,description,problem_water,problem_humidity,problem_odor,problem_contamination,roomaction)" +
+                                        " SELECT jourid, @2, GETDATE(), GETDATE(), @3,@4,@5,@6,@7,@8,@9 FROM jour WHERE journo LIKE @1",
+                                        journo, roomid, title, desc, water, humidity, odor, contamination, actionsb.ToString())) { }
+
+                                    JArray roomimages = (JArray)room["images"];
+                                    foreach (String image in roomimages) {
+                                        using (SQL.ExecuteTransQuery(con, trans, "INSERT INTO jour_roomimage (roomid,image) SELECT roomid ,@2 FROM jour_room WHERE uuid LIKE @1", roomid, new FileInfo(image).Name)) { }
+                                    }
+                                }
+
+                                DateTime timestamp;
+
+                                JArray logs = (JArray)jour["loglist"];
+                                foreach (JObject log in logs) {
+                                    DateTime.TryParse((log["timestamp"] != null ? log["timestamp"].ToString() : ""), out timestamp);
+                                    if (timestamp < (DateTime)SqlDateTime.MinValue) {
+                                        timestamp = DateTime.Now;
+                                    }
+                                    string activity = log["activity"].ToString();
+                                    string comment = log["comment"].ToString();
+
+                                    using (SQL.ExecuteTransQuery(con, trans, "INSERT INTO jour_log (jourid,timestamp,dateupdated,activity,comment) SELECT jourid ,@2, GETDATE(),@3,@4 FROM jour WHERE journo LIKE @1", journo, timestamp, activity, comment)) { }
+                                }
+
+                                trans.Commit();
+                            } catch (Exception ex) {
+                                trans.Rollback();
+                                counter.success = "FAIL";
+                                counter.message = ex.Message;
+                            }
+                        }
                     }
-                    string activity = log["activity"].ToString();
-                    string comment = log["comment"].ToString();
-
-                    using (SQL.ExecuteQuery("INSERT INTO jour_log (jourid,timestamp,dateupdated,activity,comment) SELECT jourid ,@2, GETDATE(),@3,@4 FROM jour WHERE journo LIKE @1", journo, timestamp, activity, comment)) { }
                 }
 
-                counter.success = "OK";
-                counter.message = "Success";
+                bool success = false;
+                if (id > 0) {
+                    success = createPdf(id, journo, email);
+                }
+
+                if (success) {                                
+                    counter.success = "OK";
+                    counter.message = "Success";
+                } else {
+                    counter.success = "FAIL";
+                    counter.message = "Couldn't crreate PDF";
+                }
             } catch (Exception ex) {
                 counter.success = "FAIL";
                 counter.message = ex.Message;
@@ -201,13 +240,13 @@ public class JourSyncController : ApiController
         //return counter;
     }
 
-    private void createPdf(int id) {       
+    private bool createPdf(long jid,string journo,string email) {
         string contents = string.Empty;
 
         MemoryStream ms = new MemoryStream();
 
         try {
-
+            int id;
             Doc doc = new Doc();
 
             doc.MediaBox.String = "A4";
@@ -217,7 +256,7 @@ public class JourSyncController : ApiController
             doc.HtmlOptions.FontProtection = false;
             doc.HtmlOptions.ImageQuality = 33;
             Random rnd = new Random();
-            id = doc.AddImageUrl("/Documents/jour_pdf.aspx?id=" + id.ToString() + "&rnd=" + rnd.Next(50000));
+            id = doc.AddImageUrl("http://" + HttpContext.Current.Request.Url.Host + "/Documents/jour_pdf.aspx?id=" + jid.ToString() + "&rnd=" + rnd.Next(50000));
 
             while (true) {
                 //doc.FrameRect();
@@ -235,7 +274,7 @@ public class JourSyncController : ApiController
             doc.FontSize = 36;
             for (int i = 1; i <= doc.PageCount; i++) {
                 doc.PageNumber = i;
-                id = doc.AddImageUrl("/Documents/header.aspx?id=" + id.ToString() +"&rnd=" + rnd.Next(50000));                    
+                id = doc.AddImageUrl("http://" + HttpContext.Current.Request.Url.Host + "/Documents/header.aspx?id=" + jid.ToString() + "&rnd=" + rnd.Next(50000));                    
             }
 
             doc.Rect.String = "10 0 585 100";
@@ -244,7 +283,7 @@ public class JourSyncController : ApiController
             //doc.FontSize = 36;
             //for (int i = 1; i <= doc.PageCount; i++) {
                 doc.PageNumber = 1;
-                id = doc.AddImageUrl("/Documents/footer.aspx?rnd=" + rnd.Next(50000));
+                id = doc.AddImageUrl("http://" + HttpContext.Current.Request.Url.Host + "/Documents/footer.aspx?rnd=" + rnd.Next(50000));
                 //doc.AddText("Page " + i.ToString() + " of " + doc.PageCount.ToString());
                 //doc.FrameRect();
             //}
@@ -260,11 +299,15 @@ public class JourSyncController : ApiController
             //doc.SaveOptions.
             doc.Clear();
 
-            bool success = AmazonHandler.PutPdfJour(ms, journo);                
+            bool mail = Common.PdfMail(ms, email);
+            if (mail) {
+                return AmazonHandler.PutPdfJour(ms, journo);
+            }
+            return false;                       
 
             //}
         } catch (Exception ex) {
-                
+            return false;
         }
     }
 }
