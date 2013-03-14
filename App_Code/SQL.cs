@@ -13,7 +13,7 @@ namespace Eaztimate
     {
         private static string m_connectionString = string.Empty;
 
-        private static SqlConnection CreateConnection()
+        public static SqlConnection CreateConnection()
         {
             if (m_connectionString.Length == 0)
             {
@@ -82,6 +82,22 @@ namespace Eaztimate
                     }
                 }
                 return cmd.ExecuteReader(CommandBehavior.CloseConnection);
+            }
+        }
+
+        public static SqlDataReader ExecuteTransQuery(SqlConnection con, SqlTransaction trans, string query, params object[] parameters) {           
+            using (SqlCommand cmd = con.CreateCommand()) {
+                cmd.Transaction = trans;
+                cmd.CommandTimeout = int.Parse(Conf.AppSettings["SQLCommandTimeoutSec"]);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = query;
+                for (int x = 0; x < parameters.Length; x++) {
+                    SqlParameter p = cmd.Parameters.AddWithValue("@" + (x + 1), parameters[x]);
+                    if (parameters[x] is string) {
+                        p.DbType = DbType.AnsiString;
+                    }
+                }
+                return cmd.ExecuteReader();
             }
         }
     }
