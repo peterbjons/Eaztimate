@@ -15,7 +15,7 @@
             <li><a href="Register.aspx">Create user</a></li>
             <li><a href="Company.aspx">Create company</a></li>
             <li><a href="User_groups.aspx">Manage user groups</a></li>
-            <li><a href="Company.aspx">Manage company</a></li>
+            <li><a href="List_company.aspx">Manage company</a></li>
         </ul>
     </div></div>
 </asp:Content>
