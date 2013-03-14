@@ -875,7 +875,7 @@ thead tr.tr_red td {
     font-size: 14pt;
     font-weight: 300;
     font-family: 'Open Sans';
-    width: 310px;
+    width: 334px;
     margin: 5px 0px 15px 0px;
     height: 115px;
 }
@@ -889,12 +889,12 @@ thead tr.tr_red td {
 
 #AdminPage .left_col {
     float: left;
-    width: 760px;
+    width: 700px;
 }
 
 #AdminPage .right_col {
     float: right;
-    width: 180px;
+    width: 200px;
 }
 
     #AdminPage .right_col ul {
