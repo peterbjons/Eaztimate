@@ -9,14 +9,12 @@
         <div style="float: left; width: 50%">
             <asp:TextBox runat="server" ID="UserGroupNameText" placeholder="Name" />
             
-            <asp:Button ID="UserGroupCreate" runat="server" Text="Create user group" />
+            <asp:Button ID="UserGroupCreate" runat="server" Text="Create user group" OnClick="UserGroupCreate_Click" />
         </div>
         <div style="float:left; width: 50%">
             <asp:ListBox ID="rolesBox" SelectionMode="Multiple" runat="server" />
-            <asp:Button ID="UserGroupDelete" runat="server" Text="Delete user group" />
+            <asp:Button ID="UserGroupDelete" runat="server" Text="Delete user group" OnClientClick="return confirm('Are you sure?');" OnClick="UserGroupDelete_Click" />
         </div>
-
-
 
         </div>
 </asp:Content>

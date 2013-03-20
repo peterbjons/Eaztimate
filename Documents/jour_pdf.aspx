@@ -60,6 +60,7 @@
                     <asp:Literal ID="otherneeds" runat="server"/>                 
                 </ol>
             </div>
+            <div style="clear: both"></div>
             <div class="col col_430" id="actiondescdiv" runat="server">
                 <h2 class="light">Beskrivning av åtgärd</h2>
                 <asp:Literal id="actiondesc" runat="server" />
@@ -105,7 +106,7 @@
                                 <td><%#DataBinder.Eval(Container.DataItem, "comment")%></td>
                             </tr>
                         </ItemTemplate>
-                    </asp:Repeater>                                        
+                    </asp:Repeater>
                 </tbody>
             </table>
 

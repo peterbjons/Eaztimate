@@ -10,10 +10,13 @@ using Microsoft.AspNet.Membership.OpenAuth;
 
 public partial class Account_Register : Page
 {
+    int id = 0;
     protected void Page_Load(object sender, EventArgs e)
     {
-       
-        RegisterUser.ContinueDestinationPageUrl = Request.QueryString["ReturnUrl"];
+        if(!int.TryParse(Request.QueryString["id"] ?? string.Empty, out id)) {
+            Response.Redirect("list_company.aspx", true);
+        }
+
         if (!Page.IsPostBack) {
             rolesBox.SelectedIndex = -1;
             rolesBox.DataSource = Roles.GetAllRoles();
@@ -23,14 +26,17 @@ public partial class Account_Register : Page
 
     protected void RegisterUser_CreatedUser(object sender, EventArgs e)
     {
-        Roles.AddUserToRole(RegisterUser.UserName, rolesBox.SelectedValue);
-        //FormsAuthentication.SetAuthCookie(RegisterUser.UserName, createPersistentCookie: false);
+        MembershipUser user = Membership.GetUser(RegisterUser.UserName);
+        using (Eaztimate.SQL.ExecuteQuery("INSERT INTO customerusers(customerid,userid) VALUES(@1,@2)", id, (Guid)user.ProviderUserKey)) { }
 
-        //string continueUrl = RegisterUser.ContinueDestinationPageUrl;
-        //if (!OpenAuth.IsLocalUrl(continueUrl))
-        //{
-        //    continueUrl = "~/";
-        //}
-        //Response.Redirect(continueUrl);
+        List<string> roles = new List<string>();
+        for (int i = 0; i < rolesBox.Items.Count; i++) {
+            if (rolesBox.Items[i].Selected == true) {
+                roles.Add(rolesBox.Items[i].Value);
+            }
+        }
+
+        Roles.AddUserToRoles(RegisterUser.UserName, roles.ToArray());
+        Response.Redirect("company.aspx?id=" + id.ToString());        
     }
 }
