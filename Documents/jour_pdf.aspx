@@ -58,6 +58,10 @@
             
             <div class="col col_655">
                 <img src="../Images/bygg1.jpg" />
+                <div id="imagetext" runat="server">
+                <strong>Händelse:</strong><asp:Literal ID="damagedescription" runat="server" /><br />
+                <strong>Berörda utrymmen:</strong> literal-tack
+            </div>
             </div>
             <asp:Repeater ID="jourimagerepeater" runat="server">
                 <ItemTemplate>
@@ -67,11 +71,7 @@
                 </ItemTemplate>
             </asp:Repeater>
             <div style="clear: both"></div>
-            <div id="imagetext" runat="server">
-                <strong>Händelse:</strong>
-                <asp:Literal ID="damagedescription" runat="server" /><br />
-                <strong>Berörda utrymmen:</strong> literal-tack
-            </div>
+            
             <div style="clear: both; height: 50px;"></div>
             <div class="col col_655">
                 <h2 class="light">Beskrivning av skadan</h2>
