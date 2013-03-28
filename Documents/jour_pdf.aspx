@@ -11,25 +11,8 @@
     <form id="form1" runat="server">
         <div class="a4_paper ">
 
-            <div class="header_text">Insatsrapport - Jour</div>
-            <div class="col col_205">
-                <h2 class="dark">Försäkringsnummer</h2>
-                <asp:Literal id="insuranceno" runat="server" />
-            </div>
-            <div class="col col_205">
-                <h2 class="dark">Typ av försäkring</h2>
-                <asp:Literal id="insurancetype" runat="server" />
-            </div>
-            <div class="col col_205">
-                <h2 class="dark">Händelse</h2>
-                <asp:Literal id="damagetype" runat="server" />
-            </div>
-            <div class="col col_205 last">
-                <h2 class="dark">Insatsdatum</h2>
-                <asp:Literal id="jourdate" runat="server" />
-            </div>
-            <div style="clear: both"></div>
-            <div class="col col_205">
+            <div class="header_text">Jourrapport <asp:Literal id="contactaddress_header" runat="server" />, <asp:Literal id="contactcity_header" runat="server" />. <asp:Literal id="jourdate" runat="server" /> <asp:Literal id="damagetype" runat="server" /></div>
+           <div class="col col_205">
                 <h2 class="dark">Försäkringstagare</h2>
                 <asp:Literal id="contactname" runat="server" /><br />
                 <asp:Literal id="contactpn" runat="server" /><br />
@@ -40,19 +23,26 @@
                 <asp:Literal id="contactphone2" runat="server" />
             </div>
             <div class="col col_205">
+                <h2 class="dark">Försäkring</h2>
+                <asp:Literal id="insurancetype" runat="server" /><br />
+                <asp:Literal id="insuranceno" runat="server" />
+            </div>
+            <div class="col col_205">
                 <h2 class="dark">Ansvarig Ocab</h2>                
                 <asp:Literal id="syncemail" runat="server" />
             </div>
-            <div class="col col_205">
+            <div class="col col_205 last">
                 <h2 class="dark">Åtgärd</h2>                
                 <asp:Literal id="action" runat="server" />
             </div>
+            
+            
+            
+            
+            
             <div style="clear: both"></div>
             
-            <div class="col col_430">
-                <h2 class="light">Beskrivning av skadan</h2>
-                <asp:Literal id="damagedescription" runat="server" />
-            </div>
+            
             
             <div class="col col_430 last" >
                 <h2 class="light">Övriga behov</h2>
@@ -68,14 +58,17 @@
             <div class="col col_430 last" id="entrepreneurdiv" runat="server">
                 <h2 class="light">Kontaktad entreprenör</h2>
                 <asp:Literal id="entrepeneur" runat="server" />
-            </div>
+            </div><div class="col col_880">
             <asp:Repeater ID="jourimagerepeater" runat="server">
                 <ItemTemplate>                    
-                    <div class="col col_430 <%#(Container.ItemIndex+1) % 2 == 0 ? "last" : "" %>">
+                    <div class="col col_880 <%#(Container.ItemIndex+1) % 1 == 0 ? "last" : "" %>">
                         <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" />
-                    </div>                        
+                                  </div>          
                 </ItemTemplate>
             </asp:Repeater>
+            <div id="imagetext" runat="server"><strong>Händelse:</strong> <asp:Literal id="damagedescription" runat="server" /><br />
+                <strong>Berörda utrymmen:</strong> literal-tack
+            </div></div> 
             <div style="clear:both; height:100px;"></div>
 
         </div>

@@ -24,13 +24,13 @@ public partial class Documents_jour_pdf : System.Web.UI.Page
                 damagetype.Text = reader.GetString(reader.GetOrdinal("damagetype"));
                 jourdate.Text = logdate.Text = reader.GetDateTime(reader.GetOrdinal("timestamp")).ToString("yyyy-MM-dd");
                 contactname.Text = reader.GetString(reader.GetOrdinal("contactname"));
-                contactaddress.Text = reader.GetString(reader.GetOrdinal("contactaddress"));
+                contactaddress.Text = contactaddress_header.Text = reader.GetString(reader.GetOrdinal("contactaddress"));
                 contactpn.Text = reader.GetString(reader.GetOrdinal("contactpersonalnumber"));
                 if (reader.GetString(reader.GetOrdinal("contactaddress2")).Length > 1) {
                     contactaddress2.Text = reader.GetString(reader.GetOrdinal("contactaddress2")) + "<br/>";
                 }
                 contactzipcode.Text = reader.GetString(reader.GetOrdinal("contactzipcode"));
-                contactcity.Text = reader.GetString(reader.GetOrdinal("contactcity"));
+                contactcity.Text = contactcity_header.Text = reader.GetString(reader.GetOrdinal("contactcity"));
                 if (reader.GetString(reader.GetOrdinal("contactphone1")).Length > 1) {
                     contactphone1.Text = reader.GetString(reader.GetOrdinal("contactphone1")) + "<br/>";
                 }
@@ -79,7 +79,7 @@ public partial class Documents_jour_pdf : System.Web.UI.Page
 
         DataTable dt = new DataTable();
         dt.Columns.Add(new DataColumn("image", typeof(string)));
-        using (SqlDataReader reader = SQL.ExecuteQuery("SELECT a.image,b.journo FROM jourimage a LEFT JOIN jour b ON a.jourid=b.jourid WHERE a.jourid=@1", jourid)) {
+        using (SqlDataReader reader = SQL.ExecuteQuery("SELECT TOP 1 a.image,b.journo FROM jourimage a LEFT JOIN jour b ON a.jourid=b.jourid WHERE a.jourid=@1 order by image", jourid)) {
             while (reader.Read()) {
                 string url = AmazonHandler.GetPrivateImageJour(reader.GetString(reader.GetOrdinal("journo")) + "/" + reader.GetString(reader.GetOrdinal("image")));
                 dt.Rows.Add(url);
