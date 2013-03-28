@@ -98,8 +98,20 @@
 }
 
 .header_text {
-    height: 70px;
+    line-height:36px;
     font-size: 36px;
+    margin-bottom: 40px;
+}
+.header_text span.line1 {
+    font-size: 24px;
+    display:block;
+    height: 40px;
+    line-height: 44px;
+}
+.header_text span.line2 {
+    font-size: 16px;
+    display:block;
+    line-height: 16px;
 }
 
 .logo {

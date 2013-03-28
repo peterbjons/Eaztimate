@@ -38,7 +38,7 @@ public partial class Documents_jour_pdf : System.Web.UI.Page
                     contactphone2.Text = reader.GetString(reader.GetOrdinal("contactphone2")) + "<br/>";
                 }
                 syncemail.Text = reader.GetString(reader.GetOrdinal("syncemail"));
-                damagedescription.Text = reader.GetString(reader.GetOrdinal("damagedescription"));
+                damagedescription.Text = damagedescription_case2.Text = reader.GetString(reader.GetOrdinal("damagedescription"));
 
                 contactaction = reader.GetInt32(reader.GetOrdinal("contactaction"));
 
