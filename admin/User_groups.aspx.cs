@@ -25,6 +25,7 @@ public partial class admin_User_groups : System.Web.UI.Page
         if(UserGroupNameText.Text.Length > 2) {
             Roles.CreateRole(UserGroupNameText.Text);
             bindData();
+            UserGroupNameText.Text = "";
         }        
     }
     protected void UserGroupDelete_Click(object sender, EventArgs e) {

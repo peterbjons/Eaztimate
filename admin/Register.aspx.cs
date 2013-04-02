@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using Eaztimate;
 using Microsoft.AspNet.Membership.OpenAuth;
 
 public partial class Account_Register : Page
@@ -19,8 +21,16 @@ public partial class Account_Register : Page
 
         if (!Page.IsPostBack) {
             rolesBox.SelectedIndex = -1;
-            rolesBox.DataSource = Roles.GetAllRoles();
-            rolesBox.DataBind();
+
+            using (SqlDataReader reader = SQL.ExecuteQuery("SELECT rolename FROM customerroles WHERE customerid=@1", id)) {
+
+                rolesBox.DataSource = reader;
+                rolesBox.DataBind();
+            }
+
+
+            //rolesBox.DataSource = Roles.GetAllRoles();
+            //rolesBox.DataBind();
         }
     }
 

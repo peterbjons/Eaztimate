@@ -36,13 +36,34 @@ public partial class admin_Company : System.Web.UI.Page
                     while (reader.Read()) {
                         guidlist.Add((Guid)reader.GetSqlGuid(0));
                     }
+
                     companylist.DataSource = Membership.GetAllUsers().Cast<MembershipUser>().Where(x => guidlist.Contains((Guid)x.ProviderUserKey)).OrderBy(x => x.UserName).ToList();
                     companylist.DataBind();
                     usersheader.Visible = true;
+
+                    updateRoles();
                 }
             }
         }
     }
+
+    protected void updateRoles() {
+        using (SqlDataReader reader = SQL.ExecuteQuery("SELECT rolename FROM customerroles WHERE customerid=@1", id)) {
+            
+            List<String> roleslist = new List<String>();
+            
+            while (reader.Read()) {
+                roleslist.Add(reader.GetString(0));
+            }
+
+            rolesaddedBox.DataSource = roleslist;
+            rolesaddedBox.DataBind();
+
+            rolesBox.DataSource = Roles.GetAllRoles().Cast<String>().Where(x => !roleslist.Contains(x));
+            rolesBox.DataBind();
+        }
+    }
+
     protected void CompanyCreate_Click(object sender, EventArgs e) {
         if (int.TryParse(Request.QueryString["id"] ?? string.Empty, out id)) {
             using (SQL.ExecuteQuery("UPDATE customer SET title=@1, address1=@2, address2=@3, zip=@4, city=@5, email=@6, phone=@7, contactperson=@8 WHERE customerid=@9",
@@ -70,6 +91,27 @@ public partial class admin_Company : System.Web.UI.Page
                     }
                     Response.Redirect("company.aspx?id=" + id.ToString());
             }
+        }
+    }
+    protected void addroleButton_Click(object sender, EventArgs e) {
+        if (int.TryParse((Request.QueryString["id"] ?? string.Empty), out id)) {
+            for (int i = 0; i < rolesBox.Items.Count; i++) {
+                if (rolesBox.Items[i].Selected == true) {
+                    using (SQL.ExecuteQuery("INSERT INTO customerroles(customerid,rolename) VALUES(@1,@2)", id, rolesBox.Items[i].Value)) { }
+                }
+            }
+            updateRoles();
+        }
+    }
+
+    protected void removeroleButton_Click(object sender, EventArgs e) {
+        if (int.TryParse((Request.QueryString["id"] ?? string.Empty), out id)) {
+            for (int i = 0; i < rolesaddedBox.Items.Count; i++) {
+                if (rolesaddedBox.Items[i].Selected == true) {
+                    using (SQL.ExecuteQuery("DELETE FROM customerroles WHERE customerid=@1 AND rolename=@2", id, rolesaddedBox.Items[i].Value)) { }
+                }
+            }
+            updateRoles();
         }
     }
 }

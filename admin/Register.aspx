@@ -56,7 +56,7 @@
             </WizardSteps>
         </asp:CreateUserWizard>
         <div style="float: left;">
-            <asp:ListBox ID="rolesBox" SelectionMode="Multiple" runat="server" />
+            <asp:ListBox ID="rolesBox" SelectionMode="Multiple" runat="server" DataTextField="rolename" />
         </div>
     </div>
 </asp:Content>

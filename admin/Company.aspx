@@ -19,8 +19,25 @@
             <asp:TextBox runat="server" ID="CompanyPhoneText" placeholder="Phone" />            
             <asp:Button ID="CompanyCreate" runat="server" Text="Create company" OnClick="CompanyCreate_Click"/>
         </div>
-        <div style="clear: both"></div>
+        <div style="clear: both; height: 20px;"></div>
+
         <asp:Panel id="usersheader" runat="server" visible="false">
+
+        <h2>Add / Remove roles</h2>
+
+        <div style="float: left; width: 50%">
+            <asp:ListBox ID="rolesBox" SelectionMode="Multiple" runat="server" />
+            <asp:Button ID="addroleButton" runat="server" Text="Add role" OnClick="addroleButton_Click"/>
+        </div>
+        
+
+        <div style="float: right; width: 50%">
+            <asp:ListBox ID="rolesaddedBox" SelectionMode="Multiple" runat="server" />
+            <asp:Button ID="removeroleButton" runat="server" Text="Remove role" OnClick="removeroleButton_Click"/>
+        </div>
+
+        <div style="clear: both"></div>
+        
             <h2 style="margin-top: 20px; float: left;">List of people in this company</h2>
             <h2 style="margin-top: 20px; float: right;"><a href="Register.aspx?id=<%=id.ToString() %>">New</a></h2>
             <table class="companycreate jourtable">
