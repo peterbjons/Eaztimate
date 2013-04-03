@@ -65,6 +65,23 @@ ol li {
         #nav ul li {
             float: left;
             line-height: 32px;
+            position:relative;
+        }
+
+        #nav ul li ul {
+            display: none;
+            list-style-image: none!important;
+            background-color: #fff;
+        }
+        #nav ul li:hover ul {
+            display: block;
+            position: absolute;
+            left: 0px;
+            top: 30px;
+            cursor:pointer;
+            width: 140px;
+            padding: 0px 10px 10px 10px;
+            z-index: 666;
         }
 
             #nav ul li a {
@@ -994,3 +1011,42 @@ table.companycreate tr.user_level3 td {
 table.companycreate tr.user_level4 td {
     color: #000;
 }
+
+.timeline_container {
+    background-image:url('../Images/black_bar.png');
+    background-repeat: repeat-y;
+    padding-left: 35px;
+    margin-bottom: 40px;
+}
+
+.timeline_container ul.jour {
+    list-style-image:url('../Images/black_bar.png');
+    
+}
+.timeline_container ul.bygg {
+    list-style-image:url('../Images/black_bar.png');
+    
+}
+.timeline_container ul.sak {
+    list-style-image:url('../Images/black_bar.png');
+   
+}
+.timeline_container ul li h3 {
+    font-size: 16pt;
+    font-weight: 300;
+}
+.timeline_container ul li {
+    margin-bottom: 50px;
+}
+.timeline_container ul li p {
+    padding-left: 30px;
+    color: #6d6d6d;
+    width: 450px;
+    text-align:justify;
+    font-size:8pt;
+}
+
+.timeline_container img {
+    margin: 20px 0px;
+}
+
