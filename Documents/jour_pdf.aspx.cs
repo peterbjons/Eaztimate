@@ -17,10 +17,11 @@ public partial class Documents_jour_pdf : System.Web.UI.Page
         int contactaction = 0;
         int.TryParse(Request.QueryString["id"] ?? "32", out jourid);
 
-        using (SqlDataReader reader = Eaztimate.SQL.ExecuteQuery("SELECT *,(SELECT TOP 1 timestamp FROM jour_log WHERE jourid=@1 ORDER BY timestamp ASC) timestamp FROM jour WHERE jourid=@1", jourid)) {
+        using (SqlDataReader reader = Eaztimate.SQL.ExecuteQuery("SELECT a.*,(SELECT TOP 1 timestamp FROM jour_log WHERE jourid=@1 ORDER BY timestamp ASC) timestamp,(SELECT TOP 1 x.image FROM jourimage x WHERE x.jourid=@1 order by image) jourimage FROM jour a WHERE jourid=@1;SELECT title FROM jour_room WHERE jourid=@1", jourid)) {
             if (reader.Read()) {
                 insuranceno.Text = reader.GetString(reader.GetOrdinal("insurancenumber"));
                 insurancetype.Text = reader.GetString(reader.GetOrdinal("insurancetype"));
+                lccaseid.Text = reader.GetString(reader.GetOrdinal("lccaseid"));
                 damagetype.Text = reader.GetString(reader.GetOrdinal("damagetype"));
                 jourdate.Text = logdate.Text = reader.GetDateTime(reader.GetOrdinal("timestamp")).ToString("yyyy-MM-dd");
                 contactname.Text = reader.GetString(reader.GetOrdinal("contactname"));
@@ -44,6 +45,12 @@ public partial class Documents_jour_pdf : System.Web.UI.Page
 
                 actiondesc.Text = reader.GetString(reader.GetOrdinal("actiondescription"));
                 entrepeneur.Text = reader.GetString(reader.GetOrdinal("externalentrepeneur"));
+
+                if(!reader.IsDBNull(reader.GetOrdinal("jourimage"))) {
+                    jourimage.Src = AmazonHandler.GetPrivateImageJour(reader.GetString(reader.GetOrdinal("journo")) + "/" + reader.GetString(reader.GetOrdinal("jourimage")));
+                } else {
+                    jourimage.Visible = false;
+                }
 
                 StringBuilder sb = new StringBuilder();
                 if (reader.GetBoolean(reader.GetOrdinal("action_otherliving"))) {
@@ -75,11 +82,18 @@ public partial class Documents_jour_pdf : System.Web.UI.Page
                         break;
                 }
             }
+            reader.NextResult();
+            StringBuilder strb = new StringBuilder();
+            while (reader.Read()) {
+                strb.Append((strb.Length == 0 ? "" : ", "));
+                strb.Append(reader.GetString(reader.GetOrdinal("title")));
+            }
+            roomslist.Text = strb.ToString();
         }
 
         DataTable dt = new DataTable();
-        dt.Columns.Add(new DataColumn("image", typeof(string)));
-        using (SqlDataReader reader = SQL.ExecuteQuery("SELECT TOP 1 a.image,b.journo FROM jourimage a LEFT JOIN jour b ON a.jourid=b.jourid WHERE a.jourid=@1 order by image", jourid)) {
+        dt.Columns.Add(new DataColumn("image", typeof(string)));        
+        using (SqlDataReader reader = SQL.ExecuteQuery("SELECT TOP 3 a.roomid, (SELECT TOP 1 image FROM jour_roomimage x WHERE x.roomid=a.roomid ORDER BY roomimage ) image,b.journo FROM jour_room a LEFT JOIN jour b ON a.jourid=b.jourid WHERE a.jourid=@1", jourid)) {
             while (reader.Read()) {
                 string url = AmazonHandler.GetPrivateImageJour(reader.GetString(reader.GetOrdinal("journo")) + "/" + reader.GetString(reader.GetOrdinal("image")));
                 dt.Rows.Add(url);
@@ -98,10 +112,11 @@ public partial class Documents_jour_pdf : System.Web.UI.Page
                 roomrepeater.DataSource = reader;
                 roomrepeater.DataBind();
             }
-            actiondescdiv.Visible = false;
+            actiondescdiv.Visible = actiondescdiv2.Visible = false;
             entrepreneurdiv.Visible = false;
         } else {
             room_pages.Visible = false;
+            imagetext.Visible = false;
             if (contactaction != 4) {
                 entrepreneurdiv.Visible = false;
             }
@@ -130,6 +145,10 @@ public partial class Documents_jour_pdf : System.Web.UI.Page
                 Repeater ImageRepeater = (Repeater)item.FindControl("roomimagerepeater");
                 ImageRepeater.DataSource = dt;
                 ImageRepeater.DataBind();
+                if (dt.Rows.Count > 1) {
+                    Literal ImageLiteral = (Literal)item.FindControl("possibleenddiv");
+                    ImageLiteral.Text = "</div>";
+                }
             }
         } catch(Exception ex) {
 

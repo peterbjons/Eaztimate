@@ -11,9 +11,7 @@
     <div class="right_col">
         <div style="height: 90px;"></div>
                 <h2>Menu</h2>
-        <ul>
-            <%--<li><a href="Register.aspx">Create user</a></li>
-            <li><a href="Company.aspx">Create company</a></li>--%>
+        <ul>            
             <li><a href="User_groups.aspx">Manage user groups</a></li>
             <li><a href="List_company.aspx">Manage companies</a></li>
         </ul>

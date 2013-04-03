@@ -67,6 +67,8 @@ public class JourSyncController : ApiController
                 int customerid = 1; //fix later
                 //---------------------------------------------------------------------
 
+                string lccaseid = jour["lc_caseno"].ToString();  
+
                 string contactname = jour["contactname"].ToString();
                 string contactaddress = jour["contactaddress1"].ToString();
                 string contactaddress2 = jour["contactaddress2"].ToString();
@@ -114,11 +116,11 @@ public class JourSyncController : ApiController
                     using (SqlConnection con = SQL.CreateConnection()) {
                         using (SqlTransaction trans = con.BeginTransaction(IsolationLevel.ReadCommitted)) {
                             try {
-                                using (SqlDataReader reader = SQL.ExecuteTransQuery(con, trans, "INSERT INTO jour(journo,syncemail,datecreated,dateupdated,contactname,contactaddress,contactaddress2,contactzipcode,contactcity,contactpersonalnumber,insurancenumber,insurancetype,damagetype,actiondescription,externalentrepeneur,damagedescription,contactinformed,contactaction,action_otherliving,action_cash,action_transport,action_helpcontact,building_power,building_lockable,building_climatesafe,building_function,customerid,contactphone1,contactphone2)" +
-                                    " VALUES(@1,@2,GETDATE(),GETDATE(),@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@16,@17,@18,@19,@20,@21,@22,@23,@24,@25,@26,@27);SELECT CAST(@@IDENTITY AS BIGINT)",
+                                using (SqlDataReader reader = SQL.ExecuteTransQuery(con, trans, "INSERT INTO jour(journo,syncemail,datecreated,dateupdated,contactname,contactaddress,contactaddress2,contactzipcode,contactcity,contactpersonalnumber,insurancenumber,insurancetype,damagetype,actiondescription,externalentrepeneur,damagedescription,contactinformed,contactaction,action_otherliving,action_cash,action_transport,action_helpcontact,building_power,building_lockable,building_climatesafe,building_function,customerid,contactphone1,contactphone2,lccaseid)" +
+                                    " VALUES(@1,@2,GETDATE(),GETDATE(),@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@16,@17,@18,@19,@20,@21,@22,@23,@24,@25,@26,@27,@28);SELECT CAST(@@IDENTITY AS BIGINT)",
                                     journo, email, contactname, contactaddress, contactaddress2, contactzipcode, contactcity, contactpersonalnumber, insurancenumber,
                                     insurancetype, damagetype, actiondescription, externalentrepeneur, damagedescription, contactinformed, action,
-                                    action_otherliving, action_cash, action_transport, action_helpcontact, building_power, building_lockable, building_climatesafe, building_function, customerid, contactphone1, contactphone2)) {
+                                    action_otherliving, action_cash, action_transport, action_helpcontact, building_power, building_lockable, building_climatesafe, building_function, customerid, contactphone1, contactphone2, lccaseid)) {
                                     if (reader.Read()) {
                                         id = reader.GetInt64(0);
                                     }
@@ -181,18 +183,31 @@ public class JourSyncController : ApiController
                     }
                 }
 
-                bool success = false;
-                if (id > 0) {
-                    success = createPdf(id, journo, email);
-                }
+               bool success = false;
+               if (id > 0) {
+                   success = createPdf(id, journo, email);
+               }
 
-                if (success) {                                
-                    counter.success = "OK";
-                    counter.message = "Success";
-                } else {
-                    counter.success = "FAIL";
-                    counter.message = "Couldn't crreate PDF";
-                }
+               if (success) {
+                   counter.success = "OK";
+                   counter.message = "Success";
+               } else {
+                   counter.success = "FAIL";
+                   counter.message = "Couldn't crreate PDF";
+               }
+
+
+               //string success = string.Empty;
+               //if (id > 0) {
+               //    success = createPdf(id, journo, email);
+               //}
+               //if (success.Length == 0) {
+               //    counter.success = "OK";
+               //    counter.message = "Success";
+               //} else {
+               //    counter.success = "FAIL";
+               //    counter.message = success;
+               //}
             } catch (Exception ex) {
                 counter.success = "FAIL";
                 counter.message = ex.Message;
@@ -303,7 +318,7 @@ public class JourSyncController : ApiController
             if (mail) {
                 return AmazonHandler.PutPdfJour(ms, journo);
             }
-            return false;                       
+            return false;
 
             //}
         } catch (Exception ex) {
