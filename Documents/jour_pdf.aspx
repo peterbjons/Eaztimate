@@ -13,13 +13,13 @@
 
             <div class="header_text">
                 Jourrapport
-                <asp:Literal ID="jourdate" runat="server" />
                 <asp:Literal ID="damagetype" runat="server" />
+                <asp:Literal ID="jourdate" runat="server" />                
                 <span class="line1">
                     <asp:Literal ID="contactaddress_header" runat="server" />,
                     <asp:Literal ID="contactcity_header" runat="server" />
                 </span>
-                <span class="line2">Larmcentralens ärendenummer: literal-tack
+                <span class="line2">Larmcentralens ärendenummer: <asp:Literal ID="lccaseid" runat="server" />
                 </span>
 
             </div>
@@ -57,10 +57,10 @@
             
             
             <div class="col col_655">
-                <img src="../Images/bygg1.jpg" />
+                <img runat="server" id="jourimage" />
                 <div id="imagetext" runat="server">
                 <strong>Händelse:</strong><asp:Literal ID="damagedescription" runat="server" /><br />
-                <strong>Berörda utrymmen:</strong> literal-tack
+                <strong>Berörda utrymmen:</strong> <asp:Literal ID="roomslist" runat="server" />
             </div>
             </div>
             <asp:Repeater ID="jourimagerepeater" runat="server">
@@ -73,6 +73,7 @@
             <div style="clear: both"></div>
             
             <div style="clear: both; height: 50px;"></div>
+            <div id="actiondescdiv2" runat="server">
             <div class="col col_655">
                 <h2 class="light">Beskrivning av skadan</h2>
                 <asp:Literal ID="damagedescription_case2" runat="server" />
@@ -81,6 +82,7 @@
                 <h2 class="light">Åtgärd</h2>
                 <asp:Literal ID="action" runat="server" />
             </div>
+                </div>
             <div class="col col_880" id="actiondescdiv" runat="server">
                 <h2 class="light">Beskrivning av åtgärd</h2>
                 <asp:Literal ID="actiondesc" runat="server" />
@@ -147,7 +149,7 @@
                         <div class="col col_880">
 
                             <div class="col col_430">
-                                <h2 class="dark">Upptäckta problem</h2>
+                                <h2 class="dark">Skador i utrymmet</h2>
                                 <%#(bool)DataBinder.Eval(Container.DataItem, "problem_water") ? "Fritt vatten<br/>" : "" %>
                                 <%#(bool)DataBinder.Eval(Container.DataItem, "problem_humidity") ? "Extrem luftfuktighet<br/>" : "" %>
                                 <%#(bool)DataBinder.Eval(Container.DataItem, "problem_odor") ? "Luktproblem<br/>" : "" %>
@@ -155,36 +157,35 @@
                             </div>
 
                             <div class="col col_430 last">
-                                <h2 class="dark">Åtgärd</h2>
+                                <h2 class="dark">Åtgärder i utrymmet</h2>
                                 <ul style="margin-top: 0px;">
                                     <%#formatRoomAction((string)DataBinder.Eval(Container.DataItem, "roomaction"))%>
                                 </ul>
                             </div>
-                        </div>
-                        <div class="divider"></div>
-                        <div class="col col_880">
-                            <h2 class="light">Rumsbeskrivning</h2>
-                            <%#DataBinder.Eval(Container.DataItem, "description")%>
-                        </div>
-                        <div class="divider"></div>
+                        </div>                       
 
                         <asp:Repeater ID="roomimagerepeater" runat="server">
                             <ItemTemplate>
-                                <div runat="server" visible="<%# (Container.ItemIndex == 0) %>">
-                                    <div class="col col_430">
-                                        <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" />
-                                    </div>
+                                
+                                <div class="col col_430" runat="server" visible="<%# (Container.ItemIndex == 0) %>">
+                                    <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" />
                                 </div>
+                                
                                 <%#(Container.ItemIndex) == 1 ? "<div class=\"col col_430 last\">" : "" %>
                                 <asp:Panel runat="server" Visible="<%# (Container.ItemIndex != 0) %>">
                                     <div class="col col_205 <%#(Container.ItemIndex) % 2 == 0 ? "last" : "" %>" style="margin-bottom: 13px">
                                         <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" />
                                     </div>
-                                </asp:Panel>
+                                </asp:Panel>                                
                             </ItemTemplate>
                         </asp:Repeater>
-                    </div>
-                    <div style="clear: both; height: 20px;"></div>
+                        <asp:Literal ID="possibleenddiv" runat="server" />
+                        <div style="clear: both; height: 20px;"></div>
+                        <div class="col col_880">
+                            <h2 class="light">Övriga noteringar</h2>
+                            <%#DataBinder.Eval(Container.DataItem, "description")%>
+                        </div>
+                    </div>                        
                     </div>
                 </ItemTemplate>
             </asp:Repeater>
