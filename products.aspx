@@ -16,7 +16,7 @@
                 <li>Rapportera</li>
             </ul>
             <p>Ett samtal kommer in till jouren och ett uppdrag startar med att jourhavande öppnar Jour-appen och noterar adress och telefonnummer...</p>
-            <a class="button" style="float:left">Read more &raquo;</a>
+            <a class="button" style="float:left" href="product_description_jour.aspx">Read more &raquo;</a>
         </li>
         <li class="block">
             <h2>Byggskada</h2>
@@ -28,7 +28,7 @@
                 
             </ul>
             <p>Stor eller liten fastighet, omfattande eller begränsad skada, sot eller fukt, osv. Skador skiljer sig åt men är sällan unika...  </p>
-            <a class="button" style="float:left">Read more &raquo;</a>
+            <a class="button" style="float:left" href="product_description_bygg.aspx">Read more &raquo;</a>
         </li>
         <li class="block">
             <h2>Lösöre</h2>
@@ -39,7 +39,7 @@
                 <li>Rapportera</li>
                 
             </ul><p>Målet, att underlätta i varje led i hateringen av lösören är ambitiöst och kräver samarbete mellan individer och bolag... </p>
-            <a class="button" style="float:left">Read more &raquo;</a>
+            <a class="button" style="float:left" href="product_description_losore.aspx">Read more &raquo;</a>
         </li>
     </ul>
 
