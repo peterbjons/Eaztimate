@@ -16,5 +16,7 @@
     <p>Loggen och dokumentation i forma av formulär, fritexter och bilder rapporteras därefter in till Försäkringsbolaget.</p>
     <p>Därmed är jourärendet avslutat.</p>
     <p>Fördelarna med att ha med sig en Jour-app i mobilen eller i paddan är flera jämfört med att arbeta med papper, penna och kamera. Enligt användarna sticker dock det minimala efterarbetet ut. Vid kontakt med internet skickas jourrapporten vidare, oftast innan du lämnar platsen. </p>
+
+    <a href="products.aspx" class="button" style="float:left">&laquo; Tillbaka till produkter</a><a href="product_timeline.aspx#jour_timeline" class="button">Se tidslinje &raquo;</a>
 </asp:Content>
 
