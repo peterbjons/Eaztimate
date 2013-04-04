@@ -46,6 +46,11 @@ public partial class Documents_jour_pdf : System.Web.UI.Page
                 actiondesc.Text = reader.GetString(reader.GetOrdinal("actiondescription"));
                 entrepeneur.Text = reader.GetString(reader.GetOrdinal("externalentrepeneur"));
 
+                skalskyddlit.Text = (reader.GetBoolean(reader.GetOrdinal("building_lockable")) ? "Nedsatt" : "Ej påverkad");
+                elvarmelit.Text = (reader.GetBoolean(reader.GetOrdinal("building_power")) ? "Nedsatt" : "Ej påverkad");
+                klimatskarmlit.Text = (reader.GetBoolean(reader.GetOrdinal("building_climatesafe")) ? "Nedsatt" : "Ej påverkad");
+                funktionlit.Text = (reader.GetBoolean(reader.GetOrdinal("building_function")) ? "Nedsatt i berörda utrymmen" : "Ej påverkad");
+
                 if(!reader.IsDBNull(reader.GetOrdinal("jourimage"))) {
                     jourimage.Src = AmazonHandler.GetPrivateImageJour(reader.GetString(reader.GetOrdinal("journo")) + "/" + reader.GetString(reader.GetOrdinal("jourimage")));
                 } else {
@@ -117,6 +122,7 @@ public partial class Documents_jour_pdf : System.Web.UI.Page
         } else {
             room_pages.Visible = false;
             imagetext.Visible = false;
+            damagelistdiv.Visible = false;
             if (contactaction != 4) {
                 entrepreneurdiv.Visible = false;
             }

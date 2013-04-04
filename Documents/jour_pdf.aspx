@@ -91,6 +91,26 @@
             </div>
             </div>
 
+            <div id="damagelistdiv" runat="server">
+                <div class="col col_205">
+                    <h2 class="light">Skalskydd</h2>
+                    <asp:Literal ID="skalskyddlit" runat="server" />
+                </div>
+                <div class="col col_205">
+                    <h2 class="light">El/värme</h2>
+                    <asp:Literal ID="elvarmelit" runat="server" />
+                </div>
+
+                <div class="col col_205">
+                    <h2 class="light">Klimatskärm</h2>
+                    <asp:Literal ID="klimatskarmlit" runat="server" />
+                </div>
+
+                <div class="col col_205 last">
+                    <h2 class="light">Funktion</h2>
+                    <asp:Literal ID="funktionlit" runat="server" />
+                </div>
+            </div>
             
         </div>
 
@@ -141,10 +161,10 @@
                 <ItemTemplate>
                     <div style="page-break-before: always">&nbsp;</div>
                     <div class="a4_paper">
-                        <div class="header_text">
-                            Insatsrapport -
+                        <div class="header_text">                            
                             <asp:HiddenField ID="roomidHidden" runat="server" Value='<%#DataBinder.Eval(Container.DataItem, "roomid")%>' />
                             <%#DataBinder.Eval(Container.DataItem, "title")%>
+                            <%#(Container.ItemIndex) == 0 ? ", primär skadeplats" : ", sekundär skadeplats" %>
                         </div>
                         <div class="col col_880">
 
