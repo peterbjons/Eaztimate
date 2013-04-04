@@ -14,17 +14,41 @@
     <script src="Scripts/jquery-1.7.1.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Oswald|Open+Sans:300italic,400italic,400,300,700' rel='stylesheet' type='text/css'>
     <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
-    </head>
+</head>
 <body>
     <form runat="server">
         <div id="header">
             <div class="wrapper">
-                <a href="Default.aspx"><div id="logo">eaztimate</div></a>
+                <a href="Default.aspx">
+                    <div id="logo">eaztimate</div>
+                </a>
                 <div id="nav">
                     <ul>
-                        <li><a href="Default.aspx" runat="server" id="menu1" class="active">Home</a></li>
+                        <li><a href="Default.aspx" runat="server" id="menu1" class="active">Hem</a></li>
                         <asp:LoginView runat="server">
                             <AnonymousTemplate>
+
+                                <li><a href="products.aspx">Produkter</a>
+                                    <ul>
+                                        <li><a href="product_description_jour.aspx">Jour</a></li>
+                                        <li><a href="product_description_bygg.aspx">Byggskada</a></li>
+                                        <li><a href="product_description_losore.aspx">Lösöre</a></li>
+                                    </ul>
+                                </li>
+                                <%--<li><a href="kunder.aspx">Kunder</a>
+                                    <ul>
+                                        <li><a>Ocab</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="services.aspx">Tjänster</a>
+                                    <ul>
+                                        <li><a>Hosting</a></li>
+                                        <li><a>Support</a></li>
+                                        <li><a>Integration</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="education.aspx">Utbildning</a></li>--%>
+                                <li><a href="Contact.aspx">Kontakt</a></li>
                                 <li><a href="login.aspx" runat="server" id="menu2">Login</a></li>
                             </AnonymousTemplate>
                             <RoleGroups>
@@ -40,7 +64,7 @@
                                     </ContentTemplate>
                                 </asp:RoleGroup>
                             </RoleGroups>
-                        </asp:LoginView> 
+                        </asp:LoginView>
                         <asp:LoginView ID="LoginView1" runat="server">
                             <RoleGroups>
                                 <asp:RoleGroup Roles="Admnistrator">
@@ -71,9 +95,9 @@
                         <li class="box1">
                             <h3>Recent inspections</h3>
                             <h4>Latest Update</h4>
-                            
-                                <p>Lorem ipsum</p>
-                            
+
+                            <p>Lorem ipsum</p>
+
                             <span class="button">More &raquo;</span>
                         </li>
                         <li class="box2">

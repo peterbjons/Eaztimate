@@ -8,6 +8,7 @@
     
     <p>EZL har även ett unikt verktyg för bedömning av ett enskilt föremåls skick och värdepåverkande egenskaper. En funktion som starkt bidrar till att vi vågar kalla EZL det bästa om hänt försäkringsbranschen sedan IT slog igenom.</p>
     
+    <a href="products.aspx" class="button" style="float:left">&laquo; Tillbaka till produkter</a><a href="product_timeline.aspx#sak_timeline" class="button">Se tidslinje &raquo;</a>
 
 </asp:Content>
 
