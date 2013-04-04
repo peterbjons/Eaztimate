@@ -51,19 +51,15 @@
                                 <li><a href="Contact.aspx">Kontakt</a></li>
                                 <li><a href="login.aspx" runat="server" id="menu2">Login</a></li>
                             </AnonymousTemplate>
-                            <RoleGroups>
-                                <asp:RoleGroup Roles="Users">
-                                    <ContentTemplate>
-                                        <li><a href="create_inspection.aspx" runat="server" id="menu2">Create</a></li>
-                                        <li><a href="open_inspection.aspx" runat="server" id="menu3">Open</a></li>
-                                        <li><a href="inspect_object.aspx" runat="server" id="menu4">Manage</a></li>
-                                        <li><a href="contact.aspx" runat="server" id="menu5">Contact</a></li>
-                                        <li><a href="pdf.aspx" runat="server" id="menu6">pdf</a></li>
-                                        <li><a href="bygg.aspx" runat="server" id="menu7">bygg</a></li>
-                                        <li><a href="jour.aspx" runat="server" id="menu8">jour</a></li>
-                                    </ContentTemplate>
-                                </asp:RoleGroup>
-                            </RoleGroups>
+                            <LoggedInTemplate>
+                                <li><a href="create_inspection.aspx" runat="server" id="menu2">Create</a></li>
+                                <li><a href="open_inspection.aspx" runat="server" id="menu3">Open</a></li>
+                                <li><a href="inspection.aspx" runat="server" id="menu4">Manage</a></li>
+                                <li><a href="contact.aspx" runat="server" id="menu5">Contact</a></li>
+                                <li><a href="pdf.aspx" runat="server" id="menu6">pdf</a></li>
+                                <li><a href="bygg.aspx" runat="server" id="menu7">bygg</a></li>
+                                <li><a href="jour.aspx" runat="server" id="menu8">jour</a></li>
+                            </LoggedInTemplate>                            
                         </asp:LoginView>
                         <asp:LoginView ID="LoginView1" runat="server">
                             <RoleGroups>

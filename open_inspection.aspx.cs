@@ -38,7 +38,7 @@ public partial class _Default : Page
             if (int.TryParse(e.CommandArgument.ToString(), out inventoryid)) {
                 switch (e.CommandName) {
                     case "Open":
-                        Response.Redirect("inspect_object.aspx?id=" + inventoryid.ToString(), true);
+                        Response.Redirect("inspection.aspx?id=" + inventoryid.ToString(), true);
                         break;
                 }
             }
