@@ -290,6 +290,28 @@ a.button {
     padding: 0px 0px 0px 35px;
     margin-bottom: 5px;
 }
+.sort_item,.selection_item {
+    padding: 0px 0px 0px 0px;
+    margin-bottom: 5px;
+}
+    .sort_item div.sort_up, .selection_item div.sort_up {
+
+        width:30px;
+        height: 30px;
+        background-color: #fcf;
+        background-image: url('../images/placeholder.png');
+        float:left;
+        margin-right: 10px;
+    }
+        .sort_item div.sort_down, .selection_item div.sort_down {
+
+        width:30px;
+        height: 30px;
+        background-color: #ccf;
+        background-image: url('../images/placeholder.png');
+        float:left;
+        margin-right: 10px;
+    }
 
 .white {
     background-color: #fff;
@@ -308,6 +330,8 @@ a.button {
     background-repeat: repeat-y;
     background-position: left;
 }
+
+
 
 .orange {
     background-image: url('../images/orange_bar.png');
@@ -408,7 +432,7 @@ a.button {
         float: left;
     }
 
-#inspection_sort .inspection_item, #inspection_help .inspection_item {
+#inspection_sort .inspection_item, #inspection_help .inspection_item,.sort_item,.selection_item {
     font-weight: 300 !important;
     font-size: 10pt !important;
     height: 30px;

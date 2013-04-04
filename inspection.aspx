@@ -149,15 +149,15 @@
     </div>
     <div id="inspection_sort">
         <h4>Sort</h4>
-        <a href="?so=0&id=<%=inspectionid %>"><div class="inspection_item <%=(sortorder == 0 ? "blue" : "white") %>">Date</div></a>
-        <a href="?so=1&id=<%=inspectionid %>"><div class="inspection_item <%=(sortorder == 1 ? "blue" : "white") %>">Status</div></a>
-        <a href="?so=2&id=<%=inspectionid %>"><div class="inspection_item <%=(sortorder == 2 ? "blue" : "white") %>">Inspection number</div></a>
+        <a href="?so=0&id=<%=inspectionid %>"><div class="sort_item <%=(sortorder == 0 ? "blue" : "white") %>">Date</div></a>
+        <a href="?so=1&id=<%=inspectionid %>"><div class="sort_item <%=(sortorder == 1 ? "blue" : "white") %>">Status</div></a>
+        <a href="?so=2&id=<%=inspectionid %>"><div class="sort_item <%=(sortorder == 2 ? "blue" : "white") %>">Inspection number</div></a>
     </div>
     <div id="inspection_help">
         <h4>Urval</h4>
-        <div class="inspection_item white">Completed</div>
-        <div class="inspection_item white">In progress</div>
-        <div class="inspection_item blue">Not started</div>
+        <div class="selection_item white"><div class="sort_up"></div>Rum</div>
+        <div class="selection_item white"><div class="sort_down"></div>Kategorier</div>
+        
     </div>
 
                     </div>
