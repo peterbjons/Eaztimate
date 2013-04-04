@@ -27,10 +27,14 @@ public partial class _Default : Page
                 sort = "ORDER BY inspectionno";                
                 break;
         }
-        using (SqlDataReader reader = SQL.ExecuteQuery("SELECT a.*,(SELECT COUNT(*) FROM item x WHERE x.inventoryid=a.inventoryid) objects FROM inventory a WHERE a.datedeleted IS NULL " + sort)) {
-            inspectionrepeater.DataSource = reader;
-            inspectionrepeater.DataBind();
-        }
+
+        string sqlstring = "SELECT a.*,(SELECT COUNT(*) FROM item x WHERE x.inventoryid=a.inventoryid) objects FROM inventory a WHERE a.datedeleted IS NULL " + sort;
+        SqlDataSource1.SelectCommand = sqlstring;
+
+        //using (SqlDataReader reader = SQL.ExecuteQuery("SELECT a.*,(SELECT COUNT(*) FROM item x WHERE x.inventoryid=a.inventoryid) objects FROM inventory a WHERE a.datedeleted IS NULL " + sort)) {
+        //    inspectionrepeater.DataSource = reader;
+        //    inspectionrepeater.DataBind();
+        //}
     }
     protected void inspectionrepeater_ItemCommand(object source, RepeaterCommandEventArgs e) {
         if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem) {
@@ -56,5 +60,21 @@ public partial class _Default : Page
             default:
                 return "white";
         }
+    }
+    protected void companylist_ItemCommand(object sender, ListViewCommandEventArgs e) {
+        if (e.Item.ItemType == ListViewItemType.DataItem) {
+            int inventoryid = 0;
+            if (int.TryParse(e.CommandArgument.ToString(), out inventoryid)) {
+                switch (e.CommandName) {
+                    case "Open":
+                        Response.Redirect("inspection.aspx?id=" + inventoryid.ToString(), true);
+                        break;
+                }
+            }
+        }
+    }
+    protected void companylist_DataBound(object sender, EventArgs e) {
+        DataPager pager = (DataPager)companylist.FindControl("DataPager1");
+        pager.Visible = pager.TotalRowCount > pager.MaximumRows;
     }
 }
