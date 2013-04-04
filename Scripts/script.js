@@ -10,3 +10,23 @@
         }
     });
 }
+
+function expandElement(handle, element) {
+    $(handle).toggle(function () {
+        $(element).animate({
+            opacity: 0.25,
+            height: 'toggle'
+        }, 500, function () {
+            // Animation complete.
+            $(handle).text("Visa");
+        });
+    }, function () {
+        $(element).animate({
+            opacity: 1.0,
+            height: 'toggle'
+        }, 500, function () {
+            // Animation complete.
+            $(handle).text("Dölj");
+        });
+    });
+}

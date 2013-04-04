@@ -20,37 +20,9 @@
     </style>
         <script type="text/javascript">
             var speed = 1;
-            $(document).ready(function () {
-                $(".inspection_row_1").click(function () {
-                    var hide = ($(this).closest('li').find('.inspection_row_2').css('display') != 'none');
-                    $(".inspection_row_2").hide(200);
-                    if (!hide) {
-                        $(this).closest('li').find('.inspection_row_2').show(200);
-                    } else {
-
-                    }
-
-                });
-                $("#collapse").toggle(function () {
-                    $(".collapsable").animate({
-                        opacity: 0.25,
-                        height: 'toggle'
-                    }, 500, function () {
-                        // Animation complete.
-                        $("#collapse").text("Visa");
-                    });
-                }, function () {
-                    $(".collapsable").animate({
-                        opacity: 1.0,
-                        height: 'toggle'
-                    }, 500, function () {
-                        // Animation complete.
-                        $("#collapse").text("Dölj");
-                    });
-
-
-
-                });
+            $(document).ready(function () {                
+                expandList($(".inspection_row_1"), $('.inspection_row_2'));
+                expandElement($("#collapse"), $(".collapsable"));
             });
     </script>
 </asp:Content>
