@@ -273,7 +273,7 @@ a.button {
 
 #inspection_sort {
     float: left;
-    width: 240px;
+    width: 210px;
     margin-right: 20px;
 }
 
@@ -283,7 +283,7 @@ a.button {
 
 #inspection_help {
     float: left;
-    width: 180px;
+    width: 210px;
 }
 
 .inspection_item {
@@ -531,8 +531,8 @@ a.button {
 
 .inspect_object .col1 {
     float: left;
-    width: 660px;
-    margin-right: 40px;
+    width: 680px;
+    margin-right: 20px;
 }
 
 .inspect_object .col2 {
@@ -540,19 +540,19 @@ a.button {
     width: 260px;
 }
 
-.inspect_object .room_col {
+.inspect_object .left_col {
     float: left;
-    width: 310px;
-    margin-right: 40px;
+    width: 330px;
+    margin-right: 20px;
 }
 
-.inspect_object .object_col {
+.inspect_object .right_col {
     float: left;
-    width: 310px;
+    width: 260px;
 }
 
 .inspect_object .full_col {
-    width: 660px;
+    width: 680px;
     float: left;
 }
 
