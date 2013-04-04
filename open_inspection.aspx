@@ -2,17 +2,8 @@
 
 <asp:Content runat="server" ID="Content1" ContentPlaceHolderID="HeadContent">
     <script type="text/javascript">
-        var speed = 1;
-        $(document).ready(function () {
-            $(".inspection_row_1").click(function () {
-                var hide = ($(this).closest('li').find('.inspection_row_2').css('display') != 'none');
-                $(".inspection_row_2").hide(200);
-                if (!hide) {
-                    $(this).closest('li').find('.inspection_row_2').show(200);
-                } else {
-
-                }
-            });
+        $(document).ready(function () {           
+            expandList($(".inspection_row_1"), $('.inspection_row_2'));
         });
     </script>
 </asp:Content>
