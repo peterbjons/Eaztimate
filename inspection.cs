@@ -38,15 +38,15 @@ public partial class inspect_object : System.Web.UI.Page
             //    objectgrid.DataBind();
             //}            
             using (SqlDataReader reader = SQL.ExecuteQuery("SELECT a.roomid,a.title FROM room a WHERE a.inventoryid=@1", inspectionid)) {
-                rooms.DataSource = reader;
-                rooms.DataBind();
+                //rooms.DataSource = reader;
+                //rooms.DataBind();
             }
-            rooms.Items.Insert(0, new ListItem("All Rooms", "0"));
+            //rooms.Items.Insert(0, new ListItem("All Rooms", "0"));
         }
     }
     protected void rooms_SelectedIndexChanged(object sender, EventArgs e) {
         int roomid = 0;
-        int.TryParse(rooms.SelectedItem.Value, out roomid);
+        //int.TryParse(rooms.SelectedItem.Value, out roomid);
         int inspectionid = 0;
         if (!int.TryParse((Request.QueryString["id"] ?? ""), out inspectionid)) {
             Response.Redirect("open_inspection.aspx", true);
@@ -71,9 +71,9 @@ public partial class inspect_object : System.Web.UI.Page
 
     protected void Room_Click(object sender, EventArgs e) {
         int roomid = 0;
-        int.TryParse(rooms.SelectedItem.Value, out roomid);
+        //int.TryParse(rooms.SelectedItem.Value, out roomid);
         if (roomid > 0) {
-            Response.Redirect("room_view.aspx?id=" + rooms.SelectedItem.Value, true);
+            //Response.Redirect("room_view.aspx?id=" + rooms.SelectedItem.Value, true);
         }
     }
     protected void objectgrid_RowDataBound(object sender, GridViewRowEventArgs e) {
