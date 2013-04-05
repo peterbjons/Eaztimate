@@ -121,9 +121,9 @@
     </div>
     <div id="inspection_sort">
         <h4>Sort</h4>
-        <a href="?so=0&id=<%=inspectionid %>"><div class="sort_item <%=(sortorder == 0 ? "sort_up" : "sort_down") %>">Date</div></a>
-        <a href="?so=1&id=<%=inspectionid %>"><div class="sort_item <%=(sortorder == 1 ? "sort_up" : "sort_down") %>">Status</div></a>
-        <a href="?so=2&id=<%=inspectionid %>"><div class="sort_item <%=(sortorder == 2 ? "sort_up" : "sort_down") %>">Inspection number</div></a>
+        <a href="?so=0&id=<%=inspectionid %>"><div class="sort_item"><div class="<%=(sortorder == 0 ? "sort_up" : "sort_down") %>"></div>Date</div></a>
+        <a href="?so=1&id=<%=inspectionid %>"><div class="sort_item"><div class="<%=(sortorder == 1 ? "sort_up" : "sort_down") %>"></div>Status</div></a>
+        <a href="?so=2&id=<%=inspectionid %>"><div class="sort_item"><div class="<%=(sortorder == 2 ? "sort_up" : "sort_down") %>"></div>Inspection number</div></a>
     </div>
     <div id="inspection_help">
         <h4>Urval</h4>
