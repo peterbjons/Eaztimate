@@ -97,6 +97,7 @@ public partial class _Default : Page
 
     protected void companylist_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e) {
         //this.datapa.DataPager1.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
+        ScriptManager.RegisterStartupScript(this, this.GetType(), "showhide", "expandList($('.inspection_row_1'), $('.inspection_row_2'));", true);
         bindListView();
     }
 }
