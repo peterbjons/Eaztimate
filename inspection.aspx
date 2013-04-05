@@ -104,7 +104,7 @@
                                         <div class="inspection_row_2" style="display: none">
                                             <div class="inspection_col3">
                                                 <div class="inspection_item_objects">
-                                                    <h3><%--<%#DataBinder.Eval(Container.DataItem, "objects")%>--%></h3>
+                                                    <h3><%--<%#DataBinder.Eval(Container.DataItem, "objects")%>--%>32</h3>
                                                     <h4>objects</h4>
                                                 </div>
                                             </div>

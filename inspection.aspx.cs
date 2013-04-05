@@ -88,7 +88,7 @@ public partial class inspect_object : System.Web.UI.Page
             if (int.TryParse(e.CommandArgument.ToString(), out inventoryid)) {
                 switch (e.CommandName) {
                     case "Open":
-                        Response.Redirect("inspection.aspx?id=" + inventoryid.ToString(), true);
+                        Response.Redirect("object_view.aspx?id=" + inventoryid.ToString(), true);
                         break;
                 }
             }
