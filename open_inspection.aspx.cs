@@ -21,10 +21,19 @@ public partial class _Default : Page
                 sort = "ORDER BY datecreated DESC";
                 break;
             case 1:
-                sort = "ORDER BY status DESC";
+                sort = "ORDER BY datecreated ASC";
                 break;
             case 2:
-                sort = "ORDER BY inspectionno";                
+                sort = "ORDER BY status DESC";
+                break;
+            case 3:
+                sort = "ORDER BY status ASC";
+                break;
+            case 4:
+                sort = "ORDER BY inspectionno ASC";                
+                break;
+            case 5:
+                sort = "ORDER BY inspectionno DESC";
                 break;
         }
 

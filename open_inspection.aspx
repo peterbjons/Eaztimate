@@ -70,7 +70,10 @@
         ConnectionString="<%$ ConnectionStrings:SQLConnectionString %>"></asp:SqlDataSource>  
     <div id="inspection_sort">
         <h2>Sort</h2>
-        <a href="?so=0">
+        <a href="?so=<%= sortorder == 0 ? 1 : 0 %>"><div class="sort_item white"><div class="<%=(sortorder == 0 ? "sort_up" : sortorder == 1 ? "sort_down" : "sort_none") %>"></div>Date</div></a>
+        <a href="?so=<%= sortorder == 2 ? 3 : 2 %>"><div class="sort_item white"><div class="<%=(sortorder == 2 ? "sort_up" : sortorder == 3 ? "sort_down" : "sort_none") %>"></div>Status</div></a>
+        <a href="?so=<%= sortorder == 4 ? 5 : 4 %>"><div class="sort_item white"><div class="<%=(sortorder == 4 ? "sort_up" : sortorder == 5 ? "sort_down" : "sort_none") %>"></div>Inspection number</div></a>
+        <%--<a href="?so=0">
             <div class="inspection_item <%=(sortorder == 0 ? "blue" : "white") %>">Date</div>
         </a>
         <a href="?so=1">
@@ -78,7 +81,7 @@
         </a>
         <a href="?so=2">
             <div class="inspection_item <%=(sortorder == 2 ? "blue" : "white") %>">Inspection number</div>
-        </a>
+        </a>--%>
     </div>
     <div id="inspection_help">
         <h2>Description</h2>
