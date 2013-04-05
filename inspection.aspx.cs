@@ -19,7 +19,34 @@ public partial class inspect_object : System.Web.UI.Page
         }
         string othertype = GetGlobalResourceObject("Strings", "other").ToString();
 
-        //SqlDataSource1.SelectCommand = "SELECT a.itemid,(CASE WHEN b.title LIKE '" + othertype + "' THEN (CASE WHEN a.alttype IS NULL THEN LEFT(a.title, 50) ELSE a.alttype END) ELSE b.title END)  itemtitle, c.title grouptitle,d.title categorytitle FROM item a LEFT JOIN type b ON a.typeid=b.typeid LEFT JOIN grupp c ON b.groupid=c.groupid LEFT JOIN category d ON c.categoryid=d.categoryid WHERE a.inventoryid=" + inspectionid.ToString();
+        int.TryParse(Request.QueryString["so"] ?? "0", out sortorder);
+        string sort = string.Empty;
+        switch (sortorder) {
+            case 0:
+                sort = " ORDER BY categorytitle DESC";
+                break;
+            case 1:
+                sort = " ORDER BY categorytitle ASC";
+                break;
+            case 2:
+                sort = " ORDER BY grouptitle DESC";
+                break;
+            case 3:
+                sort = " ORDER BY grouptitle ASC";
+                break;
+            case 4:
+                sort = " ORDER BY itemtitle ASC";
+                break;
+            case 5:
+                sort = " ORDER BY itemtitle DESC";
+                break;
+        }
+
+        SqlDataSource1.SelectCommand = "SELECT a.itemid,a.dateupdated,(CASE WHEN b.title LIKE '" + othertype + "' THEN (CASE WHEN a.alttype IS NULL THEN LEFT(a.title, 50) ELSE a.alttype END) ELSE b.title END)  itemtitle, c.title grouptitle,d.title categorytitle FROM item a LEFT JOIN type b ON a.typeid=b.typeid LEFT JOIN grupp c ON b.groupid=c.groupid LEFT JOIN category d ON c.categoryid=d.categoryid WHERE a.inventoryid=" + inspectionid.ToString() + sort;
+
+        //string sqlstring = "SELECT a.*,(SELECT COUNT(*) FROM item x WHERE x.inventoryid=a.inventoryid) objects FROM inventory a WHERE a.datedeleted IS NULL " + sort;
+        //SqlDataSource1.SelectCommand = sqlstring;
+
         if (!Page.IsPostBack) {
             ((HtmlGenericControl)Master.FindControl("slider")).Visible = false;
             
@@ -32,35 +59,13 @@ public partial class inspect_object : System.Web.UI.Page
                     zipcode.Text = reader.GetString(reader.GetOrdinal("zipcode"));
                     city.Text = reader.GetString(reader.GetOrdinal("city"));
                 }
-            }            
-            //using (SqlDataReader reader = SQL.ExecuteQuery("SELECT a.itemid,b.title itemtitle, c.title grouptitle,d.title categorytitle FROM item a LEFT JOIN type b ON a.typeid=b.typeid LEFT JOIN grupp c ON b.groupid=c.groupid LEFT JOIN category d ON c.categoryid=d.categoryid WHERE a.inventoryid=@1", inspectionid)) {
-            //    objectgrid.DataSource = reader;
-            //    objectgrid.DataBind();
-            //}            
+            }
             using (SqlDataReader reader = SQL.ExecuteQuery("SELECT a.roomid,a.title FROM room a WHERE a.inventoryid=@1", inspectionid)) {
                 //rooms.DataSource = reader;
                 //rooms.DataBind();
             }
-            //rooms.Items.Insert(0, new ListItem("All Rooms", "0"));
         }
-    }
-    protected void rooms_SelectedIndexChanged(object sender, EventArgs e) {
-        int roomid = 0;
-        //int.TryParse(rooms.SelectedItem.Value, out roomid);
-        int inspectionid = 0;
-        if (!int.TryParse((Request.QueryString["id"] ?? ""), out inspectionid)) {
-            Response.Redirect("open_inspection.aspx", true);
-        }
-
-        string othertype = GetGlobalResourceObject("Strings", "other").ToString();
-
-        //SqlDataSource1.SelectCommand = "SELECT a.itemid,(CASE WHEN b.title LIKE '" + othertype + "' THEN (CASE WHEN a.alttype IS NULL THEN LEFT(a.title, 50) ELSE a.alttype END) ELSE b.title END)  itemtitle, c.title grouptitle,d.title categorytitle FROM item a LEFT JOIN type b ON a.typeid=b.typeid LEFT JOIN grupp c ON b.groupid=c.groupid LEFT JOIN category d ON c.categoryid=d.categoryid WHERE a.inventoryid=" + inspectionid.ToString() + (roomid > 0 ? " AND a.roomid=" + roomid.ToString() : "");
-        //objectgrid.DataBind();
-        //using (SqlDataReader reader = SQL.ExecuteQuery("SELECT a.itemid,b.title type FROM item a LEFT JOIN type b ON a.typeid=b.typeid WHERE a.inventoryid=@1"+ (roomid > 0 ? " AND a.roomid=@2" : ""), inspectionid, roomid)) {
-        //    objects.DataSource = reader;
-        //    objects.DataBind();
-        //}
-    }
+    }    
     protected void Object_Click(object sender, EventArgs e) {
         //int itemid = 0;
         //int.TryParse(objects.SelectedItem.Value, out itemid);
@@ -75,67 +80,23 @@ public partial class inspect_object : System.Web.UI.Page
         if (roomid > 0) {
             //Response.Redirect("room_view.aspx?id=" + rooms.SelectedItem.Value, true);
         }
-    }
-    protected void objectgrid_RowDataBound(object sender, GridViewRowEventArgs e) {
-        //e.Row.Cells[0].Visible = false; //hide the ID
+    }    
 
-        int itemid = 0;
-        int.TryParse(e.Row.Cells[0].Text, out itemid);
-        e.Row.Cells[0].Visible = false;
-
-        if (e.Row.RowType == DataControlRowType.DataRow) {
-            if (itemid > 0) {
-                e.Row.Attributes["onclick"] = "document.location = 'object_view.aspx?id=" + itemid.ToString() +"';"; /*"alert('hej');";*/ //this.Page.ClientScript.GetPostBackClientHyperlink(this.objectgrid, "Select$" + e.Row.RowIndex);
-            }
-        }
-    }
-}
-/* 
-using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.HtmlControls;
-using System.Web.UI.WebControls;
-using Eaztimate;
-
-public partial class _Default : Page
-{
-    public int sortorder = 0;
-    protected void Page_Load(object sender, EventArgs e)
-    {
-        ((HtmlGenericControl)Master.FindControl("slider")).Visible = false;
-        int.TryParse(Request.QueryString["so"] ?? "0", out sortorder);
-        string sort = string.Empty;
-        switch (sortorder) {
-            case 0:
-                sort = "ORDER BY datecreated DESC";
-                break;
-            case 1:
-                sort = "ORDER BY status DESC";
-                break;
-            case 2:
-                sort = "ORDER BY inspectionno";                
-                break;
-        }
-        using (SqlDataReader reader = SQL.ExecuteQuery("SELECT a.*,(SELECT COUNT(*) FROM item x WHERE x.inventoryid=a.inventoryid) objects FROM inventory a WHERE a.datedeleted IS NULL " + sort)) {
-            inspectionrepeater.DataSource = reader;
-            inspectionrepeater.DataBind();
-        }
-    }
-    protected void inspectionrepeater_ItemCommand(object source, RepeaterCommandEventArgs e) {
-        if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem) {
+    protected void objectlist_ItemCommand(object sender, ListViewCommandEventArgs e) {
+        if (e.Item.ItemType == ListViewItemType.DataItem) {
             int inventoryid = 0;
             if (int.TryParse(e.CommandArgument.ToString(), out inventoryid)) {
                 switch (e.CommandName) {
                     case "Open":
-                        Response.Redirect("inspect_object.aspx?id=" + inventoryid.ToString(), true);
+                        Response.Redirect("inspection.aspx?id=" + inventoryid.ToString(), true);
                         break;
                 }
             }
         }
+    }
+    protected void objectlist_DataBound(object sender, EventArgs e) {
+        DataPager pager = (DataPager)objectlist.FindControl("DataPager1");
+        pager.Visible = pager.TotalRowCount > pager.MaximumRows;
     }
 
     protected String setColor(int status) {
@@ -150,4 +111,4 @@ public partial class _Default : Page
                 return "white";
         }
     }
-}*/
+}

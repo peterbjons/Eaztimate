@@ -70,6 +70,7 @@ public partial class _Default : Page
                 return "white";
         }
     }
+
     protected void companylist_ItemCommand(object sender, ListViewCommandEventArgs e) {
         if (e.Item.ItemType == ListViewItemType.DataItem) {
             int inventoryid = 0;
