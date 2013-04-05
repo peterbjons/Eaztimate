@@ -328,6 +328,22 @@ a.button {
     float: left;
     margin-right: 10px;
 }
+.sort_row2 {
+    padding-left: 10px;
+}
+.sort_row2 ul{
+    list-style-type: none;
+    margin-top: 5px;
+    padding-bottom: 5px;
+
+}
+.sort_row2 ul li {
+    margin: 0px;
+    padding: 0px 0px 0px 0px;
+}
+.sort_row2 input[type=checkbox]{
+    margin-right: 15px;
+}
 
 .white {
     background-color: #fff;
@@ -470,9 +486,10 @@ a.button {
 #inspection_sort .inspection_item, #inspection_help .inspection_item, .sort_item, .selection_item {
     font-weight: 300 !important;
     font-size: 10pt !important;
-    height: 30px;
+    
     line-height: 30px;
 }
+
 /*
 
 
