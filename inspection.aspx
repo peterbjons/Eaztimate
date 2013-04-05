@@ -91,7 +91,7 @@
 									<asp:DataPager ID="DataPager1" runat="server" PagedControlID="objectlist" PageSize="5" class="NavigationBar">
 										<Fields>
 											<asp:NextPreviousPagerField ButtonType="Image" FirstPageImageUrl="~/Images/pager_first.png" ShowFirstPageButton="true" PreviousPageImageUrl="~/Images/pager_prev.png" ShowLastPageButton="false" ShowNextPageButton="false" />
-                                            <asp:NumericPagerField ButtonCount="10"  NumericButtonCssClass="pagerclass"/>
+											<asp:NumericPagerField ButtonCount="10" NumericButtonCssClass="pagerclass"/>
 											<asp:NextPreviousPagerField ButtonType="Image" ShowLastPageButton="true" ShowNextPageButton="true"
 												ShowPreviousPageButton="false" LastPageImageUrl="~/Images/pager_last.png" NextPageImageUrl="~/Images/pager_next.png" />
 										</Fields>

@@ -116,6 +116,7 @@ public partial class inspect_object : System.Web.UI.Page
     }
     protected void objectlist_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e) {
         //this.datapa.DataPager1.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
+        ScriptManager.RegisterStartupScript(this, this.GetType(), "showhide", "expandList($('.inspection_row_1'), $('.inspection_row_2'));", true);
         bindListView();
     }
 }
