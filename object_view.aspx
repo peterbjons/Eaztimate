@@ -10,7 +10,7 @@
 		$(function () {
 
 			$("#slider_price").slider({
-				value: <%=slider_price %>, min: 0, max: 100, disabled: false, range: "min"
+				value: <%=slider_price %>, min: 0, max: 100, disabled: true, range: "min"
 			});
 			$("#slider_usage").slider({
 				value: <%=slider_usage %>, min: 0, max: 100, disabled: true, range: "min"
@@ -30,7 +30,7 @@
 		<h1><asp:Literal ID="typename" runat="server" /></h1>
 
 		<div class="col1">
-			<div class="room_col">
+			<div class="left_col">
 
 				<h4>Name</h4>
 				<p>
@@ -38,7 +38,7 @@
 				</p>
 			</div>
 
-			<div class="object_col">
+			<div class="middle_col">
 				<h4>Amount</h4>
 				<p>
 					1

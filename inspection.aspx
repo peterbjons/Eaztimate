@@ -21,7 +21,8 @@
         var speed = 1;
         $(document).ready(function () {
             expandList($(".inspection_row_1"), $('.inspection_row_2'));
-            expandSort($(".sort_row1"), $('.sort_row2'));
+            expandSort($(".row_rum1"), $('.row_rum2'));
+            expandSort($(".row_kategori1"), $('.row_kategori2'));
             expandElement($("#collapse"), $(".collapsable"));
         });
     </script>
@@ -177,11 +178,11 @@
             <div id="inspection_help">
                 <h4>Urval</h4>
                 <div class="selection_item white">
-                    <div class="sort_row1">
+                    <div class="sort_row1 row_rum1">
                         <div class="sort_closed"></div>
                         Rum
                     </div>
-                    <div class="sort_row2" style="display:none">
+                    <div class="sort_row2 row_rum2" style="display:none">
                         <ul>
                             <li>
                                 <input type="checkbox" />Satan</li>
@@ -194,11 +195,11 @@
 
                     </div>
                 </div>
-                <div class="selection_item white"><div class="sort_row1">
+                <div class="selection_item white"><div class="sort_row1 row_kategori1">
                     <div class="sort_closed"></div>
                     Kategorier
                     </div>
-                    <div class="sort_row2" style="display:none">
+                    <div class="sort_row2 row_kategori2" style="display:none">
                         <ul>
                             <li>
                                 <input type="checkbox" />Satan</li>
