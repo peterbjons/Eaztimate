@@ -17,7 +17,7 @@ public partial class inspect_object : System.Web.UI.Page
     {
         if (!int.TryParse((Request.QueryString["id"] ?? ""), out inspectionid)) {
             Response.Redirect("open_inspection.aspx", true);
-        }        
+        }
 
         int.TryParse(Request.QueryString["so"] ?? "0", out sortorder);        
         switch (sortorder) {
@@ -78,7 +78,7 @@ public partial class inspect_object : System.Web.UI.Page
         if (roomid > 0) {
             //Response.Redirect("room_view.aspx?id=" + rooms.SelectedItem.Value, true);
         }
-    }    
+    }
 
     protected void objectlist_ItemCommand(object sender, ListViewCommandEventArgs e) {
         if (e.Item.ItemType == ListViewItemType.DataItem) {
@@ -115,7 +115,6 @@ public partial class inspect_object : System.Web.UI.Page
         SqlDataSource1.SelectCommand = "SELECT a.itemid,a.dateupdated,(CASE WHEN b.title LIKE '" + othertype + "' THEN (CASE WHEN a.alttype IS NULL THEN LEFT(a.title, 50) ELSE a.alttype END) ELSE b.title END)  itemtitle, c.title grouptitle,d.title categorytitle, (SELECT TOP 1 x.image FROM itemimage x WHERE x.itemid=a.itemid ORDER BY x.itemimageid) itemimage, (SELECT x.inspectionno FROM inventory x WHERE a.inventoryid=x.inventoryid) inspectionno FROM item a LEFT JOIN type b ON a.typeid=b.typeid LEFT JOIN grupp c ON b.groupid=c.groupid LEFT JOIN category d ON c.categoryid=d.categoryid WHERE a.inventoryid=" + inspectionid.ToString() + sort;
     }
     protected void objectlist_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e) {
-        //this.datapa.DataPager1.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
         ScriptManager.RegisterStartupScript(this, this.GetType(), "showhide", "expandList($('.inspection_row_1'), $('.inspection_row_2'));", true);
         bindListView();
     }

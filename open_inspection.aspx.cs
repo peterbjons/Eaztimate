@@ -10,33 +10,37 @@ using Eaztimate;
 
 public partial class _Default : Page
 {
-    public int sortorder = 0;
+    public int sortorder;
     string sort = string.Empty;
 
     protected void Page_Load(object sender, EventArgs e)
     {
         ((HtmlGenericControl)Master.FindControl("slider")).Visible = false;
-        int.TryParse(Request.QueryString["so"] ?? "0", out sortorder);        
-        switch (sortorder) {
-            case 0:
-                sort = "ORDER BY datecreated DESC";
-                break;
-            case 1:
-                sort = "ORDER BY datecreated ASC";
-                break;
-            case 2:
-                sort = "ORDER BY status DESC";
-                break;
-            case 3:
-                sort = "ORDER BY status ASC";
-                break;
-            case 4:
-                sort = "ORDER BY inspectionno ASC";                
-                break;
-            case 5:
-                sort = "ORDER BY inspectionno DESC";
-                break;
-        }
+        //int.TryParse(Request.QueryString["so"] ?? "0", out sortorder);        
+        //switch (sortorder) {
+        //    case 0:
+        //        sort = "ORDER BY dateupdated ASC";
+        //        break;
+        //    case 1:
+        //        sort = "ORDER BY dateupdated DESC";
+        //        break;
+        //    case 2:
+        //        sort = "ORDER BY status DESC";
+        //        break;
+        //    case 3:
+        //        sort = "ORDER BY status ASC";
+        //        break;
+        //    case 4:
+        //        sort = "ORDER BY inspectionno ASC";                
+        //        break;
+        //    case 5:
+        //        sort = "ORDER BY inspectionno DESC";
+        //        break;
+        //    default:
+        //        sort = "ORDER BY dateupdated ASC";
+        //        sortorder = 0;
+        //        break;
+        //}
 
         if (!Page.IsPostBack) {
             bindListView();
@@ -74,6 +78,27 @@ public partial class _Default : Page
     }
 
     protected void bindListView() {
+        int.TryParse(sortorderhidden.Value, out sortorder);
+        switch (sortorderhidden.Value) {
+            case "0":
+                sort = "ORDER BY dateupdated ASC";                
+                break;
+            case "1":
+                sort = "ORDER BY dateupdated DESC";                
+                break;
+            case "2":
+                sort = "ORDER BY status DESC";                
+                break;
+            case "3":
+                sort = "ORDER BY status ASC";               
+                break;
+            case "4":
+                sort = "ORDER BY inspectionno ASC";                
+                break;
+            case "5":
+                sort = "ORDER BY inspectionno DESC";                
+                break;
+        }
         string sqlstring = "SELECT a.*,(SELECT COUNT(*) FROM item x WHERE x.inventoryid=a.inventoryid) objects FROM inventory a WHERE a.datedeleted IS NULL " + sort;
         SqlDataSource1.SelectCommand = sqlstring;
     }
@@ -96,8 +121,40 @@ public partial class _Default : Page
     }
 
     protected void companylist_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e) {
-        //this.datapa.DataPager1.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
         ScriptManager.RegisterStartupScript(this, this.GetType(), "showhide", "expandList($('.inspection_row_1'), $('.inspection_row_2'));", true);
+        bindListView();
+
+    }
+    protected void Sort_Command(object sender, CommandEventArgs e) {
+        int.TryParse(e.CommandName, out sortorder);
+        sortorderhidden.Value = e.CommandName;
+        ((LinkButton)sender).CommandName = (sortorder % 2 == 0 ? (sortorder + 1).ToString() : (sortorder - 1).ToString());  //switch command
+        //switch (e.CommandName) {
+        //    case "0":
+        //        sort = "ORDER BY dateupdated ASC";
+        //        ((LinkButton)sender).CommandName = "1";
+        //        break;
+        //    case "1":
+        //        sort = "ORDER BY dateupdated DESC";
+        //        ((LinkButton)sender).CommandName = "0";
+        //        break;
+        //    case "2":
+        //        sort = "ORDER BY status DESC";
+        //        ((LinkButton)sender).CommandName = "3";
+        //        break;
+        //    case "3":
+        //        sort = "ORDER BY status ASC";
+        //        ((LinkButton)sender).CommandName = "2";
+        //        break;
+        //    case "4":
+        //        sort = "ORDER BY inspectionno ASC";
+        //        ((LinkButton)sender).CommandName = "5";
+        //        break;
+        //    case "5":
+        //        sort = "ORDER BY inspectionno DESC";
+        //        ((LinkButton)sender).CommandName = "4";
+        //        break;
+        //}
         bindListView();
     }
 }
