@@ -294,7 +294,7 @@ a.button {
 }
 
 .inspection_item {
-    padding: 0px 0px 0px 35px;
+    padding: 0px 0px 0px 40px;
     margin-bottom: 5px;
 }
 
@@ -303,22 +303,22 @@ a.button {
     margin-bottom: 5px;
 }
 
-    .sort_item div.sort_up, .selection_item div.sort_up {
+    .sort_up {
         background-color: #85c8e0;
         background-image: url('../images/sort_up.png');
     }
 
-    .sort_item div.sort_down, .selection_item div.sort_down {
+    .sort_down {
         background-color: #85c8e0;
         background-image: url('../images/sort_down.png');
     }
 
-    .sort_item div.sort_closed, .selection_item div.sort_closed {
+    .sort_closed {
         background-color: #85c8e0;
         background-image: url('../images/sort_closed.png');
     }
 
-    .sort_item div.sort_none, .selection_item div.sort_none {
+    .sort_none {
         background-color: #fff;
     }
 
