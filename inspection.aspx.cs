@@ -12,15 +12,14 @@ public partial class inspect_object : System.Web.UI.Page
 {
     public int inspectionid = 0;
     public int sortorder = 0;
+    public string sort = string.Empty;
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!int.TryParse((Request.QueryString["id"] ?? ""), out inspectionid)) {
             Response.Redirect("open_inspection.aspx", true);
-        }
-        string othertype = GetGlobalResourceObject("Strings", "other").ToString();
+        }        
 
-        int.TryParse(Request.QueryString["so"] ?? "0", out sortorder);
-        string sort = string.Empty;
+        int.TryParse(Request.QueryString["so"] ?? "0", out sortorder);        
         switch (sortorder) {
             case 0:
                 sort = " ORDER BY categorytitle DESC";
@@ -40,14 +39,13 @@ public partial class inspect_object : System.Web.UI.Page
             case 5:
                 sort = " ORDER BY itemtitle DESC";
                 break;
-        }
-
-        SqlDataSource1.SelectCommand = "SELECT a.itemid,a.dateupdated,(CASE WHEN b.title LIKE '" + othertype + "' THEN (CASE WHEN a.alttype IS NULL THEN LEFT(a.title, 50) ELSE a.alttype END) ELSE b.title END)  itemtitle, c.title grouptitle,d.title categorytitle FROM item a LEFT JOIN type b ON a.typeid=b.typeid LEFT JOIN grupp c ON b.groupid=c.groupid LEFT JOIN category d ON c.categoryid=d.categoryid WHERE a.inventoryid=" + inspectionid.ToString() + sort;
+        }        
 
         //string sqlstring = "SELECT a.*,(SELECT COUNT(*) FROM item x WHERE x.inventoryid=a.inventoryid) objects FROM inventory a WHERE a.datedeleted IS NULL " + sort;
         //SqlDataSource1.SelectCommand = sqlstring;
 
         if (!Page.IsPostBack) {
+            bindListView();
             ((HtmlGenericControl)Master.FindControl("slider")).Visible = false;
             
             using (SqlDataReader reader = SQL.ExecuteQuery("SELECT a.* FROM inventory a WHERE a.inventoryid=@1", inspectionid)) {
@@ -110,5 +108,14 @@ public partial class inspect_object : System.Web.UI.Page
             default:
                 return "white";
         }
+    }
+
+    protected void bindListView() {
+        string othertype = GetGlobalResourceObject("Strings", "other").ToString();
+        SqlDataSource1.SelectCommand = "SELECT a.itemid,a.dateupdated,(CASE WHEN b.title LIKE '" + othertype + "' THEN (CASE WHEN a.alttype IS NULL THEN LEFT(a.title, 50) ELSE a.alttype END) ELSE b.title END)  itemtitle, c.title grouptitle,d.title categorytitle FROM item a LEFT JOIN type b ON a.typeid=b.typeid LEFT JOIN grupp c ON b.groupid=c.groupid LEFT JOIN category d ON c.categoryid=d.categoryid WHERE a.inventoryid=" + inspectionid.ToString() + sort;
+    }
+    protected void objectlist_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e) {
+        //this.datapa.DataPager1.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
+        bindListView();
     }
 }

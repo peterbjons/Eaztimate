@@ -78,7 +78,10 @@
                 <div style="width: 100%; margin-bottom: 0px;">
                     <div id="inspection_list">
                         <h4>Objects</h4>
-                        <asp:ListView ID="objectlist" runat="server" DataSourceID="SqlDataSource1" OnItemCommand="objectlist_ItemCommand" OnDataBound="objectlist_DataBound">
+                        <asp:UpdatePanel ID="listupdatepanel" runat="server" UpdateMode="Conditional">
+                            <ContentTemplate>
+                            
+                        <asp:ListView ID="objectlist" runat="server" DataSourceID="SqlDataSource1" OnItemCommand="objectlist_ItemCommand" OnDataBound="objectlist_DataBound" OnPagePropertiesChanging="objectlist_PagePropertiesChanging">
                             <LayoutTemplate>
                                 <ul>
                                     <asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder>
@@ -133,6 +136,8 @@
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server"
                             ConnectionString="<%$ ConnectionStrings:SQLConnectionString %>"></asp:SqlDataSource>
 
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
                     </div>
                     <div id="inspection_sort">
                         <h4>Sort</h4>
