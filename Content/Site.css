@@ -19,12 +19,14 @@ a {
 ol {
     margin: 0px 0px 20px 20px;
 }
-ol li {
-    padding-left: 5px;
-}
-    a:hover {
-        text-decoration: none;
+
+    ol li {
+        padding-left: 5px;
     }
+
+a:hover {
+    text-decoration: none;
+}
 
 .wrapper {
     margin: 0 auto;
@@ -39,7 +41,6 @@ ol li {
     background-color: #fff;
     height: 50px;
     padding: 10px 10px 0px 10px;
-
 }
 
 #logo {
@@ -65,24 +66,25 @@ ol li {
         #nav ul li {
             float: left;
             line-height: 32px;
-            position:relative;
+            position: relative;
         }
 
-        #nav ul li ul {
-            display: none;
-            list-style-image: none!important;
-            background-color: #fff;
-        }
-        #nav ul li:hover ul {
-            display: block;
-            position: absolute;
-            left: 0px;
-            top: 30px;
-            cursor:pointer;
-            width: 140px;
-            padding: 0px 10px 10px 10px;
-            z-index: 666;
-        }
+            #nav ul li ul {
+                display: none;
+                list-style-image: none!important;
+                background-color: #fff;
+            }
+
+            #nav ul li:hover ul {
+                display: block;
+                position: absolute;
+                left: 0px;
+                top: 30px;
+                cursor: pointer;
+                width: 140px;
+                padding: 0px 10px 10px 10px;
+                z-index: 666;
+            }
 
             #nav ul li a {
                 border-bottom: 2px solid #fff;
@@ -172,41 +174,46 @@ ol li {
             margin-bottom: 10px;
         }
 
-        ul.products li.block {
-        float: left;
-        width: 280px;
-        height: 180px;
-        padding: 20px 20px;
-        list-style-type:none;
+ul.products li.block {
+    float: left;
+    width: 280px;
+    height: 180px;
+    padding: 20px 20px;
+    list-style-type: none;
+}
+
+ul.products li ul {
+    height: 100px;
+}
+
+ul.products h2 {
+    margin-bottom: 30px;
+}
+
+ul.products img {
+    margin-bottom: 30px;
+}
+
+ul ul {
+    list-style-image: url('../Images/sq.png');
+}
+
+li.block ul {
+    margin-bottom: 20px;
+}
+
+    li.block ul li {
+        margin-bottom: 5px;
+        margin-left: 20px;
+        padding-left: 5px;
     }
 
-        ul.products li ul {
-            height: 100px;
-        }
-        ul.products h2{
-            margin-bottom: 30px;
-            
-        }
-        ul.products img {
-            margin-bottom: 30px;
-        }
-        ul ul {
-            list-style-image: url('../Images/sq.png');
-        }
-        li.block ul  {
-            margin-bottom: 20px;
-        }
-        li.block ul li {
-            margin-bottom: 5px;
-            margin-left: 20px;
-padding-left: 5px;
-        }
-        li.block p{
-            font-size: 8pt;
-            color: #6d6d6d;
-            margin-bottom: 20px;
+li.block p {
+    font-size: 8pt;
+    color: #6d6d6d;
+    margin-bottom: 20px;
+}
 
-        }
 a.button {
     background-color: #000;
     color: #fff;
@@ -290,47 +297,37 @@ a.button {
     padding: 0px 0px 0px 35px;
     margin-bottom: 5px;
 }
-.sort_item,.selection_item {
+
+.sort_item, .selection_item {
     padding: 0px 0px 0px 0px;
     margin-bottom: 5px;
 }
-    .sort_item div.sort_up, .selection_item div.sort_up {
 
-        width:30px;
-        height: 30px;
+    .sort_item div.sort_up, .selection_item div.sort_up {
         background-color: #85c8e0;
         background-image: url('../images/sort_up.png');
-        float:left;
-        margin-right: 10px;
     }
-        .sort_item div.sort_down, .selection_item div.sort_down {
 
-        width:30px;
-        height: 30px;
+    .sort_item div.sort_down, .selection_item div.sort_down {
         background-color: #85c8e0;
         background-image: url('../images/sort_down.png');
-        float:left;
-        margin-right: 10px;
     }
 
-                .sort_item div.sort_closed, .selection_item div.sort_closed {
-
-        width:30px;
-        height: 30px;
+    .sort_item div.sort_closed, .selection_item div.sort_closed {
         background-color: #85c8e0;
         background-image: url('../images/sort_closed.png');
-        float:left;
-        margin-right: 10px;
     }
-                .sort_item div.sort_none, .selection_item div.sort_none {
 
-        width:30px;
-        height: 30px;
+    .sort_item div.sort_none, .selection_item div.sort_none {
         background-color: #fff;
-        
-        float:left;
-        margin-right: 10px;
     }
+
+.sort_none, .sort_closed, .sort_down, .sort_up {
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-right: 10px;
+}
 
 .white {
     background-color: #fff;
@@ -451,7 +448,7 @@ a.button {
         float: left;
     }
 
-#inspection_sort .inspection_item, #inspection_help .inspection_item,.sort_item,.selection_item {
+#inspection_sort .inspection_item, #inspection_help .inspection_item, .sort_item, .selection_item {
     font-weight: 300 !important;
     font-size: 10pt !important;
     height: 30px;
@@ -1056,40 +1053,41 @@ table.companycreate tr.user_level4 td {
 }
 
 .timeline_container {
-    background-image:url('../Images/black_bar.png');
+    background-image: url('../Images/black_bar.png');
     background-repeat: repeat-y;
     padding-left: 35px;
     margin-bottom: 40px;
 }
 
-.timeline_container ul.jour {
-    list-style-image:url('../Images/black_bar.png');
-    
-}
-.timeline_container ul.bygg {
-    list-style-image:url('../Images/black_bar.png');
-    
-}
-.timeline_container ul.sak {
-    list-style-image:url('../Images/black_bar.png');
-   
-}
-.timeline_container ul li h3 {
-    font-size: 16pt;
-    font-weight: 300;
-}
-.timeline_container ul li {
-    margin-bottom: 50px;
-}
-.timeline_container ul li p {
-    padding-left: 30px;
-    color: #6d6d6d;
-    width: 450px;
-    text-align:justify;
-    font-size:8pt;
-}
+    .timeline_container ul.jour {
+        list-style-image: url('../Images/black_bar.png');
+    }
 
-.timeline_container img {
-    margin: 20px 0px;
-}
+    .timeline_container ul.bygg {
+        list-style-image: url('../Images/black_bar.png');
+    }
 
+    .timeline_container ul.sak {
+        list-style-image: url('../Images/black_bar.png');
+    }
+
+    .timeline_container ul li h3 {
+        font-size: 16pt;
+        font-weight: 300;
+    }
+
+    .timeline_container ul li {
+        margin-bottom: 50px;
+    }
+
+        .timeline_container ul li p {
+            padding-left: 30px;
+            color: #6d6d6d;
+            width: 450px;
+            text-align: justify;
+            font-size: 8pt;
+        }
+
+    .timeline_container img {
+        margin: 20px 0px;
+    }
