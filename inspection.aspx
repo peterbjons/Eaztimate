@@ -96,9 +96,9 @@
                                 <li>
                                     <div class="inspection_item blue">
                                         <div class="inspection_row_1">
-                                            <div class="inspection_row_col1"><%#DataBinder.Eval(Container.DataItem, "itemtitle")%></div>
-                                            <div class="inspection_row_col1"><%#DataBinder.Eval(Container.DataItem, "grouptitle")%></div>
-                                            <div class="inspection_row_col2"><%#DataBinder.Eval(Container.DataItem, "categorytitle")%></div>
+                                            <div class="inspection_row_col1_inspection_aspx"><%#DataBinder.Eval(Container.DataItem, "itemtitle")%></div>
+                                            
+                                            <div class="inspection_row_col2_inspection_aspx"><%#DataBinder.Eval(Container.DataItem, "grouptitle")%>/<%#DataBinder.Eval(Container.DataItem, "categorytitle")%></div>
                                             <div style="clear: both"></div>
                                         </div>
                                         <div class="inspection_row_2" style="display: none">

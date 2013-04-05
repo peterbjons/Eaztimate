@@ -410,6 +410,14 @@ a.button {
     height: 30px;
     line-height: 30px;
 }
+.inspection_row_col1_inspection_aspx {
+    float: left;
+    font-weight: 300 !important;
+    font-size: 10pt !important;
+    height: 30px;
+    line-height: 30px;
+}
+
 
 .inspection_row_col2 {
     float: left;
@@ -418,6 +426,15 @@ a.button {
     display: block;
     height: 30px;
     line-height: 30px;
+}
+.inspection_row_col2_inspection_aspx {
+    float: right;
+    font-size: 10pt;
+    font-weight: 300;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    margin-right:10px;
 }
 
 .inspection_col3 {
