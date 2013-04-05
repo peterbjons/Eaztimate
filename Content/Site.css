@@ -1117,12 +1117,18 @@ text-align: center;
 width: 300px;
 margin-top: 20px;
 margin-bottom: 40px;
+
     }
     .pager .pagerclass {
-        font-size: 9pt;
+        font-size: 10pt;
         text-decoration:none;
-        padding: 2px 2px ;
-        /*background-color: #1c80aa;
-        color: #fff;*/
+        padding: 0px 2px;
         color: #6d6d6d;
+      
+    }
+    
+    .pager .pagerclass_selected {
+        font-size: 12pt;
+        text-decoration:none;
+        padding: 0px 2px;
     }
