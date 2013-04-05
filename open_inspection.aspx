@@ -15,7 +15,7 @@
 
     <div id="inspection_list">
         <h2>Inspections</h2>
-        <asp:ListView ID="companylist" runat="server" DataSourceID="SqlDataSource1" OnItemCommand="companylist_ItemCommand" OnDataBound="companylist_DataBound">
+        <asp:ListView ID="companylist" runat="server" DataSourceID="SqlDataSource1" OnItemCommand="companylist_ItemCommand" OnDataBound="companylist_DataBound" OnPagePropertiesChanging="companylist_PagePropertiesChanging">
             <LayoutTemplate>
                 <ul>
                     <asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder>

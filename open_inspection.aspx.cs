@@ -11,11 +11,12 @@ using Eaztimate;
 public partial class _Default : Page
 {
     public int sortorder = 0;
+    string sort = string.Empty;
+
     protected void Page_Load(object sender, EventArgs e)
     {
         ((HtmlGenericControl)Master.FindControl("slider")).Visible = false;
-        int.TryParse(Request.QueryString["so"] ?? "0", out sortorder);
-        string sort = string.Empty;
+        int.TryParse(Request.QueryString["so"] ?? "0", out sortorder);        
         switch (sortorder) {
             case 0:
                 sort = "ORDER BY datecreated DESC";
@@ -37,8 +38,9 @@ public partial class _Default : Page
                 break;
         }
 
-        string sqlstring = "SELECT a.*,(SELECT COUNT(*) FROM item x WHERE x.inventoryid=a.inventoryid) objects FROM inventory a WHERE a.datedeleted IS NULL " + sort;
-        SqlDataSource1.SelectCommand = sqlstring;
+        if (!Page.IsPostBack) {
+            bindListView();
+        }
 
         //using (SqlDataReader reader = SQL.ExecuteQuery("SELECT a.*,(SELECT COUNT(*) FROM item x WHERE x.inventoryid=a.inventoryid) objects FROM inventory a WHERE a.datedeleted IS NULL " + sort)) {
         //    inspectionrepeater.DataSource = reader;
@@ -71,6 +73,11 @@ public partial class _Default : Page
         }
     }
 
+    protected void bindListView() {
+        string sqlstring = "SELECT a.*,(SELECT COUNT(*) FROM item x WHERE x.inventoryid=a.inventoryid) objects FROM inventory a WHERE a.datedeleted IS NULL " + sort;
+        SqlDataSource1.SelectCommand = sqlstring;
+    }
+
     protected void companylist_ItemCommand(object sender, ListViewCommandEventArgs e) {
         if (e.Item.ItemType == ListViewItemType.DataItem) {
             int inventoryid = 0;
@@ -86,5 +93,10 @@ public partial class _Default : Page
     protected void companylist_DataBound(object sender, EventArgs e) {
         DataPager pager = (DataPager)companylist.FindControl("DataPager1");
         pager.Visible = pager.TotalRowCount > pager.MaximumRows;
+    }
+
+    protected void companylist_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e) {
+        //this.datapa.DataPager1.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
+        bindListView();
     }
 }

@@ -112,7 +112,7 @@ public partial class inspect_object : System.Web.UI.Page
 
     protected void bindListView() {
         string othertype = GetGlobalResourceObject("Strings", "other").ToString();
-        SqlDataSource1.SelectCommand = "SELECT a.itemid,a.dateupdated,(CASE WHEN b.title LIKE '" + othertype + "' THEN (CASE WHEN a.alttype IS NULL THEN LEFT(a.title, 50) ELSE a.alttype END) ELSE b.title END)  itemtitle, c.title grouptitle,d.title categorytitle FROM item a LEFT JOIN type b ON a.typeid=b.typeid LEFT JOIN grupp c ON b.groupid=c.groupid LEFT JOIN category d ON c.categoryid=d.categoryid WHERE a.inventoryid=" + inspectionid.ToString() + sort;
+        SqlDataSource1.SelectCommand = "SELECT a.itemid,a.dateupdated,(CASE WHEN b.title LIKE '" + othertype + "' THEN (CASE WHEN a.alttype IS NULL THEN LEFT(a.title, 50) ELSE a.alttype END) ELSE b.title END)  itemtitle, c.title grouptitle,d.title categorytitle, (SELECT TOP 1 x.image FROM itemimage x WHERE x.itemid=a.itemid ORDER BY x.itemimageid) itemimage, (SELECT x.inspectionno FROM inventory x WHERE a.inventoryid=x.inventoryid) inspectionno FROM item a LEFT JOIN type b ON a.typeid=b.typeid LEFT JOIN grupp c ON b.groupid=c.groupid LEFT JOIN category d ON c.categoryid=d.categoryid WHERE a.inventoryid=" + inspectionid.ToString() + sort;
     }
     protected void objectlist_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e) {
         //this.datapa.DataPager1.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
