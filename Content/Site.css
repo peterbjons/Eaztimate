@@ -303,24 +303,24 @@ a.button {
     margin-bottom: 5px;
 }
 
-    .sort_up {
-        background-color: #85c8e0;
-        background-image: url('../images/sort_up.png');
-    }
+.sort_up {
+    background-color: #85c8e0;
+    background-image: url('../images/sort_up.png');
+}
 
-    .sort_down {
-        background-color: #85c8e0;
-        background-image: url('../images/sort_down.png');
-    }
+.sort_down {
+    background-color: #85c8e0;
+    background-image: url('../images/sort_down.png');
+}
 
-    .sort_closed {
-        background-color: #85c8e0;
-        background-image: url('../images/sort_closed.png');
-    }
+.sort_closed {
+    background-color: #85c8e0;
+    background-image: url('../images/sort_closed.png');
+}
 
-    .sort_none {
-        background-color: #fff;
-    }
+.sort_none {
+    background-color: #fff;
+}
 
 .sort_none, .sort_closed, .sort_down, .sort_up {
     width: 30px;
@@ -410,6 +410,7 @@ a.button {
     height: 30px;
     line-height: 30px;
 }
+
 .inspection_row_col1_inspection_aspx {
     float: left;
     font-weight: 300 !important;
@@ -427,6 +428,7 @@ a.button {
     height: 30px;
     line-height: 30px;
 }
+
 .inspection_row_col2_inspection_aspx {
     float: right;
     font-size: 10pt;
@@ -434,7 +436,7 @@ a.button {
     display: block;
     height: 30px;
     line-height: 30px;
-    margin-right:10px;
+    margin-right: 10px;
 }
 
 .inspection_col3 {
@@ -1107,4 +1109,20 @@ table.companycreate tr.user_level4 td {
 
     .timeline_container img {
         margin: 20px 0px;
+    }
+
+    .pager {
+        margin: 0 auto;
+text-align: center;
+width: 300px;
+margin-top: 20px;
+margin-bottom: 40px;
+    }
+    .pager .pagerclass {
+        font-size: 9pt;
+        text-decoration:none;
+        padding: 2px 2px ;
+        /*background-color: #1c80aa;
+        color: #fff;*/
+        color: #6d6d6d;
     }

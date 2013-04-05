@@ -87,15 +87,15 @@
 						<asp:ListView ID="objectlist" runat="server" DataSourceID="SqlDataSource1" OnItemCommand="objectlist_ItemCommand" OnDataBound="objectlist_DataBound" OnPagePropertiesChanging="objectlist_PagePropertiesChanging">
 							<LayoutTemplate>
 								<ul>
-									<asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder>
-									<asp:DataPager ID="DataPager1" runat="server" PagedControlID="objectlist" PageSize="5" class="NavigationBar">
+									<asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder><div class="pager">
+									<asp:DataPager ID="DataPager1" runat="server" PagedControlID="objectlist" PageSize="10" class="NavigationBar">
 										<Fields>
 											<asp:NextPreviousPagerField ButtonType="Image" FirstPageImageUrl="~/Images/pager_first.png" ShowFirstPageButton="true" PreviousPageImageUrl="~/Images/pager_prev.png" ShowLastPageButton="false" ShowNextPageButton="false" />
 											<asp:NumericPagerField ButtonCount="10" NumericButtonCssClass="pagerclass"/>
 											<asp:NextPreviousPagerField ButtonType="Image" ShowLastPageButton="true" ShowNextPageButton="true"
 												ShowPreviousPageButton="false" LastPageImageUrl="~/Images/pager_last.png" NextPageImageUrl="~/Images/pager_next.png" />
 										</Fields>
-									</asp:DataPager>
+									</asp:DataPager></div>
 								</ul>
 							</LayoutTemplate>
 							<ItemTemplate>
