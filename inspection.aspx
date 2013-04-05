@@ -57,11 +57,11 @@
             </div>
 
             <%-- <div class="full_col">
-						<h4>Rooms</h4>                
-						<asp:listbox runat="server" ID="rooms" DataTextField="title" DataValueField="roomid" AutoPostBack="true" OnSelectedIndexChanged="rooms_SelectedIndexChanged">
-						</asp:listbox>
-						<asp:LinkButton runat="server" OnClick="Room_Click"><span class="goto">Go to Room &raquo;</span></asp:LinkButton>
-					</div>--%>
+                        <h4>Rooms</h4>                
+                        <asp:listbox runat="server" ID="rooms" DataTextField="title" DataValueField="roomid" AutoPostBack="true" OnSelectedIndexChanged="rooms_SelectedIndexChanged">
+                        </asp:listbox>
+                        <asp:LinkButton runat="server" OnClick="Room_Click"><span class="goto">Go to Room &raquo;</span></asp:LinkButton>
+                    </div>--%>
 
 
 
@@ -85,7 +85,7 @@
                 <h4>Objects</h4>
                 <asp:UpdatePanel ID="listupdatepanel" runat="server" UpdateMode="Conditional">
                     <ContentTemplate>
-
+                        <asp:HiddenField ID="sortorderhidden" runat="server" Value="0" />
                         <asp:ListView ID="objectlist" runat="server" DataSourceID="SqlDataSource1" OnItemCommand="objectlist_ItemCommand" OnDataBound="objectlist_DataBound" OnPagePropertiesChanging="objectlist_PagePropertiesChanging">
                             <LayoutTemplate>
                                 <ul>
@@ -150,24 +150,30 @@
             </div>
             <div id="inspection_sort">
                 <h4>Sort</h4>
-                <a href="?so=<%= sortorder == 0 ? 1 : 0 %>&id=<%=inspectionid %>">
+                <asp:LinkButton OnCommand="Sort_Command" CommandName='0' runat="server">
+                <%--<a href="?so=<%= sortorder == 0 ? 1 : 0 %>&id=<%=inspectionid %>">--%>
                     <div class="sort_item white">
                         <div class="<%=(sortorder == 0 ? "sort_up" : sortorder == 1 ? "sort_down" : "sort_none") %>"></div>
                         Kategori
                     </div>
-                </a>
-                <a href="?so=<%= sortorder == 2 ? 3 : 2 %>&id=<%=inspectionid %>">
+                <%--</a>--%>
+                </asp:LinkButton>
+                <asp:LinkButton OnCommand="Sort_Command" CommandName='2' runat="server">
+                <%--<a href="?so=<%= sortorder == 2 ? 3 : 2 %>&id=<%=inspectionid %>">--%>
                     <div class="sort_item white">
                         <div class="<%=(sortorder == 2 ? "sort_up" : sortorder == 3 ? "sort_down" : "sort_none") %>"></div>
                         Grupp
                     </div>
-                </a>
-                <a href="?so=<%= sortorder == 4 ? 5 : 4 %>&id=<%=inspectionid %>">
+                <%--</a>--%>
+                </asp:LinkButton>
+                <asp:LinkButton OnCommand="Sort_Command" CommandName='4' runat="server">
+                <%--<a href="?so=<%= sortorder == 4 ? 5 : 4 %>&id=<%=inspectionid %>">--%>
                     <div class="sort_item white">
                         <div class="<%=(sortorder == 4 ? "sort_up" : sortorder == 5 ? "sort_down" : "sort_none") %>"></div>
                         Namn
                     </div>
-                </a>
+                <%--</a>--%>
+                </asp:LinkButton>
             </div>
             <div id="inspection_help">
                 <h4>Urval</h4>
