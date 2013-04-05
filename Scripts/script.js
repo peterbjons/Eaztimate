@@ -34,7 +34,7 @@ function expandElement(handle, element) {
 function expandSort(handle, element) {
     $(handle).toggle(function () {
         $(element).animate({
-            opacity: 1.0,
+            
             height: 'toggle'
         }, 500, function () {
             // Animation complete.
@@ -42,7 +42,7 @@ function expandSort(handle, element) {
         });
     }, function () {
         $(element).animate({
-            opacity: 0.25,
+            
             height: 'toggle'
         }, 500, function () {
             // Animation complete.
@@ -50,3 +50,4 @@ function expandSort(handle, element) {
         });
     });
 }
+
