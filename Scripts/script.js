@@ -36,7 +36,7 @@ function expandSort(handle, element) {
         $(element).animate({
             
             height: 'toggle'
-        }, 500, function () {
+        }, 100, function () {
             // Animation complete.
             
         });
@@ -44,7 +44,7 @@ function expandSort(handle, element) {
         $(element).animate({
             
             height: 'toggle'
-        }, 500, function () {
+        }, 100, function () {
             // Animation complete.
            
         });

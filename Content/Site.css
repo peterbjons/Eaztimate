@@ -328,6 +328,9 @@ a.button {
     float: left;
     margin-right: 10px;
 }
+.sort_row1 {
+    cursor: pointer;
+}
 .sort_row2 {
     padding-left: 10px;
 }
@@ -620,6 +623,12 @@ a.button {
     float: left;
     width: 330px;
     margin-right: 20px;
+}
+
+.inspect_object .middle_col {
+    float: left;
+    width: 330px;
+    
 }
 
 .inspect_object .right_col {
