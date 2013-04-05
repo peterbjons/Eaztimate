@@ -24,6 +24,9 @@
             expandElement($("#collapse"), $(".collapsable"));
         });
     </script>
+    <link href="Content/lightbox.css" rel="stylesheet">
+	<script src="Scripts/jquery-ui-1.9.2.custom.js"></script>
+	<script src="Scripts/lightbox.js"></script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
@@ -106,10 +109,10 @@
                                         </div>
                                         <div class="inspection_row_2" style="display: none">
                                             <div class="inspection_col3">                                                
-                                                <div class="inspection_item_objects">
-                                                    <img src="<%#AmazonHandler.GetPrivateImage(DataBinder.Eval(Container.DataItem, "inspectionno") + "/" + DataBinder.Eval(Container.DataItem, "itemimage"))%>"
-                                                    <h3><%--<%#DataBinder.Eval(Container.DataItem, "objects")%>--%>32</h3>
-                                                    <h4>objects</h4>
+                                                <div class="inspection_item_image">
+                                                    <a rel="lightbox" href=<%#AmazonHandler.GetPrivateImage(DataBinder.Eval(Container.DataItem, "inspectionno") + "/" + DataBinder.Eval(Container.DataItem, "itemimage"))%>"><img src="<%#AmazonHandler.GetPrivateImage(DataBinder.Eval(Container.DataItem, "inspectionno") + "/" + DataBinder.Eval(Container.DataItem, "itemimage"))%>" /></a>
+                                                    <h3><%--<%#DataBinder.Eval(Container.DataItem, "objects")%>--%></h3>
+                                                    
                                                 </div>
                                             </div>
                                             <div class="inspection_col4">
