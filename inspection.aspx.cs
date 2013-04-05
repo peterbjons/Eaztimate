@@ -111,11 +111,42 @@ public partial class inspect_object : System.Web.UI.Page
     }
 
     protected void bindListView() {
+
+        int.TryParse(sortorderhidden.Value, out sortorder);
+        switch (sortorderhidden.Value) {
+            case "0":
+                sort = " ORDER BY categorytitle DESC";
+                break;
+            case "1":
+                sort = " ORDER BY categorytitle ASC";
+                break;
+            case "2":
+                sort = " ORDER BY grouptitle DESC";
+                break;
+            case "3":
+                sort = " ORDER BY grouptitle ASC";
+                break;
+            case "4":
+                sort = " ORDER BY itemtitle ASC";
+                break;
+            case "5":
+                sort = " ORDER BY itemtitle DESC";
+                break;
+        }
+
+
         string othertype = GetGlobalResourceObject("Strings", "other").ToString();
         SqlDataSource1.SelectCommand = "SELECT a.itemid,a.dateupdated,(CASE WHEN b.title LIKE '" + othertype + "' THEN (CASE WHEN a.alttype IS NULL THEN LEFT(a.title, 50) ELSE a.alttype END) ELSE b.title END)  itemtitle, c.title grouptitle,d.title categorytitle, (SELECT TOP 1 x.image FROM itemimage x WHERE x.itemid=a.itemid ORDER BY x.itemimageid) itemimage, (SELECT x.inspectionno FROM inventory x WHERE a.inventoryid=x.inventoryid) inspectionno FROM item a LEFT JOIN type b ON a.typeid=b.typeid LEFT JOIN grupp c ON b.groupid=c.groupid LEFT JOIN category d ON c.categoryid=d.categoryid WHERE a.inventoryid=" + inspectionid.ToString() + sort;
     }
     protected void objectlist_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e) {
         ScriptManager.RegisterStartupScript(this, this.GetType(), "showhide", "expandList($('.inspection_row_1'), $('.inspection_row_2'));", true);
+        bindListView();
+    }
+
+    protected void Sort_Command(object sender, CommandEventArgs e) {
+        int.TryParse(e.CommandName, out sortorder);
+        sortorderhidden.Value = e.CommandName;
+        ((LinkButton)sender).CommandName = (sortorder % 2 == 0 ? (sortorder + 1).ToString() : (sortorder - 1).ToString());  //switch command
         bindListView();
     }
 }

@@ -129,32 +129,6 @@ public partial class _Default : Page
         int.TryParse(e.CommandName, out sortorder);
         sortorderhidden.Value = e.CommandName;
         ((LinkButton)sender).CommandName = (sortorder % 2 == 0 ? (sortorder + 1).ToString() : (sortorder - 1).ToString());  //switch command
-        //switch (e.CommandName) {
-        //    case "0":
-        //        sort = "ORDER BY dateupdated ASC";
-        //        ((LinkButton)sender).CommandName = "1";
-        //        break;
-        //    case "1":
-        //        sort = "ORDER BY dateupdated DESC";
-        //        ((LinkButton)sender).CommandName = "0";
-        //        break;
-        //    case "2":
-        //        sort = "ORDER BY status DESC";
-        //        ((LinkButton)sender).CommandName = "3";
-        //        break;
-        //    case "3":
-        //        sort = "ORDER BY status ASC";
-        //        ((LinkButton)sender).CommandName = "2";
-        //        break;
-        //    case "4":
-        //        sort = "ORDER BY inspectionno ASC";
-        //        ((LinkButton)sender).CommandName = "5";
-        //        break;
-        //    case "5":
-        //        sort = "ORDER BY inspectionno DESC";
-        //        ((LinkButton)sender).CommandName = "4";
-        //        break;
-        //}
         bindListView();
     }
 }
