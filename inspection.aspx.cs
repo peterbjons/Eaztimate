@@ -111,7 +111,6 @@ public partial class inspect_object : System.Web.UI.Page
     }
 
     protected void bindListView() {
-
         int.TryParse(sortorderhidden.Value, out sortorder);
         switch (sortorderhidden.Value) {
             case "0":
