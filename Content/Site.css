@@ -313,6 +313,25 @@ a.button {
         margin-right: 10px;
     }
 
+                .sort_item div.sort_closed, .selection_item div.sort_closed {
+
+        width:30px;
+        height: 30px;
+        background-color: #85c8e0;
+        background-image: url('../images/sort_closed.png');
+        float:left;
+        margin-right: 10px;
+    }
+                .sort_item div.sort_none, .selection_item div.sort_none {
+
+        width:30px;
+        height: 30px;
+        background-color: #fff;
+        
+        float:left;
+        margin-right: 10px;
+    }
+
 .white {
     background-color: #fff;
 }

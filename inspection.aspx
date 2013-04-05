@@ -127,8 +127,8 @@
     </div>
     <div id="inspection_help">
         <h4>Urval</h4>
-        <div class="selection_item white"><div class="sort_up"></div>Rum</div>
-        <div class="selection_item white"><div class="sort_down"></div>Kategorier</div>
+        <div class="selection_item white"><div class="sort_closed"></div>Rum</div>
+        <div class="selection_item white"><div class="sort_closed"></div>Kategorier</div>
         
     </div>
 
