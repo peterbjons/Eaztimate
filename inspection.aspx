@@ -91,7 +91,7 @@
                                 <ul>
                                     <asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder>
                                     <div class="pager">
-                                        <asp:DataPager ID="DataPager1" runat="server" PagedControlID="objectlist" PageSize="1" class="NavigationBar">
+                                        <asp:DataPager ID="DataPager1" runat="server" PagedControlID="objectlist" PageSize="10" class="NavigationBar">
                                             <Fields>
                                                 <asp:NextPreviousPagerField ButtonType="Image" FirstPageImageUrl="~/Images/pager_first.png" ShowFirstPageButton="true" PreviousPageImageUrl="~/Images/pager_prev.png" ShowLastPageButton="false" ShowNextPageButton="false" />
                                                 <asp:NumericPagerField ButtonCount="10" NumericButtonCssClass="pagerclass" CurrentPageLabelCssClass="pagerclass_selected" NextPreviousButtonCssClass="pagerclass" />

@@ -32,13 +32,12 @@ function expandElement(handle, element) {
 }
 
 function expandSort(handle, element) {
-    $(handle).toggle(function () {
-        $(element).animate({
-            
+    handle.toggle(function () {
+        $(element).animate({            
             height: 'toggle'
         }, 100, function () {
             // Animation complete.
-            
+            handle.find('div').removeClass('sort_closed').addClass('sort_down');   //hitta på bilddiven och byt klass till den öppnade
         });
     }, function () {
         $(element).animate({
@@ -46,7 +45,7 @@ function expandSort(handle, element) {
             height: 'toggle'
         }, 100, function () {
             // Animation complete.
-           
+            handle.find('div').removeClass('sort_down').addClass('sort_closed');
         });
     });
 }
