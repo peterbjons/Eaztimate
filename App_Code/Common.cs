@@ -60,4 +60,27 @@ public static class Common
             return false;
         }
     }
+
+    public static string ConvertToSQLList(string unprocessedList) {
+        bool first = true;
+        StringBuilder sb = new StringBuilder();
+        int i = 0;
+        sb.Append("(");
+        foreach (string s in unprocessedList.Split('|')) {
+            if (int.TryParse(s, out i)) {
+                if (!first) {
+                    sb.Append(",").Append(i.ToString());
+                } else {
+                    sb.Append(i.ToString());
+                    first = false;
+                }
+            }
+        }
+        sb.Append(")");
+        if (first)
+            return string.Empty;
+        else
+            return sb.ToString();
+    }
+
 }

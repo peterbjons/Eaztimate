@@ -50,3 +50,21 @@ function expandSort(handle, element) {
     });
 }
 
+function expandSort(handle, element, open) {    
+    handle.toggle(function () {
+        $(element).animate({
+            height: 'toggle'
+        }, 100, function () {
+            // Animation complete.
+            handle.find('div').removeClass('sort_closed').addClass('sort_down');   //hitta på bilddiven och byt klass till den öppnade
+        });
+    }, function () {
+        $(element).animate({
+            height: 'toggle'
+        }, 100, function () {
+            // Animation complete.
+            handle.find('div').removeClass('sort_down').addClass('sort_closed');
+        });
+    });
+}
+

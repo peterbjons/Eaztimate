@@ -14,7 +14,7 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server" />
     <h1>Open inspection</h1>
 
-    <asp:UpdatePanel ID="updatelist" runat="server">
+    <asp:UpdatePanel ID="updatelist" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
             <asp:HiddenField ID="sortorderhidden" runat="server" Value="0" />
             <div id="inspection_list">
@@ -24,7 +24,7 @@
                         <ul>
                             <asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder>
                             <div class="pager">
-                                <asp:DataPager ID="DataPager1" runat="server" PagedControlID="companylist" PageSize="5" class="NavegationBar">
+                                <asp:DataPager ID="DataPager1" runat="server" PagedControlID="companylist" PageSize="20" class="NavegationBar">
                                     <Fields>
                                         <asp:NextPreviousPagerField ButtonType="Image" FirstPageImageUrl="~/Images/pager_first.png" ShowFirstPageButton="true" PreviousPageImageUrl="~/Images/pager_prev.png" ShowLastPageButton="false" ShowNextPageButton="false" />
                                         <asp:NumericPagerField ButtonCount="10" NumericButtonCssClass="pagerclass" CurrentPageLabelCssClass="pagerclass_selected" NextPreviousButtonCssClass="pagerclass" />
@@ -81,28 +81,18 @@
                         <div class="<%=(sortorder == 0 ? "sort_up" : sortorder == 1 ? "sort_down" : "sort_none") %>"></div>
                         Date
                     </div>
-                </asp:LinkButton>
-                <%--<a href="?so=<%= sortorder == 0 ? 1 : 0 %>">
-                    <div class="sort_item white">
-                        <div class="<%=(sortorder == 0 ? "sort_up" : sortorder == 1 ? "sort_down" : "sort_none") %>"></div>
-                        Date
-                    </div>
-                </a>--%>
-                <%--<a href="?so=<%= sortorder == 2 ? 3 : 2 %>">--%>
+                </asp:LinkButton>                
                 <asp:LinkButton OnCommand="Sort_Command" CommandName='2' runat="server">
                     <div class="sort_item white">
                         <div class="<%=(sortorder == 2 ? "sort_up" : sortorder == 3 ? "sort_down" : "sort_none") %>"></div>
                         Status
                     </div>
-                <%--</a>--%>
                 </asp:LinkButton>
                 <asp:LinkButton OnCommand="Sort_Command" CommandName='4' runat="server">
-                <%--<a href="?so=<%= sortorder == 4 ? 5 : 4 %>">--%>
                     <div class="sort_item white">
                         <div class="<%=(sortorder == 4 ? "sort_up" : sortorder == 5 ? "sort_down" : "sort_none") %>"></div>
                         Inspection number
                     </div>
-                <%--</a>--%>
                 </asp:LinkButton>
             </div>
             <div id="inspection_help">
