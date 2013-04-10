@@ -24,19 +24,23 @@ public partial class room_view : System.Web.UI.Page
             if (!int.TryParse((Request.QueryString["id"] ?? ""), out roomid)) {
                 Response.Redirect("open_inspection.aspx", true);
             }
-            using (SqlDataReader reader = SQL.ExecuteQuery("SELECT a.*,b.inspectionno,b.inventoryid FROM room a LEFT JOIN inventory b ON a.inventoryid=b.inventoryid WHERE a.roomid=@1", roomid)) {
+            objectlist.roomid = roomid;
+            objectlist.bindData();
+
+            using (SqlDataReader reader = SQL.ExecuteQuery("SELECT a.*,b.inspectionno,b.inventoryid, (SELECT COUNT(x.itemid) FROM item x WHERE x.roomid=a.roomid) items FROM room a LEFT JOIN inventory b ON a.inventoryid=b.inventoryid WHERE a.roomid=@1", roomid)) {
                 if (reader.Read()) {
                     opinion.Text = reader.GetString(reader.GetOrdinal("opinion"));
                     description.Text = reader.GetString(reader.GetOrdinal("description"));
                     title.Text = reader.GetString(reader.GetOrdinal("title"));
                     inspectionno.Text = reader.GetString(reader.GetOrdinal("inspectionno"));
                     inspectionid = reader.GetInt64(reader.GetOrdinal("inventoryid"));
+                    objectscount.Text = reader.GetInt32(reader.GetOrdinal("items")).ToString();
                 }
             }
-            using (SqlDataReader reader = SQL.ExecuteQuery("SELECT a.itemid,b.title type FROM item a LEFT JOIN type b ON a.typeid=b.typeid WHERE a.roomid=@1", roomid)) {
-                objects.DataSource = reader;
-                objects.DataBind();
-            }
+            //using (SqlDataReader reader = SQL.ExecuteQuery("SELECT a.itemid,b.title type FROM item a LEFT JOIN type b ON a.typeid=b.typeid WHERE a.roomid=@1", roomid)) {
+            //    objects.DataSource = reader;
+            //    objects.DataBind();
+            //}
 
             DataTable dt = new DataTable();
             dt.Columns.Add(new DataColumn("image", typeof(string)));

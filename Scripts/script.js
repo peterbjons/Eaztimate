@@ -1,5 +1,6 @@
 ﻿function expandList(handle, content) {
     $(handle).click(function () {
+        $(content).stop(true);
         var speed = 200;
         var hide = ($(this).closest('li').find(content).css('display') != 'none');
         $(content).hide(speed);
@@ -17,7 +18,7 @@ function expandElement(handle, element) {
             opacity: 0.25,
             height: 'toggle'
         }, 500, function () {
-            // Animation complete.
+            $(element).stop(true);
             $(handle).text("Visa");
         });
     }, function () {
@@ -25,7 +26,7 @@ function expandElement(handle, element) {
             opacity: 1.0,
             height: 'toggle'
         }, 500, function () {
-            // Animation complete.
+            $(element).stop(true);
             $(handle).text("Dölj");
         });
     });
@@ -33,18 +34,18 @@ function expandElement(handle, element) {
 
 function expandSort(handle, element) {
     handle.toggle(function () {
-        $(element).animate({            
+        $(element).stop(true).animate({
             height: 'toggle'
         }, 100, function () {
-            // Animation complete.
+            $(element).stop(true);
             handle.find('div').removeClass('sort_closed').addClass('sort_down');   //hitta på bilddiven och byt klass till den öppnade
         });
     }, function () {
-        $(element).animate({
+        $(element).stop(true).animate({
             
             height: 'toggle'
         }, 100, function () {
-            // Animation complete.
+            $(element).stop(true);
             handle.find('div').removeClass('sort_down').addClass('sort_closed');
         });
     });
@@ -52,17 +53,17 @@ function expandSort(handle, element) {
 
 function expandSort(handle, element, open) {    
     handle.toggle(function () {
-        $(element).animate({
+        $(element).stop(true).animate({
             height: 'toggle'
         }, 100, function () {
-            // Animation complete.
+            $(element).stop(true);
             handle.find('div').removeClass('sort_closed').addClass('sort_down');   //hitta på bilddiven och byt klass till den öppnade
         });
     }, function () {
-        $(element).animate({
+        $(element).stop(true).animate({
             height: 'toggle'
         }, 100, function () {
-            // Animation complete.
+            $(element).stop(true);
             handle.find('div').removeClass('sort_down').addClass('sort_closed');
         });
     });

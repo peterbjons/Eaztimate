@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 public partial class Account_Login : Page
@@ -18,5 +19,7 @@ public partial class Account_Login : Page
         {
             RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
         }
+
+        ((HtmlGenericControl)Master.FindControl("slider")).Visible = false;
     }
 }

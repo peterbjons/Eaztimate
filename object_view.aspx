@@ -50,7 +50,6 @@
 			<asp:Repeater ID="imagerepeater" runat="server">
 				<ItemTemplate>
 					<a href="<%#DataBinder.Eval(Container.DataItem, "image")%>" rel="lightbox"><img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" class="thumbnail"/></a>
-					<%--<img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" class="thumbnail" rel="lightbox" />--%>
 				</ItemTemplate>
 			</asp:Repeater>
 			<h4>Opinion</h4>
