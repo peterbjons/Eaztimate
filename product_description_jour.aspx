@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     <img src="Images/logo_jour.png" /><h1>Beskrivning - Jour</h1>
-    <p>Ett samtal kommer in till jouren och ett uppdrag startar med att jourhavande öppnar Jour-appen och noterar adress och telefonnummer till kontaktperson på skadeplatsen.  Tid och uppgifter om olika steg i jourärendet loggas sedan i kronologisk ordning: </p>
+    <div class="whitebox"><p>Ett samtal kommer in till jouren och ett uppdrag startar med att jourhavande öppnar Jour-appen och noterar adress och telefonnummer till kontaktperson på skadeplatsen.  Tid och uppgifter om olika steg i jourärendet loggas sedan i kronologisk ordning: </p>
     <ol>
         <li>Samtalet till kontaktpersonen</li>
         <li>Resan till platsen</li>
@@ -17,6 +17,6 @@
     <p>Därmed är jourärendet avslutat.</p>
     <p>Fördelarna med att ha med sig en Jour-app i mobilen eller i paddan är flera jämfört med att arbeta med papper, penna och kamera. Enligt användarna sticker dock det minimala efterarbetet ut. Vid kontakt med internet skickas jourrapporten vidare, oftast innan du lämnar platsen. </p>
 
-    <a href="products.aspx" class="button" style="float:left">&laquo; Tillbaka till produkter</a><a href="product_timeline.aspx#jour_timeline" class="button">Se tidslinje &raquo;</a>
+    <a href="products.aspx" class="button" style="float:left">&laquo; Tillbaka till produkter</a><a href="product_timeline.aspx#jour_timeline" class="button">Se tidslinje &raquo;</a><div style="clear:both"></div></div>
 </asp:Content>
 

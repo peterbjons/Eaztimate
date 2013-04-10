@@ -10,6 +10,8 @@ body {
 
 p {
     margin-bottom: 20px;
+    color: #434343;
+    line-height: 26px;
 }
 
 a {

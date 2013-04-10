@@ -9,7 +9,7 @@
     <p>Att anpassa varje uppdrag efter fastighetstyp i EBZ är enkelt, likaså är besiktningsformulärets utformning en direkt följd av att arbetet måste vara enkelt att utföra på plats. </p>
     
     <p>Finns anslutning till internet är det möjlig att synkronisera pågående ärende så ofta man vill, den funktionen möjliggör kortare ledtider i kontakten med externa experter och försäkringsbolag.  </p>
-</div>
-    <a href="products.aspx" class="button" style="float:left">&laquo; Tillbaka till produkter</a><a href="product_timeline.aspx#bygg_timeline" class="button">Se tidslinje &raquo;</a>
+
+    <a href="products.aspx" class="button" style="float:left">&laquo; Tillbaka till produkter</a><a href="product_timeline.aspx#bygg_timeline" class="button">Se tidslinje &raquo;</a><div style="clear:both"></div></div>
 </asp:Content>
 
