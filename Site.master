@@ -53,8 +53,12 @@
                                 <li><a href="login.aspx" runat="server" id="menu2">Login</a></li>
                             </AnonymousTemplate>
                             <LoggedInTemplate>
-                                <li><a href="create_inspection.aspx" runat="server" id="menu2">Create</a></li>
-                                <li><a href="open_inspection.aspx" runat="server" id="menu3">Open</a></li>
+                                <li><a href="product_description_losore.aspx">Lösöre</a>
+                                    <ul>
+                                        <li><a href="create_inspection.aspx" runat="server" id="menu2">Skapa</a></li>
+                                <li><a href="open_inspection.aspx" runat="server" id="menu3">Öppna</a></li>
+                                    </ul>
+                                </li>                                
                                 <%--<li><a href="inspection.aspx" runat="server" id="menu4">Manage</a></li>--%>
                                 <li><a href="products.aspx">Produkter</a>
                                     <ul>
