@@ -7,7 +7,10 @@
 
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <h1>Rubrik h1</h1>
-    <h2>Underrubrik h2</h2>
-    <p>Lorem ipsum dolor sit orrpon, consectetur adipiscing elit. Suspendisse sit amet velit vel sem imperdiet condimentum sit amet blandit nisi. Sed ornare accumsan pellentesque. Morbi sodales scelerisque lacus, a posuere lacus </p>
+    <h1>Eaztimate</h1>
+    <div class="whitebox"><h2>Mobila applikationer</h2>
+    <p>I arbetet med att begränsa omfattningen av sakskador i samband med sot och fukt i fastigheter är, tid, professionalism och god kommunikation, viktiga faktorer för att lyckas.    </p>
+    <p>Eaztimate erbjuder mobila applikationer med en uppsättning verktyg som svarar upp mot dessa faktorer.</p>
+    <p>Var för sig är, Jour, Byggskada och Lösöre, applikationer som underlättar arbetet med att bedöma, dokumentera och rapportera omfattningen av skadan. Tillsammans utgör de länkar i en mycket stark kedja mellan den drabbade, försäkringsbolaget och saneringsbolaget.  </p>
+</div>
 </asp:Content>

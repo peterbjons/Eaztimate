@@ -154,8 +154,13 @@ a:hover {
     }
 
         #start_boxes ul li h3 {
-            font-weight: 400;
+            font-weight: 300;
             font-size: 18pt;
+        }
+        #start_boxes img {
+          height: 110px;
+margin: 10px auto 10px auto;
+display: block;
         }
 
         #start_boxes ul li h4 {
@@ -231,6 +236,7 @@ a.button {
 
 #start_boxes .box1 {
     background-color: #fff;
+    background-color: rgba(255,255,255,0.95);
 }
 
     #start_boxes .box1 p {
@@ -238,11 +244,13 @@ a.button {
     }
 
 #start_boxes .box2 {
-    background-color: #85c8e0;
+    /*background-color: #85c8e0;*/
+    background-color: rgba(133,200,224,0.95);
 }
 
 #start_boxes .box3 {
-    background-color: #1c80aa;
+    /*background-color: #1c80aa;*/
+    background-color: rgba(28,128,170,0.95);
 }
 
 #content {
@@ -1246,4 +1254,9 @@ margin-bottom: 40px;
     float: left;
     padding-top: 0px;
     font-size: 8pt;
+}
+
+.whitebox {
+    background-color: #fff;
+    padding: 10px;
 }

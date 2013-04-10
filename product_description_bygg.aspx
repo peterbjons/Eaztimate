@@ -4,12 +4,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
         <img src="Images/logo_bygg.png" /><h1>Beskrivning - Byggskada</h1>
-    <p>Stor eller liten fastighet, omfattande eller begränsad skada, sot eller fukt, osv. Skador skiljer sig åt men är sällan unika. I EZ Byggskada har vi strukturera upp möjliga skador,  viket leder till att arbetet med att dokumentera, bedöma och rapportera underlättas avsevärt.  </p>
+    <div class="whitebox"><p>Stor eller liten fastighet, omfattande eller begränsad skada, sot eller fukt, osv. Skador skiljer sig åt men är sällan unika. I EZ Byggskada har vi strukturera upp möjliga skador,  viket leder till att arbetet med att dokumentera, bedöma och rapportera underlättas avsevärt.  </p>
     
     <p>Att anpassa varje uppdrag efter fastighetstyp i EBZ är enkelt, likaså är besiktningsformulärets utformning en direkt följd av att arbetet måste vara enkelt att utföra på plats. </p>
     
     <p>Finns anslutning till internet är det möjlig att synkronisera pågående ärende så ofta man vill, den funktionen möjliggör kortare ledtider i kontakten med externa experter och försäkringsbolag.  </p>
-
+</div>
     <a href="products.aspx" class="button" style="float:left">&laquo; Tillbaka till produkter</a><a href="product_timeline.aspx#bygg_timeline" class="button">Se tidslinje &raquo;</a>
 </asp:Content>
 
