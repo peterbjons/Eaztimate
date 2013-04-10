@@ -4,7 +4,7 @@
             <asp:UpdatePanel ID="listupdatepanel" runat="server" UpdateMode="Conditional">
                 <ContentTemplate>
                     <div id="inspection_list">
-                        <h2>Rooms</h2>
+                        <h2>Rum</h2>
                         <asp:HiddenField ID="sortorderhidden" runat="server" Value="0" />
                         <asp:HiddenField ID="room_hf" runat="server" Value="0" />
                         <asp:HiddenField ID="inspection_hf" runat="server" Value="0" />
@@ -66,7 +66,7 @@
 
                     </div>
                     <div id="room_sort">
-                        <h2>Sort</h2>
+                        <h2>Sortering</h2>
                         <asp:LinkButton ID="LinkButton2" OnCommand="Sort_Command" CommandName='0' runat="server">
                     <div class="sort_item white">
                         <div class="<%=(sortorder == 0 ? "sort_up" : sortorder == 1 ? "sort_down" : "sort_none") %>"></div>
@@ -87,7 +87,7 @@
                         </asp:LinkButton>
                     </div>
                     <div id="room_help">
-                        <h2>Selection</h2>
+                        <h2>Urval</h2>
                         <div class="selection_item white">
                             <div class="sort_row1 row_cat1_1">
                                 <div class="sort_closed"></div>

@@ -38,11 +38,11 @@
         <h1>
             <asp:Literal ID="description" runat="server" /></h1>
         <a class="button" style="float: none" id="collapse">Dölj</a>
-        <h2>General information</h2>
+        <h2>Allmän information</h2>
         <div class="collapsable" style="width: 940px; background-color: #fff; padding: 10px; margin-bottom: 20px;">
 
             <div class="left_col">
-                <h3>Address</h3>
+                <h3>Adress</h3>
                 <p>
                     <asp:Literal ID="address1" runat="server" />,
                     <asp:Literal ID="zipcode" runat="server" />
@@ -51,14 +51,14 @@
             </div>
 
             <div class="left_col">
-                <h3>Area (m&sup2;)</h3>
+                <h3>Yta (m&sup2;)</h3>
                 <p>
                     <asp:Literal ID="area" runat="server" />
                 </p>
             </div>
 
             <div class="right_col">
-                <h3>Damage type</h3>
+                <h3>Skadetyp</h3>
                 <p>
                     <asp:Literal ID="damagetype" runat="server" />
                 </p>
@@ -67,21 +67,21 @@
             <div style="clear: both;"></div>
 
             <div class="left_col">
-                <h3>Phone</h3>
+                <h3>Telefon</h3>
                 <p>
                     <asp:Literal ID="phoneno" runat="server" />
                 </p>
             </div>
 
             <div class="left_col">
-                <h3>Adults/teenagers/kids</h3>
+                <h3>Vuxna/tonåringar/barn</h3>
                 <p>
                     <asp:Literal ID="inhabitants" runat="server" />
                 </p>
             </div>
 
             <div class="right_col">
-                <h3>Terms</h3>
+                <h3>Villkor</h3>
                 <p>
                     <asp:Literal ID="terms" runat="server" />
                 </p>

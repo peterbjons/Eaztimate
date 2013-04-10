@@ -4,7 +4,7 @@
             <asp:UpdatePanel ID="listupdatepanel" runat="server" UpdateMode="Conditional">
                 <ContentTemplate>
                     <div id="inspection_list">
-                        <h2>Objects</h2>
+                        <h2>Objekt</h2>
                         <asp:HiddenField ID="sortorderhidden" runat="server" Value="0" />
                         <asp:HiddenField ID="room_hf" runat="server" Value="0" />
                         <asp:HiddenField ID="inspection_hf" runat="server" Value="0" />
@@ -43,16 +43,16 @@
                                                 </div>
                                             </div>
                                             <div class="item_col4">												
-                                                    Price: <div class="sliderclass">
+                                                    Pris: <div class="sliderclass">
                                                         <span style="width: <%#DataBinder.Eval(Container.DataItem, "price")%>%"></span>
                                                     </div>
-                                                Usage: <div class="sliderclass">
+                                                Skick: <div class="sliderclass">
                                                         <span style="width: <%#DataBinder.Eval(Container.DataItem, "usage")%>%"></span>
                                                     </div>
-                                                Age: <div class="sliderclass">
+                                                Ålder: <div class="sliderclass">
                                                         <span style="width: <%#DataBinder.Eval(Container.DataItem, "age")%>%"></span>
                                                     </div>
-                                                Other: <div class="sliderclass">
+                                                Övrigt: <div class="sliderclass">
                                                         <span style="width: <%#DataBinder.Eval(Container.DataItem, "other")%>%"></span>
                                                     </div>                                                   
                                             </div>
@@ -60,7 +60,7 @@
                                             <div class="inspection_item_bottom">
                                                 <small>Datum: <%#((DateTime)DataBinder.Eval(Container.DataItem, "dateupdated")).ToString("yyyy-MM-dd")%><br />
                                                 </small>
-                                                <asp:LinkButton ID="LinkButton1" class="button" CommandArgument='<%# Eval("itemid") %>' CommandName="Open" runat="server">Open &raquo;</asp:LinkButton>
+                                                <asp:LinkButton ID="LinkButton1" class="button" CommandArgument='<%# Eval("itemid") %>' CommandName="Open" runat="server">Öppna &raquo;</asp:LinkButton>
                                             </div>
                                             <div style="clear: both"></div>
                                         </div>
@@ -74,7 +74,7 @@
 
                     </div>
                     <div id="inspection_sort">
-                        <h2>Sort</h2>
+                        <h2>Sortering</h2>
                         <asp:LinkButton ID="sort1_lb" OnCommand="Sort_Command" CommandName='0' runat="server">
                     <div class="sort_item white">
                         <div class="<%=(sortorder == 0 ? "sort_up" : sortorder == 1 ? "sort_down" : "sort_none") %>"></div>
@@ -95,7 +95,7 @@
                         </asp:LinkButton>
                     </div>
                     <div id="inspection_help">
-                        <h2>Selection</h2>
+                        <h2>Urval</h2>
                         <div id="roomdiv" class="selection_item white" runat="server">
                             <div class="sort_row1 row_rum1">
                                 <div class="sort_closed"></div>

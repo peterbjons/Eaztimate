@@ -12,13 +12,13 @@
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <asp:ScriptManager ID="ScriptManager1" runat="server" />
-    <h1>Open inspection</h1>
+    <h1>Öppna ärende</h1>
 
     <asp:UpdatePanel ID="updatelist" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
             <asp:HiddenField ID="sortorderhidden" runat="server" Value="0" />
             <div id="inspection_list">
-                <h2>Inspections</h2>
+                <h2>Ärenden</h2>
                 <asp:ListView ID="companylist" runat="server" DataSourceID="SqlDataSource1" OnItemCommand="companylist_ItemCommand" OnDataBound="companylist_DataBound" OnPagePropertiesChanging="companylist_PagePropertiesChanging">
                     <LayoutTemplate>
                         <ul>
@@ -47,7 +47,7 @@
                                     <div class="inspection_col3">
                                         <div class="inspection_item_objects">
                                             <h3><%#DataBinder.Eval(Container.DataItem, "objects")%></h3>
-                                            <h4>objects</h4>
+                                            <h4>objekt</h4>
                                         </div>
                                     </div>
                                     <div class="inspection_col4">
@@ -61,9 +61,9 @@
                                     </div>
                                     <div style="clear: both"></div>
                                     <div class="inspection_item_bottom">
-                                        <small>Last change: <%#((DateTime)DataBinder.Eval(Container.DataItem, "dateupdated")).ToString("yyyy-MM-dd")%><br />
+                                        <small>Senaste förändring: <%#((DateTime)DataBinder.Eval(Container.DataItem, "dateupdated")).ToString("yyyy-MM-dd")%><br />
                                         </small>
-                                        <asp:LinkButton ID="LinkButton1" class="button" CommandArgument='<%# Eval("inventoryid") %>' CommandName="Open" runat="server">Open &raquo;</asp:LinkButton>
+                                        <asp:LinkButton ID="LinkButton1" class="button" CommandArgument='<%# Eval("inventoryid") %>' CommandName="Open" runat="server">Öppna &raquo;</asp:LinkButton>
                                     </div>
                                     <div style="clear: both"></div>
                                 </div>
@@ -75,11 +75,11 @@
                     ConnectionString="<%$ ConnectionStrings:SQLConnectionString %>"></asp:SqlDataSource>
             </div>
             <div id="inspection_sort">
-                <h2>Sort</h2>
+                <h2>Sortering</h2>
                 <asp:LinkButton OnCommand="Sort_Command" CommandName='0' runat="server">
                     <div class="sort_item white">
                         <div class="<%=(sortorder == 0 ? "sort_up" : sortorder == 1 ? "sort_down" : "sort_none") %>"></div>
-                        Date
+                        Datum
                     </div>
                 </asp:LinkButton>                
                 <asp:LinkButton OnCommand="Sort_Command" CommandName='2' runat="server">
@@ -91,15 +91,15 @@
                 <asp:LinkButton OnCommand="Sort_Command" CommandName='4' runat="server">
                     <div class="sort_item white">
                         <div class="<%=(sortorder == 4 ? "sort_up" : sortorder == 5 ? "sort_down" : "sort_none") %>"></div>
-                        Inspection number
+                        Ärendenummer
                     </div>
                 </asp:LinkButton>
             </div>
             <div id="inspection_help">
-                <h2>Description</h2>
-                <div class="inspection_item green">Completed</div>
-                <div class="inspection_item orange">In progress</div>
-                <div class="inspection_item blue">Not started</div>
+                <h2>Hjälp</h2>
+                <div class="inspection_item green">Klar</div>
+                <div class="inspection_item orange">Pågående</div>
+                <div class="inspection_item blue">Ej startad</div>
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>
