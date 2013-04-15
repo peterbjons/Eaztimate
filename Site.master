@@ -107,10 +107,10 @@
         </div>
         <div id="slider" runat="server" visible="true">
             <div class="wrapper">
-                <div id="slider_text">
-                    <%--<h2>Eaztimate</h2>
-                    <p>work work!</p>--%>
-                </div>
+                <%--<div id="slider_text">
+                    <h2>Eaztimate</h2>
+                    <p>work work!</p>
+                </div>--%>
                 <div id="start_boxes">
                     <ul>
                         <li class="box1">
@@ -134,6 +134,7 @@
                             <a class="button" href="product_description_losore.aspx">Läs mer &raquo;</a>
                         </li>
                     </ul>
+                    <div style="clear:both"></div>
                 </div>
             </div>
         </div>
