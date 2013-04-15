@@ -14,40 +14,58 @@ public partial class admin_Company : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!Page.IsPostBack) {
-            string action = ((Request.QueryString["id"] ?? string.Empty) == string.Empty ? "Create" : "Edit");
-            Page.Title = action + " Company";
-            CompanyCreate.Text = action + " Company";            
-            
-            if (int.TryParse((Request.QueryString["id"] ?? string.Empty), out id)) {
-                using (SqlDataReader reader = SQL.ExecuteQuery("SELECT * FROM customer WHERE customerid = @1;SELECT userid FROM customerusers WHERE customerid=@1", id)) {
-                    if (reader.Read()) {
-                        if((Request.QueryString["id"] ?? string.Empty) != string.Empty) {
-                            titleh2.InnerText = reader.GetString(reader.GetOrdinal("title"));
-                            topmenudiv.Visible = true;
-                        }            
-                        CompanyNameText.Text = reader.GetString(reader.GetOrdinal("title"));
-                        CompanyAdress1Text.Text = reader.GetString(reader.GetOrdinal("address1"));
-                        CompanyAdress2Text.Text = reader.GetString(reader.GetOrdinal("address2"));
-                        CompanyZipText.Text = reader.GetString(reader.GetOrdinal("zip"));
-                        CompanyCityText.Text = reader.GetString(reader.GetOrdinal("city"));
-                        CompanyContactPersonText.Text = reader.GetString(reader.GetOrdinal("contactperson"));
-                        CompanyEmailText.Text = reader.GetString(reader.GetOrdinal("email"));
-                        CompanyPhoneText.Text = reader.GetString(reader.GetOrdinal("phone"));
+        if(Roles.IsUserInRole("SuperAdministrator") || Roles.IsUserInRole("Administrator")) {
+            if (!Page.IsPostBack) {
+                //int id = 0;
+                if(Roles.IsUserInRole("SuperAdministrator")) {
+                    int.TryParse((Request.QueryString["id"] ?? string.Empty), out id);
+                    rolepanel.Visible = true;
+                    roleslink.Visible = true;
+                } else {
+                    using (SqlDataReader reader = SQL.ExecuteQuery("SELECT customerid FROM customerusers WHERE userid=@1", Membership.GetUser().ProviderUserKey)) {
+                        if (reader.Read()) {
+                            id = reader.GetInt32(0);
+                        } else {
+                            Response.Redirect("/", true);
+                        }
                     }
-                    List<Guid> guidlist = new List<Guid>();
-                    reader.NextResult();
-                    while (reader.Read()) {
-                        guidlist.Add((Guid)reader.GetSqlGuid(0));
+                }
+                string action = (id == 0 ? "Create" : "Edit");
+                Page.Title = action + " Company";
+                CompanyCreate.Text = action + " Company";
+
+                if (id > 0) {
+                    using (SqlDataReader reader = SQL.ExecuteQuery("SELECT * FROM customer WHERE customerid = @1;SELECT userid FROM customerusers WHERE customerid=@1", id)) {
+                        if (reader.Read()) {
+                            if(id > 0) {
+                                titleh2.InnerText = reader.GetString(reader.GetOrdinal("title"));
+                                topmenudiv.Visible = true;
+                            }            
+                            CompanyNameText.Text = reader.GetString(reader.GetOrdinal("title"));
+                            CompanyAdress1Text.Text = reader.GetString(reader.GetOrdinal("address1"));
+                            CompanyAdress2Text.Text = reader.GetString(reader.GetOrdinal("address2"));
+                            CompanyZipText.Text = reader.GetString(reader.GetOrdinal("zip"));
+                            CompanyCityText.Text = reader.GetString(reader.GetOrdinal("city"));
+                            CompanyContactPersonText.Text = reader.GetString(reader.GetOrdinal("contactperson"));
+                            CompanyEmailText.Text = reader.GetString(reader.GetOrdinal("email"));
+                            CompanyPhoneText.Text = reader.GetString(reader.GetOrdinal("phone"));
+                        }
+                        List<Guid> guidlist = new List<Guid>();
+                        reader.NextResult();
+                        while (reader.Read()) {
+                            guidlist.Add((Guid)reader.GetSqlGuid(0));
+                        }
+
+                        companylist.DataSource = Membership.GetAllUsers().Cast<MembershipUser>().Where(x => guidlist.Contains((Guid)x.ProviderUserKey)).OrderBy(x => x.UserName).ToList();
+                        companylist.DataBind();
+                        usersheader.Visible = true;
+
+                        updateRoles();
                     }
-
-                    companylist.DataSource = Membership.GetAllUsers().Cast<MembershipUser>().Where(x => guidlist.Contains((Guid)x.ProviderUserKey)).OrderBy(x => x.UserName).ToList();
-                    companylist.DataBind();
-                    usersheader.Visible = true;
-
-                    updateRoles();
                 }
             }
+        } else {
+            Response.Redirect("/",true);
         }
     }
 
@@ -69,7 +87,7 @@ public partial class admin_Company : System.Web.UI.Page
     }
 
     protected void CompanyCreate_Click(object sender, EventArgs e) {
-        if (int.TryParse(Request.QueryString["id"] ?? string.Empty, out id)) {
+        if (id > 0) {
             using (SQL.ExecuteQuery("UPDATE customer SET title=@1, address1=@2, address2=@3, zip=@4, city=@5, email=@6, phone=@7, contactperson=@8 WHERE customerid=@9",
                 CompanyNameText.Text,
                 CompanyAdress1Text.Text,
@@ -98,7 +116,7 @@ public partial class admin_Company : System.Web.UI.Page
         }
     }
     protected void addroleButton_Click(object sender, EventArgs e) {
-        if (int.TryParse((Request.QueryString["id"] ?? string.Empty), out id)) {
+        if (id>0) {
             for (int i = 0; i < rolesBox.Items.Count; i++) {
                 if (rolesBox.Items[i].Selected == true) {
                     using (SQL.ExecuteQuery("INSERT INTO customerroles(customerid,rolename) VALUES(@1,@2)", id, rolesBox.Items[i].Value)) { }
@@ -109,7 +127,7 @@ public partial class admin_Company : System.Web.UI.Page
     }
 
     protected void removeroleButton_Click(object sender, EventArgs e) {
-        if (int.TryParse((Request.QueryString["id"] ?? string.Empty), out id)) {
+        if (id > 0) {
             for (int i = 0; i < rolesaddedBox.Items.Count; i++) {
                 if (rolesaddedBox.Items[i].Selected == true) {
                     using (SQL.ExecuteQuery("DELETE FROM customerroles WHERE customerid=@1 AND rolename=@2", id, rolesaddedBox.Items[i].Value)) { }

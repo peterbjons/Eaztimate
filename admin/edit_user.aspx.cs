@@ -71,7 +71,9 @@ public partial class admin_edit_user : System.Web.UI.Page
                 roles.Add(li.Text);
             }
         }
-        Roles.RemoveUserFromRoles(user.UserName, Roles.GetRolesForUser(user.UserName));
+        if (Roles.GetRolesForUser(user.UserName).Length > 0) {
+            Roles.RemoveUserFromRoles(user.UserName, Roles.GetRolesForUser(user.UserName));
+        }        
         Roles.AddUserToRoles(user.UserName, roles.ToArray());
 
     }

@@ -68,7 +68,7 @@ public partial class SiteMaster : MasterPage
         if ((Request.QueryString["a"] ?? string.Empty) == "logout") {
             FormsAuthentication.SignOut();
             Session.Abandon();
-            FormsAuthentication.RedirectToLoginPage();
+            Response.Redirect("/");
         }
     }
 }

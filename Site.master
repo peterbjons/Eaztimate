@@ -88,9 +88,9 @@
                         </asp:LoginView>
                         <asp:LoginView ID="LoginView1" runat="server">
                             <RoleGroups>
-                                <asp:RoleGroup Roles="Admnistrator">
+                                <asp:RoleGroup Roles="Administrator">
                                     <ContentTemplate>
-                                        <li><a href="admin.aspx" runat="server" id="A1">Adminlink</a></li>
+                                        <li><a href="/admin/company.aspx" runat="server" id="A1">Admin</a></li>
                                     </ContentTemplate>
                                 </asp:RoleGroup>
                             </RoleGroups>

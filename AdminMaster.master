@@ -8,12 +8,21 @@
         <asp:ContentPlaceHolder runat="server" ID="AdminMainContent" />
 
     </div>
-    <div class="right_col">
-        <div style="height: 90px;"></div>
-                <h2>Menu</h2>
-        <ul>            
-            <li><a href="User_groups.aspx">Manage user groups</a></li>
-            <li><a href="List_company.aspx">Manage companies</a></li>
-        </ul>
-    </div></div>
+    <asp:LoginView ID="LoginView1" runat="server">
+        <RoleGroups>
+            <asp:RoleGroup Roles="SuperAdministrator">
+                <ContentTemplate>
+                    <div class="right_col">
+                        <div style="height: 90px;"></div>
+                                <h2>Menu</h2>
+                        <ul>            
+                            <li><a href="User_groups.aspx">Manage user groups</a></li>
+                            <li><a href="List_company.aspx">Manage companies</a></li>
+                        </ul>
+                    </div>
+                </ContentTemplate>
+            </asp:RoleGroup>
+        </RoleGroups>
+    </asp:LoginView>
+    </div>
 </asp:Content>
