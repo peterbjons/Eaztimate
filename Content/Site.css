@@ -131,13 +131,14 @@ a:hover {
     width: 200px;
 }
 
-.slider_text h2 {
+    .slider_text h2 {
         padding-top: 200px;
         border-top: 2px solid #fff;
         color: #fff;
         font-weight: 300;
         font-size: 24pt;
     }
+
     .slider_text p {
         color: #fff;
         font-weight: 300;
@@ -159,27 +160,28 @@ a:hover {
             font-weight: 300;
             font-size: 18pt;
         }
-        #start_boxes img {
-          /*height: 110px;
+
+#start_boxes img {
+    /*height: 110px;
 margin: 10px auto 10px auto;
 display: block;*/
-        }
+}
 
-        #start_boxes ul li h4 {
-            font-style: italic;
-            font-weight: 400;
-            font-size: 12pt;
-        }
+#start_boxes ul li h4 {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12pt;
+}
 
-        #start_boxes ul li p {
-            line-height: 18pt;
-            font-size: 10pt;
-            font-weight: 400;
-            margin-top: 20px;
-            overflow: hidden;
-            height: 70px;
-            margin-bottom: 10px;
-        }
+#start_boxes ul li p {
+    line-height: 18pt;
+    font-size: 10pt;
+    font-weight: 400;
+    margin-top: 20px;
+    overflow: hidden;
+    height: 70px;
+    margin-bottom: 10px;
+}
 
 ul.products li.block {
     float: left;
@@ -364,25 +366,29 @@ a.button {
     float: left;
     margin-right: 10px;
 }
+
 .sort_row1 {
     cursor: pointer;
 }
+
 .sort_row2 {
     padding-left: 10px;
 }
-.sort_row2 ul{
-    list-style-type: none;
-    margin-top: 5px;
-    padding-bottom: 5px;
 
-}
-.sort_row2 ul li {
-    margin: 0px;
-    padding: 0px 0px 0px 0px;
-}
-.sort_row2 input[type=checkbox]{
-    margin-right: 15px;
-}
+    .sort_row2 ul {
+        list-style-type: none;
+        margin-top: 5px;
+        padding-bottom: 5px;
+    }
+
+        .sort_row2 ul li {
+            margin: 0px;
+            padding: 0px 0px 0px 0px;
+        }
+
+    .sort_row2 input[type=checkbox] {
+        margin-right: 15px;
+    }
 
 .white {
     background-color: #fff;
@@ -525,7 +531,6 @@ a.button {
 #inspection_sort .inspection_item, #inspection_help .inspection_item, .sort_item, .selection_item {
     font-weight: 300 !important;
     font-size: 10pt !important;
-    
     line-height: 30px;
 }
 
@@ -671,7 +676,6 @@ a.button {
 .inspect_object .middle_col {
     float: left;
     width: 330px;
-    
 }
 
 .inspect_object .right_col {
@@ -727,7 +731,7 @@ span.goto {
     border: none;
 }
 
-    .thumbnail:hover {        
+    .thumbnail:hover {
         cursor: pointer;
     }
 
@@ -1191,37 +1195,36 @@ table.companycreate tr.user_level4 td {
         margin: 20px 0px;
     }
 
-    .pager {
-        margin: 0 auto;
-text-align: center;
-width: 300px;
-margin-top: 20px;
-margin-bottom: 40px;
+.pager {
+    margin: 0 auto;
+    text-align: center;
+    width: 300px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
 
-    }
     .pager .pagerclass {
         font-size: 10pt;
-        text-decoration:none;
+        text-decoration: none;
         padding: 0px 2px;
         color: #6d6d6d;
-      
     }
-    
+
     .pager .pagerclass_selected {
         font-size: 12pt;
-        text-decoration:none;
+        text-decoration: none;
         padding: 0px 2px;
-    }    
-
-    .last {
-        margin-right: 0px;
     }
 
-    .white_block {
-        background-color: #fff;
-        display: block;
-        padding: 10px;
-    }
+.last {
+    margin-right: 0px;
+}
+
+.white_block {
+    background-color: #fff;
+    display: block;
+    padding: 10px;
+}
 
 .threecol_1 {
     float: left;
@@ -1233,7 +1236,7 @@ margin-bottom: 40px;
     float: left;
     width: 210px;
     margin-right: 20px;
-}   
+}
 
 .threecol_3 {
     float: left;
@@ -1244,15 +1247,15 @@ margin-bottom: 40px;
     height: 5px;
     background-color: #eee;
     width: 300px;
-    margin-top:2px;
+    margin-top: 2px;
     margin-bottom: 2px;
 }
 
-.sliderclass > span {
-    height: 5px;
-    background-color: #1c80aa;
-    display: block;
-}
+    .sliderclass > span {
+        height: 5px;
+        background-color: #1c80aa;
+        display: block;
+    }
 
 .item_col4 {
     float: left;
@@ -1267,68 +1270,88 @@ margin-bottom: 40px;
 }
 
 /* TOOLTIP */
-input.tooltip_r {outline:none; display: inline-block !important; margin-right: 10px !important;}
-input.tooltip_r strong {line-height:30px;}
-input.tooltip_r:hover, input.tooltip_r:focus {text-decoration:none;} 
+input.tooltip_r {
+    outline: none;
+    display: inline-block !important;
+    margin-right: 10px !important;
+}
 
-/*.tooltip span {
+    input.tooltip_r strong {
+        line-height: 30px;
+    }
+
+    input.tooltip_r:hover, input.tooltip_r:focus {
+        text-decoration: none;
+    }
+
+    /*.tooltip span {
     z-index:10;display:none; padding:14px 20px;
     margin-top:-30px; margin-left:28px;
     width:240px; line-height:16px;
 }*/
 
-input.tooltip_r + span {
-    z-index:10;display:none; padding:14px 20px;
-    margin-top:-13px; margin-left:20px;
-    width:240px; line-height:16px;
-}
-input.tooltip_r:hover + span, input.tooltip_r:focus + span{
-    display:inline-block; position:absolute; color:#111;
-    border:1px solid #DCA; background:#fffAF0;
-}
-/*.callout {z-index:20;position:absolute;top:30px;border:0;left:-12px;}*/
-    
-/*CSS3 extras*/
-input.tooltip_r + span
-{    
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius:4px;
+    input.tooltip_r + span {
+        z-index: 10;
+        display: none;
+        padding: 14px 20px;
+        margin-top: -13px;
+        margin-left: 20px;
+        width: 240px;
+        line-height: 16px;
+    }
+
+    input.tooltip_r:hover + span, input.tooltip_r:focus + span {
+        display: inline-block;
+        position: absolute;
+        color: #111;
         
-    -moz-box-shadow: 5px 5px 8px #CCC;
-    -webkit-box-shadow: 5px 5px 8px #CCC;
-    box-shadow: 5px 5px 8px #CCC;
-}
+        background: #1c80aa;
+    }
+    /*.callout {z-index:20;position:absolute;top:30px;border:0;left:-12px;}*/
+
+    /*CSS3 extras*/
 
 
-input.tooltip, select.tooltip {outline:none;}
-input.tooltip strong, select.tooltip strong {line-height:30px;}
-input.tooltip:hover, select.tooltip:hover {text-decoration:none;} 
-input.tooltip + span, select.tooltip + span {
-    z-index:10;display:none; padding:14px 20px;
-    margin-top:0px; margin-left:25px;
-    width:240px;
+
+input.tooltip, select.tooltip {
+    outline: none;
 }
-input.tooltip:hover + span, select.tooltip:hover + span {
-    display:inline; position:absolute; 
-    border:2px solid #FFF;  color:#EEE;
-    background:#000 url(src/css-tooltip-gradient-bg.png) repeat-x 0 0;
-}
-.callout {z-index:20;position:absolute;border:0;top:-14px;left:120px;}
-    
-/*CSS3 extras*/
-input.tooltip + span, select.tooltip + span
-{
-    border-radius:2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
+
+    input.tooltip strong, select.tooltip strong {
+        line-height: 30px;
+    }
+
+    input.tooltip:hover, select.tooltip:hover {
+        text-decoration: none;
+    }
+
+    input.tooltip + span, select.tooltip + span {
+        z-index: 10;
+        display: none;
+        padding: 14px 20px;
+        margin-top: 0px;
+        margin-left: 25px;
+        width: 240px;
+    }
+
+    input.tooltip:hover + span, select.tooltip:hover + span {
+        display: inline;
+        position: absolute;
         
-    -moz-box-shadow: 0px 0px 8px 4px #666;
-    -webkit-box-shadow: 0px 0px 8px 4px #666;
-    box-shadow: 0px 0px 8px 4px #666;
+        color: #EEE;
+        background: #1c80aa;
+    }
 
-    opacity: 0.8;
+.callout {
+    z-index: 20;
+    position: absolute;
+    border: 0;
+    top: -14px;
+    left: 120px;
 }
+
+
+
 
 h1.huvud {
     /*background-image:url(../images/bord.jpg);
@@ -1338,40 +1361,28 @@ h1.huvud {
 
 
 #spotlight1 {
-
-background: url('../images/tobbe.jpg');
-background-position: center top;
-background-repeat: no-repeat;
-height: 350px;
-
-
-
+    background: url('../images/tobbe.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 350px;
 }
 
 
 
 #spotlight2 {
-
-background: url('../images/tobbebw.jpg');
-background-position: center top;
-background-repeat: no-repeat;
-height: 350px;
-
-
-
+    background: url('../images/tobbebw.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 350px;
 }
 
 
 
 #spotlight3 {
-
-background: url('../images/tobbe.jpg');
-background-position: center top;
-background-repeat: no-repeat;
-height: 350px;
-
-
-
+    background: url('../images/tobbe.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 350px;
 }
 
 
@@ -1379,17 +1390,10 @@ height: 350px;
 
 
 #slider {
-
-overflow: hidden;
-
+    overflow: hidden;
 }
 
 #promoBox {
-
-width: 960px;
-
-height: 350px;
-
-
-
+    width: 960px;
+    height: 350px;
 }
