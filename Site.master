@@ -111,31 +111,7 @@
                     <h2>Eaztimate</h2>
                     <p>work work!</p>
                 </div>--%>
-                <div id="start_boxes">
-                    <ul>
-                        <li class="box1">
-                            <h3>Jour</h3>
-                            
-                            <img src="Images/logo_jour.png" />
-                            
-
-                            <a class="button" href="product_description_jour.aspx">Läs mer &raquo;</a>
-                        </li>
-                        <li class="box2">
-                            <h3>Byggskada</h3>
-                            <img src="Images/logo_bygg.png" />
-                            
-                            <a class="button" href="product_description_bygg.aspx">Läs mer &raquo;</a>
-                        </li>
-                        <li class="box3">
-                            <h3>Lösöre</h3>
-                            <img src="Images/logo_sak.png" />
-                            
-                            <a class="button" href="product_description_losore.aspx">Läs mer &raquo;</a>
-                        </li>
-                    </ul>
-                    <div style="clear:both"></div>
-                </div>
+                
             </div>
         </div>
         <div id="content">

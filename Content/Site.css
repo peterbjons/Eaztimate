@@ -151,7 +151,7 @@ a:hover {
     #start_boxes ul li {
         float: left;
         width: 280px;
-        height: 180px;
+        /*height: 180px;*/
         padding: 20px 20px;
     }
 
@@ -160,9 +160,9 @@ a:hover {
             font-size: 18pt;
         }
         #start_boxes img {
-          height: 110px;
+          /*height: 110px;
 margin: 10px auto 10px auto;
-display: block;
+display: block;*/
         }
 
         #start_boxes ul li h4 {
@@ -1328,4 +1328,10 @@ input.tooltip + span, select.tooltip + span
     box-shadow: 0px 0px 8px 4px #666;
 
     opacity: 0.8;
+}
+
+h1.huvud {
+    /*background-image:url(../images/bord.jpg);
+    padding: 2px 0px 8px 20px;
+    color: #fff;*/
 }
