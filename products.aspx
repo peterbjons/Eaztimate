@@ -67,7 +67,7 @@
                     
                     <h2>Eaztimate Lösöre</h2>
                     <p>Målet, att underlätta i varje led i hanteringen av lösören är ambitiöst och kräver samarbete mellan individer och bolag. Första steget mot att nå dit är taget i.o.m. EZL-appen. Stora utmaningar ligger i begreppet lösöre omfattar ett stort antal olika saker, en keps, en byrå, två stolar, tre flaskor, en samling frimärken, listan kan göras lång...</p>
-                    <a class="button"style="float:left;margin-top: 30px;"href="product_description_losore.aspx">Läs mer &raquo;</a>>
+                    <a class="button"style="float:left;margin-top: 30px;"href="product_description_losore.aspx">Läs mer &raquo;</a>
             
     </div><div style="clear:both"></div>
         </div>
