@@ -32,9 +32,7 @@
                             <asp:TextBox runat="server" ID="Email" placeholder="Email" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
                                 CssClass="field-validation-error" ErrorMessage="The email address field is required." Display="Dynamic" />
-                            <p class="message-info">
-                                Passwords are required to be a minimum of <%: Membership.MinRequiredPasswordLength %> characters in length.
-                            </p>
+                            
                             <%--<asp:Label runat="server" AssociatedControlID="Password">Password</asp:Label>--%>
                             <asp:TextBox runat="server" ID="Password" TextMode="Password" placeholder="Password" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Password"
@@ -46,6 +44,22 @@
                                 CssClass="field-validation-error" Display="Dynamic" ErrorMessage="The confirm password field is required." />
                             <asp:CompareValidator runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword"
                                 CssClass="field-validation-error" Display="Dynamic" ErrorMessage="The password and confirmation password do not match." />
+                            <p class="message-info">
+                                Passwords are required to be a minimum of <%: Membership.MinRequiredPasswordLength %> characters in length.
+                            </p>
+
+                            <h2>Additional info</h2>
+
+                            <asp:TextBox runat="server" ID="fname" placeholder="First Name" />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="fname"
+                                CssClass="field-validation-error" ErrorMessage="The first name field is required." Display="Dynamic" />
+
+                            <asp:TextBox runat="server" ID="lname" placeholder="Last Name" />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="lname"
+                                CssClass="field-validation-error" ErrorMessage="The last name field is required." Display="Dynamic" />
+
+                            <asp:TextBox runat="server" ID="tel1" placeholder="Phoneno 1" />
+                            <asp:TextBox runat="server" ID="tel2" placeholder="Phoneno 2" />
 
                             <asp:Button runat="server" CommandName="MoveNext" Text="Create user" />
                         </div>

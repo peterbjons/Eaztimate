@@ -50,10 +50,10 @@ public partial class object_view : System.Web.UI.Page
                 }
             }
 
-            using (SqlDataReader reader = SQL.ExecuteQuery("SELECT a.itemid,b.title type FROM item a LEFT JOIN type b ON a.typeid=b.typeid WHERE a.roomid=@1", roomid)) {
-                objects.DataSource = reader;
-                objects.DataBind();
-            }
+            //using (SqlDataReader reader = SQL.ExecuteQuery("SELECT a.itemid,b.title type FROM item a LEFT JOIN type b ON a.typeid=b.typeid WHERE a.roomid=@1", roomid)) {
+            //    objects.DataSource = reader;
+            //    objects.DataBind();
+            //}
 
             DataTable dt = new DataTable();
             dt.Columns.Add(new DataColumn("image", typeof(string)));
@@ -69,10 +69,10 @@ public partial class object_view : System.Web.UI.Page
     }
 
     protected void Object_Click(object sender, EventArgs e) {
-        int itemid = 0;
-        int.TryParse(objects.SelectedItem.Value, out itemid);
-        if (itemid > 0) {
-            Response.Redirect("object_view.aspx?id=" + objects.SelectedItem.Value, true);
-        }
+        //int itemid = 0;
+        //int.TryParse(objects.SelectedItem.Value, out itemid);
+        //if (itemid > 0) {
+        //    Response.Redirect("object_view.aspx?id=" + objects.SelectedItem.Value, true);
+        //}
     }
 }

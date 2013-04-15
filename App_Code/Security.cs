@@ -14,7 +14,7 @@ public static class Security
 
         Encoding enc = Encoding.GetEncoding("iso-8859-1");
 
-	    using (SHA1Managed sha1 = new SHA1Managed())
+        using (SHA1Managed sha1 = new SHA1Managed())
         {
             byte[] hash = sha1.ComputeHash(enc.GetBytes(str));
             StringBuilder formatted = new StringBuilder(2 * hash.Length);

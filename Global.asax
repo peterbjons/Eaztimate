@@ -23,6 +23,12 @@
             routeTemplate: "service/{controller}/{sysid}/{caseid}/{email}/{sha}",
             defaults: new { id = System.Web.Http.RouteParameter.Optional }
         );
+
+        RouteTable.Routes.MapHttpRoute(
+            name: "JourLoginApi",
+            routeTemplate: "service/{controller}/{email}/{pw}/{sha}",
+            defaults: new { id = System.Web.Http.RouteParameter.Optional }
+        );
     }
     
     void Application_End(object sender, EventArgs e)

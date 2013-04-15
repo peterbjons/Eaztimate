@@ -23,7 +23,7 @@ public class JourSyncController : ApiController
     private static string SYNCCODE = "sdjfgjkdsgh4y87sh7f783g673gyag";
 
     // GET api/<controller>/5
-    public CounterObject GetById(string caseid, string sysid, string email, string sha, [FromBody]string value)
+    public CounterObject GetById(string email, string pw)
     {
         CounterObject counter = new CounterObject();
         //int synccount = 0;
@@ -48,12 +48,10 @@ public class JourSyncController : ApiController
     public CounterObject Post(string caseid, string sysid, string email, string sha)
     {
         string hash = Security.SHA1(email + caseid + DateTime.Now.ToUniversalTime().ToString("yyyy-MM-dd") + SYNCCODE).ToLower();
-
-        
-        //HttpContent requestContent = Request.Content.;        
+      
         CounterObject counter = new CounterObject();
         if (hash.Equals(sha)) {
-            try {            
+            try {
                 var jsonSerializer = new JsonSerializer();
                 long id = 0;
                 
@@ -67,7 +65,7 @@ public class JourSyncController : ApiController
                 int customerid = 1; //fix later
                 //---------------------------------------------------------------------
 
-                string lccaseid = jour["lc_caseno"].ToString();  
+                string lccaseid = jour["lc_caseno"].ToString();
 
                 string contactname = jour["contactname"].ToString();
                 string contactaddress = jour["contactaddress1"].ToString();
