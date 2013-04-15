@@ -33,20 +33,20 @@
     <form runat="server">
         <div id="header">
             <div class="wrapper">
-                <a href="Default.aspx">
+                <a href="/">
                     <div id="logo">eaztimate</div>
                 </a>
                 <div id="nav">
                     <ul>
-                        <li><a href="Default.aspx" runat="server" id="menu1">Hem</a></li>
+                        <li><a href="/" runat="server" id="menu1">Hem</a></li>
                         <asp:LoginView runat="server">
                             <AnonymousTemplate>
 
                                 <li><a href="products.aspx">Produkter</a>
                                     <ul>
-                                        <li><a href="product_description_jour.aspx">Jour</a></li>
-                                        <li><a href="product_description_bygg.aspx">Byggskada</a></li>
-                                        <li><a href="product_description_losore.aspx">Lösöre</a></li>
+                                        <li><a href="/product_description_jour.aspx">Jour</a></li>
+                                        <li><a href="/product_description_bygg.aspx">Byggskada</a></li>
+                                        <li><a href="/product_description_losore.aspx">Lösöre</a></li>
                                     </ul>
                                 </li>
                                 <%--<li><a href="kunder.aspx">Kunder</a>
@@ -73,11 +73,11 @@
                                     </ul>
                                 </li>                                
                                 <%--<li><a href="inspection.aspx" runat="server" id="menu4">Manage</a></li>--%>
-                                <li><a href="products.aspx">Produkter</a>
+                                <li><a href="/products.aspx">Produkter</a>
                                     <ul>
-                                        <li><a href="product_description_jour.aspx">Jour</a></li>
-                                        <li><a href="product_description_bygg.aspx">Byggskada</a></li>
-                                        <li><a href="product_description_losore.aspx">Lösöre</a></li>
+                                        <li><a href="/product_description_jour.aspx">Jour</a></li>
+                                        <li><a href="/product_description_bygg.aspx">Byggskada</a></li>
+                                        <li><a href="/product_description_losore.aspx">Lösöre</a></li>
                                     </ul>
                                 </li>
                                 <%--<li><a href="contact.aspx" runat="server" id="menu5">Kontakt</a></li>--%>
@@ -107,17 +107,21 @@
         </div>
         <div id="slider" runat="server" visible="true">
             <div class="wrapper" id="promoBox">
-                <div id="spotlight1"><div class="slider_text">
-                    <h2>Eaztimate</h2>
-                    <p>work work!</p>
+                <div id="spotlight1"><img src="Images/logo_jour_300_300.png" /><div class="slider_text">
+                    
+                    <h2>Eaztimate Jour</h2>
+                    <p>Ett samtal kommer in till jouren och ett uppdrag startar med att jourhavande öppnar Jour-appen och noterar adress och telefonnummer till kontaktperson på skadeplatsen. Tid och uppgifter om olika steg i jourärendet loggas sedan i kronologisk ordning...</p>
+                    <a class="button"style="float:left;margin-top: 30px;">Läs mer</a>
                 </div></div>
-                <div id="spotlight2"><div class="slider_text">
-                    <h2>Eaztimate</h2>
-                    <p>work work!</p>
+                <div id="spotlight2"><img src="Images/logo_bygg_300_300.png" /><div class="slider_text">
+                    
+                    <h2>Eaztimate Byggskada</h2>
+                    <p>Stor eller liten fastighet, omfattande eller begränsad skada, sot eller fukt, osv. Skador skiljer sig åt men är sällan unika. I EZ Byggskada har vi strukturera upp möjliga skador, viket leder till att arbetet med att dokumentera, bedöma och rapportera underlättas avsevärt...</p><a class="button"style="float:left;margin-top: 30px;">Läs mer</a>
                 </div></div>
-                <div id="spotlight3"><div class="slider_text">
-                    <h2>Eaztimate</h2>
-                    <p>work work!</p>
+                <div id="spotlight3"><img src="Images/logo_sak_300_300.png" /><div class="slider_text">
+                    
+                    <h2>Eaztimate Lösöre</h2>
+                    <p>Målet, att underlätta i varje led i hanteringen av lösören är ambitiöst och kräver samarbete mellan individer och bolag. Första steget mot att nå dit är taget i.o.m. EZL-appen. Stora utmaningar ligger i begreppet lösöre omfattar ett stort antal olika saker, en keps, en byrå, två stolar, tre flaskor, en samling frimärken, listan kan göras lång...</p><a class="button" style="float:left;margin-top: 30px;">Läs mer</a>
                 </div></div>
                 
                 

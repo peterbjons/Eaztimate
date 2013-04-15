@@ -128,15 +128,17 @@ a:hover {
 
 .slider_text {
     height: 320px;
-    width: 200px;
+    width:630px;
+    float:left;
+    padding-left: 30px;
 }
 
     .slider_text h2 {
-        padding-top: 200px;
-        border-top: 2px solid #fff;
+        padding-top: 30px;
+        
         color: #fff;
         font-weight: 300;
-        font-size: 24pt;
+        font-size: 36pt;
     }
 
     .slider_text p {
@@ -1361,7 +1363,7 @@ h1.huvud {
 
 
 #spotlight1 {
-    background: url('../images/tobbe.jpg');
+    
     background-position: center top;
     background-repeat: no-repeat;
     height: 350px;
@@ -1370,7 +1372,7 @@ h1.huvud {
 
 
 #spotlight2 {
-    background: url('../images/tobbebw.jpg');
+ 
     background-position: center top;
     background-repeat: no-repeat;
     height: 350px;
@@ -1379,7 +1381,7 @@ h1.huvud {
 
 
 #spotlight3 {
-    background: url('../images/tobbe.jpg');
+
     background-position: center top;
     background-repeat: no-repeat;
     height: 350px;
@@ -1396,4 +1398,9 @@ h1.huvud {
 #promoBox {
     width: 960px;
     height: 350px;
+    padding-top: 30px;
+}
+
+#promoBox div img {
+    float:left;
 }
