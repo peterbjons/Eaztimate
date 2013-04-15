@@ -25,7 +25,7 @@
         ga('send', 'pageview');
 
     </script>
-    
+    <script src="Scripts/slider.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Oswald|Open+Sans:300italic,400italic,400,300,700' rel='stylesheet' type='text/css'>
     <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
 </head>
@@ -106,11 +106,20 @@
             </div>
         </div>
         <div id="slider" runat="server" visible="true">
-            <div class="wrapper">
-                <%--<div id="slider_text">
+            <div class="wrapper" id="promoBox">
+                <div id="spotlight1"><div class="slider_text">
                     <h2>Eaztimate</h2>
                     <p>work work!</p>
-                </div>--%>
+                </div></div>
+                <div id="spotlight2"><div class="slider_text">
+                    <h2>Eaztimate</h2>
+                    <p>work work!</p>
+                </div></div>
+                <div id="spotlight3"><div class="slider_text">
+                    <h2>Eaztimate</h2>
+                    <p>work work!</p>
+                </div></div>
+                
                 
             </div>
         </div>
