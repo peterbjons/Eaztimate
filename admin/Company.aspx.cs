@@ -17,11 +17,15 @@ public partial class admin_Company : System.Web.UI.Page
         if (!Page.IsPostBack) {
             string action = ((Request.QueryString["id"] ?? string.Empty) == string.Empty ? "Create" : "Edit");
             Page.Title = action + " Company";
-            CompanyCreate.Text = action + " Company";
+            CompanyCreate.Text = action + " Company";            
             
             if (int.TryParse((Request.QueryString["id"] ?? string.Empty), out id)) {
                 using (SqlDataReader reader = SQL.ExecuteQuery("SELECT * FROM customer WHERE customerid = @1;SELECT userid FROM customerusers WHERE customerid=@1", id)) {
                     if (reader.Read()) {
+                        if((Request.QueryString["id"] ?? string.Empty) != string.Empty) {
+                            titleh2.InnerText = reader.GetString(reader.GetOrdinal("title"));
+                            topmenudiv.Visible = true;
+                        }            
                         CompanyNameText.Text = reader.GetString(reader.GetOrdinal("title"));
                         CompanyAdress1Text.Text = reader.GetString(reader.GetOrdinal("address1"));
                         CompanyAdress2Text.Text = reader.GetString(reader.GetOrdinal("address2"));

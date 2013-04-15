@@ -12,32 +12,32 @@
         <h1><asp:Literal ID="title" runat="server" /></h1>
         <div class="collapsable" style="width: 960px">
             <div class="threecol_1">
-                <h2>Name</h2>
+                <h2>Namn</h2>
                 <p class="white_block">
                     <asp:Literal ID="description" runat="server" />
                 </p>
             </div>
             <div class="threecol_2">
-                <h2>Size</h2>
+                <h2>Area</h2>
                 <p class="white_block">
                     44m&sup2;
                 </p>
             </div>
             <div class="threecol_3">
-                <h2>Objects</h2>
+                <h2>Objekt</h2>
                 <p class="white_block">
                     <asp:Literal ID="objectscount" runat="server" />
                 </p>
             </div>
             <div style="clear: both;"></div> 
             <div class="object_col">
-                <h2>Damage</h2>
+                <h2>Skada</h2>
                 <p class="white_block">
                     <asp:Literal ID="opinion" runat="server" />
                 </p>
             </div>                       
             <div style="clear: both"></div>
-            <h2>Pictures</h2>
+            <h2>Bilder</h2>
             <asp:Repeater ID="imagerepeater" runat="server">
                 <ItemTemplate>
                     <a href="<%#DataBinder.Eval(Container.DataItem, "image")%>" rel="lightbox"><img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" class="thumbnail_large <%#Container.ItemIndex == 3 ? "last" : string.Empty %>"/></a>
