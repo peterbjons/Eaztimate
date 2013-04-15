@@ -21,9 +21,7 @@
 
         </div>
         <div class="col col_205">
-            Lars Hagbohm<br />
-            Mobil: 070-521 34 40<br />
-            lars.hagbohm@ocab.se
+            
 
         </div>
                 

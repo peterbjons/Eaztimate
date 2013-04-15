@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Eaztimate;
@@ -39,6 +40,20 @@ public partial class Documents_jour_pdf : System.Web.UI.Page
                     contactphone2.Text = reader.GetString(reader.GetOrdinal("contactphone2")) + "<br/>";
                 }
                 syncemail.Text = reader.GetString(reader.GetOrdinal("syncemail"));
+
+                string username = Membership.GetUserNameByEmail(reader.GetString(reader.GetOrdinal("syncemail")));
+                MembershipUser user = Membership.GetUser(username);
+
+                using (SqlDataReader reader2 = Eaztimate.SQL.ExecuteQuery("SELECT * FROM userdata WHERE userid=@1", user.ProviderUserKey)) {
+                    if (reader2.Read()) {
+                        fname.Text = reader2.GetString(reader2.GetOrdinal("fname"));
+                        lname.Text = reader2.GetString(reader2.GetOrdinal("lname"));
+                        tel1.Text = reader2.GetString(reader2.GetOrdinal("tel1"));
+                        tel2.Text = reader2.GetString(reader2.GetOrdinal("tel2"));
+                    }
+                }
+
+
                 damagedescription.Text = damagedescription_case2.Text = reader.GetString(reader.GetOrdinal("damagedescription"));
 
                 contactaction = reader.GetInt32(reader.GetOrdinal("contactaction"));

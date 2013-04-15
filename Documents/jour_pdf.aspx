@@ -41,6 +41,9 @@
             </div>
             <div class="col col_205">
                 <h2 class="dark">Ansvarig Ocab</h2>
+                <asp:Literal ID="fname" runat="server" /> <asp:Literal ID="lname" runat="server" /><br />
+                <asp:Literal ID="tel1" runat="server" /><br />
+                <asp:Literal ID="tel2" runat="server" /><br />
                 <asp:Literal ID="syncemail" runat="server" />
             </div>
             <div class="col col_205 last">
@@ -72,7 +75,7 @@
             </asp:Repeater>
             <div style="clear: both"></div>
             
-            <div style="clear: both; height: 50px;"></div>
+            <div style="clear: both; height: 20px;"></div>
             <div id="actiondescdiv2" runat="server">
             <div class="col col_655">
                 <h2 class="light">Beskrivning av skadan</h2>
