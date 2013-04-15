@@ -112,13 +112,13 @@ a:hover {
             }
 
 #slider {
-    /*height: 500px;*/
+    height: 350px;
     background-position: center top;
-    /*background-image: url('../images/slide1.jpg');*/
+    background-image: url('../images/sliderfull.jpg');
     background-repeat: no-repeat;
     position: relative;
-    /*background-color: #fff;*/
-    margin-bottom: 80px;
+    background-color: #1c80aa;
+    margin-bottom: 40px;
 }
 
 #start_boxes {
