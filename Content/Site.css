@@ -110,6 +110,10 @@ a:hover {
             #nav ul li a.active {
                 border-bottom: 2px solid #1c80aa;
             }
+.product_block {
+    background-image: url('../images/sliderfull.jpg');
+   margin-bottom: 30px;
+}
 
 #slider {
     height: 350px;
@@ -127,18 +131,19 @@ a:hover {
 }
 
 .slider_text {
-    height: 320px;
-    width:630px;
+    
+    width:620px;
     float:left;
     padding-left: 30px;
+    padding-right: 10px;
 }
 
     .slider_text h2 {
         padding-top: 30px;
         
         color: #fff;
-        font-weight: 300;
-        font-size: 36pt;
+        font-weight: 300!important;
+        font-size: 36pt!important;
     }
 
     .slider_text p {
@@ -188,7 +193,6 @@ display: block;*/
 ul.products li.block {
     float: left;
     width: 280px;
-    height: 180px;
     padding: 20px 20px;
     list-style-type: none;
 }
