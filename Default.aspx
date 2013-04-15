@@ -14,7 +14,7 @@
     <p>Var för sig är, Jour, Byggskada och Lösöre, applikationer som underlättar arbetet med att bedöma, dokumentera och rapportera omfattningen av skadan. Tillsammans utgör de länkar i en mycket stark kedja mellan den drabbade, försäkringsbolaget och saneringsbolaget.  </p>--%>
 </div>
 
-    <h1 class="huvud">Utmaning</h1>
+   <%-- <h1 class="huvud">Utmaning</h1>
     <div class="whitebox"><img src="Images/placeholder_utmaning.png" />
 </div>
     <h1>Verktyg</h1>
@@ -43,5 +43,5 @@
                         </li>
                     </ul>
                     <div style="clear:both"></div>
-                </div>
+                </div>--%>
 </asp:Content>
