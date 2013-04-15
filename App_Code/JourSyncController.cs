@@ -66,13 +66,19 @@ public class JourSyncController : ApiController
 
                 using (SqlDataReader reader = SQL.ExecuteQuery("SELECT token FROM logintokens WHERE dateexpires > GETDATE() AND userid=@1", user.ProviderUserKey)) {
                     if (reader.Read()) {
-                        counter.data = reader.GetGuid(0).ToString();
-                        hash = Security.SHA1(email + caseid + DateTime.Now.ToUniversalTime().ToString("yyyy-MM-dd") + SYNCCODE).ToLower();
+                        //counter.data = reader.GetGuid(0).ToString();
+                        hash = Security.SHA1(email + reader.GetGuid(0).ToString() + DateTime.Now.ToUniversalTime().ToString("yyyy-MM-dd") + caseid).ToLower();
+                        if (!hash.Equals(pw)) {
+                            counter.success = "Error";
+                            counter.message = "Wrong hash";
+                            return counter;
+                        }
                         //ccase.email+settings.getString("token", null)+EaztimateSecurity.GetUTCdatetimeAsString()+ccase.caseid
 
                     } else {
                         counter.success = "Expired";
                         counter.message = "Token Expired";
+                        return counter;
                     }
                 }
 
@@ -284,7 +290,7 @@ public class JourSyncController : ApiController
             doc.HtmlOptions.FontProtection = false;
             doc.HtmlOptions.ImageQuality = 33;
             Random rnd = new Random();
-            id = doc.AddImageUrl("http://" + HttpContext.Current.Request.Url.Host + "/Documents/jour_pdf.aspx?id=" + jid.ToString() + "&rnd=" + rnd.Next(50000));
+            id = doc.AddImageUrl("http://" + HttpContext.Current.Request.Url.Host + "/Documents/jour_pdf.aspx?id=" + jid.ToString() + "&uid="+ email +"&rnd=" + rnd.Next(50000));
 
             while (true) {
                 //doc.FrameRect();
