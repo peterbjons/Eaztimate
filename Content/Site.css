@@ -126,23 +126,23 @@ a:hover {
     top: 50px;
 }
 
-#slider_text {
+.slider_text {
     height: 320px;
     width: 200px;
 }
 
-/*#slider_text h2 {
+.slider_text h2 {
         padding-top: 200px;
         border-top: 2px solid #fff;
         color: #fff;
         font-weight: 300;
         font-size: 24pt;
     }
-    #slider_text p {
+    .slider_text p {
         color: #fff;
         font-weight: 300;
         font-size: 12pt;
-    }*/
+    }
 
 #start_boxes ul {
     list-style-type: none;
@@ -1334,4 +1334,62 @@ h1.huvud {
     /*background-image:url(../images/bord.jpg);
     padding: 2px 0px 8px 20px;
     color: #fff;*/
+}
+
+
+#spotlight1 {
+
+background: url('../images/tobbe.jpg');
+background-position: center top;
+background-repeat: no-repeat;
+height: 350px;
+
+
+
+}
+
+
+
+#spotlight2 {
+
+background: url('../images/tobbebw.jpg');
+background-position: center top;
+background-repeat: no-repeat;
+height: 350px;
+
+
+
+}
+
+
+
+#spotlight3 {
+
+background: url('../images/tobbe.jpg');
+background-position: center top;
+background-repeat: no-repeat;
+height: 350px;
+
+
+
+}
+
+
+
+
+
+#slider {
+
+overflow: hidden;
+
+}
+
+#promoBox {
+
+width: 960px;
+
+height: 350px;
+
+
+
 }
