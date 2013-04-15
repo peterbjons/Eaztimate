@@ -61,6 +61,21 @@ public class JourSyncController : ApiController
                 string journo = jour["caseid"].ToString();
                 string pw = jour["password"].ToString();
 
+                string username = Membership.GetUserNameByEmail(email);
+                MembershipUser user = Membership.GetUser(username);
+
+                using (SqlDataReader reader = SQL.ExecuteQuery("SELECT token FROM logintokens WHERE dateexpires > GETDATE() AND userid=@1", user.ProviderUserKey)) {
+                    if (reader.Read()) {
+                        counter.data = reader.GetGuid(0).ToString();
+                        hash = Security.SHA1(email + caseid + DateTime.Now.ToUniversalTime().ToString("yyyy-MM-dd") + SYNCCODE).ToLower();
+                        //ccase.email+settings.getString("token", null)+EaztimateSecurity.GetUTCdatetimeAsString()+ccase.caseid
+
+                    } else {
+                        counter.success = "Expired";
+                        counter.message = "Token Expired";
+                    }
+                }
+
                 //---------------------------------------------------------------------
                 int customerid = 1; //fix later
                 //---------------------------------------------------------------------
