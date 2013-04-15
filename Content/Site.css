@@ -112,12 +112,12 @@ a:hover {
             }
 
 #slider {
-    height: 500px;
+    /*height: 500px;*/
     background-position: center top;
-    background-image: url('../images/slide1.jpg');
+    /*background-image: url('../images/slide1.jpg');*/
     background-repeat: no-repeat;
     position: relative;
-    background-color: #fff;
+    /*background-color: #fff;*/
     margin-bottom: 80px;
 }
 
@@ -1262,4 +1262,5 @@ margin-bottom: 40px;
 .whitebox {
     background-color: #fff;
     padding: 10px;
+    margin-bottom: 30px;
 }
