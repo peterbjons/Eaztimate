@@ -7,7 +7,7 @@
         <div style="width: 50%; float: left;">
             <asp:TextBox runat="server" ID="Email" placeholder="Email" CssClass="tooltip"/>
             <span>
-                <img class="callout" src="/Images/callout.gif" />
+                <img class="callout" src="/Images/callout.png" />
                 <strong>Email</strong><br />
                 The email address to this user.
             </span>
@@ -15,7 +15,7 @@
                 CssClass="field-validation-error" ErrorMessage="The email address field is required." Display="Dynamic" />
             <asp:TextBox runat="server" ID="fname" placeholder="First Name" CssClass="tooltip"/>
             <span>
-                <img class="callout" src="/Images/callout.gif" />
+                <img class="callout" src="/Images/callout.png" />
                 <strong>First Name</strong><br />
                 This users first name.
             </span>
@@ -23,7 +23,7 @@
                 CssClass="field-validation-error" ErrorMessage="The first name field is required." Display="Dynamic" />
             <asp:TextBox runat="server" ID="lname" placeholder="Last Name" CssClass="tooltip"/>
             <span>
-                <img class="callout" src="/Images/callout.gif" />
+                <img class="callout" src="/Images/callout.png" />
                 <strong>Last Name</strong><br />
                 This users last name.
             </span>
@@ -32,13 +32,13 @@
 
             <asp:TextBox runat="server" ID="tel1" placeholder="Phone no 1" CssClass="tooltip"/>
             <span>
-                <img class="callout" src="/Images/callout.gif" />
+                <img class="callout" src="/Images/callout.png" />
                 <strong>Phone no 1</strong><br />
                 The first phone no.
             </span>
             <asp:TextBox runat="server" ID="tel2" placeholder="Phone no 2" CssClass="tooltip"/>
             <span>
-                <img class="callout" src="/Images/callout.gif" />
+                <img class="callout" src="/Images/callout.png" />
                 <strong>Phone no 2</strong><br />
                 The second phone number (if available).
             </span>
@@ -48,7 +48,7 @@
         <div style="width: 50%; float: right;">
             <asp:ListBox ID="rolesBox" SelectionMode="Multiple" DataTextField="rolename" DataValueField="rolename" runat="server" class="tooltip"/>
             <span>
-                <img class="callout" src="/Images/callout.gif" />
+                <img class="callout" src="/Images/callout.png" />
                 <strong>Roles</strong><br />
                 Select all roles this user belongs to.
             </span>
