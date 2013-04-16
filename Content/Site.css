@@ -130,7 +130,7 @@ a:hover {
     float:left;
     padding: 5px 10px;
     font-size: 8pt;
-    background-color: #afe1f8;
+    background-color: #85c8e0;
     color: #000;
     margin-right: 4px;margin-bottom: 5px;
 }
@@ -300,6 +300,7 @@ a.button {
         font-weight: 300;
         font-size: 20pt;
         margin-bottom: 10px;
+        margin-top: 20px;
     }
 
 
@@ -650,7 +651,9 @@ a.button {
 .inspect_object h3 {
     font-size: 14pt;
     font-weight: 300;
-    text-decoration: underline;
+    padding: 5px 10px;
+background-color: #85c8e0;
+color: #fff;
 }
 
 .inspect_object h4 {

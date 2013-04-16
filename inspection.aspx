@@ -33,12 +33,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <asp:ScriptManager ID="ScriptManager1" runat="server" />
     <div class="inspect_object">
-        <h3><a href="inspection.aspx?id=<%=inspectionid %>" class="breadcrumb">
-            <asp:Literal ID="inspectno" runat="server" /></a></h3>
+        <a href="inspection.aspx?id=<%=inspectionid %>" class="breadcrumb">
+            <asp:Literal ID="inspectno" runat="server" /></a>
         <h1>
             <asp:Literal ID="description" runat="server" /></h1>
         <a class="button" style="float: none" id="collapse">Dölj</a>
-        <h2>Allmän information</h2>
+        <h2 style="margin-top: 20px">Allmän information</h2>
         <div class="collapsable" style="width: 940px; background-color: #fff; padding: 10px; margin-bottom: 20px;">
 
             <div class="left_col">
