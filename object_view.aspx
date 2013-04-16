@@ -36,7 +36,7 @@
         <h1><asp:Literal ID="typename" runat="server" /></h1>
 
         <%--<div class="col1">--%>
-                <a class="button" style="float: none" id="collapse">Dölj</a>
+               
         <h2 style="margin-top: 20px">Allmän information</h2>
        <div class="collapsable" style="width: 940px; background-color: #fff; padding: 10px; margin-bottom: 20px;">
             <div class="left_col" style="width: 460px;">
