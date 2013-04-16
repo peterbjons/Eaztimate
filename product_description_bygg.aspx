@@ -12,4 +12,3 @@
 
     <a href="products.aspx" class="button" style="float:left">&laquo; Tillbaka till produkter</a><a href="product_timeline.aspx#bygg_timeline" class="button">Se tidslinje &raquo;</a><div style="clear:both"></div></div>
 </asp:Content>
-

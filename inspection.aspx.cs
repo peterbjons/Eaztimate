@@ -21,13 +21,7 @@ public partial class inspect_object : System.Web.UI.Page
     {
         if (!int.TryParse((Request.QueryString["id"] ?? ""), out inspectionid)) {
             Response.Redirect("open_inspection.aspx", true);
-        }
-
-        objectlist.inspectionid = inspectionid;
-        objectlist.bindData();
-
-        roomlist.inspectionid = inspectionid;
-        roomlist.bindData();
+        }        
 
         //int.TryParse(Request.QueryString["so"] ?? "0", out sortorder);        
         //switch (sortorder) {
@@ -54,6 +48,13 @@ public partial class inspect_object : System.Web.UI.Page
         if (!Page.IsPostBack) {
             //bindListView();
             //bindRoomView();
+
+            objectlist.inspectionid = inspectionid;
+            objectlist.bindData();
+
+            roomlist.inspectionid = inspectionid;
+            roomlist.bindData();
+
             ((HtmlGenericControl)Master.FindControl("slider")).Visible = false;
             
             using (SqlDataReader reader = SQL.ExecuteQuery("SELECT a.* FROM inventory a WHERE a.inventoryid=@1", inspectionid)) {

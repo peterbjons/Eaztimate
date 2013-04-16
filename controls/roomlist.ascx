@@ -38,8 +38,6 @@
                                                 <div class="inspection_item_image">
                                                     <a rel="lightbox" href="<%#AmazonHandler.GetPrivateImage(DataBinder.Eval(Container.DataItem, "inspectionno") + "/" + DataBinder.Eval(Container.DataItem, "roomimage"))%>">
                                                         <img src="<%#AmazonHandler.GetPrivateImage(DataBinder.Eval(Container.DataItem, "inspectionno") + "/" + DataBinder.Eval(Container.DataItem, "roomimage"))%>" <%#DBNull.Value.Equals(DataBinder.Eval(Container.DataItem, "roomimage")) ?  "style='display: none'" : "" %> /></a>
-                                                    <h3><%--<%#DataBinder.Eval(Container.DataItem, "objects")%>--%></h3>
-
                                                 </div>
                                             </div>
                                             <div class="inspection_col4">

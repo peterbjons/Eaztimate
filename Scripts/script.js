@@ -13,6 +13,16 @@
 }
 
 function expandElement(handle, element) {
+    //$(handle).stop(true);
+    //$(handle).click(function () {
+    //    $(element).animate({
+    //        opacity: 'toggle',
+    //        height: 'toggle'
+    //    }, 500, function () {
+    //        $(element).stop(true);
+    //        $(handle).text("Visa");
+    //    });
+    //});
     $(handle).toggle(function () {
         $(element).animate({
             opacity: 0.25,
