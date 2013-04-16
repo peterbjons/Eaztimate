@@ -2,6 +2,7 @@
     margin: 0px;
     padding: 0px;
     font-family: 'Open Sans';
+    font-size: 11pt;
 }
 
 body {
@@ -12,6 +13,7 @@ p {
     margin-bottom: 20px;
     color: #434343;
     line-height: 26px;
+    font-size: 11pt;
 }
 
 a {
@@ -35,6 +37,7 @@ a:hover {
     width: 960px;
 }
 
+
 #footer {
 }
 
@@ -42,7 +45,7 @@ a:hover {
 #header {
     background-color: #fff;
     height: 50px;
-    padding: 10px 0px 0px 0px;
+    padding: 10px 10px 0px 10px;
     min-width: 960px;
 }
 
@@ -114,6 +117,20 @@ a:hover {
 .product_block {
     background-image: url('../images/sliderfull.jpg');
    margin-bottom: 30px;
+   padding-bottom: 10px;
+}
+.product_block img {width:250px;}
+.product_block ul {
+    list-style-type: none;
+    
+}
+.product_block ul li{
+    float:left;
+    padding: 5px 10px;
+    font-size: 8pt;
+    background-color: #afe1f8;
+    color: #000;
+    margin-right: 4px;margin-bottom: 5px;
 }
 
 #slider {
@@ -151,7 +168,7 @@ a:hover {
     .slider_text p {
         color: #fff;
         font-weight: 300;
-        font-size: 12pt;
+        font-size: 11pt;
     }
 
 #start_boxes ul {
@@ -229,7 +246,7 @@ li.block p {
     font-size: 8pt;
     color: #6d6d6d;
     margin-bottom: 20px;
-    line-height: 12pt;
+    line-height: 11pt;
 }
 
 a.button {
@@ -703,7 +720,7 @@ a.button {
     background: #efefef;
     border: 0px;
     padding: 4px;
-    font-size: 12pt;
+    font-size: 11pt;
 }
 
 #MainContent_categories, #MainContent_objects {
@@ -713,7 +730,7 @@ a.button {
     background: #EFEFEF;
     border: 0px;
     padding: 4px;
-    font-size: 12pt;
+    font-size: 11pt;
 }
 
 
@@ -1028,7 +1045,7 @@ thead tr.tr_red td {
 
     .orrpon th a {
         padding: 5px 7px;
-        font-size: 12pt;
+        font-size: 11pt;
         color: #fff;
         text-decoration: none;
         font-weight: 300;
@@ -1219,7 +1236,7 @@ table.companycreate tr.user_level4 td {
     }
 
     .pager .pagerclass_selected {
-        font-size: 12pt;
+        font-size: 11pt;
         text-decoration: none;
         padding: 0px 2px;
     }
@@ -1273,6 +1290,7 @@ table.companycreate tr.user_level4 td {
 
 .whitebox {
     background-color: #fff;
+
     padding: 10px;
     margin-bottom: 30px;
 }

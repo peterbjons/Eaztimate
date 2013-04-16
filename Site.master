@@ -129,7 +129,7 @@
         </div>
         <div id="content">
 
-            <div class="wrapper">
+            <div class="wrapper" style="padding: 10px;">
                 <asp:ContentPlaceHolder runat="server" ID="MainContent">
                 </asp:ContentPlaceHolder>
             </div>

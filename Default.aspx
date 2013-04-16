@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Title="Eaztimate" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <asp:Content runat="server" ID="Content1" ContentPlaceHolderID="HeadContent">
     <link href='http://fonts.googleapis.com/css?family=Oswald|Open+Sans:300italic,400italic,400,300,700' rel='stylesheet' type='text/css'>
