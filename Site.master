@@ -11,7 +11,7 @@
     </asp:PlaceHolder>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <meta name="viewport" content="width=960" />
+    <meta name="viewport" content="width=980" />
 
     <script>
         (function (i, s, o, g, r, a, m) {
