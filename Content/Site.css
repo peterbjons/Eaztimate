@@ -1428,3 +1428,10 @@ h1.huvud {
 #promoBox div img {
     float:left;
 }
+
+div.product_verktyg img{
+    width: 50px;
+    padding: 10px;
+    background-color: #1c80aa;
+    margin: 0px 10px 5px 0px;
+}
