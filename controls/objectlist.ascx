@@ -38,7 +38,6 @@
                                                 <div class="inspection_item_image">
                                                     <a rel="lightbox" target="_blank" href="<%#AmazonHandler.GetPrivateImage(DataBinder.Eval(Container.DataItem, "inspectionno") + "/" + DataBinder.Eval(Container.DataItem, "itemimage"))%>">
                                                         <img src="<%#AmazonHandler.GetPrivateImage(DataBinder.Eval(Container.DataItem, "inspectionno") + "/" + DataBinder.Eval(Container.DataItem, "itemimage"))%>" <%#DBNull.Value.Equals(DataBinder.Eval(Container.DataItem, "itemimage")) ?  "style='display: none'" : "" %>/></a>
-                                                    <h3><%--<%#DataBinder.Eval(Container.DataItem, "objects")%>--%></h3>
 
                                                 </div>
                                             </div>
@@ -94,6 +93,12 @@
                     </div>
                         </asp:LinkButton>
                     </div>
+                    </ContentTemplate>
+                <Triggers>
+                    <asp:AsyncPostBackTrigger ControlID="cat_cblist" EventName="SelectedIndexChanged" />
+                    <asp:AsyncPostBackTrigger ControlID="room_cblist" EventName="SelectedIndexChanged" />
+                </Triggers>
+            </asp:UpdatePanel>
                     <div id="inspection_help">
                         <h2>Urval</h2>
                         <div id="roomdiv" class="selection_item white" runat="server">
@@ -114,7 +119,5 @@
                                 <asp:CheckBoxList ID="cat_cblist" runat="server" DataValueField="categoryid" DataTextField="title" OnSelectedIndexChanged="cat_cblist_SelectedIndexChanged" AutoPostBack="true"></asp:CheckBoxList>                                
                             </div>
                         </div>
-                    </div>
-                </ContentTemplate>
-            </asp:UpdatePanel>
+                    </div>                
         </div>

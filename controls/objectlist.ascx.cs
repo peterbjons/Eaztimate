@@ -16,10 +16,12 @@ public partial class controls_objectlist : System.Web.UI.UserControl
     public int sortorder = 0;
     public string sort = string.Empty;
     public string roomselect = string.Empty;
+    public string catselect = string.Empty;
 
     protected void Page_Load(object sender, EventArgs e) {
         if (!Page.IsPostBack) {
             registerScripts();
+            ScriptManager.RegisterStartupScript(Parent.Page, Parent.Page.GetType(), "showhideurval", "expandSort($('.row_rum1'), $('.row_rum2'));expandSort($('.row_kategori1'), $('.row_kategori2'));", true);
         }
     }
 
@@ -105,8 +107,18 @@ public partial class controls_objectlist : System.Web.UI.UserControl
             roomselect = string.Empty;
         }
 
+        selectedcount = cat_cblist.Items.Cast<ListItem>().Where(item => item.Selected).Count();
+        if (selectedcount > 0) {
+            var s = cat_cblist.Items.Cast<ListItem>()
+                   .Where(item => item.Selected)
+                   .Aggregate("", (current, item) => current + (item.Value + ", "));
+            catselect = " AND d.categoryid IN (" + s.TrimEnd(new[] { ',', ' ' }) + ")";
+        } else {
+            catselect = string.Empty;
+        }
+
         string othertype = GetGlobalResourceObject("Strings", "other").ToString();
-        SqlDataSource1.SelectCommand = "SELECT a.itemid,a.price,a.usage,a.age,a.other,a.dateupdated,(CASE WHEN b.title LIKE '" + othertype + "' THEN (CASE WHEN a.alttype IS NULL THEN LEFT(a.title, 50) ELSE a.alttype END) ELSE b.title END)  itemtitle, c.title grouptitle,d.title categorytitle, (SELECT TOP 1 x.image FROM itemimage x WHERE x.itemid=a.itemid ORDER BY x.itemimageid) itemimage, (SELECT x.inspectionno FROM inventory x WHERE a.inventoryid=x.inventoryid) inspectionno FROM item a LEFT JOIN type b ON a.typeid=b.typeid LEFT JOIN grupp c ON b.groupid=c.groupid LEFT JOIN category d ON c.categoryid=d.categoryid WHERE "+ (inspectionid > 0 ? "a.inventoryid=" + inspectionid.ToString() : "a.roomid="+ roomid.ToString()) + roomselect + sort;
+        SqlDataSource1.SelectCommand = "SELECT a.itemid,a.price,a.usage,a.age,a.other,a.dateupdated,(CASE WHEN b.title LIKE '" + othertype + "' THEN (CASE WHEN a.alttype IS NULL THEN LEFT(a.title, 50) ELSE a.alttype END) ELSE b.title END)  itemtitle, c.title grouptitle,d.title categorytitle,d.categoryid, (SELECT TOP 1 x.image FROM itemimage x WHERE x.itemid=a.itemid ORDER BY x.itemimageid) itemimage, (SELECT x.inspectionno FROM inventory x WHERE a.inventoryid=x.inventoryid) inspectionno FROM item a LEFT JOIN type b ON a.typeid=b.typeid LEFT JOIN grupp c ON b.groupid=c.groupid LEFT JOIN category d ON c.categoryid=d.categoryid WHERE " + (inspectionid > 0 ? "a.inventoryid=" + inspectionid.ToString() : "a.roomid=" + roomid.ToString()) + roomselect + catselect + sort;
     }    
 
     protected void objectlist_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e) {
@@ -133,7 +145,6 @@ public partial class controls_objectlist : System.Web.UI.UserControl
     }
 
     protected void registerScripts() {
-        ScriptManager.RegisterStartupScript(Parent.Page, Parent.Page.GetType(), "showhide", "expandList($('.inspection_row_1'), $('.inspection_row_2'));", true);
-        ScriptManager.RegisterStartupScript(Parent.Page, Parent.Page.GetType(), "showhideurval", "expandSort($('.row_rum1'), $('.row_rum2'));expandSort($('.row_kategori1'), $('.row_kategori2'));", true);
+        ScriptManager.RegisterStartupScript(Parent.Page, Parent.Page.GetType(), "showhide", "expandList($('.inspection_row_1'), $('.inspection_row_2'));", true);        
     }
 }
