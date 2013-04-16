@@ -28,7 +28,7 @@ public partial class controls_objectlist : System.Web.UI.UserControl
     public void bindData() {
         roomdiv.Visible = roomselection;
         if (roomselection) {
-            using (SqlDataReader reader = SQL.ExecuteQuery("SELECT a.roomid,a.title FROM room a WHERE "+ (inspectionid > 0 ? "a.inventoryid" : "a.roomid") + "=@1", (inspectionid > 0 ? inspectionid : roomid))) {
+            using (SqlDataReader reader = SQL.ExecuteQuery("SELECT a.roomid, '<span></span>'+a.title title FROM room a WHERE "+ (inspectionid > 0 ? "a.inventoryid" : "a.roomid") + "=@1", (inspectionid > 0 ? inspectionid : roomid))) {
                 room_cblist.DataSource = reader;
                 room_cblist.DataBind();
             }
