@@ -42,7 +42,7 @@
             <div class="left_col" style="width: 460px;">
 
                 <h3>Namn</h3>
-                <p
+                <p>
                     <asp:Literal ID="itemtitle" runat="server" />
                 </p>
             </div>
@@ -63,6 +63,7 @@
             <div style="clear: both"></div>   
            </div>         
             <h2 style="margin-top: 20px">Övrig information</h2><div class="collapsable" style="width: 940px; background-color: #fff; padding: 10px; margin-bottom: 20px;">
+                <div class="left_col" style="width:460px">
                 <h3>Omdöme</h3>
             <table id="sliders" style="width: 100%; background-color: #fff;">
                 <tr>
@@ -91,21 +92,25 @@
                 </tr>
 
             </table>
-            <div style="clear: both"></div> 
-               
-            <h3>Bilder</h3>
-            <asp:Repeater ID="imagerepeater" runat="server">
-                <ItemTemplate>
-                    <a href="<%#DataBinder.Eval(Container.DataItem, "image")%>" rel="lightbox[bilder]"><img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" class="thumbnail_large"/></a>
-                </ItemTemplate>
-            </asp:Repeater>
-            <div style="clear: both"></div> 
-            <h3>Material</h3>
+                    </div>
+            <div class="right_col" style="width:460px"><h3>Material</h3>
             <ul class="material">
                 <li>Trä</li>
                 <li>Metall</li>
                 <li>Övrigt</li>
             </ul>
+
+
+            </div><div style="clear: both"></div> 
+               <div style="display:block">
+            <h3>Bilder</h3>
+            <asp:Repeater ID="imagerepeater" runat="server">
+                <ItemTemplate>
+                    <a href="<%#DataBinder.Eval(Container.DataItem, "image")%>" rel="lightbox[bilder]"><img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" class="thumbnail_large"/></a>
+                </ItemTemplate>
+            </asp:Repeater></div>
+            
+            
            <div style="clear: both"></div> 
  </div>
 
