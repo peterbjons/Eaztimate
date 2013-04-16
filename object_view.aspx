@@ -23,37 +23,47 @@
             });
         });
     </script>
+            <script type="text/javascript">
+                var speed = 1;
+                $(document).ready(function () {
+                    expandElement($("#collapse"), $(".collapsable"));
+                });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <div class="inspect_object">
-        <h3><a href="inspection.aspx?id=<%=inspectionid %>" class="breadcrumb"><asp:Literal ID="inspectionno" runat="server" /></a> / <a href="room_view.aspx?id=<%=roomid %>" class="breadcrumb"><asp:Literal ID="roomname" runat="server" /></a></h3>
+        <a href="inspection.aspx?id=<%=inspectionid %>" class="breadcrumb"><asp:Literal ID="inspectionno" runat="server" /></a> / <a href="room_view.aspx?id=<%=roomid %>" class="breadcrumb"><asp:Literal ID="roomname" runat="server" /></a>
         <h1><asp:Literal ID="typename" runat="server" /></h1>
 
         <%--<div class="col1">--%>
-        <div class="collapsable" style="width: 960px">
-            <div class="threecol_1">
+                <a class="button" style="float: none" id="collapse">Dölj</a>
+        <h2 style="margin-top: 20px">Allmän information</h2>
+       <div class="collapsable" style="width: 940px; background-color: #fff; padding: 10px; margin-bottom: 20px;">
+            <div class="left_col" style="width: 460px;">
 
-                <h2>Namn</h2>
-                <p class="white_block">
+                <h3>Namn</h3>
+                <p
                     <asp:Literal ID="itemtitle" runat="server" />
                 </p>
             </div>
 
-            <div class="threecol_2">
-                <h2>Antal</h2>
-                <p class="white_block">
+            <div class="left_col" style="width:220px;">
+                <h3>Antal</h3>
+                <p>
                     1
                 </p>
             </div>
 
-            <div class="threecol_3">
-                <h2>Saneringsbar</h2>
-                <p class="white_block">
+            <div class="right_col" style="width:220px;">
+                <h3>Saneringsbar</h3>
+                <p>
                     Ja
                 </p>
             </div>
-            <div style="clear: both"></div>            
-            <h2>Omdöme</h2>
+            <div style="clear: both"></div>   
+           </div>         
+            <h2 style="margin-top: 20px">Övrig information</h2><div class="collapsable" style="width: 940px; background-color: #fff; padding: 10px; margin-bottom: 20px;">
+                <h3>Omdöme</h3>
             <table id="sliders" style="width: 100%; background-color: #fff;">
                 <tr>
                     <td>Pris:</td>
@@ -82,21 +92,22 @@
 
             </table>
             <div style="clear: both"></div> 
-            <h2>Bilder</h2>
+               
+            <h3>Bilder</h3>
             <asp:Repeater ID="imagerepeater" runat="server">
                 <ItemTemplate>
-                    <a href="<%#DataBinder.Eval(Container.DataItem, "image")%>" rel="lightbox"><img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" class="thumbnail_large"/></a>
+                    <a href="<%#DataBinder.Eval(Container.DataItem, "image")%>" rel="lightbox[bilder]"><img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" class="thumbnail_large"/></a>
                 </ItemTemplate>
             </asp:Repeater>
             <div style="clear: both"></div> 
-            <h2>Material</h2>
+            <h3>Material</h3>
             <ul class="material">
                 <li>Trä</li>
                 <li>Metall</li>
                 <li>Övrigt</li>
             </ul>
-
-
+           <div style="clear: both"></div> 
+ </div>
 
 
 

@@ -19,19 +19,19 @@
         <a class="button" style="float: none" id="collapse">Dölj</a>
         <h2 style="margin-top: 20px">Allmän information</h2>
         <div class="collapsable" style="width: 940px; background-color: #fff; padding: 10px; margin-bottom: 20px;">
-            <div class="left_col">
+            <div class="left_col" style="width:460px">
                 <h3>Namn</h3>
                 <p>
                     <asp:Literal ID="description" runat="server" />
                 </p>
             </div>
-            <div class="left_col">
+            <div class="left_col" style="width:220px;">
                 <h3>Yta (m²)</h3>
                 <p>
                     44m&sup2;
                 </p>
             </div>
-            <div class="right_col">
+            <div class="right_col" style="width:220px;">
                 <h3>Objekt</h3>
                 <p>
                     <asp:Literal ID="objectscount" runat="server" />

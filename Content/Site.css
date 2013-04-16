@@ -810,13 +810,14 @@ ul.material {
     ul.material li {
         float: left;
         font-weight: 300;
-        font-size: 14pt;
+        font-size: 11pt;
         margin-bottom: 10px;
         display: inline-block;
         background: #85C8E0;
         margin: 20px 10px 0px 0px;
         padding: 5px 7px;
         color: #000;
+
     }
 
 
