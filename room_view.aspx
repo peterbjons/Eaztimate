@@ -4,43 +4,51 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <link href="Content/lightbox.css" rel="stylesheet">
     <script src="Scripts/lightbox.js"></script>
+        <script type="text/javascript">
+            var speed = 1;
+            $(document).ready(function () {
+                expandElement($("#collapse"), $(".collapsable"));
+            });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <asp:ScriptManager ID="ScriptManager1" runat="server" />
     <div class="inspect_object">
-        <h3><a href="inspection.aspx?id=<%=inspectionid %>" class="breadcrumb"><asp:Literal ID="inspectionno" runat="server" /></a></h3>
+        <a href="inspection.aspx?id=<%=inspectionid %>" class="breadcrumb"><asp:Literal ID="inspectionno" runat="server" /></a>
         <h1><asp:Literal ID="title" runat="server" /></h1>
-        <div class="collapsable" style="width: 960px">
-            <div class="threecol_1">
-                <h2>Namn</h2>
-                <p class="white_block">
+        <a class="button" style="float: none" id="collapse">Dölj</a>
+        <h2 style="margin-top: 20px">Allmän information</h2>
+        <div class="collapsable" style="width: 940px; background-color: #fff; padding: 10px; margin-bottom: 20px;">
+            <div class="left_col">
+                <h3>Namn</h3>
+                <p>
                     <asp:Literal ID="description" runat="server" />
                 </p>
             </div>
-            <div class="threecol_2">
-                <h2>Area</h2>
-                <p class="white_block">
+            <div class="left_col">
+                <h3>Yta (m²)</h3>
+                <p>
                     44m&sup2;
                 </p>
             </div>
-            <div class="threecol_3">
-                <h2>Objekt</h2>
-                <p class="white_block">
+            <div class="right_col">
+                <h3>Objekt</h3>
+                <p>
                     <asp:Literal ID="objectscount" runat="server" />
                 </p>
             </div>
             <div style="clear: both;"></div> 
             <div class="object_col">
-                <h2>Skada</h2>
-                <p class="white_block">
+                <h3>Skada</h3>
+                <p>
                     <asp:Literal ID="opinion" runat="server" />
                 </p>
             </div>                       
             <div style="clear: both"></div>
-            <h2>Bilder</h2>
+            <h3>Bilder</h3>
             <asp:Repeater ID="imagerepeater" runat="server">
                 <ItemTemplate>
-                    <a href="<%#DataBinder.Eval(Container.DataItem, "image")%>" rel="lightbox"><img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" class="thumbnail_large <%#Container.ItemIndex == 3 ? "last" : string.Empty %>"/></a>
+                    <a href="<%#DataBinder.Eval(Container.DataItem, "image")%>" rel="lightbox[bilder]"><img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" class="thumbnail_large <%#Container.ItemIndex == 3 ? "last" : string.Empty %>"/></a>
                 </ItemTemplate>
             </asp:Repeater>
         </div>
