@@ -2,7 +2,7 @@
 <%@ Register Src="~/controls/jourlist.ascx" TagPrefix="uc1" TagName="jourlist" %>
 
 <asp:Content runat="server" ID="Content1" ContentPlaceHolderID="HeadContent">
-    <script type="text/javascript">
+    <%--<script type="text/javascript">
         var speed = 1;
         $(document).ready(function () {
             $(".inspection_row_1").click(function () {
@@ -15,7 +15,7 @@
                 }
             });
         });
-    </script>
+    </script>--%>
 </asp:Content>
 
 
