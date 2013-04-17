@@ -1,5 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="objectlist.ascx.cs" Inherits="controls_objectlist" %>
-<%--<script src="http://modernizr.com/downloads/modernizr-latest.js"></script>--%>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="jourlist.ascx.cs" Inherits="controls_jourlist" %>
 <script>
     Modernizr.addTest('csschecked', function () {
         return Modernizr.testStyles("#modernizr input {margin-left:0px;} #modernizr input:checked {margin-left: 20px;}", function (elem) {
@@ -15,16 +14,16 @@
             <asp:UpdatePanel ID="listupdatepanel" runat="server" UpdateMode="Conditional">
                 <ContentTemplate>
                     <div id="inspection_list">
-                        <h2>Objekt</h2>
+                        <h2>Jourärenden</h2>
                         <asp:HiddenField ID="sortorderhidden" runat="server" Value="0" />
                         <asp:HiddenField ID="room_hf" runat="server" Value="0" />
                         <asp:HiddenField ID="inspection_hf" runat="server" Value="0" />
-                        <asp:ListView ID="objectlist" runat="server" DataSourceID="SqlDataSource1" OnItemCommand="objectlist_ItemCommand" OnDataBound="objectlist_DataBound" OnPagePropertiesChanging="objectlist_PagePropertiesChanging">
+                        <asp:ListView ID="jourlist" runat="server" DataSourceID="SqlDataSource1" OnItemCommand="jourlist_ItemCommand" OnDataBound="jourlist_DataBound" OnPagePropertiesChanging="jourlist_PagePropertiesChanging">
                             <LayoutTemplate>
                                 <ul>
                                     <asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder>
                                     <div class="pager">
-                                        <asp:DataPager ID="DataPager1" runat="server" PagedControlID="objectlist" PageSize="10" class="NavigationBar">
+                                        <asp:DataPager ID="DataPager1" runat="server" PagedControlID="jourlist" PageSize="10" class="NavigationBar">
                                             <Fields>
                                                 <asp:NextPreviousPagerField ButtonType="Image" FirstPageImageUrl="~/Images/pager_first.png" ShowFirstPageButton="true" PreviousPageImageUrl="~/Images/pager_prev.png" ShowLastPageButton="false" ShowNextPageButton="false" />
                                                 <asp:NumericPagerField ButtonCount="10" NumericButtonCssClass="pagerclass" CurrentPageLabelCssClass="pagerclass_selected" NextPreviousButtonCssClass="pagerclass" />
@@ -39,38 +38,29 @@
                                 <li>
                                     <div class="inspection_item blue">
                                         <div class="inspection_row_1">
-                                            <div class="inspection_row_col1_inspection_aspx"><%#DataBinder.Eval(Container.DataItem, "itemtitle")%></div>
-
-                                            <div class="inspection_row_col2_inspection_aspx"><%#DataBinder.Eval(Container.DataItem, "grouptitle")%>/<%#DataBinder.Eval(Container.DataItem, "categorytitle")%></div>
+                                            <div class="inspection_row_col1"><%#DataBinder.Eval(Container.DataItem, "jourid") %></div>
+                                            <div class="inspection_row_col2"><%#DataBinder.Eval(Container.DataItem, "contactaddress") %>, <%#DataBinder.Eval(Container.DataItem, "contactcity") %></div>
                                             <div style="clear: both"></div>
                                         </div>
                                         <div class="inspection_row_2" style="display: none">
                                             <div class="inspection_col3">
                                                 <div class="inspection_item_image">
-                                                    <a rel="lightbox" target="_blank" href="<%#AmazonHandler.GetPrivateImage(DataBinder.Eval(Container.DataItem, "inspectionno") + "/" + DataBinder.Eval(Container.DataItem, "itemimage"))%>">
-                                                        <img src="<%#AmazonHandler.GetPrivateImage(DataBinder.Eval(Container.DataItem, "inspectionno") + "/" + DataBinder.Eval(Container.DataItem, "itemimage"))%>" <%#DBNull.Value.Equals(DataBinder.Eval(Container.DataItem, "itemimage")) ?  "style='display: none'" : "" %>/></a>
+                                                    <a rel="lightbox" target="_blank" href="<%#AmazonHandler.GetPrivateImageJour((string)DataBinder.Eval(Container.DataItem, "image") ?? "") %>">
+                                                        <img src="<%#AmazonHandler.GetPrivateImageJour((string)DataBinder.Eval(Container.DataItem, "image") ?? "") %>" <%#DBNull.Value.Equals(DataBinder.Eval(Container.DataItem, "image")) ?  "style='display: none'" : "" %>/></a>
 
                                                 </div>
                                             </div>
-                                            <div class="item_col4">												
-                                                    Pris: <div class="sliderclass">
-                                                        <span style="width: <%#DataBinder.Eval(Container.DataItem, "price")%>%"></span>
-                                                    </div>
-                                                Skick: <div class="sliderclass">
-                                                        <span style="width: <%#DataBinder.Eval(Container.DataItem, "usage")%>%"></span>
-                                                    </div>
-                                                Ålder: <div class="sliderclass">
-                                                        <span style="width: <%#DataBinder.Eval(Container.DataItem, "age")%>%"></span>
-                                                    </div>
-                                                Övrigt: <div class="sliderclass">
-                                                        <span style="width: <%#DataBinder.Eval(Container.DataItem, "other")%>%"></span>
-                                                    </div>                                                   
+                                            <div class="inspection_col4b">
+                                                <p><%#DataBinder.Eval(Container.DataItem, "contactname") %></p>
+                                                <small><%#DataBinder.Eval(Container.DataItem, "contactphone1") %></small><br />
+                                                <small><%#DataBinder.Eval(Container.DataItem, "contactphone2") %></small>
+                                                <p style="margin-top:25px;"><%#DataBinder.Eval(Container.DataItem, "insurancetype") %> / <%#DataBinder.Eval(Container.DataItem, "damagetype") %> / Insats ocab</p>
                                             </div>
                                             <div style="clear: both"></div>
                                             <div class="inspection_item_bottom">
                                                 <small>Datum: <%#((DateTime)DataBinder.Eval(Container.DataItem, "dateupdated")).ToString("yyyy-MM-dd")%><br />
                                                 </small>
-                                                <asp:LinkButton ID="LinkButton1" class="button" CommandArgument='<%# Eval("itemid") %>' CommandName="Open" runat="server">Öppna &raquo;</asp:LinkButton>
+                                                <asp:LinkButton ID="LinkButton1" style="margin-left: 5px;" class="button" CommandArgument='<%# Eval("jourid") %>' CommandName="Open" runat="server">Open &raquo;</asp:LinkButton>
                                             </div>
                                             <div style="clear: both"></div>
                                         </div>
@@ -88,7 +78,7 @@
                         <asp:LinkButton ID="sort1_lb" OnCommand="Sort_Command" CommandName='0' runat="server">
                     <div class="sort_item white">
                         <div class="<%=(sortorder == 0 ? "sort_up" : sortorder == 1 ? "sort_down" : "sort_none") %>"></div>
-                        Kategori
+                        Datum
                     </div>
                         </asp:LinkButton>
                         <asp:LinkButton ID="sort2_lb" OnCommand="Sort_Command" CommandName='2' runat="server">
@@ -107,7 +97,7 @@
                     </ContentTemplate>
                 <Triggers>
                     <asp:AsyncPostBackTrigger ControlID="cat_cblist" EventName="SelectedIndexChanged" />
-                    <asp:AsyncPostBackTrigger ControlID="room_cblist" EventName="SelectedIndexChanged" />
+                    <asp:AsyncPostBackTrigger ControlID="type_cblist" EventName="SelectedIndexChanged" />
                 </Triggers>
             </asp:UpdatePanel>
                     <div id="inspection_help">
@@ -115,20 +105,19 @@
                         <div id="roomdiv" class="selection_item white" runat="server">
                             <div class="sort_row1 row_rum1">
                                 <div class="sort_closed"></div>
-                                Rum
+                                Skadetyp
                             </div>
                             <div class="sort_row2 row_rum2" style="display: none">
-                                <asp:CheckBoxList ID="room_cblist" runat="server" DataValueField="roomid" DataTextField="title" OnSelectedIndexChanged="room_cblist_SelectedIndexChanged" AutoPostBack="true"></asp:CheckBoxList>
-                                
+                                <asp:CheckBoxList ID="type_cblist" runat="server" DataValueField="damagetype" DataTextField="title" OnSelectedIndexChanged="type_cblist_SelectedIndexChanged" AutoPostBack="true"></asp:CheckBoxList>                                
                             </div>
                         </div>
                         <div id="catdiv" runat="server" class="selection_item white">
                             <div class="sort_row1 row_kategori1">
                                 <div class="sort_closed"></div>
-                                Kategorier
+                                Åtgärder
                             </div>
                             <div class="sort_row2 row_kategori2" style="display: none">
-                                <asp:CheckBoxList ID="cat_cblist" runat="server" DataValueField="categoryid" DataTextField="title" OnSelectedIndexChanged="cat_cblist_SelectedIndexChanged" AutoPostBack="true"></asp:CheckBoxList>                                
+                                <asp:CheckBoxList ID="cat_cblist" runat="server" DataValueField="key" DataTextField="value" OnSelectedIndexChanged="cat_cblist_SelectedIndexChanged" AutoPostBack="true"></asp:CheckBoxList>                                
                             </div>
                         </div>
                     </div>                

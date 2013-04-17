@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="open_jour.aspx.cs" Inherits="openjour" %>
+<%@ Register Src="~/controls/jourlist.ascx" TagPrefix="uc1" TagName="jourlist" %>
 
 <asp:Content runat="server" ID="Content1" ContentPlaceHolderID="HeadContent">
-    <script type="text/javascript">
+    <%--<script type="text/javascript">
         var speed = 1;
         $(document).ready(function () {
             $(".inspection_row_1").click(function () {
@@ -14,14 +15,17 @@
                 }
             });
         });
-    </script>
+    </script>--%>
 </asp:Content>
 
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" />
     <h1>Open Jour</h1>
 
-    <div id="inspection_list">
+    <uc1:jourlist ID="jourlist" runat="server" />
+
+    <%--<div id="inspection_list">
         <h2>Cases</h2>
         <ul>
             <asp:Repeater ID="jourrepeater" runat="server" OnItemCommand="jourrepeater_ItemCommand">
@@ -71,7 +75,7 @@
         <div class="inspection_item green">Completed</div>
         <div class="inspection_item orange">In progress</div>
         <div class="inspection_item blue">Not started</div>
-    </div>
+    </div>--%>
     <div style="clear: both"></div>
 </asp:Content>
 

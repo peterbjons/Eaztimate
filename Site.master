@@ -5,8 +5,9 @@
 <head runat="server">
     <meta charset="utf-8" />
     <title><%: Page.Title %> - My ASP.NET Application</title>
+    <script src="http://modernizr.com/downloads/modernizr-latest.js"></script>
     <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/bundles/modernizr") %>
+        <%--<%: Scripts.Render("~/bundles/modernizr") %>--%>
         <%: Scripts.Render("~/bundles/CustomJS") %>
     </asp:PlaceHolder>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
@@ -40,52 +41,35 @@
                     <ul>
                         <li><a href="/" runat="server" id="menu1">Hem</a></li>
                         <asp:LoginView runat="server">
-                            <AnonymousTemplate>
-
-                                <li><a href="products.aspx">Produkter</a>
-                                    <ul>
-                                        <li><a href="/product_description_jour.aspx">Jour</a></li>
-                                        <li><a href="/product_description_bygg.aspx">Byggskada</a></li>
-                                        <li><a href="/product_description_losore.aspx">Lösöre</a></li>
-                                    </ul>
-                                </li>
-                                <%--<li><a href="kunder.aspx">Kunder</a>
-                                    <ul>
-                                        <li><a>Ocab</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="services.aspx">Tjänster</a>
-                                    <ul>
-                                        <li><a>Hosting</a></li>
-                                        <li><a>Support</a></li>
-                                        <li><a>Integration</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="education.aspx">Utbildning</a></li>--%>
-                                <%--<li><a href="Contact.aspx">Kontakt</a></li>--%>
-                                <li><a href="login.aspx" runat="server" id="menu2">Logga in</a></li>
-                            </AnonymousTemplate>
-                            <LoggedInTemplate>
-                                <li><a href="product_description_losore.aspx">Lösöre</a>
-                                    <ul>
-                                        <li><a href="create_inspection.aspx" runat="server" id="menu2">Skapa</a></li>
-                                <li><a href="open_inspection.aspx" runat="server" id="menu3">Öppna</a></li>
-                                    </ul>
-                                </li>                                
-                                <%--<li><a href="inspection.aspx" runat="server" id="menu4">Manage</a></li>--%>
-                                <li><a href="/products.aspx">Produkter</a>
-                                    <ul>
-                                        <li><a href="/product_description_jour.aspx">Jour</a></li>
-                                        <li><a href="/product_description_bygg.aspx">Byggskada</a></li>
-                                        <li><a href="/product_description_losore.aspx">Lösöre</a></li>
-                                    </ul>
-                                </li>
-                                <%--<li><a href="contact.aspx" runat="server" id="menu5">Kontakt</a></li>--%>
-                                <%--<li><a href="pdf.aspx" runat="server" id="menu6">pdf</a></li>--%>
-                                <%--<li><a href="bygg.aspx" runat="server" id="menu7">bygg</a></li>--%>
-                                <%--<li><a href="jour.aspx" runat="server" id="menu8">jour</a></li>--%>
-                            </LoggedInTemplate>                            
+                            <RoleGroups>
+                                <asp:RoleGroup Roles="Lösöre">
+                                    <ContentTemplate>
+                                        <li><a href="product_description_losore.aspx">Lösöre</a>
+                                        <ul>
+                                            <li><a href="create_inspection.aspx" runat="server" id="menu2">Skapa</a></li>
+                                            <li><a href="open_inspection.aspx" runat="server" id="menu3">Öppna</a></li>
+                                        </ul>
+                                    </li>
+                                    </ContentTemplate>
+                                </asp:RoleGroup>
+                            </RoleGroups>
                         </asp:LoginView>
+                        <asp:LoginView ID="LoginView2" runat="server">
+                            <RoleGroups>
+                                <asp:RoleGroup Roles="Jour">
+                                    <ContentTemplate>
+                                        <li><a href="/open_jour.aspx">Jour</a></li>
+                                    </ContentTemplate>
+                                </asp:RoleGroup>
+                            </RoleGroups>
+                        </asp:LoginView>
+                        <li><a href="/products.aspx">Produkter</a>
+                            <ul>
+                                <li><a href="/product_description_jour.aspx">Jour</a></li>
+                                <li><a href="/product_description_bygg.aspx">Byggskada</a></li>
+                                <li><a href="/product_description_losore.aspx">Lösöre</a></li>
+                            </ul>
+                        </li>
                         <asp:LoginView ID="LoginView1" runat="server">
                             <RoleGroups>
                                 <asp:RoleGroup Roles="Administrator">
@@ -96,6 +80,9 @@
                             </RoleGroups>
                         </asp:LoginView>
                         <asp:LoginView runat="server">
+                            <AnonymousTemplate>
+                                <li><a href="/login.aspx" runat="server" id="menu2">Logga in</a></li>
+                            </AnonymousTemplate>
                             <LoggedInTemplate>
                                 <li><a href="?a=logout" runat="server" id="logout">Logga ut</a></li>
                             </LoggedInTemplate>
