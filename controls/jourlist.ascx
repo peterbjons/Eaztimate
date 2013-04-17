@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="objectlist.ascx.cs" Inherits="controls_objectlist" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="jourlist.ascx.cs" Inherits="controls_jourlist" %>
 <script>
     Modernizr.addTest('csschecked', function () {
         return Modernizr.testStyles("#modernizr input {margin-left:0px;} #modernizr input:checked {margin-left: 20px;}", function (elem) {
@@ -14,16 +14,16 @@
             <asp:UpdatePanel ID="listupdatepanel" runat="server" UpdateMode="Conditional">
                 <ContentTemplate>
                     <div id="inspection_list">
-                        <h2>Objekt</h2>
+                        <h2>Jourärenden</h2>
                         <asp:HiddenField ID="sortorderhidden" runat="server" Value="0" />
                         <asp:HiddenField ID="room_hf" runat="server" Value="0" />
                         <asp:HiddenField ID="inspection_hf" runat="server" Value="0" />
-                        <asp:ListView ID="objectlist" runat="server" DataSourceID="SqlDataSource1" OnItemCommand="objectlist_ItemCommand" OnDataBound="objectlist_DataBound" OnPagePropertiesChanging="objectlist_PagePropertiesChanging">
+                        <asp:ListView ID="jourlist" runat="server" DataSourceID="SqlDataSource1" OnItemCommand="jourlist_ItemCommand" OnDataBound="jourlist_DataBound" OnPagePropertiesChanging="jourlist_PagePropertiesChanging">
                             <LayoutTemplate>
                                 <ul>
                                     <asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder>
                                     <div class="pager">
-                                        <asp:DataPager ID="DataPager1" runat="server" PagedControlID="objectlist" PageSize="10" class="NavigationBar">
+                                        <asp:DataPager ID="DataPager1" runat="server" PagedControlID="jourlist" PageSize="10" class="NavigationBar">
                                             <Fields>
                                                 <asp:NextPreviousPagerField ButtonType="Image" FirstPageImageUrl="~/Images/pager_first.png" ShowFirstPageButton="true" PreviousPageImageUrl="~/Images/pager_prev.png" ShowLastPageButton="false" ShowNextPageButton="false" />
                                                 <asp:NumericPagerField ButtonCount="10" NumericButtonCssClass="pagerclass" CurrentPageLabelCssClass="pagerclass_selected" NextPreviousButtonCssClass="pagerclass" />
@@ -38,9 +38,8 @@
                                 <li>
                                     <div class="inspection_item blue">
                                         <div class="inspection_row_1">
-                                            <div class="inspection_row_col1_inspection_aspx"><%#DataBinder.Eval(Container.DataItem, "itemtitle")%></div>
-
-                                            <div class="inspection_row_col2_inspection_aspx"><%#DataBinder.Eval(Container.DataItem, "grouptitle")%>/<%#DataBinder.Eval(Container.DataItem, "categorytitle")%></div>
+                                            <div class="inspection_row_col1"><%#DataBinder.Eval(Container.DataItem, "jourid") %></div>
+                                            <div class="inspection_row_col2"><%#DataBinder.Eval(Container.DataItem, "contactaddress") %>, <%#DataBinder.Eval(Container.DataItem, "contactcity") %></div>
                                             <div style="clear: both"></div>
                                         </div>
                                         <div class="inspection_row_2" style="display: none">
