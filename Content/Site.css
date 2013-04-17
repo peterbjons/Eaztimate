@@ -1162,6 +1162,8 @@ thead tr.tr_red td {
 
 .jourtable {
     width: 100%;
+    border-spacing: 0px;
+    margin-top:5px;
 }
 
 .light {
@@ -1462,10 +1464,10 @@ div.product_verktyg img{
     height:19px;
     margin:-1px 4px 0 0;
     vertical-align:middle;
-    background:url(../images/check_radio_sheet.png) left top no-repeat;
+    background:url(../images/check_radio_sheet_ez.png) left top no-repeat;
     cursor:pointer;
 }
 .csschecked input[type="checkbox"]:checked + label span {
-    background:url(../images/check_radio_sheet.png) -19px top no-repeat;
+    background:url(../images/check_radio_sheet_ez.png) -19px top no-repeat;
 }
 /* CHECKBOX SHIZZLE END*/

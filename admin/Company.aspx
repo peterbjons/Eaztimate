@@ -14,7 +14,8 @@
         <h1><%: Title %></h1>
         <h2 id="titleh2" runat="server">Use the form below to create a new company</h2>
         <div id="topmenudiv" runat="server" visible="false">
-            <a href="javascript:" onclick="showDiv('#editdiv');">Edit company</a> <a href="javascript:" onclick="showDiv('#rolesdiv');" id="roleslink" runat="server" visible="false">Roles</a> <a href="javascript:" onclick="showDiv('#usersdiv');">Users</a>
+            <a href="javascript:" onclick="showDiv('#editdiv');" class="button" style="float:left;margin-right: 5px;">Edit company</a> <a href="javascript:" onclick="showDiv('#rolesdiv');" id="roleslink" runat="server" visible="false" class="button" style="float:left;margin-right: 5px;">Roles</a> <a href="javascript:" onclick="showDiv('#usersdiv');" class="button" style="float:left;margin-right: 5px;">Users</a>
+            <div style="clear:both"></div>
         </div>        
         <div id="editdiv" class="company_div">
         <div style="float: left; width: 50%">
@@ -54,8 +55,11 @@
 
         <div id="usersdiv" style="display: none;" class="company_div">
         
-            <h2 style="margin-top: 20px; float: left;">List of people in this company</h2>
-            <h2 style="margin-top: 20px; float: right;"><a href="Register.aspx?id=<%=id.ToString() %>">New</a></h2>
+            <h2>List of people in this company</h2>
+            <div>
+            <a class="button" style="float:left" href="Register.aspx?id=<%=id.ToString() %>">New</a>
+                <div style="clear:both"></div>
+            </div>
             <table class="companycreate jourtable">
                     <thead>
                     <tr>
@@ -89,7 +93,7 @@
                             <td><%# Eval("Email") %></td>
                             <td></td>
                             <td></td>
-                            <td><a href="edit_user.aspx?cid=<%# id %>&id=<%# Eval("ProviderUserKey") %>">Edit</a></td>
+                            <td><a class="button" style="font-weight:400" href="edit_user.aspx?cid=<%# id %>&id=<%# Eval("ProviderUserKey") %>">Edit</a></td>
                         </tr>           
                     </ItemTemplate>
                 </asp:ListView>

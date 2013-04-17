@@ -2,8 +2,12 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="AdminMainContent" runat="Server">
     <h1><%: Title %></h1>
-    <h2 style="float: left;">Choose company to edit</h2>
-    <h2 style="float: right;"><a href="company.aspx">New</a></h2>
+    <%--<h2 style="float: left;">Choose company to edit</h2>
+    <h2 style="float: right;"><a href="company.aspx" class="button" style="float:none">New</a></h2>--%>
+    <h2>Choose company to edit</h2>
+    <div><a href="company.aspx" class="button" style="float:left">New</a>
+        <div style="clear:both"></div>
+    </div>
     <asp:ListView ID="companylist" runat="server" DataSourceID="SqlDataSource1">
         <LayoutTemplate>
             <table class="companycreate jourtable">
@@ -33,7 +37,7 @@
         <ItemTemplate>
             <tr>
                 <td><%# Eval("title") %></td>
-                <td><a href="company.aspx?id=<%# Eval("customerid") %>">Edit</a></td>
+                <td><a class="button" href="company.aspx?id=<%# Eval("customerid") %>">Edit</a></td>
             </tr>
         </ItemTemplate>
     </asp:ListView>
