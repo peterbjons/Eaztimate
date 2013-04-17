@@ -12,24 +12,11 @@ public partial class openjour : Page
 {
     public int sortorder = 0;
     protected void Page_Load(object sender, EventArgs e)
-    {
-        ((HtmlGenericControl)Master.FindControl("slider")).Visible = false;
-        int.TryParse(Request.QueryString["so"] ?? "0", out sortorder);
-        string sort = string.Empty;
-        switch (sortorder) {
-            case 0:
-                sort = "ORDER BY datecreated DESC";
-                break;
-            case 1:
-                sort = "ORDER BY pdf_synced";
-                break;
-            case 2:
-                sort = "ORDER BY jourid";                
-                break;
-        }
-        using (SqlDataReader reader = SQL.ExecuteQuery("SELECT a.*,ISNULL((SELECT TOP 1 image FROM jourimage x WHERE x.jourid=a.jourid), 'empty') image FROM jour a WHERE a.datedeleted IS NULL " + sort)) {
-            jourrepeater.DataSource = reader;
-            jourrepeater.DataBind();
+    {      
+        ((HtmlGenericControl)Master.FindControl("slider")).Visible = false;        
+
+        if (!Page.IsPostBack) {
+            jourlist.bindData();
         }
     }
     protected void jourrepeater_ItemCommand(object source, RepeaterCommandEventArgs e) {
