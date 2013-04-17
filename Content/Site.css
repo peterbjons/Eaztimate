@@ -1162,6 +1162,8 @@ thead tr.tr_red td {
 
 .jourtable {
     width: 100%;
+    border-spacing: 0px;
+    margin-top:5px;
 }
 
 .light {
