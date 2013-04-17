@@ -253,8 +253,16 @@ li.block p {
     margin-bottom: 20px;
     line-height: 11pt;
 }
-
-a.button {
+.buttonlight{
+    float: left;
+padding: 5px 10px;
+font-size: 8pt;
+background-color: #85c8e0;
+color: #000;
+margin-right: 4px;
+margin-bottom: 5px;
+}
+.button {
     background-color: #000;
     color: #fff;
     font-size: 8pt;
@@ -265,7 +273,7 @@ a.button {
     text-decoration: none;
 }
 
-    a.button:hover {
+    .button:hover {
         background-color: #1c80aa;
     }
 
@@ -462,6 +470,7 @@ a.button {
 
 .inspection_item_image {
     height: 100px;
+    margin-bottom: 5px;
 }
 
     .inspection_item_image img {
@@ -543,12 +552,20 @@ a.button {
     float: left;
     padding-top: 20px;
     font-size: 10pt;
+    width:320px;
 }
+
 
 .inspection_col4b {
     float: left;
     padding-left: 5px;
+    
+    width:310px;
+    
+}
+.inspection_col4b p {
     font-size: 10pt;
+    line-height: 24px;
 }
 
 .inspection_item_bottom {
