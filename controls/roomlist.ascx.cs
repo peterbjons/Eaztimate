@@ -100,7 +100,7 @@ public partial class controls_roomlist : System.Web.UI.UserControl
         //}
 
         string othertype = GetGlobalResourceObject("Strings", "other").ToString();
-        RoomSqlDataSource.SelectCommand = RoomSqlDataSource.SelectCommand = "SELECT a.*,b.inspectionno, (SELECT TOP 1 x.image FROM roomimage x WHERE x.roomid=a.roomid ORDER BY x.roomimageid) roomimage, (SELECT count(x.itemid) FROM item x WHERE x.roomid=a.roomid) items FROM room a LEFT JOIN inventory b ON a.inventoryid=b.inventoryid WHERE a.inventoryid=" + inspectionid.ToString() + sort;
+        RoomSqlDataSource.SelectCommand = RoomSqlDataSource.SelectCommand = "SELECT a.*,b.inspectionno, (SELECT TOP 1 x.image FROM roomimage x WHERE x.roomid=a.roomid ORDER BY x.roomimageid) roomimage, (SELECT count(x.itemid) FROM item x WHERE x.roomid=a.roomid) items FROM room a LEFT JOIN inventory b ON a.inventoryid=b.inventoryid WHERE a.inventoryid=" + inspectionid.ToString();
     }    
 
     protected void objectlist_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e) {

@@ -5,8 +5,9 @@
 <head runat="server">
     <meta charset="utf-8" />
     <title><%: Page.Title %> - My ASP.NET Application</title>
+    <script src="http://modernizr.com/downloads/modernizr-latest.js"></script>
     <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/bundles/modernizr") %>
+        <%--<%: Scripts.Render("~/bundles/modernizr") %>--%>
         <%: Scripts.Render("~/bundles/CustomJS") %>
     </asp:PlaceHolder>
     <webopt:BundleReference runat="server" Path="~/Content/css" />

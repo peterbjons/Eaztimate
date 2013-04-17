@@ -39,7 +39,7 @@
                                                     <a rel="lightbox" href="<%#AmazonHandler.GetPrivateImage(DataBinder.Eval(Container.DataItem, "inspectionno") + "/" + DataBinder.Eval(Container.DataItem, "roomimage"))%>">
                                                         <img src="<%#AmazonHandler.GetPrivateImage(DataBinder.Eval(Container.DataItem, "inspectionno") + "/" + DataBinder.Eval(Container.DataItem, "roomimage"))%>" <%#DBNull.Value.Equals(DataBinder.Eval(Container.DataItem, "roomimage")) ?  "style='display: none'" : "" %> /></a>
                                                 </div>
-                                                <span class="buttonlight">44m²</span><span class="buttonlight">3 objekt</span>
+                                                <span class="buttonlight"><%#DataBinder.Eval(Container.DataItem, "size")%>m²</span><span class="buttonlight"><%#DataBinder.Eval(Container.DataItem, "items")%> objekt</span>
                                             </div>
                                             <div class="inspection_col4b">
                                                 
