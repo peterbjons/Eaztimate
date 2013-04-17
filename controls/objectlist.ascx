@@ -119,7 +119,6 @@
                             </div>
                             <div class="sort_row2 row_rum2" style="display: none">
                                 <asp:CheckBoxList ID="room_cblist" runat="server" DataValueField="roomid" DataTextField="title" OnSelectedIndexChanged="room_cblist_SelectedIndexChanged" AutoPostBack="true"></asp:CheckBoxList>
-                                <input type="checkbox" id="c1" name="cc" /><label for="c1"><span></span>Check Box 1</label>
                             </div>
                         </div>
                         <div id="catdiv" runat="server" class="selection_item white">

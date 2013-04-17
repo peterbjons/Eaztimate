@@ -28,6 +28,7 @@ public partial class controls_objectlist : System.Web.UI.UserControl
     public void bindData() {
         roomdiv.Visible = roomselection;
         if (roomselection) {
+            //span for styled checkboxes!
             using (SqlDataReader reader = SQL.ExecuteQuery("SELECT a.roomid, '<span></span>'+a.title title FROM room a WHERE "+ (inspectionid > 0 ? "a.inventoryid" : "a.roomid") + "=@1", (inspectionid > 0 ? inspectionid : roomid))) {
                 room_cblist.DataSource = reader;
                 room_cblist.DataBind();
@@ -36,7 +37,8 @@ public partial class controls_objectlist : System.Web.UI.UserControl
 
         catdiv.Visible = catselection;
         if (catselection) {
-            using (SqlDataReader reader = SQL.ExecuteQuery("SELECT d.categoryid,d.title FROM item a RIGHT JOIN type b ON a.typeid=b.typeid RIGHT JOIN grupp c ON b.groupid=c.groupid RIGHT JOIN category d ON c.categoryid=d.categoryid WHERE " + (inspectionid > 0 ? "a.inventoryid" : "a.roomid") + "=@1 GROUP BY d.categoryid,d.title", (inspectionid > 0 ? inspectionid : roomid))) {
+            //span for styled checkboxes!
+            using (SqlDataReader reader = SQL.ExecuteQuery("SELECT d.categoryid,'<span></span>'+d.title title FROM item a RIGHT JOIN type b ON a.typeid=b.typeid RIGHT JOIN grupp c ON b.groupid=c.groupid RIGHT JOIN category d ON c.categoryid=d.categoryid WHERE " + (inspectionid > 0 ? "a.inventoryid" : "a.roomid") + "=@1 GROUP BY d.categoryid,d.title", (inspectionid > 0 ? inspectionid : roomid))) {
                 cat_cblist.DataSource = reader;
                 cat_cblist.DataBind();
             }
