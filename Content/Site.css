@@ -420,6 +420,9 @@ a.button {
     .sort_row2 input[type=checkbox] {
         margin-right: 15px;
     }
+    .sort_row2.row_rum2 label {
+        cursor: pointer;
+    }
 
 .white {
     background-color: #fff;
