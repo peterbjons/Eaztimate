@@ -8,13 +8,37 @@
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <h1 class="huvud">Eaztimate</h1>
-    <div class="whitebox"><h2>Mobila applikationer</h2>
-    <%--<p>I arbetet med att begränsa omfattningen av sakskador i samband med sot och fukt i fastigheter är, tid, professionalism och god kommunikation, viktiga faktorer för att lyckas.    </p>
+    <div class="whitebox">
+        <h2>Effektivitet</h2>
+        <p>Mer gjort på kortare tid med lägre felprocent och högre kvalitet.  Mer tid för eftertanke och mindre tid i bil, bättre beslutsunderlag och kortare ledtider. Tydliga mallar och förbättrad överblick, minskar stress och osäkerhet. Eaztimates mobila applikationen är inga underverk men det förbättrar onekligen dina chanser att addera värden i dina tjänster. </p>
+        <blockquote>"  I arbetet med att begränsa omfattningen av sakskador i samband med sot och fukt i fastigheter är, tid, professionalism och god kommunikation viktiga faktorer för att lyckas  "</blockquote>
+        <h2>Mobila applikationer</h2>
+        <p>Var för sig är Jour, Byggskada och Lösöre, applikationer som underlättar arbetet med att bedöma, dokumentera och rapportera omfattningen av skadan. Tillsammans utgör de länkar i en mycket stark kedja mellan den drabbade, försäkringsbolaget och saneringsbolaget.  </p>
+        <blockquote>"  Eaztimate erbjuder en uppsättning verktyg som svarar upp mot dina förväntningar  "</blockquote>
+        <h2>Våra tjänster</h2>
+        <div class="services_block">
+            <h3>Produkter</h3><img src="Images/object1.jpg" />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce diam lacus, pellentesque in vestibulum ac, malesuada scelerisque enim. Nunc volutpat nisi quis urna viverra euismod. Vivamus tempus sagittis leo.</p>
+            <span class="buttonlight">Jour</span><span class="buttonlight">Byggskada</span><span class="buttonlight">Lösöre</span><a href="products.aspx" class="button" style="float:left">Läs mer &raquo;</a>
+        </div>
+        <div class="services_block">
+            <h3>Utbildning</h3>
+            <img src="Images/object1.jpg" />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce diam lacus, pellentesque in vestibulum ac, malesuada scelerisque enim. Nunc volutpat nisi quis urna viverra euismod. Vivamus tempus sagittis leo.</p>
+        </div>
+        <div class="services_block last">
+            <h3>Support</h3><img src="Images/object1.jpg" />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce diam lacus, pellentesque in vestibulum ac, malesuada scelerisque enim. Nunc volutpat nisi quis urna viverra euismod. Vivamus tempus sagittis leo.</p>
+        </div>
+        <div style="clear: both"></div>
+
+
+        <%--<p>I arbetet med att begränsa omfattningen av sakskador i samband med sot och fukt i fastigheter är, tid, professionalism och god kommunikation, viktiga faktorer för att lyckas.    </p>
     <p>Eaztimate erbjuder mobila applikationer med en uppsättning verktyg som svarar upp mot dessa faktorer.</p>
     <p>Var för sig är, Jour, Byggskada och Lösöre, applikationer som underlättar arbetet med att bedöma, dokumentera och rapportera omfattningen av skadan. Tillsammans utgör de länkar i en mycket stark kedja mellan den drabbade, försäkringsbolaget och saneringsbolaget.  </p>--%>
-</div>
+    </div>
 
-   <%-- <h1 class="huvud">Utmaning</h1>
+    <%-- <h1 class="huvud">Utmaning</h1>
     <div class="whitebox"><img src="Images/placeholder_utmaning.png" />
 </div>
     <h1>Verktyg</h1>
