@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="roomlist.aspx.cs" Inherits="controls_roomlist" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="roomlist.ascx.cs" Inherits="controls_roomlist" %>
 
 <div style="width: 100%; margin-bottom: 0px;">
             <asp:UpdatePanel ID="listupdatepanel" runat="server" UpdateMode="Conditional">
