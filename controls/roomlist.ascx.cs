@@ -76,23 +76,17 @@ public partial class controls_roomlist : System.Web.UI.UserControl
 
         switch (sortorderhidden.Value) {
             case "0":
-                sort = " ORDER BY categorytitle DESC";
+                sort = " ORDER BY title ASC";
                 break;
             case "1":
-                sort = " ORDER BY categorytitle ASC";
+                sort = " ORDER BY title DESC";
                 break;
             case "2":
-                sort = " ORDER BY grouptitle DESC";
+                sort = " ORDER BY items DESC";
                 break;
             case "3":
-                sort = " ORDER BY grouptitle ASC";
-                break;
-            case "4":
-                sort = " ORDER BY itemtitle ASC";
-                break;
-            case "5":
-                sort = " ORDER BY itemtitle DESC";
-                break;
+                sort = " ORDER BY items ASC";
+                break;            
         }
 
         //int selectedcount = room_cblist.Items.Cast<ListItem>().Where(item => item.Selected).Count();
@@ -106,7 +100,7 @@ public partial class controls_roomlist : System.Web.UI.UserControl
         //}
 
         string othertype = GetGlobalResourceObject("Strings", "other").ToString();
-        RoomSqlDataSource.SelectCommand = RoomSqlDataSource.SelectCommand = "SELECT a.*,b.inspectionno, (SELECT TOP 1 x.image FROM roomimage x WHERE x.roomid=a.roomid ORDER BY x.roomimageid) roomimage FROM room a LEFT JOIN inventory b ON a.inventoryid=b.inventoryid WHERE a.inventoryid=" + inspectionid.ToString();
+        RoomSqlDataSource.SelectCommand = RoomSqlDataSource.SelectCommand = "SELECT a.*,b.inspectionno, (SELECT TOP 1 x.image FROM roomimage x WHERE x.roomid=a.roomid ORDER BY x.roomimageid) roomimage, (SELECT count(x.itemid) FROM item x WHERE x.roomid=a.roomid) items FROM room a LEFT JOIN inventory b ON a.inventoryid=b.inventoryid WHERE a.inventoryid=" + inspectionid.ToString() + sort;
     }    
 
     protected void objectlist_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e) {

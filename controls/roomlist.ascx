@@ -68,21 +68,15 @@
                         <asp:LinkButton ID="LinkButton2" OnCommand="Sort_Command" CommandName='0' runat="server">
                     <div class="sort_item white">
                         <div class="<%=(sortorder == 0 ? "sort_up" : sortorder == 1 ? "sort_down" : "sort_none") %>"></div>
-                        Typ
+                        Namn
                     </div>
                         </asp:LinkButton>
                         <asp:LinkButton ID="LinkButton3" OnCommand="Sort_Command" CommandName='2' runat="server">
                     <div class="sort_item white">
                         <div class="<%=(sortorder == 2 ? "sort_up" : sortorder == 3 ? "sort_down" : "sort_none") %>"></div>
-                        Namn
-                    </div>
-                        </asp:LinkButton>
-                        <asp:LinkButton ID="LinkButton4" OnCommand="Sort_Command" CommandName='4' runat="server">
-                    <div class="sort_item white">
-                        <div class="<%=(sortorder == 4 ? "sort_up" : sortorder == 5 ? "sort_down" : "sort_none") %>"></div>
                         Antal objekt
                     </div>
-                        </asp:LinkButton>
+                        </asp:LinkButton>                        
                     </div>
                     <div id="room_help">
                         <h2>Urval</h2>
