@@ -21,33 +21,9 @@ public partial class inspect_object : System.Web.UI.Page
     {
         if (!int.TryParse((Request.QueryString["id"] ?? ""), out inspectionid)) {
             Response.Redirect("open_inspection.aspx", true);
-        }        
+        }
 
-        //int.TryParse(Request.QueryString["so"] ?? "0", out sortorder);        
-        //switch (sortorder) {
-        //    case 0:
-        //        sort = " ORDER BY categorytitle DESC";
-        //        break;
-        //    case 1:
-        //        sort = " ORDER BY categorytitle ASC";
-        //        break;
-        //    case 2:
-        //        sort = " ORDER BY grouptitle DESC";
-        //        break;
-        //    case 3:
-        //        sort = " ORDER BY grouptitle ASC";
-        //        break;
-        //    case 4:
-        //        sort = " ORDER BY itemtitle ASC";
-        //        break;
-        //    case 5:
-        //        sort = " ORDER BY itemtitle DESC";
-        //        break;
-        //}                
-
-        if (!Page.IsPostBack) {
-            //bindListView();
-            //bindRoomView();
+        if (!Page.IsPostBack) {            
 
             objectlist.inspectionid = inspectionid;
             objectlist.bindData();
@@ -70,18 +46,7 @@ public partial class inspect_object : System.Web.UI.Page
                     phoneno.Text = reader.GetString(reader.GetOrdinal("tel"));
                     terms.Text = reader.GetString(reader.GetOrdinal("terms"));
                 }
-            }
-            //using (SqlDataReader reader = SQL.ExecuteQuery("SELECT a.roomid,a.title FROM room a WHERE a.inventoryid=@1", inspectionid)) {
-            //    room_cblist.DataSource = reader;
-            //    room_cblist.DataBind();
-            //    //rooms.DataSource = reader;
-            //    //rooms.DataBind();
-            //}
-
-            //using (SqlDataReader reader = SQL.ExecuteQuery("SELECT d.categoryid,d.title FROM item a RIGHT JOIN type b ON a.typeid=b.typeid RIGHT JOIN grupp c ON b.groupid=c.groupid RIGHT JOIN category d ON c.categoryid=d.categoryid WHERE a.inventoryid=@1 GROUP BY d.categoryid,d.title", inspectionid)) {
-            //    cat_cblist.DataSource = reader;
-            //    cat_cblist.DataBind();                
-            //}
+            }           
         }
     }    
     protected void Object_Click(object sender, EventArgs e) {
@@ -98,27 +63,7 @@ public partial class inspect_object : System.Web.UI.Page
         if (roomid > 0) {
             //Response.Redirect("room_view.aspx?id=" + rooms.SelectedItem.Value, true);
         }
-    }
-
-    //protected void objectlist_ItemCommand(object sender, ListViewCommandEventArgs e) {
-    //    if (e.Item.ItemType == ListViewItemType.DataItem) {
-    //        int inventoryid = 0;
-    //        if (int.TryParse(e.CommandArgument.ToString(), out inventoryid)) {
-    //            switch (e.CommandName) {
-    //                case "Open":
-    //                    Response.Redirect("object_view.aspx?id=" + inventoryid.ToString(), true);
-    //                    break;
-    //            }
-    //        }
-    //    }
-    //}
-
-    //protected void objectlist_DataBound(object sender, EventArgs e) {
-    //    DataPager pager = (DataPager)objectlist.FindControl("DataPager1");
-    //    if (pager != null) {
-    //        pager.Visible = pager.TotalRowCount > pager.MaximumRows;
-    //    }        
-    //}
+    }    
 
     protected void roomlist_ItemCommand(object sender, ListViewCommandEventArgs e) {
         if (e.Item.ItemType == ListViewItemType.DataItem) {
@@ -151,59 +96,7 @@ public partial class inspect_object : System.Web.UI.Page
             default:
                 return "white";
         }
-    }
-
-    //protected void bindRoomView() {
-    //    int.TryParse(roomsortorderhidden.Value, out roomsortorder);
-    //    RoomSqlDataSource.SelectCommand = "SELECT a.*,b.inspectionno, (SELECT TOP 1 x.image FROM roomimage x WHERE x.roomid=a.roomid ORDER BY x.roomimageid) roomimage FROM room a LEFT JOIN inventory b ON a.inventoryid=b.inventoryid WHERE a.inventoryid=" + inspectionid.ToString();
-    //}
-
-    //protected void bindListView() {
-    //    int.TryParse(sortorderhidden.Value, out sortorder);
-    //    switch (sortorderhidden.Value) {
-    //        case "0":
-    //            sort = " ORDER BY categorytitle DESC";
-    //            break;
-    //        case "1":
-    //            sort = " ORDER BY categorytitle ASC";
-    //            break;
-    //        case "2":
-    //            sort = " ORDER BY grouptitle DESC";
-    //            break;
-    //        case "3":
-    //            sort = " ORDER BY grouptitle ASC";
-    //            break;
-    //        case "4":
-    //            sort = " ORDER BY itemtitle ASC";
-    //            break;
-    //        case "5":
-    //            sort = " ORDER BY itemtitle DESC";
-    //            break;
-    //    }
-
-    //    int selectedcount =  room_cblist.Items.Cast<ListItem>().Where(item => item.Selected).Count();
-    //    if (selectedcount > 0) {
-    //        var s = room_cblist.Items.Cast<ListItem>()
-    //               .Where(item => item.Selected)
-    //               .Aggregate("", (current, item) => current + (item.Value + ", "));
-    //        roomselect = " AND a.roomid IN (" + s.TrimEnd(new[] { ',', ' ' }) + ")";
-    //    } else {
-    //        roomselect = string.Empty;
-    //    }
-
-    //    string othertype = GetGlobalResourceObject("Strings", "other").ToString();
-    //    SqlDataSource1.SelectCommand = "SELECT a.itemid,a.price,a.usage,a.age,a.other,a.dateupdated,(CASE WHEN b.title LIKE '" + othertype + "' THEN (CASE WHEN a.alttype IS NULL THEN LEFT(a.title, 50) ELSE a.alttype END) ELSE b.title END)  itemtitle, c.title grouptitle,d.title categorytitle, (SELECT TOP 1 x.image FROM itemimage x WHERE x.itemid=a.itemid ORDER BY x.itemimageid) itemimage, (SELECT x.inspectionno FROM inventory x WHERE a.inventoryid=x.inventoryid) inspectionno FROM item a LEFT JOIN type b ON a.typeid=b.typeid LEFT JOIN grupp c ON b.groupid=c.groupid LEFT JOIN category d ON c.categoryid=d.categoryid WHERE a.inventoryid=" + inspectionid.ToString() + roomselect + sort;
-    //}
-
-    //protected void roomlist_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e) {
-    //    //registerScripts();
-    //    bindRoomView();
-    //}
-
-    //protected void objectlist_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e) {
-    //    registerScripts();
-    //    bindListView();
-    //}
+    }   
 
     protected void Sort_Command(object sender, CommandEventArgs e) {
         int.TryParse(e.CommandName, out sortorder);
@@ -211,19 +104,5 @@ public partial class inspect_object : System.Web.UI.Page
         //sortorderhidden.Value = e.CommandName;
         ((LinkButton)sender).CommandName = (sortorder % 2 == 0 ? (sortorder + 1).ToString() : (sortorder - 1).ToString());  //switch command
         //bindListView();
-    }
-    //protected void room_cblist_SelectedIndexChanged(object sender, EventArgs e) {
-    //    registerScripts();
-    //    bindListView();
-    //}
-
-    //protected void cat_cblist_SelectedIndexChanged(object sender, EventArgs e) {
-    //    registerScripts();
-    //    bindListView();
-    //}
-
-    //protected void registerScripts() {
-    //    ScriptManager.RegisterStartupScript(this, this.GetType(), "showhide", "expandList($('.inspection_row_1'), $('.inspection_row_2'));", true);
-    //    ScriptManager.RegisterStartupScript(this, this.GetType(), "showhideurval", "expandSort($('.row_rum1'), $('.row_rum2'));expandSort($('.row_kategori1'), $('.row_kategori2'));", true);
-    //}
+    }    
 }

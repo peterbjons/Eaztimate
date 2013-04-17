@@ -1447,19 +1447,25 @@ div.product_verktyg img{
 }
 
 /* CHECKBOX SHIZZLE */
-input[type="checkbox"] {
-    display:none;
+
+.csschecked input[type="checkbox"] {
+    display:none; /* hide the checkboxes in supported browsers */
 }
-input[type="checkbox"] + label span {
+
+/*input[type="checkbox"] {
+    display:none;
+}*/
+
+.csschecked input[type="checkbox"] + label span {
     display:inline-block;
     width:19px;
     height:19px;
     margin:-1px 4px 0 0;
     vertical-align:middle;
-    background:url(../images/check_radio_sheet_ez.png) left top no-repeat;
+    background:url(../images/check_radio_sheet.png) left top no-repeat;
     cursor:pointer;
 }
-input[type="checkbox"]:checked + label span {
-    background:url(../images/check_radio_sheet_ez.png) -19px top no-repeat;
+.csschecked input[type="checkbox"]:checked + label span {
+    background:url(../images/check_radio_sheet.png) -19px top no-repeat;
 }
 /* CHECKBOX SHIZZLE END*/
