@@ -66,16 +66,20 @@ a:hover {
 }
 
 #logo {
-    width: 74px;
+    width: 195px;
     height: 42px;
     background-image: url('../images/logo_small_symbol.png');
     background-repeat: no-repeat;
-    padding: 0px 0px 0px 50px;
+    padding: 0px 0px 0px 0px;
     font-family: Oswald;
     font-size: 14pt;
     line-height: 42px;
     float: left;
     margin-left: 10px;
+}
+#logo img {
+    float:left;
+    margin-right: 5px;
 }
 
 #nav {
@@ -172,7 +176,8 @@ margin-bottom: 10px;
     text-align:justify;
 }
 .services_block img {
-    width:286px;
+    width:186px;
+    margin: 0 auto;
 }
 
 #slider {

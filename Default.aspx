@@ -17,17 +17,17 @@
         <blockquote>"  Eaztimate erbjuder en uppsättning verktyg som svarar upp mot dina förväntningar  "</blockquote>
         <h2>Våra tjänster</h2>
         <div class="services_block">
-            <h3>Produkter</h3><img src="Images/object1.jpg" />
+            <h3>Produkter</h3><img src="Images/produkter.png"  style="margin-left: 50px"/>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce diam lacus, pellentesque in vestibulum ac, malesuada scelerisque enim. Nunc volutpat nisi quis urna viverra euismod. Vivamus tempus sagittis leo.</p>
             <span class="buttonlight">Jour</span><span class="buttonlight">Byggskada</span><span class="buttonlight">Lösöre</span><a href="products.aspx" class="button" style="float:left">Läs mer &raquo;</a>
         </div>
         <div class="services_block">
             <h3>Utbildning</h3>
-            <img src="Images/object1.jpg" />
+            <img src="Images/books.png"  style="margin-left: 50px"/>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce diam lacus, pellentesque in vestibulum ac, malesuada scelerisque enim. Nunc volutpat nisi quis urna viverra euismod. Vivamus tempus sagittis leo.</p>
         </div>
         <div class="services_block last">
-            <h3>Support</h3><img src="Images/object1.jpg" />
+            <h3>Support</h3><img src="Images/livboj.png"  style="margin-left: 50px"/>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce diam lacus, pellentesque in vestibulum ac, malesuada scelerisque enim. Nunc volutpat nisi quis urna viverra euismod. Vivamus tempus sagittis leo.</p>
         </div>
         <div style="clear: both"></div>

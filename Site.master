@@ -35,7 +35,8 @@
         <div id="header">
             <div class="wrapper">
                 <a href="/">
-                    <div id="logo">eaztimate</div>
+                    
+                    <div id="logo"><img src="Images/logo_small_symbol.gif" />eaztimate</div>
                 </a>
                 <div id="nav">
                     <ul>
