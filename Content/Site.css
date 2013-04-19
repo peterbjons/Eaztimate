@@ -1487,7 +1487,9 @@ h1.huvud {
 
 
 
-
+.divider {
+    height: 50px;
+}
 
 #slider {
     overflow: hidden;

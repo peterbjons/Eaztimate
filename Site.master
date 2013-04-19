@@ -69,6 +69,7 @@
                                 <li><a href="/product_description_jour.aspx">Jour</a></li>
                                 <li><a href="/product_description_bygg.aspx">Byggskada</a></li>
                                 <li><a href="/product_description_losore.aspx">Lösöre</a></li>
+                                <li><a href="/product_description_losore.aspx">Hårdvara</a></li>
                             </ul>
                         </li>
                         <asp:LoginView ID="LoginView1" runat="server">

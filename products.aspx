@@ -91,6 +91,21 @@
         </div>
         <div style="clear: both"></div>
     </div>
+        <div class="product_block">
+        <img src="Images/logo_hardware_300_300.png" style="float: left" /><div class="slider_text">
+
+            <h2 style="padding-top: 0px">Hårdvara</h2>
+            <p>Vi kan grejerna!</p><ul>
+                <li>Surfplattor</li>
+                <li>Mobiltelefoner</li>
+                <li>Android</li>
+                
+            </ul>
+            <a class="button" style="float: left; " href="product_description_losore.aspx">Läs mer &raquo;</a>
+
+        </div>
+        <div style="clear: both"></div>
+    </div>
 
 
 
