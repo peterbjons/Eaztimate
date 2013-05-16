@@ -95,13 +95,43 @@
         <img src="Images/logo_hardware_300_300.png" style="float: left" /><div class="slider_text">
 
             <h2 style="padding-top: 0px">Hårdvara</h2>
-            <p>Vi kan grejerna!</p><ul>
+            <p>Våra mobila applikationer fungerar bäst tillsammans med moderna mobiltelefoner/paddor med högupplöst skärm och bra kamera, nedan följer en lista på utrustning som vi rekommenderar.</p><ul>
                 <li>Surfplattor</li>
                 <li>Mobiltelefoner</li>
                 <li>Android</li>
                 
             </ul>
-            <a class="button" style="float: left; " href="product_description_losore.aspx">Läs mer &raquo;</a>
+            <a class="button" style="float: left; " href="product_description_hardware.aspx">Läs mer &raquo;</a>
+
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <div class="product_block">
+        <img src="Images/logo_books_300_300.png" style="float: left" /><div class="slider_text">
+
+            <h2 style="padding-top: 0px">Utbildning</h2>
+            <p>Vi kan grejerna!</p><ul>
+                <li>Steg 1-3</li>
+                <li>Certifiering</li>
+                
+                
+            </ul>
+            <a class="button" style="float: left; " href="utbildning.aspx">Läs mer &raquo;</a>
+
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <div class="product_block">
+        <img src="Images/logo_livboj_300_300.png" style="float: left" /><div class="slider_text">
+
+            <h2 style="padding-top: 0px">Tjänster</h2>
+            <p>Vi kan grejerna!</p><ul>
+                <li>Hosting</li>
+                <li>Support</li>
+                <li>Integration</li>
+                
+            </ul>
+            <a class="button" style="float: left; " href="tjanster.aspx">Läs mer &raquo;</a>
 
         </div>
         <div style="clear: both"></div>

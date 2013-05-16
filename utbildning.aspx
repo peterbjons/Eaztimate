@@ -4,8 +4,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
      <img src="Images/logo_books.png" /><h1>Utbildning</h1>
-    <div class="whitebox"><h2>Steg 1-3</h2>
-        <p>Fördelarna med att ha med sig en Jour-app i mobilen eller i paddan är flera jämfört med att arbeta med papper, penna och kamera. Enligt användarna sticker dock det minimala efterarbetet ut. Vid kontakt med internet skickas jourrapporten vidare, oftast innan du lämnar platsen. </p>
+    <div class="whitebox">
+        <p>Våra utbildningar riktar sig till personal inom företag som vill utveckla sin verksamhet med hjälp av modern teknik och väl beprövade arbetsmetoder. Personal som genomgår utbildning blir certifierade att använda våra verktyg och tillgång till vår support. </p>
         <h2>Certifiering</h2>
         <p>Fördelarna med att ha med sig en Jour-app i mobilen eller i paddan är flera jämfört med att arbeta med papper, penna och kamera. Enligt användarna sticker dock det minimala efterarbetet ut. Vid kontakt med internet skickas jourrapporten vidare, oftast innan du lämnar platsen. </p>
         
