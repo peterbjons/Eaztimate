@@ -1590,3 +1590,17 @@ div.product_verktyg img {
 .blockbox h2 {
     margin: 5px 0px 0px 0px !important;
 }
+
+ol.jourlistitem li {
+    padding: 10px 10px; 
+    background-image: url('../images/sliderfull.jpg');
+    margin: 5px;
+    color: #fff;
+    float:left;
+    
+}
+ol.jourlistitem {
+    list-style-type: none;
+    margin: 0px 0px 20px;
+    padding: 0px;
+}

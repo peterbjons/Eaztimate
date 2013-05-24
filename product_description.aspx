@@ -74,7 +74,7 @@
             <h3>Eaztimate Jour</h3>
             <img src="Images/logo_jour_300_300.png" style="margin-left: 50px" />
             <p>Ett samtal kommer in till jouren och ett uppdrag startar med att jourhavande öppnar Jour-appen och noterar adress och telefonnummer till kontaktperson på skadeplatsen. Tid och uppgifter om olika steg i jourärendet loggas sedan i kronologisk ordning...</p>
-            <span class="buttonlight">Hitta rätt</span><span class="buttonlight">Logga aktiviteter</span><span class="buttonlight">Beslutsstöd</span><span class="buttonlight">Rapportera</span><a href="product_description.aspx" class="button" style="float: left">Läs mer &raquo;</a>
+            <span class="buttonlight">Hitta rätt</span><span class="buttonlight">Logga aktiviteter</span><span class="buttonlight">Beslutsstöd</span><span class="buttonlight">Rapportera</span><a href="product_description_jour.aspx" class="button" style="float: left">Läs mer &raquo;</a>
         </div>
         <div class="services_block" style="height: 550px;">
             <h3>Eaztimate Bygg</h3>
