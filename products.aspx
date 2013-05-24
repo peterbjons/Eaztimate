@@ -5,45 +5,23 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <h1>Produkter</h1>
 
-    <%--    <ul class="products">
-        <li class="block">
-            <h2>Jour</h2><div class="whitebox">
-            <img src="Images/logo_jour_300_300.png" />
-            
-            <ul>
-                <li>Hitta rätt</li>
-                <li>Logga aktiviteter</li>
-                <li>Beslutsstöd</li>
-                <li>Rapportera</li>
-            </ul>
-            <p>Ett samtal kommer in till jouren och ett uppdrag startar med att jourhavande öppnar Jour-appen och noterar adress och telefonnummer...</p>
-            <a class="button" style="float:left" href="product_description_jour.aspx">Läs mer &raquo;</a><div style="clear:both"></div></div>
-        </li>
-        <li class="block">
-            <h2>Byggskada</h2><div class="whitebox">
-            <img src="Images/logo_bygg_300_300.png" />
-            <ul>
-                <li>Dokumentera</li>
-                <li>Bedöm</li>
-                <li>Rapportera</li>
+  <div class="product_block">
+        <img src="Images/logo_produkter_300_300.png" style="float: left" /><div class="slider_text">
+
+            <h2 style="padding-top: 0px">Mobila Applikationer</h2>
+            <p>Var för sig är Jour, Byggskada och Lösöre, applikationer som underlättar arbetet med att bedöma, dokumentera och rapportera omfattningen av skadan. Tillsammans utgör de länkar i en mycket stark kedja mellan den drabbade, försäkringsbolaget och saneringsbolaget.</p><ul>
+                <li>Jour</li>
+                <li>Byggskada</li>
+                <li>Lösöre</li>
                 
             </ul>
-            <p>Stor eller liten fastighet, omfattande eller begränsad skada, sot eller fukt, osv. Skador skiljer sig åt men är sällan unika...  </p>
-            <a class="button" style="float:left" href="product_description_bygg.aspx">Läs mer &raquo;</a><div style="clear:both"></div></div>
-        </li>
-        <li class="block">
-            <h2>Lösöre</h2><div class="whitebox">
-            <img src="Images/logo_sak_300_300.png" />
-            <ul>
-                <li>Dokumentera</li>
-                <li>Bedöm</li>
-                <li>Rapportera</li>
-                
-            </ul><p>Målet, att underlätta i varje led i hateringen av lösören är ambitiöst och kräver samarbete mellan individer och bolag... </p>
-            <a class="button" style="float:left" href="product_description_losore.aspx">Läs mer &raquo;</a><div style="clear:both"></div></div>
-        </li>
-    </ul><div style="clear:both"></div>--%>
-    <div class="product_block">
+            <a class="button" style="float: left; " href="product_description.aspx">Läs mer &raquo;</a>
+
+        </div>
+        <div style="clear: both"></div>
+    </div>
+
+    <%--<div class="product_block">
         <img src="Images/logo_jour_300_300.png" style="float: left" /><div class="slider_text">
 
             <h2 style="padding-top: 0px">Eaztimate Jour</h2>
@@ -59,8 +37,8 @@
 <div style="clear:both"></div>
         </div>
         <div style="clear: both"></div>
-    </div>
-    <div class="product_block">
+    </div>--%>
+    <%--<div class="product_block">
         <img src="Images/logo_bygg_300_300.png" style="float: left" /><div class="slider_text">
 
             <h2 style="padding-top: 0px">Eaztimate Bygg</h2>
@@ -74,9 +52,9 @@
 
         </div>
         <div style="clear: both"></div>
-    </div>
+    </div>--%>
 
-    <div class="product_block">
+    <%--<div class="product_block">
         <img src="Images/logo_sak_300_300.png" style="float: left" /><div class="slider_text">
 
             <h2 style="padding-top: 0px">Eaztimate Lösöre</h2>
@@ -90,7 +68,7 @@
 
         </div>
         <div style="clear: both"></div>
-    </div>
+    </div>--%>
         <div class="product_block">
         <img src="Images/logo_hardware_300_300.png" style="float: left" /><div class="slider_text">
 
@@ -106,12 +84,12 @@
         </div>
         <div style="clear: both"></div>
     </div>
-    <div class="product_block">
+  <%--  <div class="product_block">
         <img src="Images/logo_books_300_300.png" style="float: left" /><div class="slider_text">
 
             <h2 style="padding-top: 0px">Utbildning</h2>
-            <p>Vi kan grejerna!</p><ul>
-                <li>Steg 1-3</li>
+            <p class="textneedsfix">Vi kan grejerna!</p><ul>
+                
                 <li>Certifiering</li>
                 
                 
@@ -120,12 +98,12 @@
 
         </div>
         <div style="clear: both"></div>
-    </div>
-    <div class="product_block">
+    </div>--%>
+<%--    <div class="product_block">
         <img src="Images/logo_livboj_300_300.png" style="float: left" /><div class="slider_text">
 
             <h2 style="padding-top: 0px">Tjänster</h2>
-            <p>Vi kan grejerna!</p><ul>
+            <p class="textneedsfix">Vi kan grejerna!</p><ul>
                 <li>Hosting</li>
                 <li>Support</li>
                 <li>Integration</li>
@@ -135,7 +113,7 @@
 
         </div>
         <div style="clear: both"></div>
-    </div>
+    </div>--%>
 
 
 

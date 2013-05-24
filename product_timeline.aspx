@@ -12,40 +12,48 @@
         <ul class="jour">
             <li>
                 <h3>1 minut</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit, tortor eget </p>
+                <p>Personsökaren piper och X öppnar EZ Jour, väljer i listan över anslutna journummer och ringer upp. <strong>Tid och Jour loggas som start på jourärende</strong></p>
 
             </li>
             <li>
                 <h3>5 minut</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas semper felis quis iaculis. Mauris leo erat, interdum vel aliquam ut, consequat sed dui. Etiam sit amet ante fermentum nisl mollis pulvinar sit amet eu justo.</p>
+                <p>Samtal med jour. Registrera grunddata och omständigheter kring skada. <strong>Tid för avslutat samtal med jour loggas</strong></p>
             </li>
             <li>
                 <h3>15 minut</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit, tortor eget </p>
+                <p>Samtal till skadedrabbad. Alternativ för hur jourärendet skall fortgå registreras. <strong>Tid för samtal med skadedrabbad loggas</strong></p>
             </li>
             <li>
                 <h3>30 minut</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit, tortor eget </p>
+                <p>Ankomst till skadeplats dokumenteras, <strong>Tid för ankomst loggas</strong></p>
             </li>
             <li>
                 <h3>1 timme</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas semper felis quis iaculis. Mauris leo erat, interdum vel aliquam ut, consequat sed dui. Etiam sit amet ante fermentum nisl mollis pulvinar sit amet eu justo.</p>
+                <p>Eventuella akutåtgärder vidtas. <strong>Akutåtgärder loggas</strong></p>
             </li>
             <li>
                 <h3>2 timmar</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas semper felis quis iaculis. Mauris leo erat, interdum vel aliquam ut, consequat sed dui. Etiam sit amet ante fermentum nisl mollis pulvinar sit amet eu justo.</p>
+                <p>Utvändig besiktning dokumenteras. <strong>Tid för utvändig besiktning loggas</strong></p>
             </li>
             <li>
                 <h3>6 timmar</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit, tortor eget </p>
+                <p>Invändig besiktning dokumentera. <strong>Tid för invändig besiktning loggas</strong></p>
             </li>
             <li>
                 <h3>12 timmar</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit, tortor eget </p>
+                <p>Åtgärder vidtagna för att begränsa skada dokumenteras. <strong>Tid för skadebegränsande åtgärder loggas</strong></p>
             </li>
             <li>
                 <h3>24 timmar</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit, tortor eget </p>
+                <p>Ärendet avslutas. <strong>Tid för avslut loggas</strong></p>
+            </li>
+            <li>
+                <h3>24 timmar</h3>
+                <p>Jourrapport synkas med databas.</p>
+            </li>
+            <li>
+                <h3>24 timmar</h3>
+                <p>Jourrapport skapas och skickas till Försäkringsbolag. </p>
             </li>
             
         </ul>
@@ -58,46 +66,39 @@
         <ul class="bygg">
             <li>
                 <h3>1 minut</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit, tortor eget </p>
+                <p>Skapa upp ny rapport genom att hämta från bakomliggande system eller genom att lägga in uppgifter om skadeplatsen manuellt.</p>
             </li>
             <li>
                 <h3>5 minut</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit, tortor eget </p>
+                <p>Dokumentera byggnadstyp</p>
             </li>
             <li>
                 <h3>15 minut</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas semper felis quis iaculis. Mauris leo erat, interdum vel aliquam ut, consequat sed dui. Etiam sit amet ante fermentum nisl mollis pulvinar sit amet eu justo.</p>
+                <p>Beskriv och fotografera primär skadeorsak</p>
             </li>
             <li>
                 <h3>30 minut</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit, tortor eget </p>
+                <p>Beskriv rumsförhållanden</p>
             </li>
             <li>
                 <h3>1 timme</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit, tortor eget </p>
+                <p>Dokumentera omfattning av skada </p>
             </li>
             <li>
                 <h3>2 timmar</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit, tortor eget </p>
+                <p>Skapa rapport</p>
             </li>
             <li>
                 <h3>6 timmar</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit, tortor eget </p>
+                <p>Skicka rapport på byggskada</p>
             </li>
-            <li>
-                <h3>12 timmar</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit, tortor eget </p>
-            </li>
-            <li>
-                <h3>24 timmar</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit, tortor eget </p>
-            </li>
+           
         </ul>
 
     </div>
     <a class="button" style="float: left" href="product_description_bygg.aspx">&laquo; Till beskrivningen av Byggskada</a>
     <div style="clear:both; margin-bottom: 30px;"></div><a name="sak_timeline"></a>
-    <h2>Dag 3</h2>
+    <h2>Dag 3</h2><div class="textneedsfix">
     <div class="timeline_container">
         <img src="Images/logo_sak_60.png" class="head" />
         <ul class="sak">
@@ -138,8 +139,8 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit, tortor eget </p>
             </li>
         </ul>
-
-    </div><a class="button" style="float: left" href="product_description_losore.aspx">&laquo; Till beskrivningen av Lösöre</a>
+</div></div>
+    <a class="button" style="float: left" href="product_description_losore.aspx">&laquo; Till beskrivningen av Lösöre</a>
     <div style="clear:both; margin-bottom: 30px;"></div>
 </asp:Content>
 

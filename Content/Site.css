@@ -14,7 +14,7 @@ blockquote {
     font-size: 16pt;
     line-height: 19pt;
     font-weight: 300;
-    font-style:italic;
+    font-style: italic;
     color: rgb(119,119,119);
     /*background-image: url(../images/blockquote.png);
     background-repeat: no-repeat;
@@ -22,6 +22,7 @@ blockquote {
     width: 90%;
     margin: 0 0px;
 }
+
 p {
     margin-bottom: 20px;
     color: #434343;
@@ -41,9 +42,10 @@ ol {
         padding-left: 5px;
     }
 
-    small {
-        font-size: 8pt;
-    }
+small {
+    font-size: 8pt;
+}
+
 a:hover {
     text-decoration: none;
 }
@@ -77,10 +79,11 @@ a:hover {
     float: left;
     margin-left: 10px;
 }
-#logo img {
-    float:left;
-    margin-right: 5px;
-}
+
+    #logo img {
+        float: left;
+        margin-right: 5px;
+    }
 
 #nav {
     float: right;
@@ -109,7 +112,7 @@ a:hover {
                 left: 0px;
                 top: 30px;
                 cursor: pointer;
-                width: 140px;
+                width: 190px;
                 padding: 0px 10px 10px 10px;
                 z-index: 666;
             }
@@ -136,49 +139,58 @@ a:hover {
             #nav ul li a.active {
                 border-bottom: 2px solid #1c80aa;
             }
+
 .product_block {
     background-image: url('../images/sliderfull.jpg');
-   margin-bottom: 30px;
-   padding-bottom: 10px;
-}
-.product_block img {width:250px;}
-.product_block ul {
-    list-style-type: none;
-    
-}
-.product_block ul li{
-    float:left;
-    padding: 5px 10px;
-    font-size: 8pt;
-    background-color: #85c8e0;
-    color: #000;
-    margin-right: 4px;margin-bottom: 5px;
-}
-.services_block{
-        background-image: url('../images/sliderfull.jpg');
-   margin-bottom: 30px;
-   margin-right: 10px;
-   padding: 10px;
-   width: 286px;
-   float:left;
-   background-position: -630px 2100px;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
 }
 
-.services_block h3 {
-    color: #fff;
-font-weight: 300!important;
-font-size: 18pt!important;
-margin-bottom: 10px;
+    .product_block img {
+        width: 250px;
+    }
+
+    .product_block ul {
+        list-style-type: none;
+    }
+
+        .product_block ul li {
+            float: left;
+            padding: 5px 10px;
+            font-size: 8pt;
+            background-color: #85c8e0;
+            color: #000;
+            margin-right: 4px;
+            margin-bottom: 5px;
+        }
+
+.services_block {
+    background-image: url('../images/sliderfull.jpg');
+    margin-bottom: 30px;
+    margin-right: 10px;
+    padding: 10px;
+    width: 286px;
+    float: left;
+    background-position: -630px 2100px;
 }
-.services_block p {
-    color: #fff;
-    font-weight: 300;
-    text-align:justify;
-}
-.services_block img {
-    width:186px;
-    margin: 0 auto;
-}
+
+    .services_block h3 {
+        color: #fff;
+        font-weight: 300!important;
+        font-size: 18pt!important;
+        margin-bottom: 10px;
+    }
+
+    .services_block p {
+        color: #fff;
+        font-weight: 300;
+        
+    }
+
+    .services_block img {
+        width: 186px;
+        margin: 0 auto;
+    }
 
 #slider {
     height: 350px;
@@ -197,16 +209,14 @@ margin-bottom: 10px;
 }
 
 .slider_text {
-    
-    width:620px;
-    float:left;
+    width: 620px;
+    float: left;
     padding-left: 30px;
     padding-right: 10px;
 }
 
     .slider_text h2 {
         padding-top: 30px;
-        
         color: #fff;
         font-weight: 300!important;
         font-size: 36pt!important;
@@ -295,15 +305,17 @@ li.block p {
     margin-bottom: 20px;
     line-height: 11pt;
 }
-.buttonlight{
+
+.buttonlight {
     float: left;
-padding: 5px 10px;
-font-size: 8pt;
-background-color: #85c8e0;
-color: #000;
-margin-right: 4px;
-margin-bottom: 5px;
+    padding: 5px 10px;
+    font-size: 8pt;
+    background-color: #85c8e0;
+    color: #000;
+    margin-right: 4px;
+    margin-bottom: 5px;
 }
+
 .button {
     background-color: #000;
     color: #fff;
@@ -470,6 +482,7 @@ margin-bottom: 5px;
     .sort_row2 input[type=checkbox] {
         margin-right: 15px;
     }
+
     .sort_row2.row_rum2 label {
         cursor: pointer;
     }
@@ -512,7 +525,7 @@ margin-bottom: 5px;
 
 .inspection_item_image {
     height: 100px;
-    margin-bottom: 5px; 
+    margin-bottom: 5px;
 }
 
     .inspection_item_image img {
@@ -594,21 +607,20 @@ margin-bottom: 5px;
     float: left;
     padding-top: 20px;
     font-size: 10pt;
-    width:320px;
+    width: 320px;
 }
 
 
 .inspection_col4b {
     float: left;
     padding-left: 5px;
-    
-    width:310px;
-    
+    width: 310px;
 }
-.inspection_col4b p {
-    font-size: 10pt;
-    line-height: 24px;
-}
+
+    .inspection_col4b p {
+        font-size: 10pt;
+        line-height: 24px;
+    }
 
 .inspection_item_bottom {
     padding: 0px 5px 0px 0px;
@@ -717,8 +729,8 @@ margin-bottom: 5px;
     font-size: 14pt;
     font-weight: 300;
     padding: 5px 10px;
-background-color: #85c8e0;
-color: #fff;
+    background-color: #85c8e0;
+    color: #fff;
 }
 
 .inspect_object h4 {
@@ -833,7 +845,6 @@ span.goto {
 .thumbnail_large {
     width: 222px;
     margin-right: 10px;
-    
     margin-top: 10px;
     border: none;
 }
@@ -879,7 +890,6 @@ ul.material {
         margin: 20px 10px 0px 0px;
         padding: 5px 7px;
         color: #000;
-
     }
 
 
@@ -1225,7 +1235,7 @@ thead tr.tr_red td {
 .jourtable {
     width: 100%;
     border-spacing: 0px;
-    margin-top:5px;
+    margin-top: 5px;
 }
 
 .light {
@@ -1294,6 +1304,11 @@ table.companycreate tr.user_level4 td {
         margin: 20px 0px;
     }
 
+    .timeline_container .jour strong {
+        display: block;
+        font-size: 10pt;
+    }
+
 .pager {
     margin: 0 auto;
     text-align: center;
@@ -1316,7 +1331,7 @@ table.companycreate tr.user_level4 td {
     }
 
 .last {
-    margin-right: 0px;
+    margin-right: 0px !important;
 }
 
 .white_block {
@@ -1364,7 +1379,6 @@ table.companycreate tr.user_level4 td {
 
 .whitebox {
     background-color: #fff;
-
     padding: 10px;
     margin-bottom: 30px;
 }
@@ -1404,12 +1418,11 @@ input.tooltip_r {
         display: inline-block;
         position: absolute;
         color: #111;
-        
         background: #1c80aa;
     }
-    /*.callout {z-index:20;position:absolute;top:30px;border:0;left:-12px;}*/
+/*.callout {z-index:20;position:absolute;top:30px;border:0;left:-12px;}*/
 
-    /*CSS3 extras*/
+/*CSS3 extras*/
 
 
 
@@ -1437,7 +1450,6 @@ input.tooltip, select.tooltip {
     input.tooltip:hover + span, select.tooltip:hover + span {
         display: inline;
         position: absolute;
-        
         color: #EEE;
         background: #1c80aa;
     }
@@ -1461,7 +1473,6 @@ h1.huvud {
 
 
 #spotlight1 {
-    
     background-position: center top;
     background-repeat: no-repeat;
     height: 350px;
@@ -1470,7 +1481,6 @@ h1.huvud {
 
 
 #spotlight2 {
- 
     background-position: center top;
     background-repeat: no-repeat;
     height: 350px;
@@ -1479,7 +1489,6 @@ h1.huvud {
 
 
 #spotlight3 {
-
     background-position: center top;
     background-repeat: no-repeat;
     height: 350px;
@@ -1501,11 +1510,11 @@ h1.huvud {
     padding-top: 30px;
 }
 
-#promoBox div img {
-    float:left;
-}
+    #promoBox div img {
+        float: left;
+    }
 
-div.product_verktyg img{
+div.product_verktyg img {
     width: 50px;
     padding: 10px;
     background-color: #1c80aa;
@@ -1515,23 +1524,69 @@ div.product_verktyg img{
 /* CHECKBOX SHIZZLE */
 
 .csschecked input[type="checkbox"] {
-    display:none; /* hide the checkboxes in supported browsers */
+    display: none; /* hide the checkboxes in supported browsers */
 }
 
-/*input[type="checkbox"] {
+    /*input[type="checkbox"] {
     display:none;
 }*/
 
-.csschecked input[type="checkbox"] + label span {
-    display:inline-block;
-    width:19px;
-    height:19px;
-    margin:-1px 4px 0 0;
-    vertical-align:middle;
-    background:url(../images/check_radio_sheet_ez.png) left top no-repeat;
-    cursor:pointer;
-}
-.csschecked input[type="checkbox"]:checked + label span {
-    background:url(../images/check_radio_sheet_ez.png) -19px top no-repeat;
-}
+    .csschecked input[type="checkbox"] + label span {
+        display: inline-block;
+        width: 19px;
+        height: 19px;
+        margin: -1px 4px 0 0;
+        vertical-align: middle;
+        background: url(../images/check_radio_sheet_ez.png) left top no-repeat;
+        cursor: pointer;
+    }
+
+    .csschecked input[type="checkbox"]:checked + label span {
+        background: url(../images/check_radio_sheet_ez.png) -19px top no-repeat;
+    }
 /* CHECKBOX SHIZZLE END*/
+
+.textneedsfix {
+    background-color: #ED1C24;
+    color: #fff;
+}
+
+.shoutbox {
+    padding: 20px;
+    float:right;
+    width: 200px;
+    background-image: url('../images/sliderfull.jpg');
+    background-position: center center;
+    margin: 20px;
+    color: #fff;
+}
+
+.shoutbox h4 {
+    font-size: 18pt;
+    margin-bottom: 20px;
+    font-weight: 300;
+    
+}
+
+.blockbox {
+    width: 445px;
+    height: 120px;
+    float:left;
+    margin-right: 10px;
+    margin-bottom: 10px;        background-image: url('../images/sliderfull.jpg');
+    padding: 10px;
+    background-position: center center;
+     text-align:center;color: #fff;
+}
+.blockbox p{
+
+    color: #fff;
+   padding: 10px;
+    
+   
+
+    
+}
+.blockbox h2 {
+    margin: 5px 0px 0px 0px !important;
+}

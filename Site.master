@@ -66,12 +66,13 @@
                         </asp:LoginView>
                         <li><a href="/products.aspx">Produkter</a>
                             <ul>
-                                <li><a href="/product_description_jour.aspx">Jour</a></li>
-                                <li><a href="/product_description_bygg.aspx">Byggskada</a></li>
-                                <li><a href="/product_description_losore.aspx">Lösöre</a></li>
+                                <li><a href="/product_description.aspx">Mobila Applikationer</a></li>
                                 <li><a href="/product_description_hardware.aspx">Hårdvara</a></li>
+                            
                             </ul>
                         </li>
+                        <li><a href="/tjanster.aspx">Tjänster</a></li>
+                        <li><a href="/support.aspx">Support</a></li>
                         <asp:LoginView ID="LoginView1" runat="server">
                             <RoleGroups>
                                 <asp:RoleGroup Roles="Administrator">

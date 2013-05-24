@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
      <img src="Images/logo_livboj.png" /><h1>Support</h1>
-    <div class="whitebox"><p>Ett samtal kommer in till jouren och ett uppdrag startar med att jourhavande öppnar Jour-appen och noterar adress och telefonnummer till kontaktperson på skadeplatsen.  Tid och uppgifter om olika steg i jourärendet loggas sedan i kronologisk ordning: </p>
+    <div class="whitebox textneedfix"><p>Ett samtal kommer in till jouren och ett uppdrag startar med att jourhavande öppnar Jour-appen och noterar adress och telefonnummer till kontaktperson på skadeplatsen.  Tid och uppgifter om olika steg i jourärendet loggas sedan i kronologisk ordning: </p>
     <ol>
         <li>Samtalet till kontaktpersonen</li>
         <li>Resan till platsen</li>

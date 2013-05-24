@@ -9,19 +9,19 @@
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <h1 class="huvud">Eaztimate</h1>
     <div class="whitebox">
-        <h2>Effektivitet</h2>
-        <p>Mer gjort på kortare tid med lägre felprocent och högre kvalitet. Mer tid för eftertanke och mindre tid i bil, bättre beslutsunderlag och kortare ledtider. Tydliga mallar och förbättrad överblick, minskar stress och osäkerhet. Eaztimates mobila applikationen är inga underverk men det förbättrar onekligen dina chanser att addera värden i din verksamhet. </p>
-        <p style="margin-bottom:50px;">Med fokus på funktionalitet, användarvänlighet och integration har Eaztimate under 2012 och 2013, utvecklat, levererat och integrerat mobila applikationer som på ett revolutionerade sätt har förändrat och förbättrat arbetet med att utföra och dokumentera jour, byggskador och lösöresärenden. </p>
+        <%--<h2>Effektivitet</h2>--%>
+        <p>Med fokus på funktionalitet, användarvänlighet och integration har Eaztimate under 2012 och 2013, utvecklat, levererat och integrerat mobila applikationer som på ett revolutionerade sätt har förändrat och förbättrat arbetet med att utföra och dokumentera arbeten inom bygg och saneringsbranschen.</p>
+        <p style="margin-bottom:50px;">Mer gjort på kortare tid med lägre felprocent och högre kvalitet. Mer tid för eftertanke och mindre tid till administration, bättre beslutsunderlag och kortare ledtider. Tydliga mallar och förbättrad överblick, minskar stress och osäkerhet. Eaztimate’s mobila applikationen förbättrar onekligen dina chanser att addera värden i din verksamhet, samtidigt som din investering i utrustning och utbildning är blygsam i förhållande till den affärsnytta Eaztimates’s mobila applikationer genererar.  </p><div class="shoutbox"><h4>Shoutbox</h4>Shout, shout, let it all out, lalalal nanana Lorem ipsum fi fan</div>
         <blockquote>"  I arbetet med att begränsa omfattningen av sakskador i samband med sot och fukt i fastigheter är, tid, professionalism och god kommunikation viktiga faktorer för att lyckas  "</blockquote>
-        <h2>Mobila applikationer</h2>
-        <p>Var för sig är Jour, Byggskada och Lösöre, applikationer som underlättar arbetet med att bedöma, dokumentera och rapportera omfattningen av skadan. Tillsammans utgör de länkar i en mycket stark kedja mellan den drabbade, försäkringsbolaget och saneringsbolaget.</p>
+        <h2></h2>
+        <p></p>
         <blockquote>"  Eaztimate erbjuder en uppsättning verktyg som svarar upp mot dina förväntningar  "</blockquote>
         <h2>Våra tjänster</h2>
         <div class="services_block">
-            <h3>Produkter</h3>
+            <h3>Mobila applikationer</h3>
             <img src="Images/produkter.png" style="margin-left: 50px" />
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce diam lacus, pellentesque in vestibulum ac, malesuada scelerisque enim. Nunc volutpat nisi quis urna viverra euismod. Vivamus tempus sagittis leo.</p>
-            <span class="buttonlight">Jour</span><span class="buttonlight">Byggskada</span><span class="buttonlight">Lösöre</span><a href="products.aspx" class="button" style="float: left">Läs mer &raquo;</a>
+            <p>Var för sig är Jour, Byggskada och Lösöre, applikationer som underlättar arbetet med att bedöma, dokumentera och rapportera omfattningen av skadan. Tillsammans utgör de länkar i en mycket stark kedja mellan den drabbade, försäkringsbolaget och saneringsbolaget.</p>
+            <span class="buttonlight">Jour</span><span class="buttonlight">Byggskada</span><span class="buttonlight">Lösöre</span><a href="product_description.aspx" class="button" style="float: left">Läs mer &raquo;</a>
         </div>
         <div class="services_block">
             <h3>Utbildning</h3>
@@ -30,14 +30,14 @@
              <%--<span class="buttonlight">Steg 1-3</span>--%><span class="buttonlight">Certifiering</span><a href="utbildning.aspx" class="button" style="float: left">Läs mer &raquo;</a>
         </div>
         <div class="services_block last">
-            <h3>Tjänster</h3>
-            <img src="Images/livboj.png" style="margin-left: 50px" />
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce diam lacus, pellentesque in vestibulum ac, malesuada scelerisque enim. Nunc volutpat nisi quis urna viverra euismod. Vivamus tempus sagittis leo.</p>
+            <h3>Integration</h3>
+            <img src="Images/integration.png" style="margin-left: 50px" />
+            <p>Har ni bakomliggande system som behöver information on-line om pågående ärenden så hjälper vi er att koppla era system till Eaztimates mobila applikationen. Fördelarna är att ni snabbt får överblick över pågående ärenden och informationen samlad. </p>
             <span class="buttonlight">Hosting</span><span class="buttonlight">Support</span><span class="buttonlight">Integration</span><a href="tjanster.aspx" class="button" style="float: left">Läs mer &raquo;</a>
         </div>
         <div style="clear: both"></div>
-        <h2>Övriga tjänster</h2>
-        <p>Vi erbjuder även Hosting, integration, certifiering, uppgraderingar med mer..</p>
+        <%--<h2>Övriga tjänster</h2>
+        <p class="textneedsfix">Vi erbjuder även Hosting, integration, certifiering, uppgraderingar med mer..</p>--%>
 
 
         <%--<p>I arbetet med att begränsa omfattningen av sakskador i samband med sot och fukt i fastigheter är, tid, professionalism och god kommunikation, viktiga faktorer för att lyckas.    </p>
