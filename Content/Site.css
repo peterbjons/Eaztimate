@@ -184,7 +184,6 @@ a:hover {
     .services_block p {
         color: #fff;
         font-weight: 300;
-        
     }
 
     .services_block img {
@@ -359,6 +358,7 @@ li.block p {
         font-weight: 300;
         font-size: 36pt;
         margin-bottom: 30px;
+        margin-left: 20px;
     }
 
     #content h2 {
@@ -1553,7 +1553,7 @@ div.product_verktyg img {
 
 .shoutbox {
     padding: 20px;
-    float:right;
+    float: right;
     width: 200px;
     background-image: url('../images/sliderfull.jpg');
     background-position: center center;
@@ -1561,46 +1561,49 @@ div.product_verktyg img {
     color: #fff;
 }
 
-.shoutbox h4 {
-    font-size: 18pt;
-    margin-bottom: 20px;
-    font-weight: 300;
-    
-}
+    .shoutbox h4 {
+        font-size: 18pt;
+        margin-bottom: 20px;
+        font-weight: 300;
+    }
 
 .blockbox {
     width: 445px;
     height: 120px;
-    float:left;
+    float: left;
     margin-right: 10px;
-    margin-bottom: 10px;        background-image: url('../images/sliderfull.jpg');
+    margin-bottom: 10px;
+    background-image: url('../images/sliderfull.jpg');
     padding: 10px;
     background-position: center center;
-     text-align:center;color: #fff;
-}
-.blockbox p{
-
+    text-align: center;
     color: #fff;
-   padding: 10px;
-    
-   
+}
 
-    
-}
-.blockbox h2 {
-    margin: 5px 0px 0px 0px !important;
-}
+    .blockbox p {
+        color: #fff;
+        padding: 10px;
+    }
+
+    .blockbox h2 {
+        margin: 5px 0px 0px 0px !important;
+    }
 
 ol.jourlistitem li {
-    padding: 10px 10px; 
+    padding: 10px 10px;
     background-image: url('../images/sliderfull.jpg');
     margin: 5px;
     color: #fff;
-    float:left;
-    
+    float: left;
 }
+
 ol.jourlistitem {
     list-style-type: none;
     margin: 0px 0px 20px;
     padding: 0px;
+}
+
+img.stockbild {
+    
+    margin: 5px 0px 5px 5px;
 }

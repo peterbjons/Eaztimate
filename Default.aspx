@@ -8,7 +8,7 @@
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <h1 class="huvud">Eaztimate</h1>
-    <div class="whitebox">
+    <div class="whitebox"><img src="images/stock/banner-13.jpg" />
         <%--<h2>Effektivitet</h2>--%>
         <p>Med fokus på funktionalitet, användarvänlighet och integration har Eaztimate under 2012 och 2013, utvecklat, levererat och integrerat mobila applikationer som på ett revolutionerade sätt har förändrat och förbättrat arbetet med att utföra och dokumentera arbeten inom bygg och saneringsbranschen.</p><div class="shoutbox"><h4>Shoutbox</h4>Sedan starten i februari 2013 har hundratals byggskador dokumenterats med EZ Byggskada och omdömmen är mycket positiva. En som i dag flitigt använder den mobila applikationen är Bengt Torrång (OCAB Dalarna, med 30 års erfarenhet inom branchen)</div>
         <p style="margin-bottom:50px;">Mer gjort på kortare tid med lägre felprocent och högre kvalitet. Mer tid för eftertanke och mindre tid till administration, bättre beslutsunderlag och kortare ledtider. Tydliga mallar och förbättrad överblick, minskar stress och osäkerhet. Eaztimate’s mobila applikationen förbättrar onekligen dina chanser att addera värden i din verksamhet, samtidigt som din investering i utrustning och utbildning är blygsam i förhållande till den affärsnytta Eaztimates’s mobila applikationer genererar.  </p>

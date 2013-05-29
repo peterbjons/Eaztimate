@@ -3,8 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
-    <img src="Images/logo_livboj.png" /><h1>Tjänster</h1>
+    <h1>Tjänster</h1>
     <div class="whitebox">
+        <img src="images/stock/banner-5.jpg" />
                 <h2>Support</h2>
         <p>Teknisk support på applikationer och hårdvara ingår i avgifterna för att använda respektive applikation. </p>
         <h2>Integration</h2>

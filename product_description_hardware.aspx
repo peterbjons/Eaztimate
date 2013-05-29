@@ -6,7 +6,7 @@
 
     <h1>Hårdvara</h1>
 
-    <div class="whitebox">
+    <div class="whitebox"><img src="images/stock/banner-45-2.jpg" />
         <p>Våra mobila applikationer fungerar bäst tillsammans med moderna mobiltelefoner/paddor med högupplöst skärm och bra kamera, nedan följer en lista på utrustning som vi rekommenderar.</p>
         <h2>Surfplattor</h2>
         <h2>Mobiltelefoner</h2>

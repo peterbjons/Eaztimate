@@ -5,6 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <h1>Mobila applikationer</h1>
     <div class="whitebox">
+        <img src="images/stock/banner-33.jpg" />
         <p>När arbetet med att ta fram våra första applikationer inleddes var vi noga med att ställa oss frågorna, när, var, hur och varför, ofta och till alla involverade. Svaren vi fick har vi sammanställt nedan. </p>
         <div class="blockbox"><h2>När:</h2><p>Var helst det är tekniskt möjligt att tillgodose ett behov av bättre dokumentation och minskad administration.</p></div>
         <div class="blockbox last">
@@ -80,13 +81,13 @@
             <h3>Eaztimate Bygg</h3>
             <img src="Images/logo_bygg_300_300.png" style="margin-left: 50px" />
             <p>Stor eller liten fastighet, omfattande eller begränsad skada, sot eller fukt, osv. Skador skiljer sig åt men är sällan unika. I EZ Byggskada har vi strukturera upp möjliga skador, viket leder till att arbetet med att dokumentera, bedöma och rapportera underlättas avsevärt...</p>
-             <span class="buttonlight">Dokumentera</span><span class="buttonlight">Bedöm</span><span class="buttonlight">Rapportera</span><a href="utbildning.aspx" class="button" style="float: left">Läs mer &raquo;</a>
+             <span class="buttonlight">Dokumentera</span><span class="buttonlight">Bedöm</span><span class="buttonlight">Rapportera</span><a href="product_description_bygg.aspx" class="button" style="float: left">Läs mer &raquo;</a>
         </div>
         <div class="services_block last" style="height: 550px;">
             <h3>Eaztimate Lösöre</h3>
             <img src="Images/logo_sak_300_300.png" style="margin-left: 50px" />
             <p>Målet, att underlätta i varje led i hanteringen av lösören är ambitiöst och kräver samarbete mellan individer och bolag. Första steget mot att nå dit är taget i.o.m. EZL-appen. Stora utmaningar ligger i begreppet lösöre omfattar ett stort antal olika saker, en keps, en byrå, två stolar, tre flaskor, en samling frimärken, listan kan göras lång...</p>
-            <span class="buttonlight">Dokumentera</span><span class="buttonlight">Bedöm</span><span class="buttonlight">Rapportera</span><a href="tjanster.aspx" class="button" style="float: left">Läs mer &raquo;</a>
+            <span class="buttonlight">Dokumentera</span><span class="buttonlight">Bedöm</span><span class="buttonlight">Rapportera</span><a href="product_description_losore.aspx" class="button" style="float: left">Läs mer &raquo;</a>
         </div>
         <div style="clear: both"></div>
 
