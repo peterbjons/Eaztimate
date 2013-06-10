@@ -67,6 +67,10 @@ a:hover {
     min-width: 940px;
 }
 
+    #header img {
+        border: 0px;
+    }
+
 #logo {
     width: 195px;
     height: 42px;
@@ -88,6 +92,7 @@ a:hover {
 #nav {
     float: right;
     margin-right: 10px;
+    margin-top: 5px;
 }
 
     #nav ul {
@@ -350,7 +355,7 @@ li.block p {
 }
 
 #content {
-    padding: 40px 0px 0px 0px;
+    padding: 10px 0px 0px 0px;
     margin-bottom: 100px;
 }
 
@@ -1333,6 +1338,9 @@ table.companycreate tr.user_level4 td {
 .last {
     margin-right: 0px !important;
 }
+.bottom {
+    margin-bottom: 0px !important;
+}
 
 .white_block {
     background-color: #fff;
@@ -1604,6 +1612,328 @@ ol.jourlistitem {
 }
 
 img.stockbild {
-    
     margin: 5px 0px 5px 5px;
+}
+
+/*body#start {
+    background: url(../images/background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#start .band {
+    background-color: rgba(0,0,0,0.70);
+    height: 230px;
+    margin-top: 25%;    padding-top:40px;
+    font-family: 'Open Sans';
+    text-align: center;
+}
+#start .blueband{
+    background-color: #549ec4;
+    background-image: url(../images/banner.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    height:55px;
+    text-align: center;
+    opacity: 0.9;
+    padding-top:5px;
+
+}
+#start .blueband:hover {
+    cursor:pointer;
+    opacity:1.0;
+}
+#start .blueband h3 {
+        font-weight: 300;
+    font-family: 'Open Sans';
+    font-size: 25pt;
+    color: #fff;
+}
+
+.band h1 {
+    color: #fff;
+    font-weight: normal;
+    font-size: 80pt;
+    line-height: 100pt;
+    
+}
+.band h2 {
+    color: #fff;
+    font-weight: 300;
+    font-size: 20pt;
+    line-height: 20pt;
+    
+}*/
+
+body#start {
+    background: url(../images/background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#start .band {
+    background-color: rgba(0,0,0,0.70);
+    padding: 30px 0px;
+    font-family: 'Open Sans';
+    text-align: center;
+}
+
+#start .blueband {
+    background-color: #549ec4;
+    background-image: url(../images/banner.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-align: center;
+    opacity: 0.9;
+    padding: 5px 0px;
+}
+
+.blueband a {
+    text-decoration: none;
+}
+
+#start .blueband:hover {
+    cursor: pointer;
+    opacity: 1.0;
+}
+
+#start .blueband h3 {
+    font-weight: 300;
+    font-family: 'Open Sans';
+    font-size: 25pt;
+    color: #fff;
+}
+
+.band h1 {
+    color: #fff;
+    font-weight: normal;
+    font-size: 80pt;
+    line-height: 100pt;
+}
+
+.band h2 {
+    color: #fff;
+    font-weight: 300;
+    font-size: 20pt;
+    line-height: 20pt;
+}
+
+#start #box {
+    position: absolute;
+    width: 100%;
+    bottom: 30px;
+}
+
+#start {
+    position: relative;
+    height: 100%;
+}
+
+.startblock {
+    width: 300px;
+    float: left;
+    margin: 10px 20px 0px 0px;
+}
+
+    .startblock img {
+        width: 100%;
+    }
+
+.blackfield .arrow {
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 30px 0 0px 50px;
+    border-color: transparent transparent transparent #ffffff;
+    position: absolute;
+    bottom: 20px;
+    right: -50px;
+}
+
+
+
+.whitefield {
+    background-image: url('../images/whitefield_micke4.jpg');
+    height: 512px;
+    padding: 10px;
+}
+
+    .whitefield .bubble {
+       background-color: rgba(31,31,31,0.80);
+        width: 500px;
+        padding: 10px;
+        position: relative;
+        margin-bottom:10px;
+    }
+
+        .whitefield .bubble p {
+            color: #fff;
+        }
+
+    .whitefield .block {
+        background-color: rgba(215,215,215,0.7);
+        width: 500px;
+        padding: 10px;
+        position: relative;
+        margin-top: 10px;
+        color: #000;
+        min-height: 44px;
+        background-image: url(../images/readmore_arrows.png);
+        background-repeat: no-repeat;
+        background-position: 480px center;
+    }
+
+        .whitefield .block p {
+            color: #000;
+            margin: 0px;
+            padding: 0px;
+            float: left;
+            width: 350px;
+        }
+
+        .whitefield .block img {
+            float: left;
+            width: 64px;
+            margin-right: 10px;
+        }
+
+        .whitefield .block:hover {
+            background-color: #e9e9e9;
+            cursor: pointer;
+        }
+
+    .whitefield .arrow {
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-width: 30px 0 0px 50px;
+        border-color: transparent transparent transparent #372c32;
+        position: absolute;
+        bottom: 20px;
+        right: -50px;
+    }
+
+.appblock {
+    width: 920px;
+    height: 240px;
+    background-image: url(../images/random_background2.jpg);
+    padding: 10px;
+    margin-top: 10px;
+}
+
+    .appblock p {
+        padding: 20px 30px 20px 30px;
+        font-size: 14pt;
+        text-align: center;
+        color: #fff;
+        
+        
+    }
+
+    .appblock .appar {
+    }
+
+        .appblock .appar ul {
+            list-style-type: none;
+        }
+
+            .appblock .appar ul li {
+                float: left;
+                width: 176px;
+                height: 128px;
+                margin-right: 10px;
+            }
+
+                .appblock .appar ul li p:hover {
+                    cursor: pointer;
+                }
+
+.floater_bygg {
+    background-image: url(../images/floater_bygg.png);
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+
+.floater_jour {
+    background-image: url(../images/floater_jour.png);
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+
+.floater_sanering {
+    background-image: url(../images/floater_sanering.png);
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+
+.floater_losore {
+    background-image: url(../images/floater_losore.png);
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+
+.floater_klotter {
+    background-image: url(../images/floater_klotter.png);
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+
+.appblock .appar ul li p {
+    background-color: rgba(31,31,31,0.72);
+    font-size: 11pt;
+    margin-top: 97px;
+    padding: 1px 6px 4px;
+    
+}
+.appar a {
+    text-decoration: none;
+}
+
+.litetappblock {
+    height: 130px;
+    padding-top: 30px;
+    margin: 0px 0px 0px 0px;
+
+}
+.whitefield .appbubble {
+    width:435px;
+    float:left;
+    height:120px;
+    margin-right:10px;
+}
+
+.whitefield .appbubble p {
+    text-align:center;
+}
+.whitefield .appbubble h2 {
+    color: #fff;
+    text-align:center;
+    margin: 10px 0px 5px !important;
+}
+.startblock.funktion {
+    height: 500px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    margin-bottom: 80px;
+}
+.startblock.funktion h2{
+    text-align:center;
+    font-size: 16pt!important;
+    margin-top: 0px !important;
+}
+.startblock.funktion img {
+    width:250px;
+    margin: 0 25px;
+}
+#intervju p {
+    line-height: 18pt;
+    margin-bottom: 30px;
+}
+#intervju strong {
+    margin: 0px 0px 0px 0px;
+    display:block;
 }

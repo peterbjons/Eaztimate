@@ -64,15 +64,10 @@
                                 </asp:RoleGroup>
                             </RoleGroups>
                         </asp:LoginView>
-                        <li><a href="/products.aspx">Produkter</a>
-                            <ul>
-                                <li><a href="/product_description.aspx">Mobila Applikationer</a></li>
-                                <li><a href="/product_description_hardware.aspx">Hårdvara</a></li>
-                            
-                            </ul>
-                        </li>
+                        <li><a href="/product_description.aspx">Mobila Applikationer</a></li>
+                        <li><a href="/business_model.aspx">Affärsmodell</a></li>
                         <li><a href="/tjanster.aspx">Tjänster</a></li>
-                        <li><a href="/support.aspx">Support</a></li>
+                        <li><a href="/contact.aspx">Kontakt</a></li>
                         <asp:LoginView ID="LoginView1" runat="server">
                             <RoleGroups>
                                 <asp:RoleGroup Roles="Administrator">

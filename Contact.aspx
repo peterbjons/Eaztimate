@@ -5,9 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     <div class="contact">
         <h1>Kontakt</h1>
-        <h2>
-            Om ni behöver komma i kontakt med oss, kontakta någon av följande personer
-        </h2>
+        <div class="whitebox">
         <div class="contact_item">
             <div class="contact_photo">
                 <img src="Images/micke.jpg" /></div>
@@ -27,7 +25,7 @@
                 <p>Telefon: 070 123 45 67</p>
                 <p>Email: ingen@eaztimate.com</p></div>
                     <div style="clear:both"></div>
-        </div>
+        </div></div>
     </div>
 
 </asp:Content>
