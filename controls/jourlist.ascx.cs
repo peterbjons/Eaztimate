@@ -118,7 +118,7 @@ public partial class controls_jourlist : System.Web.UI.UserControl
             catselect = string.Empty;
         }
 
-        SqlDataSource1.SelectCommand = "SELECT a.*,ISNULL((SELECT TOP 1 image FROM jourimage x WHERE x.jourid=a.jourid), 'empty') image FROM jour a WHERE a.datedeleted IS NULL " + catselect + typeselect + sort;
+        SqlDataSource1.SelectCommand = "SELECT a.*,a.journo,(SELECT TOP 1 image FROM jourimage x WHERE x.jourid=a.jourid) image FROM jour a WHERE a.datedeleted IS NULL " + catselect + typeselect + sort;
     }
 
     protected void jourlist_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e) {

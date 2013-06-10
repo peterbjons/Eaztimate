@@ -29,6 +29,12 @@
             routeTemplate: "service/{controller}/{email}/{pw}/{sha}",
             defaults: new { id = System.Web.Http.RouteParameter.Optional }
         );
+
+        RouteTable.Routes.MapHttpRoute(
+            name: "ACRALogApi",
+            routeTemplate: "service/{controller}/{id}",
+            defaults: new { id = System.Web.Http.RouteParameter.Optional }
+        );
     }
     
     void Application_End(object sender, EventArgs e)
