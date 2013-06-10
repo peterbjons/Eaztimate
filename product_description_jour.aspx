@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <%--<img src="Images/logo_jour.png" />--%><h1>EZ Jour</h1>
-    <div class="whitebox"><img src="images/stock/Banner-36.jpg" />
+    <div class="whitebox" style="position:relative;"><img src="images/stock/Banner-36.jpg" />
         <p>När det händer, det piper i personsökaren hos jourhavande (JH), det är ont om tid, värden stå på spel och beslut måste fattas, då är <br />EZ Jour din bästa kompis att hålla i handen. Applikationen som utvecklats av branschfolk för dig som har jour gällande brand, vatten, inbrott och andra akuta situationer där sakskador behöver minimeras. </p><p>
 I EZ Jour har vi på Eaztimate samlat verktyg som underlättar varje steg i processen som inleds med att du startar EZ Jour och klickar på numret som visats i personsökaren.</p>
         <ol class="jourlistitem"><img src="images/stock/eaztimate-9.jpg" class="stockbild" style="float:left; height: 290px;"/>
