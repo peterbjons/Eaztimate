@@ -31,6 +31,12 @@
         );
 
         RouteTable.Routes.MapHttpRoute(
+            name: "KlotterSyncApi",
+            routeTemplate: "service/{controller}/{sysid}/{caseid}/{email}/{sha}",
+            defaults: new { id = System.Web.Http.RouteParameter.Optional }
+        );
+
+        RouteTable.Routes.MapHttpRoute(
             name: "ACRALogApi",
             routeTemplate: "service/{controller}/{id}",
             defaults: new { id = System.Web.Http.RouteParameter.Optional }
