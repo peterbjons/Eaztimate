@@ -35,8 +35,9 @@
         <div id="header">
             <div class="wrapper">
                 <a href="/">
-                    
-                    <div id="logo"><img src="Images/logo_small_symbol.gif" />eaztimate</div>
+
+                    <div id="logo">
+                        <img src="Images/logo_small_symbol.gif" />eaztimate</div>
                 </a>
                 <div id="nav">
                     <ul>
@@ -46,11 +47,11 @@
                                 <asp:RoleGroup Roles="Lösöre">
                                     <ContentTemplate>
                                         <li><a href="product_description_losore.aspx">Lösöre</a>
-                                        <ul>
-                                            <li><a href="create_inspection.aspx" runat="server" id="menu2">Skapa</a></li>
-                                            <li><a href="open_inspection.aspx" runat="server" id="menu3">Öppna</a></li>
-                                        </ul>
-                                    </li>
+                                            <ul>
+                                                <li><a href="create_inspection.aspx" runat="server" id="menu2">Skapa</a></li>
+                                                <li><a href="open_inspection.aspx" runat="server" id="menu3">Öppna</a></li>
+                                            </ul>
+                                        </li>
                                     </ContentTemplate>
                                 </asp:RoleGroup>
                             </RoleGroups>
@@ -65,7 +66,7 @@
                             </RoleGroups>
                         </asp:LoginView>
                         <li><a href="/product_description.aspx">Mobila Applikationer</a></li>
-                        <li><a href="/business_model.aspx">Affärsmodell</a></li>
+                        <%-- <li><a href="/business_model.aspx">Affärsmodell</a></li>--%>
                         <li><a href="/tjanster.aspx">Tjänster</a></li>
                         <li><a href="/contact.aspx">Kontakt</a></li>
                         <asp:LoginView ID="LoginView1" runat="server">
@@ -92,24 +93,32 @@
         </div>
         <div id="slider" runat="server" visible="true">
             <div class="wrapper" id="promoBox">
-                <div id="spotlight1"><img src="Images/logo_jour_300_300.png" /><div class="slider_text">
-                    
-                    <h2>Eaztimate Jour</h2>
-                    <p>Ett samtal kommer in till jouren och ett uppdrag startar med att jourhavande öppnar Jour-appen och noterar adress och telefonnummer till kontaktperson på skadeplatsen. Tid och uppgifter om olika steg i jourärendet loggas sedan i kronologisk ordning...</p>
-                    <a class="button"style="float:left;margin-top: 30px;"href="product_description_jour.aspx">Läs mer &raquo;</a>
-                </div></div>
-                <div id="spotlight2"><img src="Images/logo_bygg_300_300.png" /><div class="slider_text">
-                    
-                    <h2>Eaztimate Byggskada</h2>
-                    <p>Stor eller liten fastighet, omfattande eller begränsad skada, sot eller fukt, osv. Skador skiljer sig åt men är sällan unika. I EZ Byggskada har vi strukturera upp möjliga skador, viket leder till att arbetet med att dokumentera, bedöma och rapportera underlättas avsevärt...</p><a class="button"style="float:left;margin-top: 30px;"href="product_description_bygg.aspx">Läs mer &raquo;</a>
-                </div></div>
-                <div id="spotlight3"><img src="Images/logo_sak_300_300.png" /><div class="slider_text">
-                    
-                    <h2>Eaztimate Lösöre</h2>
-                    <p>Målet, att underlätta i varje led i hanteringen av lösören är ambitiöst och kräver samarbete mellan individer och bolag. Första steget mot att nå dit är taget i.o.m. EZL-appen. Stora utmaningar ligger i begreppet lösöre omfattar ett stort antal olika saker, en keps, en byrå, två stolar, tre flaskor, en samling frimärken, listan kan göras lång...</p><a class="button" style="float:left;margin-top: 30px;"href="product_description_losore.aspx">Läs mer &raquo;</a>
-                </div></div>
-                
-                
+                <div id="spotlight1">
+                    <img src="Images/logo_jour_300_300.png" /><div class="slider_text">
+
+                        <h2>Eaztimate Jour</h2>
+                        <p>Ett samtal kommer in till jouren och ett uppdrag startar med att jourhavande öppnar Jour-appen och noterar adress och telefonnummer till kontaktperson på skadeplatsen. Tid och uppgifter om olika steg i jourärendet loggas sedan i kronologisk ordning...</p>
+                        <a class="button" style="float: left; margin-top: 30px;" href="product_description_jour.aspx">Läs mer &raquo;</a>
+                    </div>
+                </div>
+                <div id="spotlight2">
+                    <img src="Images/logo_bygg_300_300.png" /><div class="slider_text">
+
+                        <h2>Eaztimate Byggskada</h2>
+                        <p>Stor eller liten fastighet, omfattande eller begränsad skada, sot eller fukt, osv. Skador skiljer sig åt men är sällan unika. I EZ Byggskada har vi strukturera upp möjliga skador, viket leder till att arbetet med att dokumentera, bedöma och rapportera underlättas avsevärt...</p>
+                        <a class="button" style="float: left; margin-top: 30px;" href="product_description_bygg.aspx">Läs mer &raquo;</a>
+                    </div>
+                </div>
+                <div id="spotlight3">
+                    <img src="Images/logo_sak_300_300.png" /><div class="slider_text">
+
+                        <h2>Eaztimate Lösöre</h2>
+                        <p>Målet, att underlätta i varje led i hanteringen av lösören är ambitiöst och kräver samarbete mellan individer och bolag. Första steget mot att nå dit är taget i.o.m. EZL-appen. Stora utmaningar ligger i begreppet lösöre omfattar ett stort antal olika saker, en keps, en byrå, två stolar, tre flaskor, en samling frimärken, listan kan göras lång...</p>
+                        <a class="button" style="float: left; margin-top: 30px;" href="product_description_losore.aspx">Läs mer &raquo;</a>
+                    </div>
+                </div>
+
+
             </div>
         </div>
         <div id="content">
@@ -120,7 +129,49 @@
             </div>
         </div>
         <div id="footer">
-            <div class="wrapper"></div>
+            <div class="wrapper">
+                <div class="whitebox">
+                    <ul>
+                        <li>Mobila Applikationer
+                            <ul>
+                                <li>Byggskada</li>
+                                <li>Jour</li>
+                                <li>Sanering</li>
+                                <li>Lösöre</li>
+                                <li>Klotter</li>
+                            </ul>
+
+                        </li>
+                        <li>Tjänster
+                            <ul>
+                                <li>Support & Service</li>
+                                <li>Integration</li>
+                                <li>Utbildning</li>
+                            </ul>
+
+                        </li>
+                        <li>Funktioner
+                            <ul>
+                                <li>Vägvisare</li>
+                                <li>Logg</li>
+                                <li>Anteckningar</li>
+                                <li>Beslutsstöd</li>
+                                <li>Kom.center</li>
+                                <li>Ritverktyg</li>
+                                <li>Rapportör</li>
+                            </ul>
+
+                        </li>
+                        <li>Kontakt
+                            <ul><li><input type="text" name="email" value="E-mail"/>
+                            <textarea style="height:50px;"></textarea>
+                            <input type="submit" /></li></ul>
+                        </li>
+                    </ul>
+                    <div style="clear:Both"></div>
+                    <div class="copyright">Copyright 2013 - Eaztimate - Sidan producerad av Digitalyard Sverige AB</div>
+                </div>
+            </div>
         </div>
 
 

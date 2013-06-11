@@ -43,9 +43,9 @@
 
                 <div style="clear: both"></div>
             </div>
-            <div class="block">
-                <img src="Images/stock/Eaztimate-49.jpg" />
-                <p>Möt Lars Hagbohm, Ocab Dalarna</p>
+            <div class="block"><a href="larshagbohm.aspx">
+                <img src="Images/stock/Eaztimate-Lasse-3.jpg" />
+                <p>Möt Lars Hagbohm, Ocab Dalarna</p></a>
                 <div style="clear: both"></div>
             </div>
             <div class="block">
