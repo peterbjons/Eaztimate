@@ -9,6 +9,9 @@ public partial class Start : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        HttpCookie myCookie = new HttpCookie("showStart");
+        myCookie["version"] = "1";
+        myCookie.Expires = DateTime.Now.AddDays(30d);
+        Response.Cookies.Add(myCookie);
     }
 }

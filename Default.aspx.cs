@@ -12,6 +12,10 @@ public partial class _Default : Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Request.Cookies["showStart"] == null) {
+            Response.Redirect("start.aspx", true);
+        }
+
         ((HtmlGenericControl)Master.FindControl("slider")).Visible = false;
         }
         //Response.Write(BitConverter.ToString(result));
