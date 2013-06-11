@@ -83,4 +83,37 @@ public static class AmazonHandler
             return client.GetPreSignedURL(request);
         }
     }
+
+    public static bool PutACRALog(String data, String filename) {
+        string accessKeyID = Conf.AppSettings["AWSAccessKey"];
+        string secretAccessKeyID = Conf.AppSettings["AWSSecretKey"];
+        try {
+            using (AmazonS3 client = Amazon.AWSClientFactory.CreateAmazonS3Client(accessKeyID, secretAccessKeyID)) {
+                PutObjectRequest request = new PutObjectRequest();                
+                request.WithBucketName(Conf.AppSettings["BucketLog"]).WithKey(filename + ".json").WithTimeout(600000).WithContentBody(data);
+                using (S3Response response = client.PutObject(request)) { }                
+                return true;
+            }
+        } catch (AmazonS3Exception amazonS3Exception) {
+            if (amazonS3Exception.ErrorCode != null &&
+                (amazonS3Exception.ErrorCode.Equals("InvalidAccessKeyId") ||
+                amazonS3Exception.ErrorCode.Equals("InvalidSecurity"))) {
+                return false;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    public static string GetACRALog(string reportid) {
+        string accessKeyID = Conf.AppSettings["AWSAccessKey"];
+        string secretAccessKeyID = Conf.AppSettings["AWSSecretKey"];
+        using (AmazonS3 client = Amazon.AWSClientFactory.CreateAmazonS3Client(accessKeyID, secretAccessKeyID)) {
+            GetPreSignedUrlRequest request = new GetPreSignedUrlRequest()
+                .WithBucketName(Conf.AppSettings["BucketLog"])
+                .WithKey(reportid + ".json")
+                .WithExpires(DateTime.Now.Add(new TimeSpan(0, 24, 0, 0)));
+            return client.GetPreSignedURL(request);
+        }
+    }
 }

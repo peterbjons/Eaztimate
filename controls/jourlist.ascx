@@ -45,8 +45,8 @@
                                         <div class="inspection_row_2" style="display: none">
                                             <div class="inspection_col3">
                                                 <div class="inspection_item_image">
-                                                    <a rel="lightbox" target="_blank" href="<%#AmazonHandler.GetPrivateImageJour((string)DataBinder.Eval(Container.DataItem, "image") ?? "") %>">
-                                                        <img src="<%#AmazonHandler.GetPrivateImageJour((string)DataBinder.Eval(Container.DataItem, "image") ?? "") %>" <%#DBNull.Value.Equals(DataBinder.Eval(Container.DataItem, "image")) ?  "style='display: none'" : "" %>/></a>
+                                                    <a rel="lightbox" target="_blank" href="<%#DBNull.Value.Equals(DataBinder.Eval(Container.DataItem, "image")) ? "" : AmazonHandler.GetPrivateImageJour((string)DataBinder.Eval(Container.DataItem, "journo")+"/"+(string)DataBinder.Eval(Container.DataItem, "image"))%>">
+                                                        <img src="<%#DBNull.Value.Equals(DataBinder.Eval(Container.DataItem, "image")) ? "" : AmazonHandler.GetPrivateImageJour((string)DataBinder.Eval(Container.DataItem, "journo")+"/"+(string)DataBinder.Eval(Container.DataItem, "image")) %>" <%#DBNull.Value.Equals(DataBinder.Eval(Container.DataItem, "image")) ?  "style='display: none'" : "" %>/></a>
 
                                                 </div>
                                             </div>
