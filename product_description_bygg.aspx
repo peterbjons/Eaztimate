@@ -6,6 +6,7 @@
     <%--<img src="Images/logo_bygg.png" />--%><h1>EZ Byggskada</h1>
     <div class="whitebox">
         <img src="images/stock/banner-31.jpg" />
+        <p>Eaztimate Bygg är ett insamlingsverktyg för arbete på fältet. I applikationen struktureras informationen så att mått, beskrivningar, bilder och föreslagna åtgärder, binds till rätt ärende, rätt fastighet och rätt rum.    </p>
         <p>Stor eller liten fastighet, omfattande eller begränsad skada, sot eller fukt, osv. Skador skiljer sig åt men är sällan unika. I EZ Byggskada har vi strukturera upp möjliga skador,  viket leder till att arbetet med att dokumentera, bedöma och rapportera underlättas avsevärt.  </p>
 
         <p>Att anpassa varje uppdrag efter fastighetstyp i EBZ är enkelt, likaså är besiktningsformulärets utformning en direkt följd av att arbetet måste vara enkelt att utföra på plats. </p>

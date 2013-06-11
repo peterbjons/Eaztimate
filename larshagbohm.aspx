@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <h1>Intervju med Lars Hagbohm</h1>
     <div class="whitebox">
-        <img src="images/stock/banner-lars.jpg" />
+        <img src="images/stock/banner-lasse.jpg" />
         <strong style="display: block; margin-bottom: 40px;">Vi tog ett snack med Lars Hagbohm, verksamhetsledare på Ocab i Dalarna, för att se vad han tycker om Eaztimate.<br />Lars har 20 års erfarenhet av sanering och allmänt sull och vet vad han snackar om. 
             Lars anställda använder dagligen appen och i dagsläget görs 500 rapporter i veckan (upp från 80).</strong>
         <div id="intervju" style="width: 640px; float: left;">

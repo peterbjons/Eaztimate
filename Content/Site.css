@@ -57,9 +57,55 @@ a:hover {
 
 
 #footer {
+    
+}
+#footer .whitebox {
+    margin-bottom: 0px;
+    background-image: url(../images/random_background3.jpg);
+    background-position: top center;
+    color: #fff;
 }
 
+.copyright {
+    font-size: 8pt;
+    text-align:center;
+    margin-top: 40px;
+}
+#footer ul,#footer ul ul {
+    list-style-type: none;
+    list-style-image:none;
+}
+#footer ul li {
+    float:left;
+    width:25%;
+    font-size: 12pt;
+    font-weight:300;
+    
+}
+#footer ul li ul li {
+    float:none;
+    font-size:10pt;
+   
+}
+#footer ul li ul li:first-child { margin-top:10px;}
 
+#footer input,#footer textarea {
+    color: #fff;
+    width:225px;
+    background-color: rgba(128, 128, 128, 0.50);
+    border: 0px;
+    padding:5px;   font-size:8pt;
+}
+    #footer input[type=submit] {
+        font-size: 8pt;
+        padding: 4px 2px;
+        width:235px;
+        background-color: rgba(48, 48, 48, 0.83);
+    }
+    #footer input[type=text]{
+        margin-bottom:4px;
+        font-size:8pt;
+    }
 #header {
     background-color: #fff;
     height: 50px;
@@ -1924,6 +1970,9 @@ body#start {
     text-align:center;
     font-size: 16pt!important;
     margin-top: 0px !important;
+}
+.startblock.funktion p {
+    padding:10px;
 }
 .startblock.funktion img {
     width:250px;
