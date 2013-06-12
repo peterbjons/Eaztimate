@@ -37,7 +37,7 @@
                 <a href="/">
 
                     <div id="logo">
-                        <img src="Images/logo_small_symbol.gif" />eaztimate</div>
+                        <img src="~/Images/logo_small_symbol.gif" runat="server"/>eaztimate</div>
                 </a>
                 <div id="nav">
                     <ul>

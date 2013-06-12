@@ -37,7 +37,7 @@
                 </div>--%>
                 <p>Sedan starten i februari 2013 har hundratals byggskador dokumenterats med EZ Byggskada och omdömmen är mycket positiva. En som i dag flitigt använder den mobila applikationen är Bengt Torrång (OCAB Dalarna, med 30 års erfarenhet inom branchen)</p>
             </div>
-<%--            <a href="ut-pa-uppdrag.aspx">
+            <%--            <a href="ut-pa-uppdrag.aspx">
                 <div class="block">
                     <img src="Images/stock/Eaztimate-44.jpg" />
                     <p>Eaztimate följer med ut på en skada</p>
@@ -45,14 +45,21 @@
                     <div style="clear: both"></div>
                 </div>
             </a>--%>
-            <a href="larshagbohm.aspx">
+            <a href="News/larshagbohm.aspx">
                 <div class="block">
                     <img src="Images/stock/Eaztimate-Lasse-3.jpg" />
                     <p>Möt Lars Hagbohm, Ocab Dalarna</p>
                     <div style="clear: both"></div>
                 </div>
             </a>
-   <%--         <div class="block">
+  <%--          <a href="News/appar-istallet-for-lappar.aspx">
+                <div class="block">
+                    <img src="Images/stock/Eaztimate-46.jpg" />
+                    <p>Appar istället för lappar</p>
+                    <div style="clear: both"></div>
+                </div>
+            </a>--%>
+            <%--         <div class="block">
                 <img src="Images/stock/Eaztimate-33.jpg" />
                 <p>Från skada till färdig rapport</p>
                 <div style="clear: both"></div>
@@ -75,21 +82,21 @@
                             <p>Jour</p>
                         </li>
                     </a>
-                 <%--   <a href="product_description_sanering.aspx">--%>
-                        <li class="floater_sanering">
-                            <p>Sanering</p>
-                        </li>
-              <%--      </a>--%>
+                    <%--   <a href="product_description_sanering.aspx">--%>
+                    <li class="floater_sanering">
+                        <p>Sanering</p>
+                    </li>
+                    <%--      </a>--%>
                     <a href="product_description_losore.aspx">
                         <li class="floater_losore">
                             <p>Lösöre</p>
                         </li>
                     </a>
                     <%--<a href="product_description_klotter.aspx">--%>
-                        <li class="floater_klotter last">
-                            <p>Klotter</p>
-                        </li>
-                 <%--   </a>--%>
+                    <li class="floater_klotter last">
+                        <p>Klotter</p>
+                    </li>
+                    <%--   </a>--%>
                 </ul>
                 <div style="clear: both"></div>
             </div>
@@ -100,12 +107,12 @@
         <div class="startblock">
             <img src="images/stock/eaztimate-33.jpg" /><h2>Mobila applikationer</h2>
             <p>Var för sig är Jour, Byggskada och Lösöre, applikationer som underlättar arbetet med att bedöma, dokumentera och rapportera omfattningen av skadan. Tillsammans utgör de länkar i en mycket stark kedja mellan den drabbade, försäkringsbolaget och saneringsbolaget.</p>
-          <%--  <a href="product_description.aspx" class="button" style="float: left">Läs mer &raquo;</a>--%>
+            <%--  <a href="product_description.aspx" class="button" style="float: left">Läs mer &raquo;</a>--%>
         </div>
         <div class="startblock">
             <img src="images/stock/eaztimate-37.jpg" /><h2>Utbildning</h2>
             <p>Våra utbildningar riktar sig till personal inom företag som vill utveckla sin verksamhet med hjälp av modern teknik och väl beprövade arbetsmetoder. Personal som genomgår utbildning blir certifierade att använda våra verktyg och tillgång till vår support.</p>
-           <%-- <a href="utbildning.aspx" class="button" style="float: left">Läs mer &raquo;</a>--%>
+            <%-- <a href="utbildning.aspx" class="button" style="float: left">Läs mer &raquo;</a>--%>
         </div>
         <div class="startblock last">
             <img src="images/stock/eaztimate-46.jpg" /><h2>Integration</h2>

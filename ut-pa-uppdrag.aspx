@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
     <h1>Eaztimate följer med ut på en skada</h1>
     <div class="whitebox">
-        <img src="images/stock/banner-klotter-3.jpg" />
+        <img src="../images/stock/banner-klotter-3.jpg" />
         <strong style="display: block; margin-bottom: 40px;">Vi tog ett snack med Lars Hagbohm, verksamhetsledare på Ocab i Dalarna, för att se vad han tycker om Eaztimate.<br />Lars har 20 års erfarenhet av sanering och allmänt sull och vet vad han snackar om. 
             Lars anställda använder dagligen appen och i dagsläget görs 500 rapporter i veckan (upp från 80).</strong>
         <div id="intervju" style="width: 640px; float: left;">
@@ -40,7 +40,7 @@ Utöver detta detta fanns en viss bävan inför ”teknikfientlighet” i gruppe
             <strong>Hur ser kalkylen ut?</strong>
             <p>Bara tidsbesparingen per uppdrag uttryckt i kronor är ca dubbelt så stor som kostnaden vi har för hantering av uppdraget via appen. Detta gör att vi kan leverera hög kvalitet till en lägre kostnad till våra kunder, det stärker oss som leverantör!</p>
         </div><div style="width:270px; float:left;padding-left:30px;">
-        <img src="images/stock/eaztimate-54.jpg" style="width: 270px;" /><i style="display:block;">Eaztimannen, coolare än någonsin</i></div><div style="clear: both"></div>
+        <img src="../images/stock/eaztimate-54.jpg" style="width: 270px;" /><i style="display:block;">Eaztimannen, coolare än någonsin</i></div><div style="clear: both"></div>
     </div>
 </asp:Content>
 
