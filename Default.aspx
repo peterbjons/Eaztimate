@@ -100,17 +100,17 @@
         <div class="startblock">
             <img src="images/stock/eaztimate-33.jpg" /><h2>Mobila applikationer</h2>
             <p>Var för sig är Jour, Byggskada och Lösöre, applikationer som underlättar arbetet med att bedöma, dokumentera och rapportera omfattningen av skadan. Tillsammans utgör de länkar i en mycket stark kedja mellan den drabbade, försäkringsbolaget och saneringsbolaget.</p>
-            <a href="product_description.aspx" class="button" style="float: left">Läs mer &raquo;</a>
+          <%--  <a href="product_description.aspx" class="button" style="float: left">Läs mer &raquo;</a>--%>
         </div>
         <div class="startblock">
             <img src="images/stock/eaztimate-37.jpg" /><h2>Utbildning</h2>
             <p>Våra utbildningar riktar sig till personal inom företag som vill utveckla sin verksamhet med hjälp av modern teknik och väl beprövade arbetsmetoder. Personal som genomgår utbildning blir certifierade att använda våra verktyg och tillgång till vår support.</p>
-            <a href="utbildning.aspx" class="button" style="float: left">Läs mer &raquo;</a>
+           <%-- <a href="utbildning.aspx" class="button" style="float: left">Läs mer &raquo;</a>--%>
         </div>
         <div class="startblock last">
             <img src="images/stock/eaztimate-46.jpg" /><h2>Integration</h2>
             <p>Har ni bakomliggande system som behöver information on-line om pågående ärenden så hjälper vi er att koppla era system till Eaztimates mobila applikationen. Fördelarna är att ni snabbt får överblick över pågående ärenden och informationen samlad.</p>
-            <a href="tjanster.aspx" class="button" style="float: left">Läs mer &raquo;</a>
+            <%--<a href="tjanster.aspx" class="button" style="float: left">Läs mer &raquo;</a>--%>
         </div>
 
         <div style="clear: Both"></div>
