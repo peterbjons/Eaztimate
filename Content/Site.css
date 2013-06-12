@@ -85,9 +85,12 @@ a:hover {
 #footer ul li ul li {
     float:none;
     font-size:10pt;
+    width:100%;
    
 }
-#footer ul li ul li:first-child { margin-top:10px;}
+#footer ul li ul li:first-child { margin-top:10px;
+
+}
 
 #footer input,#footer textarea {
     color: #fff;
