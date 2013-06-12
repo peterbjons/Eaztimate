@@ -162,11 +162,11 @@
                             </ul>
 
                         </li>
-                        <li>Kontakt
+                    <%--    <li>Kontakt
                             <ul><li><input type="text" name="email" value="E-mail"/>
                             <textarea style="height:50px;"></textarea>
                             <input type="submit" /></li></ul>
-                        </li>
+                        </li>--%>
                     </ul>
                     <div style="clear:Both"></div>
                     <div class="copyright">Copyright 2013 - Eaztimate - Sidan producerad av Digitalyard Sverige AB</div>
