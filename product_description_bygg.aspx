@@ -14,6 +14,6 @@
 
         <p>Finns anslutning till internet är det möjlig att synkronisera pågående ärende så ofta man vill, den funktionen möjliggör kortare ledtider i kontakten med externa experter och försäkringsbolag.  </p>
         <div style="clear:both"></div>
-        <a href="product_description.aspx" class="button" style="float: left">&laquo; Tillbaka till produkter</a><a href="product_timeline.aspx#bygg_timeline" class="button">Se tidslinje &raquo;</a><div style="clear: both"></div>
+        <a href="product_description.aspx" class="button" style="float: left">&laquo; Tillbaka till produkter</a><%--<a href="product_timeline.aspx#bygg_timeline" class="button">Se tidslinje &raquo;</a>--%><div style="clear: both"></div>
     </div>
 </asp:Content>

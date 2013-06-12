@@ -21,7 +21,7 @@ I EZ Jour har vi på Eaztimate samlat verktyg som underlättar varje steg i proc
 Den stora bonusen är att arbetet kan rapporteras till uppdragsgivaren så fort det finns ett nät att tillgå. Så väl försäkringsbolag som försäkringstagare blir informerad om vika insatser som gjorts, utan dröjsmål.</p><p>Att vara väl förberedd och snabbt sätta sig in i situationen är avgörande faktorer för hur insatsen fortlöper.        </p>
 
         <div style="clear:both"></div>
-        <a href="product_description.aspx" class="button" style="float: left">&laquo; Tillbaka till produkter</a><a href="product_timeline.aspx#jour_timeline" class="button">Se tidslinje &raquo;</a><div style="clear: both"></div>
+        <a href="product_description.aspx" class="button" style="float: left">&laquo; Tillbaka till produkter</a><%--<a href="product_timeline.aspx#jour_timeline" class="button">Se tidslinje &raquo;</a>--%><div style="clear: both"></div>
     </div>
 <%--    <h1>Case</h1>
     <div class="whitebox" style="margin-bottom: 20px;">
@@ -57,5 +57,6 @@ Den stora bonusen är att arbetet kan rapporteras till uppdragsgivaren så fort 
     <div class="whitebox" style="float:left; width: 295px; margin-right:10px"><img src="Images/alien1.png" style="width:275px"/></div>
     <div class="whitebox" style="float:left; width: 295px; margin-right:10px"><img src="Images/alien2.png" style="width:275px"/></div>
     <div class="whitebox" style="float:left; width: 290px;"><img src="Images/alien3.png" style="width:275px"/></div>
+    <div style="clear:both"></div>
 </asp:Content>
 
