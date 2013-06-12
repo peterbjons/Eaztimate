@@ -75,21 +75,21 @@
                             <p>Jour</p>
                         </li>
                     </a>
-                    <a href="product_description_sanering.aspx">
+                 <%--   <a href="product_description_sanering.aspx">--%>
                         <li class="floater_sanering">
                             <p>Sanering</p>
                         </li>
-                    </a>
+              <%--      </a>--%>
                     <a href="product_description_losore.aspx">
                         <li class="floater_losore">
                             <p>Lösöre</p>
                         </li>
                     </a>
-                    <a href="product_description_klotter.aspx">
+                    <%--<a href="product_description_klotter.aspx">--%>
                         <li class="floater_klotter last">
                             <p>Klotter</p>
                         </li>
-                    </a>
+                 <%--   </a>--%>
                 </ul>
                 <div style="clear: both"></div>
             </div>

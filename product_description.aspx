@@ -6,7 +6,7 @@
     <h1>Mobila applikationer</h1>
     <div class="whitebox">
 
-      <%--  <div class="appblock litetappblock">
+        <%--  <div class="appblock litetappblock">
             <div class="appar">
                 <ul>
                     <li class="floater_bygg">
@@ -36,9 +36,9 @@
         </div>
         <div class="blockbox"><h2>Hur:</h2> <p>Med hjälp av väl beprövad teknik och intuitiva gränssnitt</p></div>
         <div class="blockbox last"><h2>Varför:</h2> <p>Tidsbesparande, minskad felprocent, förbättrad kommunikationen mellan den som utför arbetet och de som skall ta del av det utförda arbetet.</p></div><div style="clear:both; height:20px"></div>--%>
-        <div class="whitefield" style="background-image: url(images/stock/eaztimate-33.jpg);background-size: 100% auto;background-position:center -170px;margin-bottom:20px;height:auto;">
+        <div class="whitefield" style="background-image: url(images/stock/eaztimate-33.jpg); background-size: 100% auto; background-position: center -170px; margin-bottom: 20px; height: auto;">
             <div class="bubble" style="width: auto;">
-                
+
                 <p>När arbetet med att ta fram våra första applikationer inleddes var vi noga med att ställa oss frågorna, när, var, hur och varför, ofta och till alla involverade. Svaren vi fick har vi sammanställt nedan. </p>
             </div>
             <div class="bubble appbubble">
@@ -67,30 +67,40 @@
         <p>Självklarheter? – javisst, det är självklart, med den tekniska utvecklingen av mobiltelefonen så följer möjligheten till förändringar och förbättringar av arbetsmetoderna som känns självklara.</p>
 
         <p>Nedan finner ni beskrivningar av våra applikationer som utvecklats och driftsatts av Eastimate. Applikationer som svarar på frågorna När, var, hur och varför.</p>
-         <div class="appblock litetappblock">
+        <div class="appblock litetappblock">
             <div class="appar">
                 <ul>
-                   <a href="product_description_bygg.aspx"> <li class="floater_bygg">
-                        <p>Byggskada</p>
-                    </li></a>
-                    <a href="product_description_jour.aspx"><li class="floater_jour">
-                        <p>Jour</p>
-                    </li></a>
-                  <a href="product_description_sanering.aspx">  <li class="floater_sanering">
-                        <p>Sanering</p>
-                    </li></a>
-                   <a href="product_description_losore.aspx"> <li class="floater_losore">
-                        <p>Lösöre</p>
-                    </li></a>
-                   <a href="product_description_klotter.aspx">  <li class="floater_klotter last">
-                       <p>Klotter</p>
-                    </li></a>
+                    <a href="product_description_bygg.aspx">
+                        <li class="floater_bygg">
+                            <p>Byggskada</p>
+                        </li>
+                    </a>
+                    <a href="product_description_jour.aspx">
+                        <li class="floater_jour">
+                            <p>Jour</p>
+                        </li>
+                    </a>
+              <%--      <a href="product_description_sanering.aspx">--%>
+                        <li class="floater_sanering">
+                            <p>Sanering</p>
+                        </li>
+                <%--    </a>--%>
+                    <a href="product_description_losore.aspx">
+                        <li class="floater_losore">
+                            <p>Lösöre</p>
+                        </li>
+                    </a>
+                   <%-- <a href="product_description_klotter.aspx">--%>
+                        <li class="floater_klotter last">
+                            <p>Klotter</p>
+                        </li>
+                  <%--  </a>--%>
                 </ul>
                 <div style="clear: both"></div>
             </div>
         </div>
     </div>
-   <%-- <h1>Eaztimate applikationer</h1>--%>
+    <%-- <h1>Eaztimate applikationer</h1>--%>
     <%--<div class="product_block">
         <img src="Images/logo_jour_300_300.png" style="float: left" /><div class="slider_text">
 
@@ -141,7 +151,7 @@
         </div>
         <div style="clear: both"></div>
     </div>--%>
-<%--    <div class="whitebox">
+    <%--    <div class="whitebox">
         <div class="services_block" style="height: 550px;">
             <h3>Eaztimate Jour</h3>
             <img src="Images/logo_jour_300_300.png" style="margin-left: 50px" />
