@@ -37,45 +37,61 @@
                 </div>--%>
                 <p>Sedan starten i februari 2013 har hundratals byggskador dokumenterats med EZ Byggskada och omdömmen är mycket positiva. En som i dag flitigt använder den mobila applikationen är Bengt Torrång (OCAB Dalarna, med 30 års erfarenhet inom branchen)</p>
             </div>
-           <a href="ut-pa-uppdrag.aspx"> <div class="block">
-                <img src="Images/stock/Eaztimate-44.jpg" />
-                <p>Eaztimate följer med ut på en skada</p>
+<%--            <a href="ut-pa-uppdrag.aspx">
+                <div class="block">
+                    <img src="Images/stock/Eaztimate-44.jpg" />
+                    <p>Eaztimate följer med ut på en skada</p>
 
-                <div style="clear: both"></div>
-            </div></a><a href="larshagbohm.aspx">
-            <div class="block">
-                <img src="Images/stock/Eaztimate-Lasse-3.jpg" />
-                <p>Möt Lars Hagbohm, Ocab Dalarna</p>
-                <div style="clear: both"></div>
-            </div></a>
-            <div class="block">
+                    <div style="clear: both"></div>
+                </div>
+            </a>--%>
+            <a href="larshagbohm.aspx">
+                <div class="block">
+                    <img src="Images/stock/Eaztimate-Lasse-3.jpg" />
+                    <p>Möt Lars Hagbohm, Ocab Dalarna</p>
+                    <div style="clear: both"></div>
+                </div>
+            </a>
+   <%--         <div class="block">
                 <img src="Images/stock/Eaztimate-33.jpg" />
                 <p>Från skada till färdig rapport</p>
                 <div style="clear: both"></div>
-            </div>
+            </div>--%>
         </div>
 
 
-        
-        <div class="appblock"><p>Med fokus på funktionalitet, användarvänlighet och kommunikation har Eaztimate utvecklat mobilappar som gör din mobiltelefon till en uppskattad jobbarkompis.</p>
+
+        <div class="appblock">
+            <p>Med fokus på funktionalitet, användarvänlighet och kommunikation har Eaztimate utvecklat mobilappar som gör din mobiltelefon till en uppskattad jobbarkompis.</p>
             <div class="appar">
                 <ul>
-                   <a href="product_description_bygg.aspx"> <li class="floater_bygg">
-                        <p>Byggskada</p>
-                    </li></a>
-                    <a href="product_description_jour.aspx"><li class="floater_jour">
-                        <p>Jour</p>
-                    </li></a>
-                  <a href="product_description_sanering.aspx">  <li class="floater_sanering">
-                        <p>Sanering</p>
-                    </li></a>
-                   <a href="product_description_losore.aspx"> <li class="floater_losore">
-                        <p>Lösöre</p>
-                    </li></a>
-                   <a href="product_description_klotter.aspx">  <li class="floater_klotter last">
-                       <p>Klotter</p>
-                    </li></a>
-                </ul><div style="clear:both"></div>
+                    <a href="product_description_bygg.aspx">
+                        <li class="floater_bygg">
+                            <p>Byggskada</p>
+                        </li>
+                    </a>
+                    <a href="product_description_jour.aspx">
+                        <li class="floater_jour">
+                            <p>Jour</p>
+                        </li>
+                    </a>
+                    <a href="product_description_sanering.aspx">
+                        <li class="floater_sanering">
+                            <p>Sanering</p>
+                        </li>
+                    </a>
+                    <a href="product_description_losore.aspx">
+                        <li class="floater_losore">
+                            <p>Lösöre</p>
+                        </li>
+                    </a>
+                    <a href="product_description_klotter.aspx">
+                        <li class="floater_klotter last">
+                            <p>Klotter</p>
+                        </li>
+                    </a>
+                </ul>
+                <div style="clear: both"></div>
             </div>
         </div>
 
