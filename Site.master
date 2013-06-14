@@ -34,14 +34,14 @@
     <form runat="server">
         <div id="header">
             <div class="wrapper">
-                <a href="/">
+                <a href="/" runat="server">
 
                     <div id="logo">
                         <img src="~/Images/logo_small_symbol.gif" runat="server"/>eaztimate</div>
                 </a>
                 <div id="nav">
                     <ul>
-                        <li><a href="/" runat="server" id="menu1">Hem</a></li>
+                <%--        <li><a href="/" runat="server" id="menu1">Hem</a></li>--%>
                         <asp:LoginView runat="server">
                             <RoleGroups>
                                 <asp:RoleGroup Roles="Lösöre">
@@ -65,10 +65,10 @@
                                 </asp:RoleGroup>
                             </RoleGroups>
                         </asp:LoginView>
-                        <li><a href="/product_description.aspx">Mobila Applikationer</a></li>
+                     <%--   <li><a href="/product_description.aspx">Mobila Applikationer</a></li>--%>
                         <%-- <li><a href="/business_model.aspx">Affärsmodell</a></li>--%>
-                        <li><a href="/tjanster.aspx">Tjänster</a></li>
-                        <li><a href="/contact.aspx">Kontakt</a></li>
+                  <%--      <li><a href="/tjanster.aspx">Tjänster</a></li>
+                        <li><a href="/contact.aspx">Kontakt</a></li>--%>
                         <asp:LoginView ID="LoginView1" runat="server">
                             <RoleGroups>
                                 <asp:RoleGroup Roles="Administrator">
@@ -128,21 +128,21 @@
                 </asp:ContentPlaceHolder>
             </div>
         </div>
-        <div id="footer">
+<%--        <div id="footer">
             <div class="wrapper">
                 <div class="whitebox">
                     <ul>
-                        <li>Mobila Applikationer
+                        <li><a href="~/product_description.aspx" runat="server">Mobila Applikationer</a>
                             <ul>
-                                <li>Byggskada</li>
-                                <li>Jour</li>
-                                <li>Sanering</li>
-                                <li>Lösöre</li>
-                                <li>Klotter</li>
+                                <li><a href="~/product_description_bygg.aspx" runat="server">Byggskada</a></li>
+                                <li><a id="A2" href="~/product_description_jour.aspx" runat="server">Jour</a></li>
+                                <li><a id="A3" href="~/product_description_sanering.aspx" runat="server">Sanering</a></li>
+                                <li><a id="A4" href="~/product_description_losore.aspx" runat="server">Lösöre</a></li>
+                                <li><a id="A5" href="~/product_description_klotter.aspx" runat="server">Klotter</a></li>
                             </ul>
 
                         </li>
-                        <li>Tjänster
+                        <li><a href="~/tjanster.aspx" runat="server">Tjänster</a>
                             <ul>
                                 <li>Support & Service</li>
                                 <li>Integration</li>
@@ -150,29 +150,29 @@
                             </ul>
 
                         </li>
-                        <li>Funktioner
+                        <li><a href="~/functions.aspx" runat="server">Funktioner</a>
                             <ul>
-                                <li>Vägvisare</li>
-                                <li>Logg</li>
-                                <li>Anteckningar</li>
-                                <li>Beslutsstöd</li>
-                                <li>Kom.center</li>
-                                <li>Ritverktyg</li>
-                                <li>Rapportör</li>
+                                <li><a id="A6" href="~/functions.aspx#vagvisare" runat="server">Vägvisare</a></li>
+                                <li><a id="A7" href="~/functions.aspx#logg" runat="server">Logg</a></li>
+                                <li><a id="A8" href="~/functions.aspx#anteckningar" runat="server">Anteckningar</a></li>
+                                <li><a id="A9" href="~/functions.aspx#beslutsstod" runat="server">Beslutsstöd</a></li>
+                                <li><a id="A10" href="~/functions.aspx#komcenter" runat="server">Kom.center</a></li>
+                                <li><a id="A11" href="~/functions.aspx#ritverktyg" runat="server">Ritverktyg</a></li>
+                                <li><a id="A12" href="~/functions.aspx#rapportor" runat="server">Rapportör</a></li>
                             </ul>
 
                         </li>
-                    <%--    <li>Kontakt
+                      <li>Kontakt
                             <ul><li><input type="text" name="email" value="E-mail"/>
                             <textarea style="height:50px;"></textarea>
                             <input type="submit" /></li></ul>
-                        </li>--%>
+                        </li>
                     </ul>
                     <div style="clear:Both"></div>
                     <div class="copyright">Copyright 2013 - Eaztimate - Sidan producerad av Digitalyard Sverige AB</div>
                 </div>
             </div>
-        </div>
+        </div>--%>
 
 
 

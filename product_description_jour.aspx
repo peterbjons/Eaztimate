@@ -1,6 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="product_description_jour.aspx.cs" Inherits="product_description_jour" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
+    <style type="text/css">
+        body {
+            background-image: url(images/alien_bg1.png);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <%--<img src="Images/logo_jour.png" />--%><h1>EZ Jour</h1>
@@ -53,10 +61,10 @@ Den stora bonusen är att arbetet kan rapporteras till uppdragsgivaren så fort 
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a erat lacus. Pellentesque at nisi id nisi mattis scelerisque. Quisque sit amet mi vitae velit condimentum elementum. Integer nec orci nulla, a commodo eros. Integer sapien diam, tempus id congue eu, ultricies nec lacus. Nullam vulputate tempor est, ac pretium sem auctor id. Quisque sollicitudin pretium volutpat. Fusce euismod, justo ut tincidunt rutrum, sapien felis commodo ligula, in iaculis urna augue in risus. Nulla facilisi.</p>
         </div>
         <div style="clear: both; height: 10px;"></div>
-    </div>--%><h1>Exempel på arbetsordning</h1>
+    </div>--%><%--<h1>Exempel på arbetsordning</h1>
     <div class="whitebox" style="float:left; width: 295px; margin-right:10px"><img src="Images/alien1.png" style="width:275px"/></div>
     <div class="whitebox" style="float:left; width: 295px; margin-right:10px"><img src="Images/alien2.png" style="width:275px"/></div>
     <div class="whitebox" style="float:left; width: 290px;"><img src="Images/alien3.png" style="width:275px"/></div>
-    <div style="clear:both"></div>
+    <div style="clear:both"></div>--%>
 </asp:Content>
 

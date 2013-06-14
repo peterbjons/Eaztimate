@@ -37,7 +37,7 @@
                 </div>--%>
                 <p>Sedan starten i februari 2013 har hundratals byggskador dokumenterats med EZ Byggskada och omdömmen är mycket positiva. En som i dag flitigt använder den mobila applikationen är Bengt Torrång (OCAB Dalarna, med 30 års erfarenhet inom branchen)</p>
             </div>
-            <%--            <a href="ut-pa-uppdrag.aspx">
+                       <%-- <a href="news/ut-pa-uppdrag.aspx">
                 <div class="block">
                     <img src="Images/stock/Eaztimate-44.jpg" />
                     <p>Eaztimate följer med ut på en skada</p>
@@ -52,7 +52,7 @@
                     <div style="clear: both"></div>
                 </div>
             </a>
-  <%--          <a href="News/appar-istallet-for-lappar.aspx">
+<%--            <a href="News/appar-istallet-for-lappar.aspx">
                 <div class="block">
                     <img src="Images/stock/Eaztimate-46.jpg" />
                     <p>Appar istället för lappar</p>
@@ -72,27 +72,27 @@
             <p>Med fokus på funktionalitet, användarvänlighet och kommunikation har Eaztimate utvecklat mobilappar som gör din mobiltelefon till en uppskattad jobbarkompis.</p>
             <div class="appar">
                 <ul>
-                    <a href="product_description_bygg.aspx">
+                 <%--   <a href="product_description_bygg.aspx">--%>
                         <li class="floater_bygg">
                             <p>Byggskada</p>
                         </li>
-                    </a>
-                    <a href="product_description_jour.aspx">
+               <%--     </a>
+                <a href="product_description_jour.aspx">--%>
                         <li class="floater_jour">
                             <p>Jour</p>
                         </li>
-                    </a>
-                    <%--   <a href="product_description_sanering.aspx">--%>
+                  <%--  </a>
+                       <a href="product_description_sanering.aspx">--%>
                     <li class="floater_sanering">
                         <p>Sanering</p>
                     </li>
-                    <%--      </a>--%>
-                    <a href="product_description_losore.aspx">
+                         <%-- </a>
+                    <a href="product_description_losore.aspx">--%>
                         <li class="floater_losore">
                             <p>Lösöre</p>
                         </li>
-                    </a>
-                    <%--<a href="product_description_klotter.aspx">--%>
+                    <%--</a>
+                    <a href="product_description_klotter.aspx">--%>
                     <li class="floater_klotter last">
                         <p>Klotter</p>
                     </li>

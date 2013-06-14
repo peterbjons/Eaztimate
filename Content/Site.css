@@ -7,6 +7,10 @@
 
 body {
     background-color: #efefef;
+    background-image: url(../images/alien_bg1.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 blockquote {
@@ -57,60 +61,79 @@ a:hover {
 
 
 #footer {
-    
 }
-#footer .whitebox {
-    margin-bottom: 0px;
-    background-image: url(../images/random_background3.jpg);
-    background-position: top center;
-    color: #fff;
-}
+
+    #footer .whitebox {
+        margin-bottom: 0px;
+        background-image: url(../images/random_background3.jpg);
+        background-position: top center;
+        color: #fff;
+    }
 
 .copyright {
     font-size: 8pt;
-    text-align:center;
+    text-align: center;
     margin-top: 40px;
 }
-#footer ul,#footer ul ul {
+
+#footer ul, #footer ul ul {
     list-style-type: none;
-    list-style-image:none;
-}
-#footer ul li {
-    float:left;
-    width:25%;
-    font-size: 12pt;
-    font-weight:300;
-    
-}
-#footer ul li ul li {
-    float:none;
-    font-size:10pt;
-    width:100%;
-   
-}
-#footer ul li ul li:first-child { margin-top:10px;
-
+    list-style-image: none;
 }
 
-#footer input,#footer textarea {
+    #footer ul li {
+        float: left;
+        width: 25%;
+        font-size: 12pt;
+        font-weight: 300;
+    }
+
+#footer a {
     color: #fff;
-    width:225px;
+    text-decoration: none;
+}
+
+    #footer a:hover {
+        color: #85c8e0;
+    }
+
+#footer ul li ul li {
+    float: none;
+    font-size: 10pt !important;
+    width: 100%;
+}
+
+    #footer ul li ul li a {
+        font-size: 10pt;
+    }
+
+    #footer ul li ul li:first-child {
+        margin-top: 10px;
+    }
+
+#footer input, #footer textarea {
+    color: #fff;
+    width: 225px;
     background-color: rgba(128, 128, 128, 0.50);
     border: 0px;
-    padding:5px;   font-size:8pt;
+    padding: 5px;
+    font-size: 8pt;
 }
+
     #footer input[type=submit] {
         font-size: 8pt;
         padding: 4px 2px;
-        width:235px;
+        width: 235px;
         background-color: rgba(48, 48, 48, 0.83);
     }
-    #footer input[type=text]{
-        margin-bottom:4px;
-        font-size:8pt;
+
+    #footer input[type=text] {
+        margin-bottom: 4px;
+        font-size: 8pt;
     }
+
 #header {
-    background-color: #fff;
+    background-color: rgba(255,255,255,1);
     height: 50px;
     padding: 10px 0px 0px 0px;
     min-width: 940px;
@@ -404,8 +427,7 @@ li.block p {
 }
 
 #content {
-    padding: 10px 0px 0px 0px;
-    margin-bottom: 100px;
+    padding: 10px 0px 100px 0px;
 }
 
     #content h1 {
@@ -1387,6 +1409,7 @@ table.companycreate tr.user_level4 td {
 .last {
     margin-right: 0px !important;
 }
+
 .bottom {
     margin-bottom: 0px !important;
 }
@@ -1435,7 +1458,7 @@ table.companycreate tr.user_level4 td {
 }
 
 .whitebox {
-    background-color: #fff;
+    background-color: rgba(255,255,255,0.70);
     padding: 10px;
     margin-bottom: 30px;
 }
@@ -1812,11 +1835,11 @@ body#start {
 }
 
     .whitefield .bubble {
-       background-color: rgba(31,31,31,0.80);
+        background-color: rgba(31,31,31,0.80);
         width: 500px;
         padding: 10px;
         position: relative;
-        margin-bottom:10px;
+        margin-bottom: 10px;
     }
 
         .whitefield .bubble p {
@@ -1879,8 +1902,6 @@ body#start {
         font-size: 14pt;
         text-align: center;
         color: #fff;
-        
-        
     }
 
     .appblock .appar {
@@ -1936,8 +1957,8 @@ body#start {
     font-size: 11pt;
     margin-top: 97px;
     padding: 1px 6px 4px;
-    
 }
+
 .appar a {
     text-decoration: none;
 }
@@ -1946,46 +1967,53 @@ body#start {
     height: 130px;
     padding-top: 30px;
     margin: 0px 0px 0px 0px;
-
 }
+
 .whitefield .appbubble {
-    width:435px;
-    float:left;
-    height:120px;
-    margin-right:10px;
+    width: 435px;
+    float: left;
+    height: 120px;
+    margin-right: 10px;
 }
 
-.whitefield .appbubble p {
-    text-align:center;
-}
-.whitefield .appbubble h2 {
-    color: #fff;
-    text-align:center;
-    margin: 10px 0px 5px !important;
-}
+    .whitefield .appbubble p {
+        text-align: center;
+    }
+
+    .whitefield .appbubble h2 {
+        color: #fff;
+        text-align: center;
+        margin: 10px 0px 5px !important;
+    }
+
 .startblock.funktion {
     height: 500px;
-    overflow:hidden;
-    text-overflow:ellipsis;
+    overflow: hidden;
+    text-overflow: ellipsis;
     margin-bottom: 80px;
 }
-.startblock.funktion h2{
-    text-align:center;
-    font-size: 16pt!important;
-    margin-top: 0px !important;
-}
-.startblock.funktion p {
-    padding:10px;
-}
-.startblock.funktion img {
-    width:250px;
-    margin: 0 25px;
-}
+
+    .startblock.funktion h2 {
+        text-align: center;
+        font-size: 16pt!important;
+        margin-top: 0px !important;
+    }
+
+    .startblock.funktion p {
+        padding: 10px;
+    }
+
+    .startblock.funktion img {
+        width: 250px;
+        margin: 0 25px;
+    }
+
 #intervju p {
     line-height: 18pt;
     margin-bottom: 30px;
 }
+
 #intervju strong {
     margin: 0px 0px 0px 0px;
-    display:block;
+    display: block;
 }
