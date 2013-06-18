@@ -403,9 +403,21 @@ li.block p {
     text-decoration: none;
 }
 
-    .button:hover {
-        background-color: #1c80aa;
+.big_button {
+    padding: 10px 0px;
+    width: 100%;
+    background-color: rgba(0,0,0,0.4);
+    color: #fff;
+    text-align: center;
+}
+
+    .big_button:hover {
+        background-color: rgba(28, 128, 170, 0.50);
     }
+
+.button:hover {
+    background-color: rgba(28, 128, 170, 0.50);
+}
 
 #start_boxes .box1 {
     background-color: #fff;
@@ -1990,7 +2002,7 @@ body#start {
     height: 500px;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
 }
 
     .startblock.funktion h2 {
@@ -2017,3 +2029,131 @@ body#start {
     margin: 0px 0px 0px 0px;
     display: block;
 }
+
+
+/*APP*/
+.app_col1 {
+    float: left;
+    margin-right: 10px;
+    width: 200px;
+}
+
+    .app_col1 ul li, .app_col1 span {
+        font-size: 9pt;
+    }
+
+.app_col2 {
+    float: left;
+    width: 730px;
+}
+
+.app_image {
+    background-color: rgba(200,200,200,0.1);
+}
+
+    .app_image img {
+        width: 200px;
+        height: 201px;
+    }
+
+.app_banner {
+    height: 205px;
+    width: 730px;
+    background-size: 100% auto;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+}
+
+ul.app_funktioner {
+    list-style-type: none;
+}
+
+.app_screenshots {
+    overflow-x: scroll;
+    height: 220px;
+    overflow-y: hidden;
+    margin-bottom: 20px;
+}
+
+    .app_screenshots img {
+        height: 200px;
+    }
+
+    .app_screenshots ul {
+        list-style-type: none;
+    }
+
+        .app_screenshots ul li {
+            float: left;
+            margin-right: 10px;
+        }
+
+
+
+.app_appar {
+    margin: 30px 0px;
+}
+
+    .app_appar ul {
+        list-style-type: none;
+    }
+
+        .app_appar ul li {
+            float: left;
+            width: 175px;
+            height: 128px;
+            margin-right: 10px;
+        }
+
+            .app_appar ul li p:hover {
+                cursor: pointer;
+            }
+
+    .app_appar p {
+        padding: 20px 30px 20px 30px;
+        font-size: 14pt;
+        text-align: center;
+    }
+
+    .app_appar ul li p {
+        font-size: 11pt;
+        margin-top: 85px;
+        padding: 1px 6px 4px;
+    }
+
+    .app_appar a {
+        text-decoration: none;
+    }
+
+ul.contact {
+    list-style-type: none;
+}
+
+    ul.contact li {
+        background-repeat: no-repeat;
+        padding-left: 30px;
+        background-position: left center;
+        margin-bottom: 10px;
+    }
+
+.formbox {
+    float: left;
+    width: 180px;
+    margin: 0px 10px 10px 0px;
+}
+
+    .formbox input[type=text] {
+        width: 95%;
+        padding: 2px 4px; font-size:10pt;
+    }
+
+    #contact textarea {
+        height: 100px;
+        width: 550px;
+        padding: 5px;
+        font-size:10pt;
+    }
+    #contact input[type=submit] {
+        border:none;
+    }
