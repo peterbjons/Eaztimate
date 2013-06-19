@@ -90,44 +90,79 @@ public class KlotterSyncController : ApiController
 
                 //string contactname = klotter["contactname"].ToString();
                 string title = klotter["title"].ToString();
-                string address = klotter["address1"].ToString();
-                string address2 = klotter["address2"].ToString();
+                string buildingno = klotter["buildingno"].ToString();
+                string address = klotter["address"].ToString();
                 string contactzipcode = klotter["zipcode"].ToString();
                 string contactcity = klotter["city"].ToString();
                 double latitude = 0, longitude = 0, accuracy = 0;
                 double.TryParse(klotter["latitude"].ToString(), out latitude);
                 double.TryParse(klotter["longitude"].ToString(), out longitude);
-                double.TryParse(klotter["locaccuracy"].ToString(), out accuracy);                
+                double.TryParse(klotter["locaccuracy"].ToString(), out accuracy);
+
+                string desc = klotter["workdescription"].ToString();
+
+                string client = klotter["client"].ToString();
+                string clientno = klotter["clientno"].ToString();
+                string clientaddress = klotter["clientaddress"].ToString();
+                string clientaddress2 = klotter["clientaddress2"].ToString();
+                string clientzip = klotter["clientzipcode"].ToString();
+                string clientcity = klotter["clientcity"].ToString();
+
+                bool policereport = (klotter["policereport"] != null ? (bool)klotter["policereport"] : false);
+                string policereporttext = klotter["policereporttext"].ToString();
+
+                int hours = 0, minutes = 0;
+                int.TryParse(klotter["hours"].ToString(), out hours);
+                int.TryParse(klotter["minutes"].ToString(), out minutes);
+
+                bool pressurewasher = (klotter["pressurewasher"] != null ? (bool)klotter["pressurewasher"] : false);
+                bool pressurewasherRecycle = (klotter["pressurewasherRecycle"] != null ? (bool)klotter["pressurewasherRecycle"] : false);
+                bool handwash = (klotter["handwashing"] != null ? (bool)klotter["handwashing"] : false);
+
+                JObject chem = (JObject)klotter["chem"];
+
+                string chemname = chem["name"].ToString();
+                int amount = 0;
+                int.TryParse(chem["amount"].ToString(), out amount);
 
                 bool klotterexists = false;
 
                 using (SqlDataReader reader = SQL.ExecuteQuery("SELECT klotterid FROM klotter WHERE klotterno LIKE @1", klotterno)) {
                     if (reader.Read()) {
                         klotterexists = true;
-                        id = reader.GetInt64(0);                        
+                        id = reader.GetInt64(0);
                     }
                 }
 
-               if (!klotterexists) {
+                if (klotterexists) {
+                    using (SQL.ExecuteQuery("DELETE FROM klotter WHERE klotterno LIKE @1", klotterno)) { }
+                }
+
+               //if (!klotterexists) {
                     using (SqlConnection con = SQL.CreateConnection()) {
                         using (SqlTransaction trans = con.BeginTransaction(IsolationLevel.ReadCommitted)) {
                             try {
-                                using (SqlDataReader reader = SQL.ExecuteTransQuery(con, trans, "INSERT INTO klotter(klotterno,syncemail,datecreated,dateupdated,title,address1,address2,zipcode,city,latitude,longitude,accuracy)" +
-                                    " VALUES(@1,@2,GETDATE(),GETDATE(),@3,@4,@5,@6,@7,@8,@9,@10);SELECT CAST(@@IDENTITY AS BIGINT)",
-                                    klotterno, email, title, address, address2, contactzipcode, contactcity, latitude, longitude, accuracy)) {
+                                using (SqlDataReader reader = SQL.ExecuteTransQuery(con, trans, "INSERT INTO klotter(klotterno,syncemail,datecreated,dateupdated,title,address1,zipcode,city,latitude,longitude,accuracy,buildingno,description," +
+                                    "client,clientno,clientaddress,clientaddress2,clientzipcode,clientcity,policereport,policereporttext,hours,minutes,pressurewasher,pwrecycle,handwashing,customerid)" +
+                                    " VALUES(@1,@2,GETDATE(),GETDATE(),@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@16,@17,@18,@19,@20,@21,@22,@23,@24,@25);SELECT CAST(@@IDENTITY AS BIGINT)",
+                                    klotterno, email, title, address, contactzipcode, contactcity, latitude, longitude, accuracy, buildingno, desc,
+                                        client, clientno, clientaddress, clientaddress2, clientzip, clientcity, policereport, policereporttext,
+                                        hours, minutes, pressurewasher, pressurewasherRecycle, handwash, customerid)) {
                                     if (reader.Read()) {
                                         id = reader.GetInt64(0);
                                     }
                                 }
 
+                                using (SQL.ExecuteTransQuery(con, trans, "INSERT INTO klotter_chem (klotterid,title,amount) SELECT klotterid, @2,@3 FROM klotter WHERE klotterno LIKE @1", klotterno, chemname, amount)) { }
+
                                 JArray images = (JArray)klotter["beforeimages"];
                                 foreach (String image in images) {
-                                    using (SQL.ExecuteTransQuery(con, trans, "INSERT INTO klotter_image (klotterid,image,type) SELECT klotterid ,@2 FROM klotter WHERE klotterno LIKE @1", klotterno, new FileInfo(image).Name, 0)) { }
+                                    using (SQL.ExecuteTransQuery(con, trans, "INSERT INTO klotter_image (klotterid,image,type) SELECT klotterid ,@2,@3 FROM klotter WHERE klotterno LIKE @1", klotterno, new FileInfo(image).Name, 0)) { }
                                 }
 
                                 images = (JArray)klotter["afterimages"];
                                 foreach (String image in images) {
-                                    using (SQL.ExecuteTransQuery(con, trans, "INSERT INTO klotter_image (klotterid,image,type) SELECT klotterid ,@2 FROM klotter WHERE klotterno LIKE @1", klotterno, new FileInfo(image).Name, 1)) { }
+                                    using (SQL.ExecuteTransQuery(con, trans, "INSERT INTO klotter_image (klotterid,image,type) SELECT klotterid ,@2,@3 FROM klotter WHERE klotterno LIKE @1", klotterno, new FileInfo(image).Name, 1)) { }
                                 }
 
                                 JArray tags = (JArray)klotter["tags"];
@@ -157,7 +192,7 @@ public class KlotterSyncController : ApiController
                             }
                         }
                     }
-                }
+               // }
 
                bool success = false;
                if (id > 0) {
