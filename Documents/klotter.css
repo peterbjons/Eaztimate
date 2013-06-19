@@ -1,0 +1,271 @@
+﻿
+*, body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Open Sans Light';
+    /* ändring */
+    
+}
+
+body {
+    background-color: #ccc;
+}
+
+.red {
+    background-color: #ED1C24;
+}
+
+.green2 {
+    background-color: #39B54A;
+}
+
+
+
+
+
+.divider {
+    height:40px;
+    clear:both;
+}
+
+/* PDF */
+
+.a4_paper {
+    background-color: #fff;
+    width: 880px;
+   height: 1278px;
+    margin-bottom: 20px;
+    padding: 40px 40px 0px 40px;
+    font-size: 11pt; /* was 8pt*/
+}
+.a4_paper.a4_height{
+    
+}
+.damage_summary_paper {
+}
+
+    .damage_summary_paper h2, .room_paper h2 {
+        margin-bottom: 50px !important;
+        font-size: 36pt!important;
+        font-weight: 300;
+    }
+
+.ensurance_company_logo {
+    height: 150px;
+    width: 300px;
+    float: left;
+}
+
+.sanerings_company_logo {
+    height: 150px;
+    width: 300px;
+    float: right;
+}
+
+    .ensurance_company_logo img, .sanerings_company_logo img {
+        max-width: 300px;
+    }
+
+.damage_summary_paper .inspection_number {
+    background-color: #000;
+    color: #fff;
+    font-weight: 300;
+    font-size: 10pt;
+    padding: 5px 7px;
+    width: 205px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+
+.a4_paper ul {
+    list-style-type: none;
+ 
+}
+
+
+
+
+
+/* BYGG PDF*/
+.header {
+        padding-left: 40px;
+    padding-top:20px;
+    padding-right: 40px;
+}
+.header.height150 {
+    height: 150px;
+}
+.header.height60 {
+    height: 60px;
+}
+
+.header_text {
+    line-height:36px;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+.header_text span.line1 {
+    font-size: 24px;
+    display:block;
+    height: 40px;
+    line-height: 44px;
+}
+.header_text span.line2 {
+    font-size: 16px;
+    display:block;
+    line-height: 16px;
+}
+
+.logo {
+    float: left;
+}
+
+    .height150 .logo img {
+        /*width: 250px;*/
+        height: 80px;
+    }
+    .height60 .logo img {
+        /*width: 100px;*/
+        height: 35px;
+    }
+
+
+.inspection_number {
+    background-color: #000;
+    color: #fff;
+    font-weight: 300;
+    font-size: 10pt;
+    padding: 5px 7px;
+    width: 205px;
+  margin-bottom: 40px;
+    /*float: right;*/
+    float:left;
+}
+
+.col {
+    float: left;
+    min-height: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+   /* background: #fff; ta bort sen*/
+   
+
+    
+}
+.headercol {
+        float: left;
+    min-height: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+}
+
+    .headercol h2,  h2.rubrik,.col h2,  h2.rubrik {
+        padding: 5px 7px!important;
+        color: #fff!important;
+        font-weight: 300!important;
+        font-size: 14pt!important; /* was 10pt*/
+        margin-bottom: 10px!important;
+    }
+
+        .light {
+            background-color: #85c8e0;
+        }
+
+        .dark {
+            background-color: #1c80aa;
+        }
+
+        .headercol.last {
+            padding-right: 0px;
+        }
+    .col.last {
+        margin-right: 0px;
+    }
+
+.col_430 {
+    width: 430px;
+}
+
+.col_205 {
+    width: 205px;
+}
+.col_655 {
+    width: 655px;
+}
+.col_880 {
+    width: 880px;
+}
+.col_430 img {
+    width: 430px;
+}
+
+.col_205 img {
+    width: 205px;
+}
+.col_655 img {
+    width: 655px;
+}
+.col_880 img {
+    width: 880px;
+}
+.col_880 img.two_two {
+    width: 433px;
+    margin:0px 10px 10px 0px;
+}
+.col .last {
+    margin-right: 0px!important;
+}
+
+.a4_paper table thead {
+    font-size: 12pt;
+}
+
+.jourtable tbody tr:first-child td{
+padding-top: 5px;
+}
+
+
+
+.a4_paper table tbody tr td {
+    width: 200px;
+}
+.a4_paper table tbody tr td:first-child {
+    width: 300px!important;
+}
+
+
+
+.jourtable thead th {
+    
+    text-align: left;
+    padding: 5px 7px;
+color: #fff;
+font-weight: 300;
+font-size: 14pt; /* was 10pt*/
+
+}
+.jourtable tbody td{
+    height: 20px;
+    vertical-align: top;
+    padding: 2px 0px;
+}
+.jourtable {
+    width: 880px;
+}
+
+.footer {
+    height: 60px;
+    padding-top: 40px;
+    padding-left: 10px;
+    background-image: url('../Images/footer.png');
+    background-repeat:no-repeat;
+    background-position: center top;
+}
+
+ol.needs {
+    padding-left: 20px;
+    list-style-image: url('../Images/sq.png');
+}
+ol.needs li {
+    margin-bottom:5px;
+}
