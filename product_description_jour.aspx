@@ -11,7 +11,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
-    <%--<img src="Images/logo_jour.png" />--%><h1>EZ Jour</h1>
+    <%--       <h1>EZ Jour</h1>
     <div class="whitebox" style="position:relative;"><img src="images/stock/Banner-36.jpg" />
         <p>När det händer, det piper i personsökaren hos jourhavande (JH), det är ont om tid, värden stå på spel och beslut måste fattas, då är <br />EZ Jour din bästa kompis att hålla i handen. Applikationen som utvecklats av branschfolk för dig som har jour gällande brand, vatten, inbrott och andra akuta situationer där sakskador behöver minimeras. </p><p>
 I EZ Jour har vi på Eaztimate samlat verktyg som underlättar varje steg i processen som inleds med att du startar EZ Jour och klickar på numret som visats i personsökaren.</p>
@@ -29,42 +29,97 @@ I EZ Jour har vi på Eaztimate samlat verktyg som underlättar varje steg i proc
 Den stora bonusen är att arbetet kan rapporteras till uppdragsgivaren så fort det finns ett nät att tillgå. Så väl försäkringsbolag som försäkringstagare blir informerad om vika insatser som gjorts, utan dröjsmål.</p><p>Att vara väl förberedd och snabbt sätta sig in i situationen är avgörande faktorer för hur insatsen fortlöper.        </p>
 
         <div style="clear:both"></div>
-        <a href="product_description.aspx" class="button" style="float: left">&laquo; Tillbaka till produkter</a><%--<a href="product_timeline.aspx#jour_timeline" class="button">Se tidslinje &raquo;</a>--%><div style="clear: both"></div>
+        <a href="product_description.aspx" class="button" style="float: left">&laquo; Tillbaka till produkter</a><div style="clear: both"></div>
+    </div>--%>
+
+    <h1>EZ Jour</h1>
+    <div class="whitebox">
+        <div class="app_col1">
+            <div class="app_image">
+                <img src="Images/logo_jour_300_300.png" />
+            </div>
+            <h2>Funktioner</h2>
+            <ul class="app_funktioner">
+                <li>GPS</li>
+                <li>Delningscenter</li>
+
+                <li>Jourlistan </li>
+                <li>Checklistor</li>
+                <li>Formulär</li>
+                <li>Logg</li>
+                <li>Rapportgenerator</li>
+            </ul>
+            <h2>Specifikationer</h2>
+
+        <ul class="app_funktioner">
+          <li>  Version: <span style="color:#1c80aa">1.0b</span></li>
+          <li>  Storlek: <span style="color:#1c80aa">5.1 MB</span></li>
+           <li> Språk: <span style="color:#1c80aa">Svenska</span></li>
+          <li>  Uppdaterad: <span style="color:#1c80aa">2013-06-18</span></li></ul>
+            <h2>Hårdvarukrav</h2>
+            <ul class="app_funktioner">
+                <li>Kamera</li>
+                <li>GPS</li>
+            </ul>
+        </div>
+        <div class="app_col2">
+            <div class="app_banner" style="background-image: url(images/stock/banner-36.jpg);"></div>
+            <h2>Beskrivning</h2>
+            <p>
+                När det händer, det piper i personsökaren hos jourhavande (JH), det är ont om tid, värden stå på spel och beslut måste fattas, då är
+                <br />
+                EZ Jour din bästa kompis att hålla i handen. Applikationen som utvecklats av branschfolk för dig som har jour gällande brand, vatten, inbrott och andra akuta situationer där sakskador behöver minimeras.
+            </p>
+            <p>
+                I EZ Jour har vi på Eaztimate samlat verktyg som underlättar varje steg i processen som inleds med att du startar EZ Jour och klickar på numret som visats i personsökaren.
+            </p>
+            <p>
+                Verktygen som räknas upp ovan ger JH möjligheten att koncentrera sig på det väsentliga, människor som behöver hjälp att ta hand om sig själva och sina ägodelar. 
+Den stora bonusen är att arbetet kan rapporteras till uppdragsgivaren så fort det finns ett nät att tillgå. Så väl försäkringsbolag som försäkringstagare blir informerad om vika insatser som gjorts, utan dröjsmål.
+            </p>
+            <p>Att vara väl förberedd och snabbt sätta sig in i situationen är avgörande faktorer för hur insatsen fortlöper.        </p>
+            <h2>Skärmdumpar</h2>
+            <div class="app_screenshots">
+                <ul style="width: 1100px;">
+                    <li>
+                        <img src="Images/screenshot_jour1.png" /></li>
+                    <li>
+                        <img src="Images/screenshot_jour2.png" /></li>
+                    <li>
+                        <img src="Images/screenshot_jour3.png" /></li>
+                    
+                </ul><div style="clear: both;"></div>
+               
+            </div> <h2>Våra andra appar</h2>
+            <div class="app_appar">
+                <ul>
+                    <a href="product_description_bygg.aspx">
+                        <li class="floater_bygg">
+                            <p>Byggskada</p>
+                        </li>
+                    </a>
+                   
+                    <a href="product_description_sanering.aspx">
+                        <li class="floater_sanering">
+                            <p>Sanering</p>
+                        </li>
+                    </a>
+                    <a href="product_description_losore.aspx">
+                        <li class="floater_losore">
+                            <p>Lösöre</p>
+                        </li>
+                    </a>
+                    <a href="product_description_klotter.aspx">
+                        <li class="floater_klotter last">
+                            <p>Klotter</p>
+                        </li>
+                    </a>
+                </ul><div style="clear: both"></div>
+            </div>
+            <div class="big_button">Beställ</div>
+        </div>
+        <div style="clear: both"></div>
     </div>
-<%--    <h1>Case</h1>
-    <div class="whitebox" style="margin-bottom: 20px;">
-        <div style="width: 400px; float: left; padding: 10px;">
-            <img src="Images/alien1.png" />
-        </div>
-        <div style="width: 480px; float: left; padding-left: 40px">
-            <h2>Case 1</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a erat lacus. Pellentesque at nisi id nisi mattis scelerisque. Quisque sit amet mi vitae velit condimentum elementum. Integer nec orci nulla, a commodo eros. Integer sapien diam, tempus id congue eu, ultricies nec lacus. Nullam vulputate tempor est, ac pretium sem auctor id. Quisque sollicitudin pretium volutpat. Fusce euismod, justo ut tincidunt rutrum, sapien felis commodo ligula, in iaculis urna augue in risus. Nulla facilisi.</p>
-        </div>
-        <div style="clear: both;"></div>
-    </div>
-    <div class="whitebox" style="margin-bottom: 20px;">
-        <div style="width: 400px; float: left; padding: 10px; border: 0px dotted #ccc">
-            <img src="Images/alien2.png" />
-        </div>
-        <div style="width: 480px; float: left; padding-left: 40px">
-            <h2>Case 2</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a erat lacus. Pellentesque at nisi id nisi mattis scelerisque. Quisque sit amet mi vitae velit condimentum elementum. Integer nec orci nulla, a commodo eros. Integer sapien diam, tempus id congue eu, ultricies nec lacus. Nullam vulputate tempor est, ac pretium sem auctor id. Quisque sollicitudin pretium volutpat. Fusce euismod, justo ut tincidunt rutrum, sapien felis commodo ligula, in iaculis urna augue in risus. Nulla facilisi.</p>
-        </div>
-        <div style="clear: both; height: 10px;"></div>
-    </div>
-    <div class="whitebox" style="margin-bottom: 20px;">
-        <div style="width: 400px; float: left; padding: 10px; border: 0px dotted #ccc">
-            <img src="Images/alien3.png" />
-        </div>
-        <div style="width: 480px; float: left; padding-left: 40px">
-            <h2>Case 3</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a erat lacus. Pellentesque at nisi id nisi mattis scelerisque. Quisque sit amet mi vitae velit condimentum elementum. Integer nec orci nulla, a commodo eros. Integer sapien diam, tempus id congue eu, ultricies nec lacus. Nullam vulputate tempor est, ac pretium sem auctor id. Quisque sollicitudin pretium volutpat. Fusce euismod, justo ut tincidunt rutrum, sapien felis commodo ligula, in iaculis urna augue in risus. Nulla facilisi.</p>
-        </div>
-        <div style="clear: both; height: 10px;"></div>
-    </div>--%><%--<h1>Exempel på arbetsordning</h1>
-    <div class="whitebox" style="float:left; width: 295px; margin-right:10px"><img src="Images/alien1.png" style="width:275px"/></div>
-    <div class="whitebox" style="float:left; width: 295px; margin-right:10px"><img src="Images/alien2.png" style="width:275px"/></div>
-    <div class="whitebox" style="float:left; width: 290px;"><img src="Images/alien3.png" style="width:275px"/></div>
-    <div style="clear:both"></div>--%>
+
 </asp:Content>
 

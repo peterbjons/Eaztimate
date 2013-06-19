@@ -150,8 +150,8 @@ mot entré med lika ytskikt.
                 <table>
                     <thead>
                         <tr>
-                            <td>Konstruktion</td>
-                            <td>Mängd</td>
+                            <td>Beteckning</td>
+                            <td>Mängd/antal</td>
                             <td>Föreslagen åtgärd</td>
                         </tr>
                     </thead>

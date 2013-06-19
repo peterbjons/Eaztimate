@@ -128,7 +128,7 @@
                 </asp:ContentPlaceHolder>
             </div>
         </div>
-<%--        <div id="footer">
+        <div id="footer">
             <div class="wrapper">
                 <div class="whitebox">
                     <ul>
@@ -172,7 +172,7 @@
                     <div class="copyright">Copyright 2013 - Eaztimate - Sidan producerad av Digitalyard Sverige AB</div>
                 </div>
             </div>
-        </div>--%>
+        </div>
 
 
 

@@ -52,13 +52,13 @@
                     <div style="clear: both"></div>
                 </div>
             </a>
-<%--            <a href="News/appar-istallet-for-lappar.aspx">
+            <a href="News/appar-istallet-for-lappar.aspx">
                 <div class="block">
                     <img src="Images/stock/Eaztimate-46.jpg" />
                     <p>Appar istället för lappar</p>
                     <div style="clear: both"></div>
                 </div>
-            </a>--%>
+            </a>
             <%--         <div class="block">
                 <img src="Images/stock/Eaztimate-33.jpg" />
                 <p>Från skada till färdig rapport</p>
@@ -72,31 +72,51 @@
             <p>Med fokus på funktionalitet, användarvänlighet och kommunikation har Eaztimate utvecklat mobilappar som gör din mobiltelefon till en uppskattad jobbarkompis.</p>
             <div class="appar">
                 <ul>
-                 <%--   <a href="product_description_bygg.aspx">--%>
+                    <a href="product_description_bygg.aspx">
                         <li class="floater_bygg">
                             <p>Byggskada</p>
                         </li>
-               <%--     </a>
-                <a href="product_description_jour.aspx">--%>
+                    </a>
+                <a href="product_description_jour.aspx">
                         <li class="floater_jour">
                             <p>Jour</p>
                         </li>
-                  <%--  </a>
-                       <a href="product_description_sanering.aspx">--%>
+                    </a>
+                       <a href="product_description_sanering.aspx">
                     <li class="floater_sanering">
                         <p>Sanering</p>
                     </li>
-                         <%-- </a>
-                    <a href="product_description_losore.aspx">--%>
+                          </a>
+                    <a href="product_description_losore.aspx">
                         <li class="floater_losore">
                             <p>Lösöre</p>
                         </li>
-                    <%--</a>
-                    <a href="product_description_klotter.aspx">--%>
+                    </a>
+                   <a href="product_description_klotter.aspx">
+                    <li class="floater_klotter last">
+                        <p>Klotter</p>
+                    </li></a>
+                       <%-- 
+                        <li class="floater_bygg">
+                            <p>Byggskada</p>
+                        </li>
+                  
+                        <li class="floater_jour">
+                            <p>Jour</p>
+                        </li>
+                  
+                    <li class="floater_sanering">
+                        <p>Sanering</p>
+                    </li>
+                          
+                        <li class="floater_losore">
+                            <p>Lösöre</p>
+                        </li>
+                    
                     <li class="floater_klotter last">
                         <p>Klotter</p>
                     </li>
-                    <%--   </a>--%>
+                       --%>
                 </ul>
                 <div style="clear: both"></div>
             </div>
