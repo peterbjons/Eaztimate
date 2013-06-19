@@ -19,7 +19,7 @@ public class JourLoginController : ApiController
 
         string hash = Security.SHA1(email + pw + DateTime.Now.ToUniversalTime().ToString("yyyy-MM-dd") + SYNCCOUNTERCODE).ToLower();
 
-        if (hash.Equals(sha)) {        
+        if (hash.Equals(sha)) {
             string username = Membership.GetUserNameByEmail(email);
             if (!string.IsNullOrEmpty(username)) {
                 if (Membership.ValidateUser(username, pw)) {

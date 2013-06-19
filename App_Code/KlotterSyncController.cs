@@ -196,7 +196,7 @@ public class KlotterSyncController : ApiController
 
                bool success = false;
                if (id > 0) {
-                   //success = createPdf(id, klotterno, email);
+                   success = createPdf(id, klotterno, email);
                    success = true;
                }
 
@@ -267,7 +267,7 @@ public class KlotterSyncController : ApiController
         //return counter;
     }
 
-    private bool createPdf(long jid,string journo,string email) {
+    private bool createPdf(long kid,string klotterno,string email) {
         string contents = string.Empty;
 
         MemoryStream ms = new MemoryStream();
@@ -283,7 +283,7 @@ public class KlotterSyncController : ApiController
             doc.HtmlOptions.FontProtection = false;
             doc.HtmlOptions.ImageQuality = 33;
             Random rnd = new Random();
-            id = doc.AddImageUrl("http://" + HttpContext.Current.Request.Url.Host + "/Documents/jour_pdf.aspx?id=" + jid.ToString() + "&uid="+ email +"&rnd=" + rnd.Next(50000));
+            id = doc.AddImageUrl("http://" + HttpContext.Current.Request.Url.Host + "/Documents/klotter_pdf.aspx?id=" + kid.ToString() + "&uid="+ email +"&rnd=" + rnd.Next(50000));
 
             while (true) {
                 //doc.FrameRect();
@@ -294,26 +294,26 @@ public class KlotterSyncController : ApiController
                 id = doc.AddImageToChain(id);
             }
 
-            doc.Rect.String = "10 780 595 840";
-            doc.HPos = 0.5;
-            doc.VPos = 0.0;
-            doc.Color.String = "0 255 0";
-            doc.FontSize = 36;
-            for (int i = 1; i <= doc.PageCount; i++) {
-                doc.PageNumber = i;
-                id = doc.AddImageUrl("http://" + HttpContext.Current.Request.Url.Host + "/Documents/header.aspx?id=" + jid.ToString() + "&rnd=" + rnd.Next(50000));                    
-            }
-
-            doc.Rect.String = "10 0 585 100";
-            doc.HPos = 0.5;
-            doc.VPos = 1.0;
+            //doc.Rect.String = "10 780 595 840";
+            //doc.HPos = 0.5;
+            //doc.VPos = 0.0;
+            //doc.Color.String = "0 255 0";
             //doc.FontSize = 36;
             //for (int i = 1; i <= doc.PageCount; i++) {
-                doc.PageNumber = 1;
-                id = doc.AddImageUrl("http://" + HttpContext.Current.Request.Url.Host + "/Documents/footer.aspx?rnd=" + rnd.Next(50000));
-                //doc.AddText("Page " + i.ToString() + " of " + doc.PageCount.ToString());
-                //doc.FrameRect();
+            //    doc.PageNumber = i;
+            //    id = doc.AddImageUrl("http://" + HttpContext.Current.Request.Url.Host + "/Documents/header.aspx?id=" + kid.ToString() + "&rnd=" + rnd.Next(50000));                    
             //}
+
+            //doc.Rect.String = "10 0 585 100";
+            //doc.HPos = 0.5;
+            //doc.VPos = 1.0;
+            ////doc.FontSize = 36;
+            ////for (int i = 1; i <= doc.PageCount; i++) {
+            //    doc.PageNumber = 1;
+            //    id = doc.AddImageUrl("http://" + HttpContext.Current.Request.Url.Host + "/Documents/footer.aspx?rnd=" + rnd.Next(50000));
+            //    //doc.AddText("Page " + i.ToString() + " of " + doc.PageCount.ToString());
+            //    //doc.FrameRect();
+            ////}
 
             for (int i = 0; i < doc.PageCount; i++) {
                 doc.PageNumber = i;
@@ -328,7 +328,7 @@ public class KlotterSyncController : ApiController
 
             bool mail = Common.PdfMail(ms, email);
             if (mail) {
-                return AmazonHandler.PutPdfJour(ms, journo);
+                return AmazonHandler.PutPdfJour(ms, klotterno);
             }
             return false;
 
