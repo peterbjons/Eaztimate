@@ -11,7 +11,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="a4_paper ">
-            <div class="inspection_number">222222</div>
+            <div class="inspection_number">222222</div><div style="clear:both"></div>
             <div class="header_text">Titel</div>
             <div style="clear: both"></div>
 
