@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: #ccc;
+    /*background-color: #ccc;*/
 }
 
 .red {
@@ -88,7 +88,7 @@ body {
 
 /* BYGG PDF*/
 .header {
-        padding-left: 40px;
+        padding-left: 0px;
     padding-top:20px;
     padding-right: 40px;
 }

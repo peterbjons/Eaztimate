@@ -10,8 +10,10 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="a4_paper ">
-            <div class="inspection_number">222222</div><div style="clear:both"></div>
+        <div class="a4_paper "><div class="header height150">
+                <div class="logo">
+                    <img src="../Images/forsak2.png" />
+                </div></div>            <div class="inspection_number">222222</div><div style="clear:both"></div>
             <div class="header_text">Titel</div>
             <div style="clear: both"></div>
 
@@ -44,7 +46,10 @@
 
         <div style="page-break-before: always">&nbsp;</div>
 
-        <div class="a4_paper ">
+        <div class="a4_paper "><div class="header height150">
+                <div class="logo">
+                    <img src="../Images/forsak2.png" />
+                </div></div>  
             <div class="inspection_number">222222</div>
             <div style="float: right; font-size: 17pt;">Faktureringsunderlag</div>
             <div style="clear: both"></div>
