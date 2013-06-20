@@ -84,6 +84,42 @@ public static class AmazonHandler
         }
     }
 
+    public static bool PutPdfKlotter(MemoryStream ms, String filename) {
+        string accessKeyID = Conf.AppSettings["AWSAccessKey"];
+        string secretAccessKeyID = Conf.AppSettings["AWSSecretKey"];
+        try {
+            using (AmazonS3 client = Amazon.AWSClientFactory.CreateAmazonS3Client(accessKeyID, secretAccessKeyID)) {
+                PutObjectRequest request = new PutObjectRequest();
+                //DirectoryInfo di = new DirectoryInfo(m_filePath + fileThumbs + @"\" + i[0].ToString());                    
+                //m_eventLog.WriteEntry("Uploading " + m_filePath + fileType + @"\" + i[0].ToString() + ext, EventLogEntryType.Information);
+                request.WithBucketName(Conf.AppSettings["bucketKlotter"]).WithKey(filename + "/report.pdf").WithTimeout(600000).WithInputStream(ms);
+                using (S3Response response = client.PutObject(request)) { }
+                using (Eaztimate.SQL.ExecuteQuery("UPDATE klotter SET pdf_synced=1 WHERE klotterno=@1", filename)) { }
+                return true;
+            }
+        } catch (AmazonS3Exception amazonS3Exception) {
+            if (amazonS3Exception.ErrorCode != null &&
+                (amazonS3Exception.ErrorCode.Equals("InvalidAccessKeyId") ||
+                amazonS3Exception.ErrorCode.Equals("InvalidSecurity"))) {
+                return false;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    public static string GetPdfKotter(string klotterid) {
+        string accessKeyID = Conf.AppSettings["AWSAccessKey"];
+        string secretAccessKeyID = Conf.AppSettings["AWSSecretKey"];
+        using (AmazonS3 client = Amazon.AWSClientFactory.CreateAmazonS3Client(accessKeyID, secretAccessKeyID)) {
+            GetPreSignedUrlRequest request = new GetPreSignedUrlRequest()
+                .WithBucketName(Conf.AppSettings["bucketKlotter"])
+                .WithKey(klotterid + "/report.pdf")
+                .WithExpires(DateTime.Now.Add(new TimeSpan(0, 24, 0, 0)));
+            return client.GetPreSignedURL(request);
+        }
+    }
+
     public static bool PutACRALog(String data, String filename) {
         string accessKeyID = Conf.AppSettings["AWSAccessKey"];
         string secretAccessKeyID = Conf.AppSettings["AWSSecretKey"];

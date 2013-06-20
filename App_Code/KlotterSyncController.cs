@@ -90,6 +90,7 @@ public class KlotterSyncController : ApiController
 
                 //string contactname = klotter["contactname"].ToString();
                 string title = klotter["title"].ToString();
+                string caseno = klotter["caseno"].ToString();
                 string buildingno = klotter["buildingno"].ToString();
                 string address = klotter["address"].ToString();
                 string contactzipcode = klotter["zipcode"].ToString();
@@ -143,11 +144,11 @@ public class KlotterSyncController : ApiController
                         using (SqlTransaction trans = con.BeginTransaction(IsolationLevel.ReadCommitted)) {
                             try {
                                 using (SqlDataReader reader = SQL.ExecuteTransQuery(con, trans, "INSERT INTO klotter(klotterno,syncemail,datecreated,dateupdated,title,address1,zipcode,city,latitude,longitude,accuracy,buildingno,description," +
-                                    "client,clientno,clientaddress,clientaddress2,clientzipcode,clientcity,policereport,policereporttext,hours,minutes,pressurewasher,pwrecycle,handwashing,customerid)" +
-                                    " VALUES(@1,@2,GETDATE(),GETDATE(),@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@16,@17,@18,@19,@20,@21,@22,@23,@24,@25);SELECT CAST(@@IDENTITY AS BIGINT)",
+                                    "client,clientno,clientaddress,clientaddress2,clientzipcode,clientcity,policereport,policereporttext,hours,minutes,pressurewasher,pwrecycle,handwashing,customerid,orderno)" +
+                                    " VALUES(@1,@2,GETDATE(),GETDATE(),@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@16,@17,@18,@19,@20,@21,@22,@23,@24,@25,@26);SELECT CAST(@@IDENTITY AS BIGINT)",
                                     klotterno, email, title, address, contactzipcode, contactcity, latitude, longitude, accuracy, buildingno, desc,
                                         client, clientno, clientaddress, clientaddress2, clientzip, clientcity, policereport, policereporttext,
-                                        hours, minutes, pressurewasher, pressurewasherRecycle, handwash, customerid)) {
+                                        hours, minutes, pressurewasher, pressurewasherRecycle, handwash, customerid, caseno)) {
                                     if (reader.Read()) {
                                         id = reader.GetInt64(0);
                                     }
@@ -197,7 +198,7 @@ public class KlotterSyncController : ApiController
                bool success = false;
                if (id > 0) {
                    success = createPdf(id, klotterno, email);
-                   success = true;
+                   //success = true;
                }
 
                if (success) {

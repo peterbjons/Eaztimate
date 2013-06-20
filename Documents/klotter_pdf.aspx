@@ -13,22 +13,24 @@
         <div class="a4_paper "><div class="header height150">
                 <div class="logo">
                     <img src="../Images/forsak2.png" />
-                </div></div>            <div class="inspection_number">222222</div><div style="clear:both"></div>
-            <div class="header_text">Titel</div>
+                </div></div>            <div class="inspection_number"><asp:Literal ID="klotterno" runat="server" /></div><div style="clear:both"></div>
+            <div class="header_text"><asp:Literal ID="title" runat="server" /></div>
             <div style="clear: both"></div>
 
 
             <div class="col col_205">
                 <h2 class="dark">Fastighetsbeteckning</h2>
-                Hehehe
+                <asp:Literal ID="buildingno" runat="server" />
             </div>
             <div class="col col_205">
                 <h2 class="dark">Adress</h2>
-                Hehehe
+                 <asp:Literal ID="address" runat="server" /><br />
+                <asp:Literal ID="zipcode" runat="server" />
+                <asp:Literal ID="city" runat="server" /><br />
             </div>
             <div class="col col_205">
                 <h2 class="dark">Åtgärd</h2>
-                Hehehe
+                <asp:Literal ID="actions" runat="server" />
             </div>
             <div class="col col_205 last">
                 <h2 class="dark">Kommentar</h2>
