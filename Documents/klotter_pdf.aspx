@@ -26,7 +26,7 @@
                 <h2 class="dark">Adress</h2>
                  <asp:Literal ID="address" runat="server" /><br />
                 <asp:Literal ID="zipcode" runat="server" />
-                <asp:Literal ID="city" runat="server" /><br />
+                <asp:Literal ID="city" runat="server" />
             </div>
             <div class="col col_205">
                 <h2 class="dark">Åtgärd</h2>
@@ -34,7 +34,7 @@
             </div>
             <div class="col col_205 last">
                 <h2 class="dark">Kommentar</h2>
-                Hehehe
+                <asp:Literal ID="comment" runat="server" />
             </div>
             <div class="col col_880">
                 <h2 class="light">Bilder</h2>
@@ -55,21 +55,24 @@
             <div class="inspection_number">222222</div>
             <div style="float: right; font-size: 17pt;">Faktureringsunderlag</div>
             <div style="clear: both"></div>
-            <div class="header_text">Titel</div>
+            <div class="header_text"><asp:Literal ID="title2" runat="server" /></div>
             <div style="clear: both"></div>
 
 
             <div class="col col_205">
                 <h2 class="dark">Kund</h2>
-                Hehehe
+                <asp:Literal ID="client" runat="server" />
             </div>
             <div class="col col_205">
                 <h2 class="dark">Kundnummer</h2>
-                Hehehe
+                <asp:Literal ID="clientno" runat="server" />
             </div>
             <div class="col col_205">
                 <h2 class="dark">Fakturaadress</h2>
-                Hehehe
+                <asp:Literal ID="clientaddress" runat="server" /><br />
+                <asp:Literal ID="clientaddress2" runat="server" /><br />
+                <asp:Literal ID="clientzipcode" runat="server" />
+                <asp:Literal ID="clientcity" runat="server" />
             </div>
             <div class="col col_205 last">
                 <h2 class="dark">Fakturatyp</h2>
