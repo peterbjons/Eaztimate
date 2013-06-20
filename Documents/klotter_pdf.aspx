@@ -17,23 +17,22 @@
                 </div>
             </div>
             <div class="inspection_number">
-                <asp:Literal ID="klotterno" runat="server" />
+                <%: klotterno %>
             </div>
             <div style="clear: both"></div>
             <div class="header_text">
-                <asp:Literal ID="title" runat="server" />
+                <%: title %>
             </div>
             <div style="clear: both"></div>
 
             <div class="col col_205">
                 <h2 class="dark">Adress</h2>
-                <asp:Literal ID="address" runat="server" /><br />
-                <asp:Literal ID="zipcode" runat="server" />
-                <asp:Literal ID="city" runat="server" />
+                <%: address %><br />
+                <%: zipcode %> <%: city %>
             </div>
             <div class="col col_205">
                 <h2 class="dark">Fastighetsbeteckning</h2>
-                <asp:Literal ID="buildingno" runat="server" />
+                <%: buildingno %>
             </div>
 
             <div class="col col_205">
@@ -42,32 +41,31 @@
             </div>
             <div class="col col_205 last">
                 <h2 class="dark">Polisanmälan</h2>
-                <asp:Literal ID="policereport" runat="server" />
+                <%: policereport %>
             </div>
             <div class="col col_655">
                 <h2 class="dark">Kommentar</h2>
-                <asp:Literal ID="comment" runat="server" />
+                <%: comment %>
             </div>
             <div class="col col_205 last">
                 <h2 class="dark">Utfört av</h2>
-                <asp:Literal ID="createdby" runat="server" />
+                <%: createdby %>
             </div>
 
 
             <div class="col col_205">
                 <h2 class="light">Kund</h2>
-                <asp:Literal ID="client" runat="server" />
+                <%: client %>
             </div>
             <div class="col col_205">
                 <h2 class="light">Kundnummer</h2>
-                <asp:Literal ID="clientno" runat="server" />
+                <%: clientno %>
             </div>
             <div class="col col_205">
                 <h2 class="light">Fakturaadress</h2>
-                <asp:Literal ID="clientaddress" runat="server" /><br />
-                <asp:Literal ID="clientaddress2" runat="server" /><br />
-                <asp:Literal ID="clientzipcode" runat="server" />
-                <asp:Literal ID="clientcity" runat="server" />
+                <%: clientaddress %><br />
+                <%: clientaddress2 %><br />
+                <%: clientzipcode %> <%: clientcity %>
             </div>
             <div class="col col_205 last">
                 <h2 class="light">Kontaktperson</h2>
@@ -80,14 +78,9 @@
                 </div>
                 <div class="spec_row">
                     <div class="name">Tidsåtgång sanering</div>
-                    <div class="ammount">200 timmar</div>
+                    <div class="ammount"><%: time %></div>
                     <div style="clear: both"></div>
-                </div>
-                <div class="spec_row">
-                    <div class="name">Tidsåtgång sanering</div>
-                    <div class="ammount">200 timmar</div>
-                    <div style="clear: both"></div>
-                </div>
+                </div>                
             </div>
             <%--            <div class="col col_205">
                 <h2 class="light">Org nummer</h2>
@@ -107,28 +100,35 @@
                     <img src="../Images/forsak2.png" />
                 </div>
             </div>
-            <div class="inspection_number"><asp:Literal ID="klotterno2" runat="server" /></div>
+            <div class="inspection_number"><%:klotterno %></div>
 
             <div style="clear: both"></div>
             <div class="header_text">
-                <asp:Literal ID="title2" runat="server" />
+                <%: title %>
             </div>
             <div style="clear: both"></div>
 
-            <div class="col col_205">
+            <div class="col col_430">
                 <h2 class="dark">Taggar</h2>
-                Hjort</div>
+                <%: tags %>
+            </div>
 
 
             <div class="col col_880">
                 <h2 class="dark">Bilder före</h2>
-                <img src="../Images/bygg1.jpg" class="two_two" />
-                <img src="../Images/bygg1.jpg" class="two_two last" />
+                <asp:Repeater ID="beforeimagerepeater" runat="server">
+                    <ItemTemplate>                    
+                        <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" class="two_two <%#(Container.ItemIndex) % 2 != 0 ? "last" : "" %>" />
+                    </ItemTemplate>
+                </asp:Repeater>
             </div>
             <div class="col col_880">
                 <h2 class="light">Bilder efter</h2>
-                <img src="../Images/bygg1.jpg" class="two_two" />
-                <img src="../Images/bygg1.jpg" class="two_two last" />
+                <asp:Repeater ID="afterimagerepeater" runat="server">
+                    <ItemTemplate>                    
+                        <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" class="two_two <%#(Container.ItemIndex) % 2 != 0 ? "last" : "" %>" />
+                    </ItemTemplate>
+                </asp:Repeater>
             </div>
         </div>
     </form>
