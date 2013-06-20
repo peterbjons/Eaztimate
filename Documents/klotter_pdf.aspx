@@ -75,14 +75,18 @@
             </div>
             <div class="col col_880">
                 <h2 class="light">Specifikation</h2>
-                <div style="border-bottom: 1px solid #ccc">
-                    <div style="float: left">Tidsåtgång sanering</div>
-                    <div style="float: right">200 timmar</div>
+                <div class="spec_row">
+                    <div class="name_spec">Benämning</div>
+                    <div class="ammount_spec">Antal</div>
+                </div>
+                <div class="spec_row">
+                    <div class="name">Tidsåtgång sanering</div>
+                    <div class="ammount">200 timmar</div>
                     <div style="clear: both"></div>
                 </div>
-                <div style="border-bottom: 1px solid #ccc">
-                    <div style="float: left">Tidsåtgång sanering</div>
-                    <div style="float: right">200 timmar</div>
+                <div class="spec_row">
+                    <div class="name">Tidsåtgång sanering</div>
+                    <div class="ammount">200 timmar</div>
                     <div style="clear: both"></div>
                 </div>
             </div>
