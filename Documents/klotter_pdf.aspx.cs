@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -22,6 +23,19 @@ public partial class Documents_klotter_pdf : System.Web.UI.Page
                 address.Text = reader.GetString(reader.GetOrdinal("address1"));
                 zipcode.Text = reader.GetString(reader.GetOrdinal("zipcode"));
                 city.Text = reader.GetString(reader.GetOrdinal("city"));
+
+                string username = Membership.GetUserNameByEmail(reader.GetString(reader.GetOrdinal("syncemail")));
+                MembershipUser user = Membership.GetUser(username);
+
+                using (SqlDataReader reader2 = Eaztimate.SQL.ExecuteQuery("SELECT * FROM userdata WHERE userid=@1", user.ProviderUserKey)) {
+                    if (reader2.Read()) {
+                        createdby.Text = reader2.GetString(reader2.GetOrdinal("fname")) + " " + reader2.GetString(reader2.GetOrdinal("lname"));
+                        //tel1.Text = reader2.GetString(reader2.GetOrdinal("tel1"));
+                        //tel2.Text = reader2.GetString(reader2.GetOrdinal("tel2"));
+                    }
+                }
+
+                policereport.Text = reader.GetBoolean(reader.GetOrdinal("policereport")) ? "Ja" : "Nej";
 
                 StringBuilder sb = new StringBuilder();
                 sb.Append(reader.GetBoolean(reader.GetOrdinal("pressurewasher")) ? "Högtryckstvätt<br/>" : "");

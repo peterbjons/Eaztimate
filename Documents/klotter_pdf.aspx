@@ -42,7 +42,7 @@
             </div>
             <div class="col col_205 last">
                 <h2 class="dark">Polisanmälan</h2>
-                Hehehe
+                <asp:Literal ID="policereport" runat="server" />
             </div>
             <div class="col col_655">
                 <h2 class="dark">Kommentar</h2>
@@ -71,7 +71,6 @@
             </div>
             <div class="col col_205 last">
                 <h2 class="light">Kontaktperson</h2>
-                Hehehe
             </div>
             <div class="col col_880">
                 <h2 class="light">Specifikation</h2>
@@ -104,7 +103,7 @@
                     <img src="../Images/forsak2.png" />
                 </div>
             </div>
-            <div class="inspection_number">222222</div>
+            <div class="inspection_number"><asp:Literal ID="klotterno2" runat="server" /></div>
 
             <div style="clear: both"></div>
             <div class="header_text">
