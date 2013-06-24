@@ -27,7 +27,9 @@
             <asp:TextBox runat="server" ID="CompanyCityText" placeholder="City" />
         </div>
         <div style="float: left; width: 50%">
-            <asp:TextBox runat="server" ID="CompanyContactPersonText" placeholder="Contact person" />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="CompanyOrgNo" CssClass="field-validation-error" ErrorMessage="The orgno field is required." Display="Dynamic"/>
+            <asp:TextBox runat="server" ID="CompanyOrgNo" placeholder="Orgno" />
+            <asp:TextBox runat="server" ID="CompanyContactPersonText" placeholder="Contact person" />            
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="CompanyEmailText" CssClass="field-validation-error" ErrorMessage="The email field is required." Display="Dynamic"/>
             <asp:TextBox runat="server" ID="CompanyEmailText" placeholder="Email" />
             <asp:TextBox runat="server" ID="CompanyPhoneText" placeholder="Phone" />            
@@ -102,5 +104,6 @@
             </div>
         </asp:Panel>
     </div>
+    <div style="clear: both;"></div>
 </asp:Content>
 

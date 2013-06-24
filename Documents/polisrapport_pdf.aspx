@@ -16,10 +16,8 @@
 
 
             <table class="ao_nr">
-                <tbody><tr><td style="width: 200px;"><span class="liten">Arbetsordernr</span>021107</td></tr></tbody>
-            </table>
-
-            
+                <tbody><tr><td style="width: 200px;"><span class="liten">Arbetsordernr</span><%: aonr %></td></tr></tbody>
+            </table>            
 
             <table>
                 <thead>
@@ -29,14 +27,14 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="width: 400px"><span class="liten">Ägare</span>Affärsfastigheter i Dalarna</td>
-                        <td rowspan="2" style="width: 400px;"><span class="liten">Adress</span>Box 332<br />791 27 Falun</td>
+                        <td style="width: 400px"><span class="liten">Ägare</span><%: clientname %></td>
+                        <td rowspan="2" style="width: 400px;"><span class="liten">Adress</span><%: clientaddress %><br /><%: clientaddress2 %><br /><%: clientzipcode %> <%: clientcity %></td>
                     </tr>
                 <tr>
-                    <td><span class="liten">Organisationsnummer</span></td>
+                    <td><span class="liten">Organisationsnummer</span><%: clientorgno %></td>
                 </tr>
                     <tr>
-                    <td><span class="liten">Kontaktperson</span>Robert Östman</td>
+                    <td><span class="liten">Kontaktperson</span><%: clientcontact %></td>
                         <td><span class="liten">Fastighetsbeteckning</span></td>
                 </tr>
                 </tbody>
@@ -70,15 +68,15 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="width: 400px"><span class="liten">Anmälare</span>Ocab i Dalarna AB</td>
+                        <td style="width: 400px"><span class="liten">Anmälare</span><%: createdcompany %></td>
                         <td rowspan="2" style="width: 400px;"><span class="liten">Adress</span>Ocab i Dalarna AB<br />Rissgårdsvägen 3<br />791 77 Falun</td>
                     </tr>
                 <tr>
                     <td><span class="liten">Organisationsnummer</span>556543-1219</td>
                 </tr>
                     <tr>
-                    <td><span class="liten">Kontaktperson</span>Mikael Pettersson</td>
-                        <td><span class="liten">Telefon</span>023-134 40 eller 070-758 80 50</td>
+                    <td><span class="liten">Kontaktperson</span><%: createdby %></td>
+                        <td><span class="liten">Telefon</span><%: createdphone %></td>
                 </tr>
                 </tbody>
             </table>

@@ -49,6 +49,7 @@ public partial class admin_Company : System.Web.UI.Page
                             CompanyContactPersonText.Text = reader.GetString(reader.GetOrdinal("contactperson"));
                             CompanyEmailText.Text = reader.GetString(reader.GetOrdinal("email"));
                             CompanyPhoneText.Text = reader.GetString(reader.GetOrdinal("phone"));
+                            CompanyOrgNo.Text = reader.GetString(reader.GetOrdinal("orgno"));
                         }
                         List<Guid> guidlist = new List<Guid>();
                         reader.NextResult();
@@ -88,7 +89,7 @@ public partial class admin_Company : System.Web.UI.Page
 
     protected void CompanyCreate_Click(object sender, EventArgs e) {
         if (id > 0) {
-            using (SQL.ExecuteQuery("UPDATE customer SET title=@1, address1=@2, address2=@3, zip=@4, city=@5, email=@6, phone=@7, contactperson=@8 WHERE customerid=@9",
+            using (SQL.ExecuteQuery("UPDATE customer SET title=@1, address1=@2, address2=@3, zip=@4, city=@5, email=@6, phone=@7, contactperson=@8, orgno=@10 WHERE customerid=@9",
                 CompanyNameText.Text,
                 CompanyAdress1Text.Text,
                 CompanyAdress2Text.Text,
@@ -97,9 +98,10 @@ public partial class admin_Company : System.Web.UI.Page
                 CompanyEmailText.Text,
                 CompanyPhoneText.Text,
                 CompanyContactPersonText.Text,
-                id.ToString())) { }
+                id.ToString(),
+                CompanyOrgNo.Text)) { }
         } else {
-            using(SqlDataReader reader = SQL.ExecuteQuery("INSERT INTO customer(title,datecreated,dateupdated,modifiedadminid,address1,address2,zip,city,email,phone,companyid,contactperson) VALUES(@1,GETDATE(),GETDATE(),0,@2,@3,@4,@5,@6,@7,0,@8);SELECT CAST(@@IDENTITY AS INT)",
+            using(SqlDataReader reader = SQL.ExecuteQuery("INSERT INTO customer(title,datecreated,dateupdated,modifiedadminid,address1,address2,zip,city,email,phone,companyid,contactperson,orgno) VALUES(@1,GETDATE(),GETDATE(),0,@2,@3,@4,@5,@6,@7,0,@8,@9);SELECT CAST(@@IDENTITY AS INT)",
                 CompanyNameText.Text,
                 CompanyAdress1Text.Text,
                 CompanyAdress2Text.Text,
@@ -107,7 +109,8 @@ public partial class admin_Company : System.Web.UI.Page
                 CompanyCityText.Text,
                 CompanyEmailText.Text,
                 CompanyPhoneText.Text,
-                CompanyContactPersonText.Text)) {
+                CompanyContactPersonText.Text,
+                CompanyOrgNo.Text)) {
                     if (reader.Read()) {
                         id = reader.GetInt32(0);
                     }
