@@ -96,7 +96,7 @@ public static class AmazonHandler
         }
     }
 
-    public static bool PutPdfKlotter(MemoryStream ms, String filename) {
+    public static bool PutPdfKlotter(MemoryStream ms, String filename, int type) {
         string accessKeyID = Conf.AppSettings["AWSAccessKey"];
         string secretAccessKeyID = Conf.AppSettings["AWSSecretKey"];
         try {
@@ -104,7 +104,7 @@ public static class AmazonHandler
                 PutObjectRequest request = new PutObjectRequest();
                 //DirectoryInfo di = new DirectoryInfo(m_filePath + fileThumbs + @"\" + i[0].ToString());                    
                 //m_eventLog.WriteEntry("Uploading " + m_filePath + fileType + @"\" + i[0].ToString() + ext, EventLogEntryType.Information);
-                request.WithBucketName(Conf.AppSettings["bucketKlotter"]).WithKey(filename + "/report.pdf").WithTimeout(600000).WithInputStream(ms);
+                request.WithBucketName(Conf.AppSettings["bucketKlotter"]).WithKey(filename + "/report" + (type == 0 ? "" : "-police") + ".pdf").WithTimeout(600000).WithInputStream(ms);
                 using (S3Response response = client.PutObject(request)) { }
                 using (Eaztimate.SQL.ExecuteQuery("UPDATE klotter SET pdf_synced=1 WHERE klotterno=@1", filename)) { }
                 return true;

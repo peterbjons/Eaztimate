@@ -198,6 +198,9 @@ public class KlotterSyncController : ApiController
                bool success = false;
                if (id > 0) {
                    success = createPdf(id, klotterno, email);
+                   if (policereport && success) {
+                       success = createpolicereportPdf(id, klotterno, email);
+                   }
                    //success = true;
                }
 
@@ -295,7 +298,59 @@ public class KlotterSyncController : ApiController
                 }
                 doc.Page = doc.AddPage();
                 id = doc.AddImageToChain(id);
-            }            
+            }                        
+
+            for (int i = 0; i < doc.PageCount; i++) {
+                doc.PageNumber = i;
+                doc.Flatten();
+            }
+
+            //doc.AddImageHtml(contents);
+            //doc.Save(Server.MapPath("htmlimport.pdf"));
+            doc.Save(ms);
+            //doc.SaveOptions.
+            doc.Clear();
+
+            bool mail = Common.PdfMail(ms, email, "Klotter");
+            if (mail) {
+                return AmazonHandler.PutPdfKlotter(ms, klotterno, 0);
+            }
+            return false;
+
+            //}
+        } catch (Exception ex) {
+            return false;
+        }
+    }
+
+    private bool createpolicereportPdf(long kid, string klotterno, string email) {
+        string contents = string.Empty;
+
+        MemoryStream ms = new MemoryStream();
+
+        try {
+            int id;
+            Doc doc = new Doc();
+
+            doc.MediaBox.String = "A4";
+            doc.Rect.String = doc.MediaBox.String;
+            //doc.Rect. = doc.CropBox;
+            doc.HtmlOptions.BrowserWidth = 980;
+            doc.HtmlOptions.FontEmbed = true;
+            doc.HtmlOptions.FontSubstitute = false;
+            doc.HtmlOptions.FontProtection = false;
+            doc.HtmlOptions.ImageQuality = 33;
+            Random rnd = new Random();
+            id = doc.AddImageUrl("http://" + HttpContext.Current.Request.Url.Host + "/Documents/polisrapport_pdf.aspx?id=" + kid.ToString() + "&uid=" + email + "&rnd=" + rnd.Next(50000));
+
+            while (true) {
+                //doc.FrameRect();
+                if (!doc.Chainable(id)) {
+                    break;
+                }
+                doc.Page = doc.AddPage();
+                id = doc.AddImageToChain(id);
+            }
 
             //doc.Rect.String = "10 780 595 840";
             //doc.HPos = 0.5;
@@ -329,9 +384,9 @@ public class KlotterSyncController : ApiController
             //doc.SaveOptions.
             doc.Clear();
 
-            bool mail = Common.PdfMail(ms, email, "Klotter");
+            bool mail = Common.PdfMail(ms, email, "Polisanmälan");
             if (mail) {
-                return AmazonHandler.PutPdfJour(ms, klotterno);
+                return AmazonHandler.PutPdfKlotter(ms, klotterno, 1);
             }
             return false;
 

@@ -16,7 +16,9 @@
 
 
             <table class="ao_nr">
-                <tbody><tr><td style="width: 200px;"><span class="liten">Arbetsordernr</span><%: aonr %></td></tr></tbody>
+                <tbody><tr><td style="width: 200px;"><span class="liten">Arbetsordernr</span>
+                    <p class="stor">
+                    <%: aonr %></p></td></tr></tbody>
             </table>            
 
             <table>
@@ -27,15 +29,15 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="width: 400px"><span class="liten">Ägare</span><%: clientname %></td>
-                        <td rowspan="2" style="width: 400px;"><span class="liten">Adress</span><%: clientaddress %><br /><%: clientaddress2 %><br /><%: clientzipcode %> <%: clientcity %></td>
+                        <td style="width: 400px"><span class="liten">Ägare</span><p class="stor"><%: clientname %></p></td>
+                        <td rowspan="2" style="width: 400px;"><span class="liten">Adress</span><p class="stor"><%: clientaddress %><br /><%: clientaddress2 %><br /><%: clientzipcode %> <%: clientcity %></p></td>
                     </tr>
                 <tr>
-                    <td><span class="liten">Organisationsnummer</span><%: clientorgno %></td>
+                    <td><span class="liten">Organisationsnummer</span><p class="stor"><%: clientorgno %></p></td>
                 </tr>
                     <tr>
-                    <td><span class="liten">Kontaktperson</span><%: clientcontact %></td>
-                        <td><span class="liten">Fastighetsbeteckning</span><%: buildingno %></td>
+                    <td><span class="liten">Kontaktperson</span><p class="stor"><%: clientcontact %></p></td>
+                        <td><span class="liten">Fastighetsbeteckning</span><p class="stor"><%: buildingno %></p></td>
                 </tr>
                 </tbody>
             </table>
@@ -48,15 +50,17 @@
                 <tbody>
 
                     <tr>
-                        <td style="width: 400px"><span class="liten">Typ</span>Skadegörelse genom klotter på fasad</td>
+                        <td style="width: 400px"><span class="liten">Typ</span><p class="stor">Skadegörelse genom klotter på fasad</p></td>
                         <td rowspan="2" style="width: 400px;"><span class="liten">Adress</span>
+                            <p class="stor">
                             <%: address %><br />
                             <%: zipcode %> <%: city %>
+                            </p>
                         </td>
                     </tr>
                 <tr>
                     <td><span class="liten">Upptäckt datum</span>
-                        <%: timestamp.ToString("yyyy-MM-dd") %>
+                        <p class="stor"><%: timestamp.ToString("yyyy-MM-dd") %></p>
                     </td>
                 </tr>
                     <tr>
@@ -73,15 +77,16 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="width: 400px"><span class="liten">Anmälare</span><%: createdcompany %></td>
-                        <td rowspan="2" style="width: 400px;"><span class="liten">Adress</span><%: createdcompany %><br /><%: createdaddress %><br /><%: createdaddress2 %><br /><%: createdzipcode %> <%: createdcity %></td>
+                        <td style="width: 400px"><span class="liten">Anmälare</span><p class="stor"><%: createdcompany %></p></td>
+                        <td rowspan="2" style="width: 400px;"><span class="liten">Adress</span>
+                            <p class="stor"><%: createdcompany %><br /><%: createdaddress %><br /><%: createdaddress2 %><br /><%: createdzipcode %> <%: createdcity %></p></td>
                     </tr>
                 <tr>
-                    <td><span class="liten">Organisationsnummer</span><%: createdorgno %></td>
+                    <td><span class="liten">Organisationsnummer</span><p class="stor"><%: createdorgno %></p></td>
                 </tr>
                     <tr>
-                    <td><span class="liten">Kontaktperson</span><%: createdby %></td>
-                        <td><span class="liten">Telefon</span><%: createdphone %></td>
+                    <td><span class="liten">Kontaktperson</span><p class="stor"><%: createdby %></p></td>
+                        <td><span class="liten">Telefon</span><p class="stor"><%: createdphone %></p></td>
                 </tr>
                 </tbody>
             </table>

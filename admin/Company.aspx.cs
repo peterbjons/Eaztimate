@@ -14,33 +14,34 @@ public partial class admin_Company : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        if(Roles.IsUserInRole("SuperAdministrator") || Roles.IsUserInRole("Administrator")) {
-            //if (!Page.IsPostBack) {
-                //int id = 0;
-                if(Roles.IsUserInRole("SuperAdministrator")) {
-                    int.TryParse((Request.QueryString["id"] ?? string.Empty), out id);
-                    rolepanel.Visible = true;
-                    roleslink.Visible = true;
-                } else {
-                    using (SqlDataReader reader = SQL.ExecuteQuery("SELECT customerid FROM customerusers WHERE userid=@1", Membership.GetUser().ProviderUserKey)) {
-                        if (reader.Read()) {
-                            id = reader.GetInt32(0);
-                        } else {
-                            Response.Redirect("/", true);
-                        }
+        if (Roles.IsUserInRole("SuperAdministrator") || Roles.IsUserInRole("Administrator")) {
+
+            //int id = 0;
+            if (Roles.IsUserInRole("SuperAdministrator")) {
+                int.TryParse((Request.QueryString["id"] ?? string.Empty), out id);
+                rolepanel.Visible = true;
+                roleslink.Visible = true;
+            } else {
+                using (SqlDataReader reader = SQL.ExecuteQuery("SELECT customerid FROM customerusers WHERE userid=@1", Membership.GetUser().ProviderUserKey)) {
+                    if (reader.Read()) {
+                        id = reader.GetInt32(0);
+                    } else {
+                        Response.Redirect("/", true);
                     }
                 }
-                string action = (id == 0 ? "Create" : "Edit");
-                Page.Title = action + " Company";
-                CompanyCreate.Text = action + " Company";
+            }
+            string action = (id == 0 ? "Create" : "Edit");
+            Page.Title = action + " Company";
+            CompanyCreate.Text = action + " Company";
 
+            if (!Page.IsPostBack) {
                 if (id > 0) {
                     using (SqlDataReader reader = SQL.ExecuteQuery("SELECT * FROM customer WHERE customerid = @1;SELECT userid FROM customerusers WHERE customerid=@1", id)) {
                         if (reader.Read()) {
-                            if(id > 0) {
+                            if (id > 0) {
                                 titleh2.InnerText = reader.GetString(reader.GetOrdinal("title"));
                                 topmenudiv.Visible = true;
-                            }            
+                            }
                             CompanyNameText.Text = reader.GetString(reader.GetOrdinal("title"));
                             CompanyAdress1Text.Text = reader.GetString(reader.GetOrdinal("address1"));
                             CompanyAdress2Text.Text = reader.GetString(reader.GetOrdinal("address2"));
@@ -64,9 +65,9 @@ public partial class admin_Company : System.Web.UI.Page
                         updateRoles();
                     }
                 }
-            //}
+            }
         } else {
-            Response.Redirect("/",true);
+            Response.Redirect("/", true);
         }
     }
 
