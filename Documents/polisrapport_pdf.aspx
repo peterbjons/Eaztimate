@@ -35,7 +35,7 @@
                 </tr>
                     <tr>
                     <td><span class="liten">Kontaktperson</span><%: clientcontact %></td>
-                        <td><span class="liten">Fastighetsbeteckning</span></td>
+                        <td><span class="liten">Fastighetsbeteckning</span><%: buildingno %></td>
                 </tr>
                 </tbody>
             </table>
@@ -49,10 +49,15 @@
 
                     <tr>
                         <td style="width: 400px"><span class="liten">Typ</span>Skadegörelse genom klotter på fasad</td>
-                        <td rowspan="2" style="width: 400px;"><span class="liten">Adress</span></td>
+                        <td rowspan="2" style="width: 400px;"><span class="liten">Adress</span>
+                            <%: address %><br />
+                            <%: zipcode %> <%: city %>
+                        </td>
                     </tr>
                 <tr>
-                    <td><span class="liten">Upptäckt datum</span></td>
+                    <td><span class="liten">Upptäckt datum</span>
+                        <%: timestamp.ToString("yyyy-MM-dd") %>
+                    </td>
                 </tr>
                     <tr>
                     <td colspan="2"><span class="liten">Placering på byggnaden</span></td>
@@ -69,10 +74,10 @@
                 <tbody>
                     <tr>
                         <td style="width: 400px"><span class="liten">Anmälare</span><%: createdcompany %></td>
-                        <td rowspan="2" style="width: 400px;"><span class="liten">Adress</span>Ocab i Dalarna AB<br />Rissgårdsvägen 3<br />791 77 Falun</td>
+                        <td rowspan="2" style="width: 400px;"><span class="liten">Adress</span><%: createdcompany %><br /><%: createdaddress %><br /><%: createdaddress2 %><br /><%: createdzipcode %> <%: createdcity %></td>
                     </tr>
                 <tr>
-                    <td><span class="liten">Organisationsnummer</span>556543-1219</td>
+                    <td><span class="liten">Organisationsnummer</span><%: createdorgno %></td>
                 </tr>
                     <tr>
                     <td><span class="liten">Kontaktperson</span><%: createdby %></td>
@@ -81,9 +86,9 @@
                 </tbody>
             </table>
 
-            <p>Ocab i Dalarna har skriftligen fullmakt från fastighetsägaren att göra denna anmälan. Se även bifogad fotobilaga.</p>
-           <p style="font-size:14pt;margin-top: 60px;">Önskas ytterligare information i ärendet står vi gärna till Er tjänst<br />Ocab i Dalarna AB</p>
-            <p style="font-size:16pt">Mikael Pettersson</p>
+            <p><%: createdcompany %> har skriftligen fullmakt från fastighetsägaren att göra denna anmälan. Se även bifogad fotobilaga.</p>
+           <p style="font-size:14pt;margin-top: 60px;">Önskas ytterligare information i ärendet står vi gärna till Er tjänst<br /><%: createdcompany %></p>
+            <p style="font-size:16pt"><%: createdby %></p>
         </div>
 
     </form>
