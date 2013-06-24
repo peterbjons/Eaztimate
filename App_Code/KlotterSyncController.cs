@@ -278,6 +278,8 @@ public class KlotterSyncController : ApiController
             Doc doc = new Doc();
 
             doc.MediaBox.String = "A4";
+            doc.Rect.String = doc.MediaBox.String;
+            //doc.Rect. = doc.CropBox;
             doc.HtmlOptions.BrowserWidth = 980;
             doc.HtmlOptions.FontEmbed = true;
             doc.HtmlOptions.FontSubstitute = false;
@@ -293,7 +295,7 @@ public class KlotterSyncController : ApiController
                 }
                 doc.Page = doc.AddPage();
                 id = doc.AddImageToChain(id);
-            }
+            }            
 
             //doc.Rect.String = "10 780 595 840";
             //doc.HPos = 0.5;
@@ -327,7 +329,7 @@ public class KlotterSyncController : ApiController
             //doc.SaveOptions.
             doc.Clear();
 
-            bool mail = Common.PdfMail(ms, email);
+            bool mail = Common.PdfMail(ms, email, "Klotter");
             if (mail) {
                 return AmazonHandler.PutPdfJour(ms, klotterno);
             }

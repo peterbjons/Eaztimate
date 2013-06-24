@@ -61,6 +61,32 @@ public static class Common
         }
     }
 
+    public static bool PdfMail(Stream stream, string toAddress, string app) {
+        try {
+            MailMessage message = new MailMessage(new MailAddress("noreply@digitalyard.se", "Eaztimate " + app), new MailAddress(toAddress));
+            message.BodyEncoding = Encoding.GetEncoding("ISO-8859-1");
+            message.Subject = app + "rapport";
+            message.Body = "Här kommer en " + app + "rapport\r\n";
+            stream.Seek(0, SeekOrigin.Begin);
+            Attachment att = new Attachment(stream, MediaTypeNames.Application.Pdf);
+            att.ContentDisposition.FileName = app + "rapport.pdf";
+            message.Attachments.Add(att);
+            message.IsBodyHtml = false;
+
+            int port = 0;
+            int.TryParse(ConfigurationManager.AppSettings["SMTPPort"], out port);
+            SmtpClient client = new SmtpClient(ConfigurationManager.AppSettings["SMTPServer"], port);
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.Credentials = new System.Net.NetworkCredential(ConfigurationManager.AppSettings["AutomatedEMailAddress"], ConfigurationManager.AppSettings["SMTPPassword"]);
+            //client.Credentials = CredentialCache.DefaultNetworkCredentials;
+            client.Send(message);
+            return true;
+        } catch (Exception ex) {
+            ex.ToString();
+            return false;
+        }
+    }
+
     public static string ConvertToSQLList(string unprocessedList) {
         bool first = true;
         StringBuilder sb = new StringBuilder();
