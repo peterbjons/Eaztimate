@@ -37,14 +37,14 @@
                 </div>--%>
                 <p>Sedan starten i februari 2013 har hundratals byggskador dokumenterats med EZ Byggskada och omdömmen är mycket positiva. En som i dag flitigt använder den mobila applikationen är Bengt Torrång (OCAB Dalarna, med 30 års erfarenhet inom branchen)</p>
             </div>
-                       <%-- <a href="news/ut-pa-uppdrag.aspx">
+                        <a href="news/ut-pa-uppdrag.aspx">
                 <div class="block">
                     <img src="Images/stock/Eaztimate-44.jpg" />
                     <p>Eaztimate följer med ut på en skada</p>
 
                     <div style="clear: both"></div>
                 </div>
-            </a>--%>
+            </a>
             <a href="News/larshagbohm.aspx">
                 <div class="block">
                     <img src="Images/stock/Eaztimate-Lasse-3.jpg" />

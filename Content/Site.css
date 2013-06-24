@@ -60,7 +60,7 @@ a:hover {
 }
 
 
-#footer {
+#footer {clear:both;
 }
 
     #footer .whitebox {
@@ -2157,3 +2157,63 @@ ul.contact {
     #contact input[type=submit] {
         border:none;
     }
+
+    #uppdrag .bjqs-slide {
+        background-position: center center;
+        background-size: auto 100%;
+        -o-background-size: auto 100%;
+        -moz-background-size: auto 100%;
+        -webkit-background-size: auto 100%;
+        
+    }
+    #uppdrag .uppdrag_desc {
+        position: absolute;
+        bottom: 10px;
+        width: 900px;
+        padding: 10px;
+        background-color:rgba(31,31,31,0.80);
+        color: #fff;
+        left: 10px;
+    }
+        .slide1 {
+        background-image: url(../images/stock/Eaztimate-bygg-20.jpg);
+    }
+            .slide2 {
+        background-image: url();
+    }
+                .slide3 {
+        background-image: url(../images/stock/Eaztimate-bygg-1.jpg);
+    }
+                    .slide4 {
+        background-image: url(../images/stock/Eaztimate-bygg-2.jpg);
+
+    }
+                        .slide5 {
+        background-image: url(../images/stock/Eaztimate-bygg-11.jpg);
+    }
+                            .slide6 {
+        background-image: url(../images/stock/Eaztimate-bygg-13.jpg);
+    }
+                                .slide7 {
+        background-image: url(../images/stock/Eaztimate-bygg-10.jpg);
+    }
+                                    .slide8 {
+        background-image: url(../images/stock/Eaztimate-bygg-17.jpg);
+    }
+                                        .slide9 {
+        background-image: url();
+    }
+                                        #uppdrag .bjqs-prev {
+                                            height: 50px;
+                                            width: 32px;
+                                            
+                                            background-image: url(../images/slider-previous.png);
+                                            left:10px;
+                                        }
+                                        #uppdrag .bjqs-next {
+                                            height: 50px;
+                                            width: 32px;
+                                           
+                                            background-image: url(../images/slider-next.png);
+                                            right:10px;
+                                        }
