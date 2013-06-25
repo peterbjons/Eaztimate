@@ -1234,13 +1234,19 @@ thead tr.tr_red td {
     padding: 5px 7px;
 }
 
+.forms .col2 {
+    width: 460px;
+    margin-right: 10px;
+    float: left;
+}
+
 .forms input[type=text] {
     display: block;
     padding: 10px;
     font-size: 14pt;
     font-weight: 300;
     font-family: 'Open Sans';
-    width: 310px;
+    /*width: 310px;*/
     margin: 5px 0px 15px 0px;
 }
 
@@ -1250,7 +1256,7 @@ thead tr.tr_red td {
     font-size: 14pt;
     font-weight: 300;
     font-family: 'Open Sans';
-    width: 310px;
+    /*width: 310px;*/
     margin: 5px 0px 15px 0px;
 }
 
@@ -1260,7 +1266,7 @@ thead tr.tr_red td {
     font-size: 14pt;
     font-weight: 300;
     font-family: 'Open Sans';
-    width: 334px;
+    /*width: 334px;*/
     text-align: center;
     border: none;
     color: #fff;
@@ -1275,7 +1281,7 @@ thead tr.tr_red td {
     font-size: 14pt;
     font-weight: 300;
     font-family: 'Open Sans';
-    width: 334px;
+    /*width: 334px;*/
     margin: 5px 0px 15px 0px;
     height: 300px;
 }

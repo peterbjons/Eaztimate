@@ -35,7 +35,7 @@
             <div class="bubble">
                 <%-- <div class="arrow">
                 </div>--%>
-                <p>Sedan starten i februari 2013 har hundratals byggskador dokumenterats med EZ Byggskada och omdömmen är mycket positiva. En som i dag flitigt använder den mobila applikationen är Bengt Torrång (OCAB Dalarna, med 30 års erfarenhet inom branchen)</p>
+                <p>Sedan starten i februari 2013 har hundratals byggskador dokumenterats med EZ Byggskada och omdömena är mycket positiva. En som i dag flitigt använder den mobila applikationen är Bengt Torrång som jobbar på OCAB Dalarna, med över 30 års erfarenhet inom branchen</p>
             </div>
                         <a href="news/ut-pa-uppdrag.aspx">
                 <div class="block">
@@ -126,23 +126,23 @@
 
         <div class="startblock">
             <img src="images/stock/eaztimate-33.jpg" /><h2>Mobila applikationer</h2>
-            <p class="textneedsfix">Var för sig är Jour, Byggskada och Lösöre, applikationer som underlättar arbetet med att bedöma, dokumentera och rapportera omfattningen av skadan. Tillsammans utgör de länkar i en mycket stark kedja mellan den drabbade, försäkringsbolaget och saneringsbolaget.</p>
+            <p>Var för sig underlättar våra applikationer arbetet med att bedöma, dokumentera och rapportera omfattningen av skadan. Tillsammans utgör de länkar i en mycket stark kedja mellan den drabbade, försäkringsbolaget och saneringsbolaget.</p>
             <%--  <a href="product_description.aspx" class="button" style="float: left">Läs mer &raquo;</a>--%>
         </div>
         <div class="startblock">
             <img src="images/stock/eaztimate-37.jpg" /><h2>Utbildning</h2>
-            <p>Våra utbildningar riktar sig till personal inom företag som vill utveckla sin verksamhet med hjälp av modern teknik och väl beprövade arbetsmetoder. Personal som genomgår utbildning blir certifierade att använda våra verktyg och tillgång till vår support.</p>
+            <p>Våra utbildningar riktar sig till personal inom företag som vill utveckla sin verksamhet med hjälp av modern teknik och väl beprövade arbetsmetoder. Personal som genomgår utbildning blir certifierade att använda våra verktyg och får tillgång till vår support.</p>
             <%-- <a href="utbildning.aspx" class="button" style="float: left">Läs mer &raquo;</a>--%>
         </div>
         <div class="startblock last">
             <img src="images/stock/eaztimate-46.jpg" /><h2>Integration</h2>
-            <p>Har ni bakomliggande system som behöver information on-line om pågående ärenden så hjälper vi er att koppla era system till Eaztimates mobila applikationen. Fördelarna är att ni snabbt får överblick över pågående ärenden och informationen samlad.</p>
+            <%--<p>Har ni bakomliggande system som behöver integreras med Eaztimates mobila applikationer?<br />
+            Vi hjälper er att bygga ett gränssnitt mellan era system och Eaztimate vilket minskar dubbelarbete och risken för fel.</p>--%>
+            <p>Har ni bakomliggande system som behöver information on-line om pågående ärenden så hjälper vi er att koppla era system till Eaztimates mobila applikationer. Fördelarna är att ni snabbt får överblick över pågående ärenden och informationen samlad.</p>
             <%--<a href="tjanster.aspx" class="button" style="float: left">Läs mer &raquo;</a>--%>
         </div>
 
         <div style="clear: Both"></div>
     </div>
-
-
 
 </asp:Content>
