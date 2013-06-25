@@ -45,7 +45,7 @@ table thead td {
 table td {
  border:1px solid #ebebeb;
     position:relative;
-    padding: 22px 5px 6px 10px;
+    /*padding: 22px 5px 6px 10px;*/
 }
 tr {
     height:50px;
@@ -59,12 +59,19 @@ thead tr td{
     /*border-bottom: 2px solid #d0d0d0;*/
 }
 table .liten {
-    position: absolute;
+    /*position: absolute;*/
+    display: block;
     left: 6px;
     top: 1px;
     font-size: 10pt;
     font-weight: bold;
     color: #383838
+}
+
+table .stor {
+    /*position: absolute;*/
+    padding-left: 10px;
+    margin-bottom: 0px;
 }
 
 .divider {
