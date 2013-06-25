@@ -1646,11 +1646,13 @@ div.product_verktyg img {
 .shoutbox {
     padding: 20px;
     float: right;
-    width: 200px;
-    background-image: url('../images/sliderfull.jpg');
-    background-position: center center;
-    margin: 20px;
+    width: 200px;background-color:rgba(31,31,31,0.80);
+    /*background-image: url('../images/sliderfull.jpg');
+    background-position: center center;*/
+    margin: 0px 0px 20px 20px;
     color: #fff;
+    font-size:13px;
+    line-height: 20px;
 }
 
     .shoutbox h4 {
@@ -2175,11 +2177,14 @@ ul.contact {
         color: #fff;
         left: 10px;
     }
+    .slide0 {
+        background-image: url(../images/uppdrag.jpg);
+    }
         .slide1 {
         background-image: url(../images/stock/Eaztimate-bygg-20.jpg);
     }
             .slide2 {
-        background-image: url();
+        background-image: url(../images/stock/Eaztimate-namnlos-1.jpg);
     }
                 .slide3 {
         background-image: url(../images/stock/Eaztimate-bygg-1.jpg);
@@ -2201,18 +2206,18 @@ ul.contact {
         background-image: url(../images/stock/Eaztimate-bygg-17.jpg);
     }
                                         .slide9 {
-        background-image: url();
+        background-image: url(../images/stock/eaztimate-bytut-1.jpg);
     }
                                         #uppdrag .bjqs-prev {
                                             height: 50px;
-                                            width: 32px;
+                                            width: 182px;
                                             
                                             background-image: url(../images/slider-previous.png);
                                             left:10px;
                                         }
                                         #uppdrag .bjqs-next {
                                             height: 50px;
-                                            width: 32px;
+                                            width: 182px;
                                            
                                             background-image: url(../images/slider-next.png);
                                             right:10px;

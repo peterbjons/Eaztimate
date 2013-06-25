@@ -15,7 +15,7 @@
                 'nexttext': ' ',
                 'prevtext': ' ',
                 'showmarkers': false,
-
+               
 
             });
         });
@@ -27,6 +27,7 @@
        
         <div id="uppdrag">
     <ul class="bjqs">
+        <li class="slide0"><div class="uppdrag_desc">Följ med Eaztimate ut på uppdrag, använd pilarna för att navigera dig genom bildspelet.</div></li>
         <li class="slide1"><div class="uppdrag_desc">Magnus börjar dagen med att starta mobilen och synkronisera  EZ Byggskada med OCAB skador. Nya uppdrag som lagts i OCAB skador listas i EZ Byggskada.  </div></li>
         <li class="slide2"><div class="uppdrag_desc">Det första Magnus gör är att klicka på ”ring upp” knappen bredvid fastighetsägarens telefonnummer och får bekräftat att han kan komma in i fastigheten.</div></li>
         <li class="slide3"><div class="uppdrag_desc">Med hjälp av GPS funktionen  i EZ byggskada kommer Magnus rätt till varje skada och slipper onödiga telefonsamtal och felkörningar</div></li>
