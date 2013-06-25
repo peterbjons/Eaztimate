@@ -6,7 +6,7 @@
     <h1>Intervju med Lars Hagbohm</h1>
     <div class="whitebox">
         <img src="../images/stock/banner-lasse.jpg" />
-        <strong style="display: block; margin-bottom: 40px;">Vi tog ett snack med Lars Hagbohm, verksamhetsledare på Ocab i Dalarna, för att se vad han tycker om Eaztimate. Lars anställda använder dagligen appen.</strong>
+        <strong style="display: block; margin-bottom: 40px;">Vi tog ett snack med Lars Hagbohm, verksamhetsledare på Ocab i Dalarna, för att se vad han tycker om Eaztimate. Lars anställda har redan dokumenterat hundratals byggskador med EZ byggskada och använder dagligen våra appar.</strong>
         <div id="intervju" style="width: 640px; float: left;">
             <strong>När uppstod tanken hos dig på att använda mobila applikationer i verksamheten?</strong>
             <p>Vi har de senaste åren anat potentialen i och med de senare generationerna av ”smart phones”  men den stora anledningen att gå vidare med detta var att vi genom nya kundavtal stod inför en fördubbling av antalet uppdrag vi skulle hinna med på fuktavdelningen. Valen vi då hade var att antingen lösa det på traditionellt vis med en fördubbling av antalet medarbetare på avdelningen, ELLER ta steget mot ett mer effektivt rapportverktyg som eliminerade mycket av dubbelarbetet som tidigare var förknippat med rapportskrivning.  </p>
