@@ -126,7 +126,7 @@
 
         <div class="startblock">
             <img src="images/stock/eaztimate-33.jpg" /><h2>Mobila applikationer</h2>
-            <p>Var för sig är Jour, Byggskada och Lösöre, applikationer som underlättar arbetet med att bedöma, dokumentera och rapportera omfattningen av skadan. Tillsammans utgör de länkar i en mycket stark kedja mellan den drabbade, försäkringsbolaget och saneringsbolaget.</p>
+            <p class="textneedsfix">Var för sig är Jour, Byggskada och Lösöre, applikationer som underlättar arbetet med att bedöma, dokumentera och rapportera omfattningen av skadan. Tillsammans utgör de länkar i en mycket stark kedja mellan den drabbade, försäkringsbolaget och saneringsbolaget.</p>
             <%--  <a href="product_description.aspx" class="button" style="float: left">Läs mer &raquo;</a>--%>
         </div>
         <div class="startblock">
