@@ -89,32 +89,32 @@ public class KlotterSyncController : ApiController
                 //string lccaseid = klotter["lc_caseno"].ToString();
 
                 //string contactname = klotter["contactname"].ToString();
-                string title = klotter["title"].ToString();
-                string caseno = klotter["caseno"].ToString();
-                string buildingno = klotter["buildingno"].ToString();
-                string address = klotter["address"].ToString();
-                string contactzipcode = klotter["zipcode"].ToString();
-                string contactcity = klotter["city"].ToString();
+                string title = klotter["title"] != null ? klotter["title"].ToString() : "";
+                string caseno = klotter["caseno"] != null ? klotter["caseno"].ToString() : "";
+                string buildingno = klotter["buildingno"] != null ? klotter["buildingno"].ToString() : "";
+                string address = klotter["address"] != null ? klotter["address"].ToString() : "";
+                string contactzipcode = klotter["zipcode"] != null ? klotter["zipcode"].ToString() : "";
+                string contactcity = klotter["city"] != null ? klotter["city"].ToString() : "";
                 double latitude = 0, longitude = 0, accuracy = 0;
-                double.TryParse(klotter["latitude"].ToString(), out latitude);
-                double.TryParse(klotter["longitude"].ToString(), out longitude);
-                double.TryParse(klotter["locaccuracy"].ToString(), out accuracy);
+                double.TryParse(klotter["latitude"] != null ? klotter["latitude"].ToString() : "", out latitude);
+                double.TryParse(klotter["longitude"] != null ? klotter["longitude"].ToString() : "", out longitude);
+                double.TryParse(klotter["locaccuracy"] != null ? klotter["locaccuracy"].ToString() : "", out accuracy);
 
-                string desc = klotter["workdescription"].ToString();
+                string desc =  klotter["workdescription"] != null ? klotter["workdescription"].ToString() : "";
 
-                string client = klotter["client"].ToString();
-                string clientno = klotter["clientno"].ToString();
-                string clientaddress = klotter["clientaddress"].ToString();
-                string clientaddress2 = klotter["clientaddress2"].ToString();
-                string clientzip = klotter["clientzipcode"].ToString();
-                string clientcity = klotter["clientcity"].ToString();
+                string client = klotter["client"] != null ? klotter["client"].ToString() : "";
+                string clientno = klotter["clientno"] != null ?  klotter["clientno"].ToString() : "";
+                string clientaddress = klotter["clientaddress"] != null ? klotter["clientaddress"].ToString() : "";
+                string clientaddress2 = klotter["clientaddress2"] != null ? klotter["clientaddress2"].ToString() : "";
+                string clientzip = klotter["clientzipcode"] != null ? klotter["clientzipcode"].ToString() : "";
+                string clientcity = klotter["clientcity"] != null ? klotter["clientcity"].ToString() : "";
 
                 bool policereport = (klotter["policereport"] != null ? (bool)klotter["policereport"] : false);
-                string policereporttext = klotter["policereporttext"].ToString();
+                string policereporttext = klotter["policereporttext"] != null ? klotter["policereporttext"].ToString() : "";
 
                 int hours = 0, minutes = 0;
-                int.TryParse(klotter["hours"].ToString(), out hours);
-                int.TryParse(klotter["minutes"].ToString(), out minutes);
+                int.TryParse(klotter["hours"] != null ? klotter["hours"].ToString() : "", out hours);
+                int.TryParse(klotter["minutes"] != null ? klotter["minutes"].ToString() : "", out minutes);
 
                 bool pressurewasher = (klotter["pressurewasher"] != null ? (bool)klotter["pressurewasher"] : false);
                 bool pressurewasherRecycle = (klotter["pressurewasherRecycle"] != null ? (bool)klotter["pressurewasherRecycle"] : false);
@@ -122,9 +122,12 @@ public class KlotterSyncController : ApiController
 
                 JObject chem = (JObject)klotter["chem"];
 
-                string chemname = chem["name"].ToString();
+                string chemname = string.Empty;
                 int amount = 0;
-                int.TryParse(chem["amount"].ToString(), out amount);
+                if (chem != null) {
+                    chemname = chem["name"] != null ? chem["name"].ToString() : "";
+                    int.TryParse(chem["amount"] != null ? chem["amount"].ToString() : "", out amount);
+                }                                
 
                 bool klotterexists = false;
 
@@ -157,37 +160,46 @@ public class KlotterSyncController : ApiController
                                 using (SQL.ExecuteTransQuery(con, trans, "INSERT INTO klotter_chem (klotterid,title,amount) SELECT klotterid, @2,@3 FROM klotter WHERE klotterno LIKE @1", klotterno, chemname, amount)) { }
 
                                 JArray images = (JArray)klotter["beforeimages"];
-                                foreach (String image in images) {
-                                    using (SQL.ExecuteTransQuery(con, trans, "INSERT INTO klotter_image (klotterid,image,type) SELECT klotterid ,@2,@3 FROM klotter WHERE klotterno LIKE @1", klotterno, new FileInfo(image).Name, 0)) { }
+                                if (images != null) {
+                                    foreach (String image in images) {
+                                        using (SQL.ExecuteTransQuery(con, trans, "INSERT INTO klotter_image (klotterid,image,type) SELECT klotterid ,@2,@3 FROM klotter WHERE klotterno LIKE @1", klotterno, new FileInfo(image).Name, 0)) { }
+                                    }
                                 }
 
                                 images = (JArray)klotter["afterimages"];
-                                foreach (String image in images) {
-                                    using (SQL.ExecuteTransQuery(con, trans, "INSERT INTO klotter_image (klotterid,image,type) SELECT klotterid ,@2,@3 FROM klotter WHERE klotterno LIKE @1", klotterno, new FileInfo(image).Name, 1)) { }
+                                if (images != null) {
+                                    foreach (String image in images) {
+                                        using (SQL.ExecuteTransQuery(con, trans, "INSERT INTO klotter_image (klotterid,image,type) SELECT klotterid ,@2,@3 FROM klotter WHERE klotterno LIKE @1", klotterno, new FileInfo(image).Name, 1)) { }
+                                    }
                                 }
 
                                 JArray tags = (JArray)klotter["tags"];
-                                foreach (String tag in tags) {
-                                    using (SQL.ExecuteTransQuery(con, trans, "INSERT INTO klotter_tag (klotterid,tag) SELECT klotterid ,@2 FROM klotter WHERE klotterno LIKE @1", klotterno, tag)) { }
-                                }                               
+                                if (tags != null) {
+                                    foreach (String tag in tags) {
+                                        using (SQL.ExecuteTransQuery(con, trans, "INSERT INTO klotter_tag (klotterid,tag) SELECT klotterid ,@2 FROM klotter WHERE klotterno LIKE @1", klotterno, tag)) { }
+                                    }
+                                }
 
                                 DateTime timestamp;
 
                                 JArray logs = (JArray)klotter["loglist"];
-                                foreach (JObject log in logs) {
-                                    DateTime.TryParse((log["timestamp"] != null ? log["timestamp"].ToString() : ""), out timestamp);
-                                    if (timestamp < (DateTime)SqlDateTime.MinValue) {
-                                        timestamp = DateTime.Now;
-                                    }
-                                    string activity = log["activity"].ToString();
-                                    string comment = log["comment"].ToString();
+                                if (logs != null) {
+                                    foreach (JObject log in logs) {
+                                        DateTime.TryParse((log["timestamp"] != null ? log["timestamp"].ToString() : ""), out timestamp);
+                                        if (timestamp < (DateTime)SqlDateTime.MinValue) {
+                                            timestamp = DateTime.Now;
+                                        }
+                                        string activity = log["activity"] != null ? log["activity"].ToString() : "";
+                                        string comment =  log["comment"] != null ? log["comment"].ToString() : "";
 
-                                    using (SQL.ExecuteTransQuery(con, trans, "INSERT INTO klotter_log (klotterid,timestamp,dateupdated,activity,comment) SELECT klotterid ,@2, GETDATE(),@3,@4 FROM klotter WHERE klotterno LIKE @1", klotterno, timestamp, activity, comment)) { }
+                                        using (SQL.ExecuteTransQuery(con, trans, "INSERT INTO klotter_log (klotterid,timestamp,dateupdated,activity,comment) SELECT klotterid ,@2, GETDATE(),@3,@4 FROM klotter WHERE klotterno LIKE @1", klotterno, timestamp, activity, comment)) { }
+                                    }
                                 }
 
                                 trans.Commit();
                             } catch (Exception ex) {
                                 trans.Rollback();
+                                //throw ex;
                                 counter.success = "FAIL";
                                 counter.message = ex.Message;
                             }
@@ -225,8 +237,25 @@ public class KlotterSyncController : ApiController
                //    counter.message = success;
                //}
             } catch (Exception ex) {
+                //if (!System.Diagnostics.EventLog.SourceExists("Eaztimate")) {
+                //    System.Diagnostics.EventLog.CreateEventSource("Eaztimate", "Application");
+                //}
                 counter.success = "FAIL";
+                //System.Diagnostics.EventLog log = new System.Diagnostics.EventLog();
+                //log.Source = "Eaztimate";
+                //log.WriteEntry(String.Format("\r\n\r\nApplication Error\r\n\r\n" +
+                //                             "MESSAGE: {0}\r\n" +
+                //                             "SOURCE: {1}\r\n" +
+                //                             "TARGETSITE: {4}\r\n" +
+                //                             "STACKTRACE: {5}\r\n",
+                //                             ex.Message,
+                //                             ex.Source,
+                //                             ex.TargetSite,
+                //                             ex.StackTrace),
+                //                             System.Diagnostics.EventLogEntryType.Error);
+                
                 counter.message = ex.Message;
+                //throw ex;
             }
         } else {
             counter.success = "FAIL";

@@ -14,7 +14,6 @@
             <h1>Polisanmälan</h1>
             <h2>Klotter på fasad</h2>
 
-
             <table class="ao_nr">
                 <tbody><tr><td style="width: 200px;"><span class="liten">Arbetsordernr</span>
                     <p class="stor">
