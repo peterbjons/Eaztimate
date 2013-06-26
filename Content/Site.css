@@ -1730,6 +1730,11 @@ img.stockbild {
     margin: 5px 0px 5px 5px;
 }
 
+/*.radiobuttonlist label
+{
+  margin-right: 30px;
+}*/
+
 /*body#start {
     background: url(../images/background.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
