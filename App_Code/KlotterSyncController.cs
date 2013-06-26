@@ -300,7 +300,7 @@ public class KlotterSyncController : ApiController
         //return counter;
     }
 
-    private bool createPdf(long kid,string klotterno,string email) {
+    public static bool createPdf(long kid,string klotterno,string email) {
         string contents = string.Empty;
 
         MemoryStream ms = new MemoryStream();
@@ -352,7 +352,7 @@ public class KlotterSyncController : ApiController
         }
     }
 
-    private bool createpolicereportPdf(long kid, string klotterno, string email) {
+    public static bool createpolicereportPdf(long kid, string klotterno, string email) {
         string contents = string.Empty;
 
         MemoryStream ms = new MemoryStream();
