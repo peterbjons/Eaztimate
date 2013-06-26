@@ -605,7 +605,7 @@ li.block p {
 
 .orange {
     background-image: url('../images/orange_bar.png');
-    background-color: #fff;
+     background-color: rgba(255,255,255,0.70);
     background-repeat: repeat-y;
     background-position: left;
 }
@@ -1729,11 +1729,6 @@ ol.jourlistitem {
 img.stockbild {
     margin: 5px 0px 5px 5px;
 }
-
-/*.radiobuttonlist label
-{
-  margin-right: 30px;
-}*/
 
 /*body#start {
     background: url(../images/background.jpg) no-repeat center center fixed;
