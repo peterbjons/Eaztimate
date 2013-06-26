@@ -12,14 +12,16 @@
         <RoleGroups>
             <asp:RoleGroup Roles="SuperAdministrator">
                 <ContentTemplate>
+                    
                     <div class="right_col">
-                        <div style="height: 90px;"></div>
+                        <div style="height: 97px;"></div><div class="whitebox">
                                 <h2>Menu</h2>
                         <ul>            
                             <li><a class="button" style="float:left;margin-bottom:5px;" href="User_groups.aspx">Manage user groups</a></li>
                             <li><a class="button" style="float:left" href="List_company.aspx">Manage companies</a></li>
                         </ul>
-                    </div>
+                            <div style="clear:both"></div>
+                    </div></div>
                 </ContentTemplate>
             </asp:RoleGroup>
         </RoleGroups>

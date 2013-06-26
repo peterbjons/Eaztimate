@@ -13,7 +13,7 @@
     <hgroup class="title">
         <h1><%: Title %></h1>
     </hgroup>
-    
+    <div class="whitebox">
     <section id="loginForm">
         <h2>Use a local account to log in</h2>
         <asp:Login runat="server" ViewStateMode="Disabled" RenderOuterTable="false">
@@ -45,6 +45,6 @@
             if you don't have an account.
         </p>
     </section>
-
+</div>
 
 </asp:Content>

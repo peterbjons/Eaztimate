@@ -4,6 +4,7 @@
     <h1><%: Title %></h1>
     <%--<h2 style="float: left;">Choose company to edit</h2>
     <h2 style="float: right;"><a href="company.aspx" class="button" style="float:none">New</a></h2>--%>
+    <div class="whitebox">
     <h2>Choose company to edit</h2>
     <div><a href="company.aspx" class="button" style="float:left">New</a>
         <div style="clear:both"></div>
@@ -43,5 +44,5 @@
     </asp:ListView>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
         ConnectionString="<%$ ConnectionStrings:SQLConnectionString %>"  SelectCommand="SELECT [customerid], [title] FROM [customer] WHERE [datedeleted] IS NULL ORDER BY [customerid]">
-    </asp:SqlDataSource>
+    </asp:SqlDataSource></div>
 </asp:Content>
