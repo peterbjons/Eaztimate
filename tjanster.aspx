@@ -6,6 +6,16 @@
     <h1>Tjänster</h1>
     <div class="whitebox">
         <img src="images/stock/banner-5.jpg" />
+        <h2>Eaztimate erbjuder fölande tjänster</h2>
+        <ul class="lista">
+            <li>Programvaror till mobiltelefoner (Appar)</li>
+            <li>Integration med system för ärendehantering</li>
+            <li>Utbildning</li>
+            <li>Support</li>
+            <li>Hosting programadministration</li>
+            <li>Lagring av bilder och ärenden</li>
+            <li>Back-up av ärenden</li>
+        </ul>
                 <h2>Support & Service</h2>
         <p>Teknisk support på applikationer ingår i avgifterna för att använda respektive applikation. På hårdvara levererade av oss är support och service inkluderat i 2 år från och med leveransdatum.</p>
         <p>Användarsupport ingår i avgiften, öppen vardagar mellan 09.00 - 11.00 samt 14.00 - 16.00.   </p>
