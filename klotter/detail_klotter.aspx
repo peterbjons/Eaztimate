@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Ändra klotterärende" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="detail_klotter.aspx.cs" Inherits="klotter_detail_klotter" %>
+﻿<%@ Page Title="Klotterärende" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="detail_klotter.aspx.cs" Inherits="klotter_detail_klotter" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
     <script>
@@ -18,6 +18,7 @@
     <div class="forms whitebox">
         <h2>Grunddata</h2>
         <div class="col2">
+            <asp:HiddenField ID="klotterno" runat="server" />
             <asp:TextBox runat="server" ID="aonr" placeholder="Arbetsordernummer" CssClass="tooltip"/>
             <span>
                 <img class="callout" src="/Images/callout.png" />
@@ -45,6 +46,23 @@
                 Dokumentationens titel.
             </span>
         </div>
+        <div class="col2">
+            <h2>Bilder före</h2>
+            <asp:Repeater ID="beforeimagerepeater" runat="server">
+                <ItemTemplate>                    
+                    <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" class="klotter_images <%#(Container.ItemIndex) % 2 != 0 ? "last" : "" %>" />
+                </ItemTemplate>
+            </asp:Repeater>
+        </div>
+        <div class="col2">
+            <h2>Bilder efter</h2>
+            <asp:Repeater ID="afterimagerepeater" runat="server">
+                <ItemTemplate>                    
+                    <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" class="klotter_images <%#(Container.ItemIndex) % 2 != 0 ? "last" : "" %>" />
+                </ItemTemplate>
+            </asp:Repeater>
+        </div>
+        <div style="clear: both"></div>
         <h2>Skadeplatsen</h2>
         <div class="col2">
             <asp:TextBox runat="server" ID="fastbet" placeholder="Fastighetsbeteckning" CssClass="tooltip"/>
@@ -134,68 +152,31 @@
                 Fritext till polisanmälan
             </span>
         </div>
-        <div class="col2 room_images">
-            <h2>Bilder före</h2>
-            <asp:Repeater ID="beforeimagerepeater" runat="server">
-                <ItemTemplate>                    
-                    <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" class="two_two <%#(Container.ItemIndex) % 2 != 0 ? "last" : "" %>" />
-                </ItemTemplate>
-            </asp:Repeater>
-
-        </div>
-        <div class="col2 room_images">
-            <h2>Bilder efter</h2>
-            <asp:Repeater ID="afterimagerepeater" runat="server">
-                <ItemTemplate>                    
-                    <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" class="two_two <%#(Container.ItemIndex) % 2 != 0 ? "last" : "" %>" />
-                </ItemTemplate>
-            </asp:Repeater>
-        </div>
         <div style="clear: both"></div>
+        <div class="col2">
+           <h2>Tidsåtgång</h2>
+            <asp:DropDownList ID="hour_ddl" runat="server" style="width: 100px">
+                
+            </asp:DropDownList>
+            <asp:DropDownList ID="minutes_ddl" runat="server" style="width: 100px;">                
+            </asp:DropDownList>
+        </div>
+        <div class="col2">
+            <h2>Taggar</h2>
+            <asp:TextBox runat="server" ID="tags" placeholder="Taggar" CssClass="tooltip"/>
+            <span>
+                <img class="callout" src="/Images/callout.png" />
+                <strong>Taggar</strong><br />
+                Taggar, separera taggar med komma (tag1, tag2, tag3)
+            </span>
+        </div>        
         <div class="col2">
             <asp:Button ID="detailEditButton" runat="server" Text="Spara förändringar" OnClick="UserEdit_Click"/>
         </div>
         <div class="col2">
-            <asp:Button ID="reportEditButton" runat="server" Text="Spara och skapa rapport" OnClick="UserEdit_Click"/>
+            <asp:Button ID="reportEditButton" runat="server" Text="Spara och skapa rapport(er)" OnClick="ReportCreate_Click"/>
         </div>
         <div style="clear: both"></div>
-        </div>
-        <div class="forms whitebox">
-        <div class="col2">
-            <h2>Övriga data</h2>
-            <asp:RadioButton ID="policeyes" runat="server" Text="<span></span> Ja" />
-            <asp:CheckBox ID="htcb" runat="server" Text="<span></span>Högtryckstvätt" />
-            <asp:CheckBoxList ID="cat_cblist" runat="server" DataValueField="key" DataTextField="value"></asp:CheckBoxList>
-        </div>
-        <div class="col2">
-            <h2>Taggar</h2>
-            <asp:ListBox ID="tagsbox" SelectionMode="Multiple" DataTextField="tag" DataValueField="tag" runat="server" class="tooltip"/>
-            <span>
-                <img class="callout" src="/Images/callout.png" />
-                <strong>Taggar</strong><br />
-                Taggar.
-            </span>
-        </div>
-        <h2>resten</h2>
-        <div class="col2">
-            <asp:TextBox runat="server" ID="tel2" placeholder="Phone no 2" CssClass="tooltip"/>
-            <span>
-                <img class="callout" src="/Images/callout.png" />
-                <strong>Phone no 2</strong><br />
-                The second phone number (if available).
-            </span>
-            <asp:HiddenField ID="userdataexists" Value="false" runat="server"/>
-            <asp:Button ID="UserEdit" runat="server" Text="Save changes" OnClick="UserEdit_Click"/>
-        </div>
-        <div style="width: 50%; float: right;">
-            <asp:ListBox ID="rolesBox" SelectionMode="Multiple" DataTextField="rolename" DataValueField="rolename" runat="server" class="tooltip"/>
-            <span>
-                <img class="callout" src="/Images/callout.png" />
-                <strong>Roles</strong><br />
-                Select all roles this user belongs to.
-            </span>
-        </div>
-        <div style="clear: both;"></div>
-    </div>    
+        </div>        
 </asp:Content>
 
