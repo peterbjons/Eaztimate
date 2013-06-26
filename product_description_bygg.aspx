@@ -64,15 +64,30 @@ EZ Byggskada minskar: Stress, felprocenten, tid i bil och ledtider. </p>
             <div class="app_banner" style="background-image: url(images/stock/banner-31.jpg);"></div>
             <h2>Beskrivning</h2>
             <p>Skador i stora eller små fastigheter, i omfattande eller begränsad skala. Orsakade av brand, vatten, fel i konstruktionen eller av väder och vind. Skador skiljer sig åt men är sällan unika. </p>
-            <p>Eaztimate Bygg är ett insamlingsverktyg för fältet där relevant information samlas till underlag för en tydlig och omfattande rapport.     </p>
+            <p>
+                Eaztimate Bygg är ett insamlingsverktyg för fältet där relevant information samlas till underlag för en tydlig och omfattande rapport.     
+            </p>
             <p>Arbetet utgår från att det finns ett bestämt flöde i insamlingen. Ett flöde baserat på erfaren och utarbetade rutiner. EZ Byggskada fungerar som en checklista över vilka delar som skall dokumenteras. </p>
             <p>Genom integrationen med OCAB byggskador kan all data som samlas in i EZ Byggskada synkroniseras och föras vidare under arbetes gång. Experter och skadereglerare kan ta del av viktig  information utan onödiga ledtider.</p>
-            <p>Är EZ Byggskada ansluten till internet synkroniseras pågående ärende så ofta du vill, den funktionen möjliggör kortare ledtider i kontakten med externa experter och försäkringsbolag.  Via ex. OCAB interna system är det möjligt för LF att i realtid ta del av arbetet.</p>
-            <p>
-                EZ Byggskada ökar: Kontroll, kvalitet och tydligheten 
-                <br />
-                EZ Byggskada minskar: Stress, felprocenten, tid i bil och ledtider.
-            </p>
+
+            <div style="width: 350px; margin-right: 20px; float: left;">
+                <h2>När</h2>
+                <p>Vid dokumentation av skador på fastigheter</p>
+            </div>
+            <div style="width: 360px; float: left;">
+                <h2>Var</h2>
+                <p>På platsen för skadan hjälper EZ Byggskada (kan köras både i telefon eller padda) dig att skapa nödvändig dokumentation, informationen synkas med befintligt ärendehanteringssystem och rapporten kan kompletteras via PC.</p>
+            </div>
+            <div style="width: 350px; margin-right: 20px; float: left;">
+                <h2>Hur</h2>
+                <p>Ladda hem EZ Byggskada från vår hemsida, EZ Byggskada är integrerad med bakomliggande  ärendehanteringssystem och använder samma inloggningsuppgifter. EZ Byggskada fungerar sedan som en blandning mellan checklista och anteckningsblock, alla uppgifter du behöver för att skapa en rapport samlas in via EZ Byggskada.</p>
+            </div>
+            <div style="width: 360px; float: left;">
+                <h2>Varför</h2>
+                <p>Det är mycket att hålla reda på vid dokumentation av en byggskada, har du då ett verktyg som både strukturerar arbetet och ser till att inget glöms bort ökar kvaliteten i arbetet samtidig som den upplevda administrationen minskar</p>
+            </div>
+            <div style="clear: both"></div>
+
             <h2>Skärmdumpar</h2>
             <div class="app_screenshots">
                 <ul style="width: 1100px;">
@@ -111,9 +126,10 @@ EZ Byggskada minskar: Stress, felprocenten, tid i bil och ledtider. </p>
                             <p>Klotter</p>
                         </li>
                     </a>
-                </ul><div style="clear: both"></div>
+                </ul>
+                <div style="clear: both"></div>
             </div>
-            
+
             <div class="big_button">Beställ</div>
         </div>
         <div style="clear: both"></div>

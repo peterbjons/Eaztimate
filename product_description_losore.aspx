@@ -41,22 +41,41 @@
         <div class="app_col2">
             <div class="app_banner" style="background-image: url(images/stock/banner-losore.jpg);"></div>
             <h2>Beskrivning</h2>
-           <p>Målet, att underlätta i varje led i hanteringen av lösören är ambitiöst och kräver samarbete mellan individer och bolag. Första steget mot att nå dit är taget i.o.m. EZL-appen. Stora utmaningar ligger i begreppet lösöre omfattar ett stort antal olika saker, en keps, en byrå, två stolar, tre flaskor, en samling frimärken, listan kan göras lång. Den utmaningen klarar EZL bättre än något jämfört system i branschen.      </p>
-    
-    <p>EZL har även ett unikt verktyg för bedömning av ett enskilt föremåls skick och värdepåverkande egenskaper. En funktion som starkt bidrar till att vi vågar kalla EZL det bästa som hänt försäkringsbranschen sedan IT slog igenom.</p>
-        <p>Att dokumentera lösöre på en skadeplats  med hjälp av applikationen EZ – Lösöre har flera fördelar. </P>
-        <p>
-<strong>Det dynamiska gränssnittet  i applikationen gör det möjligt att:</strong><br />
- Anpassa och avgränsa innehållet utifrån fastighet och skadans art och omfattning.<br />
- Logiskt kategorisera, gruppera och typbestämma objekt</p>
-        <p>
-<strong>Inbyggda mallar leder till att:</strong><br />
-Dokumentationen av objekt blir fullständig<br< />
-Objektens egenskaper beskrivs med enhetliga skalor och begrepp<br />
-Rapporter följer standard</p>
-        <p>
-Översikt och statusvyer ger handläggare en god överblick av arbetet.
+           <p>Att dokumentera lösöre på en skadeplats  med hjälp av applikationen EZ Lösöre har flera fördelar. </p>
+            <p>Det dynamiska gränssnittet  i applikationen gör det möjligt att:</p>
+            <ul class="lista">
+                <li>Anpassa och avgränsa innehållet utifrån fastighet och skadans art och omfattning.</li>
+                <li>Logiskt kategorisera, gruppera och typbestämma objekt</li>
+            </ul>
+            <p>Inbyggda mallar leder till att:</p>
+            <ul class="lista">
+                <li>Dokumentationen av objekt blir fullständig</li>
+                <li>Objektens egenskaper beskrivs med enhetliga skalor och begrepp</li>
+                <li>Rapporter följer standard</li>
+            </ul>
+            <p>Översikt och status vyer ger handläggare en god överblick av arbetet.
 Funktionen att kopiera över egenskaper från ett objekt till ett annat spar tid.</p>
+
+
+                        <div style="width: 350px; margin-right: 20px; float: left;">
+                <h2>När</h2>
+                <p>Vid behov av att dokumentera skadat lösöre</p>
+            </div>
+            <div style="width: 360px; float: left;">
+                <h2>Var</h2>
+                <p>EZ Lösöre är utvecklad för att köras på en padda och används på skadeplatsen, här kommer det mobila konceptet verkligen till sin rätt som informationsinsamlare. EZ Lösöre är även integrerad med en egen databas som möjliggör kompletteringar via PC.</p>
+            </div>
+            <div style="width: 350px; margin-right: 20px; float: left;">
+                <h2>Hur</h2>
+                <p class="textneedsfix">Ladda hem EZ Byggskada från vår hemsida, EZ Byggskada är integrerad med bakomliggande  ärendehanteringssystem och använder samma inloggningsuppgifter. EZ Byggskada fungerar sedan som en blandning mellan checklista och anteckningsblock, alla uppgifter du behöver för att skapa en rapport samlas in via EZ Byggskada.</p>
+            </div>
+            <div style="width: 360px; float: left;">
+                <h2>Varför</h2>
+                <p class="textneedsfix">Det är mycket att hålla reda på vid dokumentation av en byggskada, har du då ett verktyg som både strukturerar arbetet och ser till att inget glöms bort ökar kvaliteten i arbetet samtidig som den upplevda administrationen minskar</p>
+            </div>
+            <div style="clear: both"></div>
+
+
             <h2>Skärmdumpar</h2>
             <div class="app_screenshots">
                 <ul style="width: 1100px;">

@@ -34,8 +34,8 @@
         <div class="whitefield">
             <div class="bubble">
                 <%-- <div class="arrow">
-                </div>--%>
-                <p>Sedan starten i februari 2013 har hundratals byggskador dokumenterats med EZ Byggskada och omdömena är mycket positiva. En som i dag flitigt använder den mobila applikationen är Bengt Torrång som jobbar på OCAB Dalarna, med över 30 års erfarenhet inom branchen</p>
+                </div>--%><p>Söker ni ett företag som hjälper hantverkare, fukt och sanerings tekniker samt jourhavande personal att dokumentera sina uppdrag, då har ni hittat rätt. Eaztimate har en serie mobila applikationer som gör mobiltelefonen till en uppskattad jobbarkompis. </p>
+              <%--  <p>Sedan starten i februari 2013 har hundratals byggskador dokumenterats med EZ Byggskada och omdömena är mycket positiva. En som i dag flitigt använder den mobila applikationen är Bengt Torrång som jobbar på OCAB Dalarna, med över 30 års erfarenhet inom branchen</p>--%>
             </div>
                         <a href="news/ut-pa-uppdrag.aspx">
                 <div class="block">
