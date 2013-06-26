@@ -584,19 +584,19 @@ li.block p {
     }
 
 .white {
-    background-color: #fff;
+     background-color: rgba(255,255,255,0.70);
 }
 
 .green {
     background-image: url('../images/green_bar.png');
-    background-color: #fff;
+     background-color: rgba(255,255,255,0.70);
     background-repeat: repeat-y;
     background-position: left;
 }
 
 .blue {
     background-image: url('../images/blue_bar.png');
-    background-color: #fff;
+     background-color: rgba(255,255,255,0.70);
     background-repeat: repeat-y;
     background-position: left;
 }
@@ -773,7 +773,7 @@ li.block p {
     #create_inspection .col1 {
         float: left;
         width: 460px;
-        margin-right: 40px;
+        margin-right: 20px;
     }
 
     #create_inspection .col2 {
@@ -1247,7 +1247,21 @@ thead tr.tr_red td {
     margin-right: 10px;
     float: left;
 }
-
+.forms .col3 {
+    float:left;
+    width:360px;
+    margin-right: 10px;
+}
+.forms .col3 input {
+    width: 336px;
+}
+.forms .col3 input[type=submit] {
+    width: 359px;
+}
+.forms .col3 select[size], .forms .col3 select[multiple], .forms .col3 select[size][multiple]
+{
+     width: 359px;
+}
 .forms input[type=text] {
     display: block;
     padding: 10px;
@@ -1278,7 +1292,7 @@ thead tr.tr_red td {
     text-align: center;
     border: none;
     color: #fff;
-    padding: 10px;
+    padding: 12px 10px 11px 10px;
     margin-top: 5px;
     margin-bottom: 15px;
 }
@@ -1303,7 +1317,7 @@ thead tr.tr_red td {
 
 #AdminPage .left_col {
     float: left;
-    width: 700px;
+    width: 750px;
 }
 
 #AdminPage .right_col {

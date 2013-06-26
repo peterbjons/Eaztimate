@@ -17,6 +17,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <h1>Skapa ärende</h1>
+    <div class="whitebox">
     <div id="create_inspection">
         <div class="col1">
             <h2>Kontaktuppgifter</h2><input type="text" id="contact_name" runat="server" placeholder="Namn" />
@@ -40,7 +41,7 @@
             <input type="text" id="inspection_insurance_sup1" runat="server" placeholder="Tilläggsförsäkring" />
             <input type="submit" id="inspection_create" runat="server" value="Skapa" />
         </div>
-        <div style="clear: both"></div>
+        <div style="clear: both"></div></div>
     </div>
 </asp:Content>
 
