@@ -141,6 +141,7 @@
                     <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" class="two_two <%#(Container.ItemIndex) % 2 != 0 ? "last" : "" %>" />
                 </ItemTemplate>
             </asp:Repeater>
+
         </div>
         <div class="col2 room_images">
             <h2>Bilder efter</h2>
