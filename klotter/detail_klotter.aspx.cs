@@ -55,7 +55,7 @@ public partial class klotter_detail_klotter : System.Web.UI.Page
                 policereport.SelectedValue = reader.GetBoolean(reader.GetOrdinal("policereport")) ? "1" : "0";
 
                 hour_ddl.SelectedValue = reader.GetInt32(reader.GetOrdinal("hours")).ToString();
-                minutes_ddl.SelectedValue = reader.GetInt32(reader.GetOrdinal("minutes")).ToString();                
+                minutes_ddl.SelectedValue = reader.GetInt32(reader.GetOrdinal("minutes")).ToString();
             }
         }
 

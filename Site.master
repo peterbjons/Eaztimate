@@ -65,6 +65,15 @@
                                 </asp:RoleGroup>
                             </RoleGroups>
                         </asp:LoginView>
+                                 <asp:LoginView ID="LoginView3" runat="server">
+                            <RoleGroups>
+                                <asp:RoleGroup Roles="Klotter">
+                                    <ContentTemplate>
+                                        <li><a href="/klotter/open_klotter.aspx">Klotter</a></li>
+                                    </ContentTemplate>
+                                </asp:RoleGroup>
+                            </RoleGroups>
+                        </asp:LoginView>
                      <%--   <li><a href="/product_description.aspx">Mobila Applikationer</a></li>--%>
                         <%-- <li><a href="/business_model.aspx">Affärsmodell</a></li>--%>
                   <%--      <li><a href="/tjanster.aspx">Tjänster</a></li>
