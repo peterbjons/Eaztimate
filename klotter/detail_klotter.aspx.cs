@@ -55,14 +55,7 @@ public partial class klotter_detail_klotter : System.Web.UI.Page
                 policereport.SelectedValue = reader.GetBoolean(reader.GetOrdinal("policereport")) ? "1" : "0";
 
                 hour_ddl.SelectedValue = reader.GetInt32(reader.GetOrdinal("hours")).ToString();
-                minutes_ddl.SelectedValue = reader.GetInt32(reader.GetOrdinal("minutes")).ToString();
-
-
-                //sb.Clear();
-                //sb.Append(reader.GetBoolean(reader.GetOrdinal("pressurewasher")) ? "Högtryckstvätt<br/>" : "");
-                //sb.Append(reader.GetBoolean(reader.GetOrdinal("pwrecycle")) ? "Högtryckstvätt recycle<br/>" : "");
-                //sb.Append(reader.GetBoolean(reader.GetOrdinal("handwashing")) ? "Handtvätt<br/>" : "");
-                //actions.Text = sb.ToString();
+                minutes_ddl.SelectedValue = reader.GetInt32(reader.GetOrdinal("minutes")).ToString();                
             }
         }
 
