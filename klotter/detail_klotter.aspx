@@ -28,7 +28,7 @@
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="aonr"
                 CssClass="field-validation-error" ErrorMessage="The email address field is required." Display="Dynamic" />
         </div>
-        <div class="col2">
+        <div class="col2 last">
             <asp:TextBox runat="server" ID="title" placeholder="Titel" CssClass="tooltip"/>
             <span>
                 <img class="callout" src="/Images/callout.png" />
@@ -54,7 +54,7 @@
                 </ItemTemplate>
             </asp:Repeater>
         </div>
-        <div class="col2">
+        <div class="col2 last">
             <h2>Bilder efter</h2>
             <asp:Repeater ID="afterimagerepeater" runat="server">
                 <ItemTemplate>                    
@@ -78,7 +78,7 @@
                 Fastighetens postnummer.
             </span>         
         </div>
-        <div class="col2">
+        <div class="col2 last">
             <asp:TextBox runat="server" ID="address" placeholder="Adress" CssClass="tooltip"/>
             <span>
                 <img class="callout" src="/Images/callout.png" />
@@ -113,7 +113,7 @@
                 Kundens postnummer.
             </span>            
         </div>
-        <div class="col2">
+        <div class="col2 last">
             <asp:TextBox runat="server" ID="clientno" placeholder="Kundnummer" CssClass="tooltip"/>
             <span>
                 <img class="callout" src="/Images/callout.png" />
@@ -144,7 +144,7 @@
                 <asp:ListItem Value="0"> Nej </asp:ListItem>
             </asp:RadioButtonList>--%>
         </div>
-        <div class="col2">
+        <div class="col2 last">
             <asp:TextBox runat="server" ID="policetext" placeholder="Fritext" CssClass="tooltip"/>
             <span>
                 <img class="callout" src="/Images/callout.png" />
@@ -161,7 +161,7 @@
             <asp:DropDownList ID="minutes_ddl" runat="server" style="width: 100px;">                
             </asp:DropDownList>
         </div>
-        <div class="col2">
+        <div class="col2 last">
             <h2>Taggar</h2>
             <asp:TextBox runat="server" ID="tags" placeholder="Taggar" CssClass="tooltip"/>
             <span>
@@ -173,7 +173,7 @@
         <div class="col2">
             <asp:Button ID="detailEditButton" runat="server" Text="Spara förändringar" OnClick="UserEdit_Click"/>
         </div>
-        <div class="col2">
+        <div class="col2 last">
             <asp:Button ID="reportEditButton" runat="server" Text="Spara och skapa rapport(er)" OnClick="ReportCreate_Click"/>
         </div>
         <div style="clear: both"></div>

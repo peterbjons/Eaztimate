@@ -37,9 +37,10 @@
             <asp:Literal ID="inspectno" runat="server" /></a>
         <h1>
             <asp:Literal ID="description" runat="server" /></h1>
+        <div class="whitebox">
         <a class="button" style="float: none" id="collapse">Dölj</a>
         <h2 style="margin-top: 20px">Allmän information</h2>
-        <div class="collapsable" style="width: 940px; background-color: #fff; padding: 10px; margin-bottom: 20px;">
+        <div class="collapsable" style="width: 940px; margin-bottom: 20px;">
 
             <div class="left_col">
                 <h3>Adress</h3>
@@ -222,8 +223,8 @@
         --%>
         <div style="clear: Both"></div>
 
-        <uc1:objectlist runat="server" ID="objectlist" roomselection="true" catselection="true"/>
-        
+        <uc1:objectlist runat="server" ID="objectlist" roomselection="true" catselection="true"/><div style="clear: Both"></div>
+        </div>
     </div>
 </asp:Content>
 

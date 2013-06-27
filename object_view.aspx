@@ -36,9 +36,9 @@
         <h1><asp:Literal ID="typename" runat="server" /></h1>
 
         <%--<div class="col1">--%>
-               
+               <div class="whitebox">
         <h2 style="margin-top: 20px">Allmän information</h2>
-       <div class="collapsable" style="width: 940px; background-color: #fff; padding: 10px; margin-bottom: 20px;">
+       <div class="collapsable" style="width: 940px; margin-bottom: 20px;">
             <div class="left_col" style="width: 460px;">
 
                 <h3>Namn</h3>
@@ -62,10 +62,10 @@
             </div>
             <div style="clear: both"></div>   
            </div>         
-            <h2 style="margin-top: 20px">Övrig information</h2><div class="collapsable" style="width: 940px; background-color: #fff; padding: 10px; margin-bottom: 20px;">
+            <h2 style="margin-top: 20px">Övrig information</h2><div class="collapsable" style="width: 940px; margin-bottom: 20px;">
                 <div class="left_col" style="width:460px">
                 <h3>Omdöme</h3>
-            <table id="sliders" style="width: 100%; background-color: #fff;">
+            <table id="sliders" style="width: 100%; ">
                 <tr>
                     <td>Pris:</td>
                     <td>
@@ -126,5 +126,6 @@
 
         </div>--%>
         <div style="clear:both"></div>
+    </div>
 </asp:Content>
 

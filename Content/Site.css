@@ -454,7 +454,7 @@ li.block p {
         font-weight: 300;
         font-size: 36pt;
         margin-bottom: 30px;
-        margin-left: 20px;
+    
     }
 
     #content h2 {
@@ -473,7 +473,7 @@ li.block p {
 #inspection_list {
     float: left;
     width: 500px;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
     #inspection_list ul {
@@ -483,7 +483,7 @@ li.block p {
 #inspection_sort {
     float: left;
     width: 210px;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
     #inspection_sort a {
@@ -508,7 +508,7 @@ li.block p {
 #room_sort {
     float: left;
     width: 210px;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
     #room_sort a {
@@ -1241,11 +1241,15 @@ thead tr.tr_red td {
 .grdiviewtable tr td {
     padding: 5px 7px;
 }
-
+.forms .col1 {width:940px}
+.forms .col1 input {width:916px;}
 .forms .col2 {
-    width: 460px;
+    width: 465px;
     margin-right: 10px;
     float: left;
+}
+.forms .col2 input {
+    width:441px;
 }
 .forms .col3 {
     float:left;
@@ -2264,7 +2268,7 @@ ul.contact {
 }
 
 .klotter_images {
-    height: 150px;
-    margin-right: 20px;
+    height: 169px;
+    margin-right: 10px;
 }
 

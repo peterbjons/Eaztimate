@@ -9,8 +9,8 @@
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <asp:ScriptManager ID="ScriptManager1" runat="server" />
     <h1>Öppna klotterärenden</h1>
-
+    <div class="whitebox">
     <uc1:klotterlist ID="klotterlist" runat="server" />
    
-    <div style="clear: both"></div>
+    <div style="clear: both"></div></div>
 </asp:Content>

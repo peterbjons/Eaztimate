@@ -15,10 +15,10 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server" />
     <div class="inspect_object">
         <a href="inspection.aspx?id=<%=inspectionid %>" class="breadcrumb"><asp:Literal ID="inspectionno" runat="server" /></a>
-        <h1><asp:Literal ID="title" runat="server" /></h1>
+        <h1><asp:Literal ID="title" runat="server" /></h1><div class="whitebox">
         <a class="button" style="float: none" id="collapse">Dölj</a>
         <h2 style="margin-top: 20px">Allmän information</h2>
-        <div class="collapsable" style="width: 940px; background-color: #fff; padding: 10px; margin-bottom: 20px;">
+        <div class="collapsable" style="width: 940px; margin-bottom: 20px;">
             <div class="left_col" style="width:460px">
                 <h3>Namn</h3>
                 <p>
@@ -55,8 +55,8 @@
 
         <div style="clear:both"></div>
 
-        <uc1:objectlist runat="server" ID="objectlist" roomselection="false" catselection="true"/>
-
+        <uc1:objectlist runat="server" ID="objectlist" roomselection="false" catselection="true"/><div style="clear:both"></div>
+</div>
     </div>
 </asp:Content>
 

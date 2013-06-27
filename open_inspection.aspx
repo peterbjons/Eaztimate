@@ -13,7 +13,7 @@
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <asp:ScriptManager ID="ScriptManager1" runat="server" />
     <h1>Öppna ärende</h1>
-
+    <div class="whitebox">
     <asp:UpdatePanel ID="updatelist" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
             <asp:HiddenField ID="sortorderhidden" runat="server" Value="0" />
@@ -104,5 +104,6 @@
         </ContentTemplate>
     </asp:UpdatePanel>
     <div style="clear: both"></div>
+        </div>
 </asp:Content>
 
