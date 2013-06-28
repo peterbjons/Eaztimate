@@ -38,7 +38,7 @@ fotografier, mått, mätvärden , konstruktioner och material samlas in systemat
         <li class="slide7"><div class="uppdrag_desc">Snabbt , enkelt, rätt . Mått på alla rum. Konstruktioner, mått och material matas enkelt in enligt förutbestämda mallar.</div></li>
         <li class="slide8"><div class="uppdrag_desc">När fältarbetet är avslutat synkas informationen upp och allt är tillgängligt för alla inblandade parter, skadereglerare, byggare, försäkringstagare
 och  den egna arbetsledningen. Magnus är redo att ta sig an nästa uppdrag. </div></li>
-        <li class="slide9"><div class="uppdrag_desc">Åter på kontoret efter avslutat fältarbete kan små justeringar/kompletteringar göras i OCAB skador och byggskaderapporten är klar. Inga papper och handgjorda skisser att hålla reda på och framför allt inget tidsödande dubbelarbete. </div></li>
+        <%--<li class="slide9"><div class="uppdrag_desc">Åter på kontoret efter avslutat fältarbete kan små justeringar/kompletteringar göras i OCAB skador och byggskaderapporten är klar. Inga papper och handgjorda skisser att hålla reda på och framför allt inget tidsödande dubbelarbete. </div></li>--%>
         
     </ul>
 </div>
