@@ -216,8 +216,8 @@
                             <asp:TextBox runat="server" ID="roomnotes" placeholder="Övriga noteringar" CssClass="tooltip" />
                             <span>
                                 <img class="callout" src="/Images/callout.png" />
-                                <strong>Kundnamn</strong><br />
-                                Namn på kunden
+                                <strong>Övriga noteringar</strong><br />
+                                Övriga noteringar
                             </span>
                         </div>
 
