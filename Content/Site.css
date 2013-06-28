@@ -1285,6 +1285,12 @@ thead tr.tr_red td {
         width: 359px;
     }
 
+    .forms .col4 {
+        float:left;
+        width:220px;
+        margin-right:10px;
+    }
+
 .forms input[type=text] {
     /*display: block;*/
     padding: 10px;
@@ -2308,4 +2314,20 @@ ul.contact {
 
 .dd-container {
     float:left;
+}
+
+.forms ul.room_row_list {
+    list-style-type: none;
+}
+.forms ul.room_row_list li {
+    margin-bottom:10px;
+}
+
+.forms ul li .room_row_1 {
+    background-color: #85c8e0;
+    color: #fff;
+    padding: 1px 10px 4px;
+}
+.forms ul li .room_row_2 {
+       
 }

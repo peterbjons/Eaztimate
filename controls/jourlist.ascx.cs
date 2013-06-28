@@ -62,7 +62,7 @@ public partial class controls_jourlist : System.Web.UI.UserControl
             if (int.TryParse(e.CommandArgument.ToString(), out inventoryid)) {
                 switch (e.CommandName) {
                     case "Open":
-                        Response.Redirect("object_view.aspx?id=" + inventoryid.ToString(), true);
+                        Response.Redirect("detail_jour.aspx?id=" + inventoryid.ToString(), true);
                         break;
                 }
             }
