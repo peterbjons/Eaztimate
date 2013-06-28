@@ -67,11 +67,11 @@ Funktionen att kopiera över egenskaper från ett objekt till ett annat spar tid
             </div>
             <div style="width: 350px; margin-right: 20px; float: left;">
                 <h2>Hur</h2>
-                <p class="textneedsfix">Ladda hem EZ Byggskada från vår hemsida, EZ Byggskada är integrerad med bakomliggande  ärendehanteringssystem och använder samma inloggningsuppgifter. EZ Byggskada fungerar sedan som en blandning mellan checklista och anteckningsblock, alla uppgifter du behöver för att skapa en rapport samlas in via EZ Byggskada.</p>
+                <p>Ladda hem EZ Lösöre från vår hemsida, EZ Lösöre är kopplad till en separat databas där alla uppgifter lagras. Försäkringsbolag och den skadedrabbade kan sedan logga in och ta del av den insamlade informationen.</p>
             </div>
             <div style="width: 360px; float: left;">
                 <h2>Varför</h2>
-                <p class="textneedsfix">Det är mycket att hålla reda på vid dokumentation av en byggskada, har du då ett verktyg som både strukturerar arbetet och ser till att inget glöms bort ökar kvaliteten i arbetet samtidig som den upplevda administrationen minskar</p>
+                <p>Både vid begränsade och omfattande skador på lösöre är det viktigt för alla inblandade parter att försäkra sig om att allt blir dokumenterat på ett korrekt sätt. Med EZ Lösöre får du ett verktyg som både kan dokumentera på plats, dela med sig av informationen, följa lösöret från skadan till eventuell sanering och tillbaka till den skadedrabbade. </p>
             </div>
             <div style="clear: both"></div>
 
