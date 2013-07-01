@@ -13,13 +13,29 @@
             });
         });
     </script>
-    <script src="../Scripts/jquery.ddslick.js"></script>
-
+    <script src="/Scripts/jquery.ddslick.js"></script>
+    <link href="/Content/lightbox.css" rel="stylesheet">
+    <script src="/Scripts/lightbox.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <h1><%: Title %></h1>
     <div class="forms whitebox">
-        <asp:ScriptManager ID="ScriptManager1" runat="server" />
+        <asp:ScriptManager ID="ScriptManager1" runat="server" />        
+        <div class="col2">
+            <h2>Skadetyp</h2>
+            <asp:DropDownList ID="damagetype" runat="server" CssClass="dropdown5" DataValueField="damagetype" DataTextField="damagetype">                
+            </asp:DropDownList>
+        </div>
+        <div class="col2 last">
+            <h2>Uppdragsgivarens ärendenummer</h2>
+            <asp:TextBox runat="server" ID="lcno" placeholder="Uppdragsgivarens ärendenummer" CssClass="tooltip" />
+            <span>
+                <img class="callout" src="/Images/callout.png" />
+                <strong>Uppdragsgivarens ärendenummer</strong><br />
+                Uppdragsgivarens ärendenummer.
+            </span>
+        </div>
+        <div style="clear: both;"></div>
         <h2>Försäkringstagare</h2>
         <div class="col2">
             <asp:TextBox runat="server" ID="clientname" placeholder="Namn" CssClass="tooltip" />
@@ -82,27 +98,30 @@
                 Försäkringsnummer.
             </span>
 
-        </div>
+        </div>        
         <div style="clear: both"></div>
         <h2>Bilder</h2>
         <div class="col1">
-
-
-            <%--UTRYMME FÖR BILDER--%>
+            <asp:Repeater ID="jourimagerepeater" runat="server">
+                <ItemTemplate>
+                    <a href="<%#DataBinder.Eval(Container.DataItem, "image")%>" rel="lightbox">
+                        <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" class="klotter_images <%#(Container.ItemIndex) % 3 == 0 ? "last" : "" %>" />
+                    </a>
+                </ItemTemplate>
+            </asp:Repeater>            
         </div>
-        <div class="col2">
+        <div class="col1">
             <h2>Beskrivning</h2>
-            <asp:TextBox runat="server" ID="description" placeholder="Beskrivning" CssClass="tooltip" />
-            <span>
-                <img class="callout" src="/Images/callout.png" />
-                <strong>Beskrivning</strong><br />
-                Beskrivning.
-            </span>
-
+            <asp:TextBox runat="server" ID="description" placeholder="Beskrivning" CssClass="tooltip" Rows="3" TextMode="MultiLine" />
         </div>
-        <div class="col2 last">
+        <div class="col1">
             <h2>Övriga behov</h2>
-            <asp:CheckBoxList runat="server" ID="otherneeds"></asp:CheckBoxList>
+            <asp:CheckBoxList runat="server" ID="otherneeds" RepeatLayout="UnorderedList" CssClass="jourcblist">
+                <asp:ListItem Text="<span></span>Tillfälligt boende" Value="1"></asp:ListItem>
+                <asp:ListItem Text="<span></span>Kontanter" Value="2"></asp:ListItem>
+                <asp:ListItem Text="<span></span>Transport" Value="3"></asp:ListItem>
+                <asp:ListItem Text="<span></span>Förmedling av kontakt" Value="4"></asp:ListItem>
+            </asp:CheckBoxList>
 
         </div>
         <div style="clear: both"></div>
@@ -178,6 +197,16 @@
                     //callback function: do something with selectedData;
                 }
             }
+    );
+
+            $('.dropdown5').ddslick({
+
+            width: 463,
+            onSelected: function (selectedData) {
+
+                //callback function: do something with selectedData;
+            }
+            }
 
 
     );
@@ -187,45 +216,63 @@
     <div class="forms whitebox">
 
         <div class="col1">
+
             <ul class="room_row_list">
-                <li>
+            <asp:Repeater ID="roomrepeater" runat="server" OnItemDataBound="roomrepeater_ItemDataBound">
+                <HeaderTemplate>
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <li>
                     <div class="room_row_1">
-                        Kontor, primär skadeplats
+                        <asp:HiddenField ID="roomidHidden" runat="server" Value='<%#DataBinder.Eval(Container.DataItem, "roomid")%>' />
+                        <%#DataBinder.Eval(Container.DataItem, "title")%>
+                        <%#(Container.ItemIndex) == 0 ? ", primär skadeplats" : ", sekundär skadeplats" %>
                     </div>
-                    <div class="room_row_2" style="display: none">
+                    <div class="room_row_2" style="display: none">   
+                        
                         <div class="col2">
                             <h2>Skador i utrymmet</h2>
-                            <asp:CheckBoxList runat="server" ID="areadamage"></asp:CheckBoxList>
+                            <asp:CheckBoxList runat="server" ID="areadamage">
+                                <asp:ListItem Text="<span></span>Fritt vatten" Value="1"></asp:ListItem>
+                                <asp:ListItem Text="<span></span>Extrem luftfuktighet" Value="2"></asp:ListItem>
+                                <asp:ListItem Text="<span></span>Luktproblem" Value="3"></asp:ListItem>
+                                <asp:ListItem Text="<span></span>Avloppsvatten/smitta" Value="4"></asp:ListItem>
+                            </asp:CheckBoxList>
                         </div>
+
                         <div class="col2 last">
-                            <h2>Åtgärder i utrymmet</h2><asp:CheckBoxList runat="server" ID="CheckBoxList1"></asp:CheckBoxList>
-                            <asp:TextBox runat="server" ID="TextBox5" placeholder="Avfuktarnummer" CssClass="tooltip" />
-                            <span>
-                                <img class="callout" src="/Images/callout.png" />
-                                <strong>Avfuktarnummer</strong><br />
-                                Nummer på avfuktare
-                            </span>
+                            <h2>Åtgärder i utrymmet</h2>
+                            <ul style="margin-top: 0px;">
+                                <%#formatRoomAction((string)DataBinder.Eval(Container.DataItem, "roomaction"))%>
+                            </ul>
                         </div>
+
                         <div style="clear: both"></div>
                         <div class="col1">
                             <h2>Bilder</h2>
-                            <%--BILDER HÄR--%>
-                        </div>
+                            <asp:Repeater ID="roomimagerepeater" runat="server">
+                                <ItemTemplate> 
+                                    <a rel="lightbox" href="<%#DataBinder.Eval(Container.DataItem, "image")%>">
+                                        <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" class="klotter_images <%#(Container.ItemIndex) % 3 == 0 ? "last" : "" %>" />
+                                    </a>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </div>                        
+
                         <div class="col1">
                             <h2>Övriga noteringar</h2>
-                            <asp:TextBox runat="server" ID="roomnotes" placeholder="Övriga noteringar" CssClass="tooltip" />
+                            <asp:TextBox runat="server" ID="notes" placeholder="Övriga noteringar" CssClass="tooltip" Text='<%#DataBinder.Eval(Container.DataItem, "description")%>' />
                             <span>
                                 <img class="callout" src="/Images/callout.png" />
                                 <strong>Övriga noteringar</strong><br />
                                 Övriga noteringar
                             </span>
-                        </div>
-
-                    </div>
-                </li>
-
+                        </div>                        
+                    </div>                        
+                    </li>
+                </ItemTemplate>
+            </asp:Repeater>
             </ul>
-
         </div>
 
         <div style="clear: both"></div>

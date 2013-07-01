@@ -60,7 +60,7 @@
                             <RoleGroups>
                                 <asp:RoleGroup Roles="Jour">
                                     <ContentTemplate>
-                                        <li><a href="/open_jour.aspx">Jour</a></li>
+                                        <li><a href="/jour/open_jour.aspx">Jour</a></li>
                                     </ContentTemplate>
                                 </asp:RoleGroup>
                             </RoleGroups>

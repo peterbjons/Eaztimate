@@ -1253,6 +1253,10 @@ thead tr.tr_red td {
         width: 916px;
     }
 
+    .forms .col1 textarea {
+        width: 916px;
+    }
+
 .forms .col2 {
     width: 465px;
     margin-right: 10px;
@@ -1324,6 +1328,16 @@ thead tr.tr_red td {
     padding: 12px 10px 11px 10px;
     margin-top: 5px;
     margin-bottom: 10px;
+}
+
+.forms textarea {
+    /*display: block;*/
+    padding: 10px;
+    font-size: 14pt;
+    font-weight: 300;
+    font-family: 'Open Sans';
+    /*width: 310px;*/
+    margin: 5px 0px 10px 0px;
 }
 
 .forms select[size], .forms select[multiple], .forms select[size][multiple] {
@@ -2331,3 +2345,13 @@ ul.contact {
 .forms ul li .room_row_2 {
        
 }
+
+.jourcblist {
+    list-style-type: none;
+}
+
+    .jourcblist li {
+        width: 220px;
+        float: left;
+        margin-right: 10px;
+    }
