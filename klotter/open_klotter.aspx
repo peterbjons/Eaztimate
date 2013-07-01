@@ -9,6 +9,9 @@
         .chart1 > div {
             border: none !important;
         }
+        .chart2 > div {
+            border: none !important;
+        }
     </style>
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvJakG_LsdMMz4JvpjPp838tHpAJUkQOA&sensor=false">
@@ -19,10 +22,10 @@
                 center: new google.maps.LatLng(60.606, 15.649),
                 zoom: 7,
                 disableDefaultUI: true,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
+                /*mapTypeId: google.maps.MapTypeId.HYBRID*/
             };
 
-            var image = '/images/ez_logo_64.png';
+            var image = '/images/flag.png';
             var myLatLng = new google.maps.LatLng(60.606, 15.649);
 
 
@@ -45,7 +48,7 @@
     <h1>Öppna klotterärenden</h1>
     <div class="whitebox">        
         <div>            
-            <div id="chart1" style="float: left">
+            <div id="chart1" style="float: left; margin-right: 10px;">
                 <h2>Ärenden per månad</h2>
                 <ajaxToolkit:BarChart ID="BarChart1" runat="server"  ChartType="Bar"
                     CategoriesAxis="jul, aug, sep, okt, nov, dec" CssClass="chart1"
@@ -56,13 +59,30 @@
                     </Series>
                 </ajaxToolkit:BarChart>
             </div>  
-            <div style="float: left">
-                <h2>Ärendenas placering</h2>
-                <div id="map-canvas" style="width: 300px; height: 200px;"/>
+            <div style="float: left; margin-right: 10px;">
+                <h2>Placering</h2>
+                <div id="map-canvas" style="width: 300px; height: 200px;"></div>
+            </div>
+            <div id="chart2" style="float: left;">
+                <h2>Typ</h2>
+                <ajaxToolkit:PieChart ID="pieChart1" runat="server" ChartHeight="200" 
+                    ChartWidth="300" CssClass="chart2"
+                    ChartTitleColor="#0E426C">
+                    <PieChartValues>
+                        <ajaxToolkit:PieChartValue Category="Högtryckstvätt" Data="45" 
+                        PieChartValueColor="#1c80aa" PieChartValueStrokeColor="#1c80aa" />
+                        <ajaxToolkit:PieChartValue Category="HT Recycling" Data="25" 
+                        PieChartValueColor="#549ec4" PieChartValueStrokeColor="#549ec4" />
+                        <ajaxToolkit:PieChartValue Category="Handtvätt" Data="17" 
+                        PieChartValueColor="#cccccc" PieChartValueStrokeColor="#cccccc" />                        
+                    </PieChartValues>
+                </ajaxToolkit:PieChart >
             </div>
             <div style="clear: both"></div>
         </div>
         <div style="clear: both"></div>
+    </div>
+    <div class="whitebox"> 
         <uc1:klotterlist ID="klotterlist" runat="server" />
             <%--<ajaxToolkit:PieChart ID="PieChart1" runat="server"></ajaxToolkit:PieChart>--%>
         <div style="clear: both"></div>
