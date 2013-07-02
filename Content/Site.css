@@ -1246,7 +1246,7 @@ thead tr.tr_red td {
 
 .forms .col1 {
     width: 940px;
-    clear:both;
+    clear: both;
 }
 
     .forms .col1 input {
@@ -1275,36 +1275,37 @@ thead tr.tr_red td {
     float: left;
     width: 360px;
     margin-right: 10px;
-    background-repeat:
+    background-repeat:;
 }
 
 .forms .col4_3 {
     width: 700px;
-    float:left;
-    margin-right:10px;
-}
-.forms .col4_3 textarea{
-    width:678px;
+    float: left;
+    margin-right: 10px;
 }
 
-
-    .forms .col3 input {
-        width: 336px;
+    .forms .col4_3 textarea {
+        width: 678px;
     }
 
-        .forms .col3 input[type=submit] {
-            width: 359px;
-        }
 
-    .forms .col3 select[size], .forms .col3 select[multiple], .forms .col3 select[size][multiple] {
+.forms .col3 input {
+    width: 336px;
+}
+
+    .forms .col3 input[type=submit] {
         width: 359px;
     }
 
-    .forms .col4 {
-        float:left;
-        width:227px;
-        margin-right:10px;
-    }
+.forms .col3 select[size], .forms .col3 select[multiple], .forms .col3 select[size][multiple] {
+    width: 359px;
+}
+
+.forms .col4 {
+    float: left;
+    width: 227px;
+    margin-right: 10px;
+}
 
 .forms input[type=text] {
     /*display: block;*/
@@ -2325,40 +2326,51 @@ ul.contact {
 
 .dd-select {
     margin-top: 5px!important;
-    padding:4px 0px!important;
+    padding: 4px 0px!important;
     border-radius: 0px !important;
     background-color: #fff !important;
 }
+
 .dd-selected {
     font-weight: 300 !important;
 }
+
 .dd-option-selected {
-      background-color: #85c8e0!important;
+    background-color: #85c8e0!important;
 }
-.dd-option:hover{background-color: #1c80aa!important;}
+
+.dd-option:hover {
+    background-color: #1c80aa!important;
+}
 
 .dd-container {
-    float:left;
+    float: left;
 }
 
 .forms ul.room_row_list {
     list-style-type: none;
 }
-.forms ul.room_row_list li {
-    margin-bottom:10px;
-}
+
+    .forms ul.room_row_list li {
+        margin-bottom: 10px;
+    }
 
 .forms ul li .room_row_1 {
     background-color: #85c8e0;
     color: #fff;
     padding: 1px 10px 4px;
+    font-size: 18pt;
+    font-weight: 300;
 }
+
 .forms ul li .room_row_2 {
-       color: rgb(0, 0, 0);
-background-color: rgb(232, 247, 252);
-background-position: bottom;
-background-repeat: repeat-x;
-background-image: url('../images/gradient.png');
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    /*background-color: rgb(232, 247, 252);*/
+    background-color: rgba(255,255,255,0.70);
+    background-position: bottom;
+    background-repeat: repeat-x;
+    background-image: url('../images/gradient.png');
 }
 
 .jourcblist {
