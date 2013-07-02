@@ -168,7 +168,7 @@
                 <asp:ListItem Text="Ej påverkad" Value="0"></asp:ListItem>
             </asp:DropDownList>
         </div>
-        <div style="clear: both"></div>
+        <div style="clear: both; height: 20px;"></div>
         <div class="col2">
             <asp:Button ID="detailEditButton" runat="server" Text="Spara förändringar" OnClick="detailEditButton_Click" />
         </div>
