@@ -32,6 +32,8 @@ public partial class jour_detail_jour : System.Web.UI.Page
         int contactaction = 0;
         int.TryParse(Request.QueryString["id"] ?? "32", out jourid);
 
+        registerScripts();   
+
         ((HtmlGenericControl)Master.FindControl("slider")).Visible = false;
 
 
@@ -40,9 +42,7 @@ public partial class jour_detail_jour : System.Web.UI.Page
             Response.Redirect("open_jour.aspx", true);
 
         }
-        if (!Page.IsPostBack) {
-
-            registerScripts();            
+        if (!Page.IsPostBack) {                    
 
             using (SqlDataReader reader = Eaztimate.SQL.ExecuteQuery("SELECT a.*,(SELECT TOP 1 timestamp FROM jour_log WHERE jourid=@1 ORDER BY timestamp ASC) timestamp,(SELECT TOP 1 x.image FROM jourimage x WHERE x.jourid=@1 order by image) jourimage FROM jour a WHERE jourid=@1; SELECT a.image,b.journo FROM jourimage a LEFT JOIN jour b ON a.jourid=b.jourid WHERE a.jourid=@1", jourid)) {
                 if (reader.Read()) {
@@ -197,5 +197,14 @@ public partial class jour_detail_jour : System.Web.UI.Page
             }
         }
         return sb.ToString();
+    }
+    protected void RoomSave_Click(object sender, EventArgs e) {
+
+    }
+    protected void detailEditButton_Click(object sender, EventArgs e) {
+
+    }
+    protected void reportEditButton_Click(object sender, EventArgs e) {
+
     }
 }

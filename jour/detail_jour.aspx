@@ -167,6 +167,13 @@
             </asp:DropDownList>
         </div>
         <div style="clear: both"></div>
+        <div class="col2">
+            <asp:Button ID="detailEditButton" runat="server" Text="Spara förändringar" OnClick="detailEditButton_Click" />
+        </div>
+        <div class="col2 last">
+            <asp:Button ID="reportEditButton" runat="server" Text="Spara och skapa rapport(er)" OnClick="reportEditButton_Click" />
+        </div>
+        <div style="clear: both"></div>
         <script>
             $('.dropdown1').ddslick({
 
@@ -237,9 +244,13 @@
                     <li>
                     <div class="room_row_1">
                         <asp:HiddenField ID="roomidHidden" runat="server" Value='<%#DataBinder.Eval(Container.DataItem, "roomid")%>' />
-                        <%#DataBinder.Eval(Container.DataItem, "title")%>
+                        <%#Eval("title")%>
                         <%#(Container.ItemIndex) == 0 ? ", primär skadeplats" : ", sekundär skadeplats" %>
                     </div>
+
+                    <asp:UpdatePanel runat="server">
+                        <ContentTemplate>                        
+
                     <div class="room_row_2" style="display: none">   
                         
                         <div class="col2">
@@ -255,7 +266,7 @@
                         <div class="col2 last">
                             <h2>Åtgärder i utrymmet</h2>
                             <ul style="margin-top: 0px;">
-                                <%#formatRoomAction((string)DataBinder.Eval(Container.DataItem, "roomaction"))%>
+                                <%#formatRoomAction((string)Eval("roomaction"))%>
                             </ul>
                         </div>
 
@@ -264,8 +275,8 @@
                             <h2>Bilder</h2>
                             <asp:Repeater ID="roomimagerepeater" runat="server">
                                 <ItemTemplate> 
-                                    <a rel="lightbox" href="<%#DataBinder.Eval(Container.DataItem, "image")%>">
-                                        <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" class="klotter_images <%#(Container.ItemIndex) % 3 == 0 ? "last" : "" %>" />
+                                    <a rel="lightbox" href="<%#Eval("image")%>">
+                                        <img src="<%#Eval("image")%>" class="klotter_images <%#(Container.ItemIndex) % 3 == 0 ? "last" : "" %>" />
                                     </a>
                                 </ItemTemplate>
                             </asp:Repeater>
@@ -273,7 +284,7 @@
 
                         <div class="col1">
                             <h2>Övriga noteringar</h2>
-                            <asp:TextBox runat="server" ID="notes" placeholder="Övriga noteringar" CssClass="tooltip" Text='<%#DataBinder.Eval(Container.DataItem, "description")%>' />
+                            <asp:TextBox runat="server" ID="notes" placeholder="Övriga noteringar" CssClass="tooltip" Text='<%#Eval("description")%>' />
                             <span>
                                 <img class="callout" src="/Images/callout.png" />
                                 <strong>Övriga noteringar</strong><br />
@@ -281,9 +292,12 @@
                             </span>
                         </div>
                         <div class="col2">
-                            <asp:Button runat="server" CommandName="save" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "roomid")%>' Text="Spara rum" />
+                            <asp:Button runat="server" CommandName="save" CommandArgument='<%#Eval("roomid")%>' Text="Spara rum" OnClick="RoomSave_Click" OnClientClick="alert('test');" />
                         </div>
                         <div style="clear: both;"></div>
+
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
                     </div>                        
                     </li>
                 </ItemTemplate>
