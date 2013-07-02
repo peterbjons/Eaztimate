@@ -2373,6 +2373,10 @@ ul.contact {
     background-image: url('../images/gradient.png');
 }
 
+.forms ul li .room_row_2 ul {
+    list-style-position: inside;
+}
+
 .jourcblist {
     list-style-type: none;
 }
