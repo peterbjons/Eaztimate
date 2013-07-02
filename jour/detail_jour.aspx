@@ -235,17 +235,17 @@
         </script>
     </div>
     <h1>Rum</h1>
-    <div class="forms whitebox">
+    <div class="forms">
 
-        <div class="col1">
+        
 
             <ul class="room_row_list">
             <asp:Repeater ID="roomrepeater" runat="server" OnItemDataBound="roomrepeater_ItemDataBound">
                 <HeaderTemplate>
                 </HeaderTemplate>
                 <ItemTemplate>
-                    <li>
-                    <div class="room_row_1">
+                    <li class="">
+                    <div class="room_row_1 ">
                         <asp:HiddenField ID="roomidHidden" runat="server" Value='<%#DataBinder.Eval(Container.DataItem, "roomid")%>' />
                         <%#Eval("title")%>
                         <%#(Container.ItemIndex) == 0 ? ", primär skadeplats" : ", sekundär skadeplats" %>
@@ -308,7 +308,7 @@
                 </ItemTemplate>
             </asp:Repeater>
             </ul>
-        </div>
+        
 
         <div style="clear: both"></div>
 
