@@ -285,6 +285,7 @@
                                     </div>
                                 </ItemTemplate>
                             </asp:Repeater>
+                            <div style="clear:both"></div>
                         </div>                        
 
                         <div class="col1">
@@ -296,7 +297,8 @@
                                 Övriga noteringar
                             </span>
                         </div>
-                        <div class="col2">
+                        <div class="col2">&nbsp;</div>
+                        <div class="col2 last">
                             <asp:Button runat="server" CommandName="save" CommandArgument='<%#Eval("roomid")%>' Text="Spara rum" OnClick="RoomSave_Click" OnClientClick="alert('test');" />
                         </div>
                         <div style="clear: both;"></div>
