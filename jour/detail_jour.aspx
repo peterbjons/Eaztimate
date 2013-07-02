@@ -278,9 +278,11 @@
                             <h2>Bilder</h2>
                             <asp:Repeater ID="roomimagerepeater" runat="server">
                                 <ItemTemplate> 
-                                    <a rel="lightbox" href="<%#Eval("image")%>">
+                                    <div class="jour_images <%#(Container.ItemIndex+1) % 4 == 0 ? "last" : "" %>" style="float: left;">
+                                    <a href="<%#Eval("image")%>" rel="lightbox" style="text-decoration: none; width: 225px; margin-right: 10px;">                                    
                                         <img src="<%#Eval("image")%>" class="klotter_images <%#(Container.ItemIndex) % 3 == 0 ? "last" : "" %>" />
                                     </a>
+                                    </div>
                                 </ItemTemplate>
                             </asp:Repeater>
                         </div>                        
