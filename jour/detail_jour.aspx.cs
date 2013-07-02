@@ -202,7 +202,11 @@ public partial class jour_detail_jour : System.Web.UI.Page
 
     }
     protected void detailEditButton_Click(object sender, EventArgs e) {
+        int id = 0;
+        int.TryParse((Request.QueryString["id"] ?? string.Empty), out id);
+        if (SaveData(id)) {
 
+        }
     }
     protected void reportEditButton_Click(object sender, EventArgs e) {
 
@@ -227,7 +231,7 @@ public partial class jour_detail_jour : System.Web.UI.Page
             }
 
             if (id > 0) {
-                using (SQL.ExecuteQuery("UPDATE jour SET dateupdated=GETDATE(), lccaseno=@2, contactname=@3, contactaddress=@4, contactaddress2=@5, contactzipcode=@6, contactcity=@7, contactphone1=@8, contactphone2=@9, contactpersonalnumber=@10, damagedescription=@11, damagetype=@12, insurancetype=@13, insurancenumber=@14,action_otherliving=@15, action_cash=@16, action_transport=@17, action_helpcontact=@18 WHERE jourid=@1",
+                using (SQL.ExecuteQuery("UPDATE jour SET dateupdated=GETDATE(), lccaseid=@2, contactname=@3, contactaddress=@4, contactaddress2=@5, contactzipcode=@6, contactcity=@7, contactphone1=@8, contactphone2=@9, contactpersonalnumber=@10, damagedescription=@11, damagetype=@12, insurancetype=@13, insurancenumber=@14,action_otherliving=@15, action_cash=@16, action_transport=@17, action_helpcontact=@18, building_power=@19, building_lockable=@20, building_climatesafe=@21, building_function=@22 WHERE jourid=@1",
                     id,
                     lcno.Text,
                     clientname.Text,
@@ -245,7 +249,11 @@ public partial class jour_detail_jour : System.Web.UI.Page
                     otherneeds.Items.FindByValue("1").Selected,
                     otherneeds.Items.FindByValue("2").Selected,
                     otherneeds.Items.FindByValue("3").Selected,
-                    otherneeds.Items.FindByValue("4").Selected
+                    otherneeds.Items.FindByValue("4").Selected,
+                    el_varme.SelectedValue == "1",
+                    skalskydd.SelectedValue == "1",
+                    klimatskydd.SelectedValue == "1",
+                    funktion.SelectedValue == "1"                    
                     )) { }
             }
             return true;
