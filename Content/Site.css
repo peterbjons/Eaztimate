@@ -1275,6 +1275,7 @@ thead tr.tr_red td {
     float: left;
     width: 360px;
     margin-right: 10px;
+    background-repeat:
 }
 
 .forms .col4_3 {
@@ -2353,7 +2354,11 @@ ul.contact {
     padding: 1px 10px 4px;
 }
 .forms ul li .room_row_2 {
-       
+       color: rgb(0, 0, 0);
+background-color: rgb(232, 247, 252);
+background-position: bottom;
+background-repeat: repeat-x;
+background-image: url('../images/gradient.png');
 }
 
 .jourcblist {
