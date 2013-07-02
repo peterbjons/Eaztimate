@@ -169,7 +169,11 @@
                 <asp:ListItem Text="Ej påverkad" Value="0"></asp:ListItem>
             </asp:DropDownList>
         </div>
+<<<<<<< HEAD
         <div style="clear: both; height: 20px;"></div>
+=======
+        <div style="clear: both;height:20px;"></div>
+>>>>>>> 7ca5192bd878c0deed035ea7577722b09f6e8611
         <div class="col2">
             <asp:Button ID="detailEditButton" runat="server" Text="Spara förändringar" OnClick="detailEditButton_Click" />
         </div>
@@ -278,11 +282,9 @@
                             <h2>Bilder</h2>
                             <asp:Repeater ID="roomimagerepeater" runat="server">
                                 <ItemTemplate> 
-                                    <div class="jour_images <%#(Container.ItemIndex+1) % 4 == 0 ? "last" : "" %>" style="float: left;">
-                                    <a href="<%#Eval("image")%>" rel="lightbox" style="text-decoration: none; width: 225px; margin-right: 10px;">                                    
+                                    <a rel="lightbox" href="<%#Eval("image")%>">
                                         <img src="<%#Eval("image")%>" class="klotter_images <%#(Container.ItemIndex) % 3 == 0 ? "last" : "" %>" />
                                     </a>
-                                    </div>
                                 </ItemTemplate>
                             </asp:Repeater>
                         </div>                        

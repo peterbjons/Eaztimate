@@ -2354,8 +2354,8 @@ ul.contact {
 
     .jourcblist li {
         width: 220px;
-        float: left;
-        margin-right: 10px;
+        /*float: left;*/
+        /*margin-right: 10px;*/
     }
 
 .jour_images {
