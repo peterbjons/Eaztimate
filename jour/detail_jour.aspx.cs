@@ -61,10 +61,10 @@ public partial class jour_detail_jour : System.Web.UI.Page
                     clientzipcode.Text = reader.GetString(reader.GetOrdinal("contactzipcode"));
                     clientcity.Text = reader.GetString(reader.GetOrdinal("contactcity"));
                     if (reader.GetString(reader.GetOrdinal("contactphone1")).Length > 1) {
-                        //contactphone1.Text = reader.GetString(reader.GetOrdinal("contactphone1")) + "<br/>";
+                        clientphone1.Text = reader.GetString(reader.GetOrdinal("contactphone1"));
                     }
                     if (reader.GetString(reader.GetOrdinal("contactphone2")).Length > 1) {
-                        //contactphone2.Text = reader.GetString(reader.GetOrdinal("contactphone2")) + "<br/>";
+                        clientphone2.Text = reader.GetString(reader.GetOrdinal("contactphone2"));
                     }
                     //syncemail.Text = reader.GetString(reader.GetOrdinal("syncemail"));
 

@@ -20,7 +20,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <h1><%: Title %></h1>
     <div class="forms whitebox">
-        <asp:ScriptManager ID="ScriptManager1" runat="server" />        
+        <asp:ScriptManager ID="ScriptManager1" runat="server" />
         <div class="col2">
             <h2>Skadetyp</h2>
             <asp:DropDownList ID="damagetype" runat="server" CssClass="dropdown5" DataValueField="damagetype" DataTextField="damagetype">                
@@ -56,6 +56,12 @@
                 <strong>Postnummer</strong><br />
                 Försäkringstagarens postnummer.
             </span>
+            <asp:TextBox runat="server" ID="clientphone1" placeholder="Telefonnummer" CssClass="tooltip" />
+            <span>
+                <img class="callout" src="/Images/callout.png" />
+                <strong>Telefonnummer</strong><br />
+                Försäkringstagarens telefonnummer.
+            </span>
         </div>
         <div class="col2 last">
             <asp:TextBox runat="server" ID="clientno" placeholder="Personnummer" CssClass="tooltip" />
@@ -75,6 +81,12 @@
                 <img class="callout" src="/Images/callout.png" />
                 <strong>Kundort</strong><br />
                 Försäkringstagarens ort.
+            </span>
+            <asp:TextBox runat="server" ID="clientphone2" placeholder="Telefonnummer" CssClass="tooltip" />
+            <span>
+                <img class="callout" src="/Images/callout.png" />
+                <strong>Telefonnummer</strong><br />
+                Försäkringstagarens telefonnummer.
             </span>
         </div>
         <div style="clear: both"></div>
@@ -267,7 +279,11 @@
                                 <strong>Övriga noteringar</strong><br />
                                 Övriga noteringar
                             </span>
-                        </div>                        
+                        </div>
+                        <div class="col2">
+                            <asp:Button runat="server" CommandName="save" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "roomid")%>' Text="Spara rum" />
+                        </div>
+                        <div style="clear: both;"></div>
                     </div>                        
                     </li>
                 </ItemTemplate>
