@@ -207,4 +207,50 @@ public partial class jour_detail_jour : System.Web.UI.Page
     protected void reportEditButton_Click(object sender, EventArgs e) {
 
     }
+
+    protected bool SaveData(int id) {
+        if (Roles.IsUserInRole("SuperAdministrator") || Roles.IsUserInRole("Administrator") || Roles.IsUserInRole("Jour")) {
+            if (Roles.IsUserInRole("SuperAdministrator")) {
+
+            } else if (Roles.IsUserInRole("Administrator")) {
+                using (SqlDataReader reader = SQL.ExecuteQuery("SELECT jourid FROM jour WHERE jourid=@2 AND customerid=(SELECT customerid FROM customerusers WHERE userid=@1)", Membership.GetUser().ProviderUserKey, id)) {
+                    if (!reader.HasRows) {
+                        return false;
+                    }
+                }
+            } else if (Roles.IsUserInRole("Jour")) {
+                using (SqlDataReader reader = Eaztimate.SQL.ExecuteQuery("SELECT jourid FROM jour WHERE jourid=@1 AND syncemail=@2", id, Membership.GetUser().Email)) {
+                    if (!reader.HasRows) {
+                        return false;
+                    }
+                }
+            }
+
+            if (id > 0) {
+                using (SQL.ExecuteQuery("UPDATE jour SET dateupdated=GETDATE(), lccaseno=@2, contactname=@3, contactaddress=@4, contactaddress2=@5, contactzipcode=@6, contactcity=@7, contactphone1=@8, contactphone2=@9, contactpersonalnumber=@10, damagedescription=@11, damagetype=@12, insurancetype=@13, insurancenumber=@14,action_otherliving=@15, action_cash=@16, action_transport=@17, action_helpcontact=@18 WHERE jourid=@1",
+                    id,
+                    lcno.Text,
+                    clientname.Text,
+                    clientaddress.Text,
+                    clientaddress2.Text,
+                    clientzipcode.Text,
+                    clientcity.Text,
+                    clientphone1.Text,
+                    clientphone2.Text,
+                    clientno.Text,
+                    description.Text,
+                    damagetype.SelectedValue,
+                    insurancetype.Text,     
+                    insurancenumber.Text,
+                    otherneeds.Items.FindByValue("1").Selected,
+                    otherneeds.Items.FindByValue("2").Selected,
+                    otherneeds.Items.FindByValue("3").Selected,
+                    otherneeds.Items.FindByValue("4").Selected
+                    )) { }
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
