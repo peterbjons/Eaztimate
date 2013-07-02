@@ -179,7 +179,7 @@
         <script>
             $('.dropdown1').ddslick({
 
-                width: 217,
+                width: 226,
                 onSelected: function (selectedData) {
 
                     //callback function: do something with selectedData;
@@ -190,7 +190,7 @@
  );
             $('.dropdown2').ddslick({
 
-                width: 217,
+                width: 226,
                 onSelected: function (selectedData) {
 
                     //callback function: do something with selectedData;
@@ -201,7 +201,7 @@
     );
             $('.dropdown3').ddslick({
 
-                width: 217,
+                width: 226,
                 onSelected: function (selectedData) {
 
                     //callback function: do something with selectedData;
@@ -212,7 +212,7 @@
     );
             $('.dropdown4').ddslick({
 
-                width: 247,
+                width: 227,
                 onSelected: function (selectedData) {
 
                     //callback function: do something with selectedData;
