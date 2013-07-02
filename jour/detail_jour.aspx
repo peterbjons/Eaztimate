@@ -125,11 +125,8 @@
             </asp:Repeater>   
             <div style="clear:both"></div>         
         </div>
-        <div class="col1">
-            <h2>Beskrivning</h2>
-            <asp:TextBox runat="server" ID="description" placeholder="Beskrivning" CssClass="tooltip" Rows="3" TextMode="MultiLine" />
-        </div>
-        <div class="col1">
+        
+        <div class="col4 ">
             <h2>Övriga behov</h2>
             <asp:CheckBoxList runat="server" ID="otherneeds" RepeatLayout="UnorderedList" CssClass="jourcblist">
                 <asp:ListItem Text="<span></span>Tillfälligt boende" Value="1"></asp:ListItem>
@@ -138,6 +135,9 @@
                 <asp:ListItem Text="<span></span>Förmedling av kontakt" Value="4"></asp:ListItem>
             </asp:CheckBoxList>
 
+        </div><div class="col4_3 last">
+            <h2>Beskrivning</h2>
+            <asp:TextBox runat="server" ID="description" placeholder="Beskrivning" CssClass="tooltip" Rows="3" TextMode="MultiLine" />
         </div>
         <div style="clear: both"></div>
 
