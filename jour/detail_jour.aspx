@@ -21,9 +21,11 @@
     <h1><%: Title %></h1>
     <div class="forms whitebox">
         <asp:ScriptManager ID="ScriptManager1" runat="server" />
+        <asp:HiddenField ID="journo" runat="server" />
         <div class="col2">
             <h2>Skadetyp</h2>
-            <asp:DropDownList ID="damagetype" runat="server" CssClass="dropdown5" DataValueField="damagetype" DataTextField="damagetype">                
+            <asp:HiddenField ID="damagetype" runat="server" />
+            <asp:DropDownList ID="damagetype_ddl" runat="server" CssClass="dropdown5" DataValueField="damagetype" DataTextField="damagetype">                
             </asp:DropDownList>
         </div>
         <div class="col2 last">
@@ -143,28 +145,36 @@
 
         <div class="col4">
             <h2>Skalskydd</h2>
-            <asp:DropDownList ID="skalskydd" runat="server" CssClass="dropdown1">
+            <asp:HiddenField ID="skalskydd" runat="server" />
+            <asp:DropDownList ID="skalskydd_ddl" runat="server" CssClass="dropdown1">
                 <asp:ListItem Text="Nedsatt" Value="1"></asp:ListItem>
                 <asp:ListItem Text="Ej påverkad" Value="0"></asp:ListItem>
             </asp:DropDownList>
         </div>
         <div class="col4">
             <h2>El/värme</h2>
-            <asp:DropDownList ID="el_varme" runat="server" CssClass="dropdown2">
+            <asp:HiddenField ID="el_varme" runat="server" />
+            <select id="el_varme_ddl" class="dropdown2" runat="server">
+                <option value="1">Nedsatt</option>
+                <option value="0">Ej påverkad</option>
+            </select>
+            <%--<asp:DropDownList ID="el_varme_ddl" runat="server" CssClass="dropdown2">
                 <asp:ListItem Text="Nedsatt" Value="1"></asp:ListItem>
                 <asp:ListItem Text="Ej påverkad" Value="0"></asp:ListItem>
-            </asp:DropDownList>
+            </asp:DropDownList>--%>
         </div>
         <div class="col4">
             <h2>Klimatskydd</h2>
-            <asp:DropDownList ID="klimatskydd" runat="server" CssClass="dropdown3">
+            <asp:HiddenField ID="klimatskydd" runat="server" />
+            <asp:DropDownList ID="klimatskydd_ddl" runat="server" CssClass="dropdown3">
                 <asp:ListItem Text="Nedsatt" Value="1"></asp:ListItem>
                 <asp:ListItem Text="Ej påverkad" Value="0"></asp:ListItem>
             </asp:DropDownList>
         </div>
         <div class="col4 last">
             <h2>Funktion</h2>
-            <asp:DropDownList ID="funktion" runat="server" CssClass="dropdown4">
+            <asp:HiddenField ID="funktion" runat="server" />
+            <asp:DropDownList ID="funktion_ddl" runat="server" CssClass="dropdown4">
                 <asp:ListItem Text="Nedsatt i berörda utrymmen" Value="1"></asp:ListItem>
                 <asp:ListItem Text="Ej påverkad" Value="0"></asp:ListItem>
             </asp:DropDownList>
@@ -181,8 +191,8 @@
             $('.dropdown1').ddslick({
 
                 width: 226,
-                onSelected: function (selectedData) {
-
+                onSelected: function (data) {
+                    $('#<%=skalskydd.ClientID %>').val(data.selectedData.value);
                     //callback function: do something with selectedData;
                 }
             }
@@ -191,20 +201,19 @@
  );
             $('.dropdown2').ddslick({
 
-                width: 226,
-                onSelected: function (selectedData) {
-
-                    //callback function: do something with selectedData;
+                width: 226,                
+                onSelected: function(data){
+                    //alert(data.selectedData.value);
+                    $('#<%=el_varme.ClientID %>').val(data.selectedData.value);
                 }
             }
-
 
     );
             $('.dropdown3').ddslick({
 
                 width: 226,
-                onSelected: function (selectedData) {
-
+                onSelected: function (data) {
+                    $('#<%=klimatskydd.ClientID %>').val(data.selectedData.value);
                     //callback function: do something with selectedData;
                 }
             }
@@ -214,8 +223,8 @@
             $('.dropdown4').ddslick({
 
                 width: 227,
-                onSelected: function (selectedData) {
-
+                onSelected: function (data) {
+                    $('#<%=funktion.ClientID %>').val(data.selectedData.value);
                     //callback function: do something with selectedData;
                 }
             }
@@ -224,8 +233,8 @@
             $('.dropdown5').ddslick({
 
             width: 463,
-            onSelected: function (selectedData) {
-
+            onSelected: function (data) {
+                $('#<%=damagetype.ClientID %>').val(data.selectedData.value);
                 //callback function: do something with selectedData;
             }
             }
@@ -240,7 +249,7 @@
         
 
             <ul class="room_row_list">
-            <asp:Repeater ID="roomrepeater" runat="server" OnItemDataBound="roomrepeater_ItemDataBound">
+            <asp:Repeater ID="roomrepeater" runat="server" OnItemDataBound="roomrepeater_ItemDataBound" OnItemCommand="roomrepeater_ItemCommand">
                 <HeaderTemplate>
                 </HeaderTemplate>
                 <ItemTemplate>
@@ -249,10 +258,7 @@
                         <asp:HiddenField ID="roomidHidden" runat="server" Value='<%#DataBinder.Eval(Container.DataItem, "roomid")%>' />
                         <%#Eval("title")%>
                         <%#(Container.ItemIndex) == 0 ? ", primär skadeplats" : ", sekundär skadeplats" %>
-                    </div>
-
-                    <asp:UpdatePanel runat="server">
-                        <ContentTemplate>                        
+                    </div>               
 
                     <div class="room_row_2" style="display: none">   
                         
@@ -299,28 +305,14 @@
                         </div>
                         <div class="col2">&nbsp;</div>
                         <div class="col2 last">
-                            <asp:Button runat="server" CommandName="save" CommandArgument='<%#Eval("roomid")%>' Text="Spara rum" OnClick="RoomSave_Click" OnClientClick="alert('test');" />
+                            <asp:Button runat="server" CommandName="save" CommandArgument='<%#Eval("roomid")%>' Text="Spara rum"/>
                         </div>
-                        <div style="clear: both;"></div>
-
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
+                        <div style="clear: both;"></div>                      
                     </div>                        
                     </li>
                 </ItemTemplate>
             </asp:Repeater>
-            </ul>
-        
-
+            </ul>       
         <div style="clear: both"></div>
-
-
-
-
     </div>
-
-
-
-
 </asp:Content>
-

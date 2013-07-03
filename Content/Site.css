@@ -2361,6 +2361,7 @@ ul.contact {
     padding: 1px 10px 4px;
     font-size: 18pt;
     font-weight: 300;
+    cursor: pointer;
 }
 
 .forms ul li .room_row_2 {

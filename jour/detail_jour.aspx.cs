@@ -20,17 +20,14 @@ public partial class jour_detail_jour : System.Web.UI.Page
     protected void Page_Init(object seneder, EventArgs e) {
         if (!Page.IsPostBack) {
             using (SqlDataReader reader = Eaztimate.SQL.ExecuteQuery("SELECT DISTINCT damagetype FROM jour")) {
-                damagetype.DataSource = reader;
-                damagetype.DataBind();
+                damagetype_ddl.DataSource = reader;
+                damagetype_ddl.DataBind();
             }
         }
     }
 
     protected void Page_Load(object sender, EventArgs e)
-    {
-        int jourid = 0;
-        int contactaction = 0;
-        int.TryParse(Request.QueryString["id"] ?? "32", out jourid);
+    {        
 
         registerScripts();   
 
@@ -42,114 +39,127 @@ public partial class jour_detail_jour : System.Web.UI.Page
             Response.Redirect("open_jour.aspx", true);
 
         }
-        if (!Page.IsPostBack) {                    
-
-            using (SqlDataReader reader = Eaztimate.SQL.ExecuteQuery("SELECT a.*,(SELECT TOP 1 timestamp FROM jour_log WHERE jourid=@1 ORDER BY timestamp ASC) timestamp,(SELECT TOP 1 x.image FROM jourimage x WHERE x.jourid=@1 order by image) jourimage FROM jour a WHERE jourid=@1; SELECT a.image,b.journo FROM jourimage a LEFT JOIN jour b ON a.jourid=b.jourid WHERE a.jourid=@1", jourid)) {
-                if (reader.Read()) {
-                    insurancenumber.Text = reader.GetString(reader.GetOrdinal("insurancenumber"));
-                    insurancetype.Text = reader.GetString(reader.GetOrdinal("insurancetype"));
-                    //lccaseid.Text = reader.GetString(reader.GetOrdinal("lccaseid"));
-                    damagetype.SelectedValue = reader.GetString(reader.GetOrdinal("damagetype"));
-                    //damagetype.Text = reader.GetString(reader.GetOrdinal("damagetype"));
-                    //jourdate.Text = logdate.Text = reader.GetDateTime(reader.GetOrdinal("timestamp")).ToString("yyyy-MM-dd");
-                    clientname.Text = reader.GetString(reader.GetOrdinal("contactname"));
-                    clientaddress.Text = reader.GetString(reader.GetOrdinal("contactaddress"));
-                    clientno.Text = reader.GetString(reader.GetOrdinal("contactpersonalnumber"));
-                    if (reader.GetString(reader.GetOrdinal("contactaddress2")).Length > 1) {
-                        clientaddress2.Text = reader.GetString(reader.GetOrdinal("contactaddress2"));
-                    }
-                    clientzipcode.Text = reader.GetString(reader.GetOrdinal("contactzipcode"));
-                    clientcity.Text = reader.GetString(reader.GetOrdinal("contactcity"));
-                    if (reader.GetString(reader.GetOrdinal("contactphone1")).Length > 1) {
-                        clientphone1.Text = reader.GetString(reader.GetOrdinal("contactphone1"));
-                    }
-                    if (reader.GetString(reader.GetOrdinal("contactphone2")).Length > 1) {
-                        clientphone2.Text = reader.GetString(reader.GetOrdinal("contactphone2"));
-                    }
-                    //syncemail.Text = reader.GetString(reader.GetOrdinal("syncemail"));
-
-                    //string username = Membership.GetUserNameByEmail(reader.GetString(reader.GetOrdinal("syncemail")));
-                    //MembershipUser user = Membership.GetUser(username);
-
-                    //using (SqlDataReader reader2 = Eaztimate.SQL.ExecuteQuery("SELECT * FROM userdata WHERE userid=@1", user.ProviderUserKey)) {
-                    //    if (reader2.Read()) {
-                    //        fname.Text = reader2.GetString(reader2.GetOrdinal("fname"));
-                    //        lname.Text = reader2.GetString(reader2.GetOrdinal("lname"));
-                    //        tel1.Text = reader2.GetString(reader2.GetOrdinal("tel1"));
-                    //        tel2.Text = reader2.GetString(reader2.GetOrdinal("tel2"));
-                    //    }
-                    //}
-
-
-                    description.Text = reader.GetString(reader.GetOrdinal("damagedescription"));
-
-                    contactaction = reader.GetInt32(reader.GetOrdinal("contactaction"));
-
-                    //actiondesc.Text = reader.GetString(reader.GetOrdinal("actiondescription"));
-                    //entrepeneur.Text = reader.GetString(reader.GetOrdinal("externalentrepeneur"));
-
-                    lcno.Text = reader.GetString(reader.GetOrdinal("lccaseid"));
-
-                    skalskydd.SelectedValue = (reader.GetBoolean(reader.GetOrdinal("building_lockable")) ? "1" : "0");
-                    el_varme.SelectedValue = (reader.GetBoolean(reader.GetOrdinal("building_power")) ? "1" : "0");
-                    klimatskydd.SelectedValue = (reader.GetBoolean(reader.GetOrdinal("building_climatesafe")) ? "1" : "0");
-                    funktion.SelectedValue = (reader.GetBoolean(reader.GetOrdinal("building_function")) ? "1" : "0");
-
-                    //StringBuilder sb = new StringBuilder();
-                    if (reader.GetBoolean(reader.GetOrdinal("action_otherliving"))) {
-                        otherneeds.Items.FindByValue("1").Selected = true;
-                        //sb.Append("<li>Tillfälligt boende</li>");
-                    }
-                    if (reader.GetBoolean(reader.GetOrdinal("action_cash"))) {
-                        otherneeds.Items.FindByValue("2").Selected = true;
-                        //sb.Append("<li>Kontanter</li>");
-                    }
-                    if (reader.GetBoolean(reader.GetOrdinal("action_transport"))) {
-                        otherneeds.Items.FindByValue("3").Selected = true;
-                        //sb.Append("<li>Transport</li>");
-                    }
-                    if (reader.GetBoolean(reader.GetOrdinal("action_helpcontact"))) {
-                        otherneeds.Items.FindByValue("4").Selected = true;
-                        //sb.Append("<li>Förmedling av kontakt vid ej ersättningsbar skada</li>");
-                    }
-                    //otherneeds.Text = sb.ToString();
-
-                    //switch (contactaction) {
-                    //    case 1:
-                    //        action.Text = "Telefonsupport";
-                    //        break;
-                    //    case 2:
-                    //        action.Text = "Försäkringstagaren löser problemet";
-                    //        break;
-                    //    case 3:
-                    //        action.Text = "Insats Ocab";
-                    //        break;
-                    //    case 4:
-                    //        action.Text = "Insats annan entrepenör";
-                    //        break;
-                    //}
-                }
-                reader.NextResult();
-                DataTable dt = new DataTable();
-                dt.Columns.Add(new DataColumn("image", typeof(string)));                
-                while (reader.Read()) {
-                    string url = AmazonHandler.GetPrivateImageJour(reader.GetString(reader.GetOrdinal("journo")) + "/" + reader.GetString(reader.GetOrdinal("image")));
-                    dt.Rows.Add(url);
-                }                
-                jourimagerepeater.DataSource = dt;
-                jourimagerepeater.DataBind();
-            }
-
-            using (SqlDataReader reader = Eaztimate.SQL.ExecuteQuery("SELECT * FROM jour_room WHERE jourid=@1 ORDER BY roomid ASC", jourid)) {
-                roomrepeater.DataSource = reader;
-                roomrepeater.DataBind();
-            }
-
+        if (!Page.IsPostBack) {
+            bindData();
         }
     }
     protected void registerScripts()
     {
         ScriptManager.RegisterStartupScript(Page, Page.GetType(), "showhide", "expandList($('.room_row_1'), $('.room_row_2'));", true);
+    }
+
+    protected void bindData() {
+        int jourid = 0;
+        int.TryParse(Request.QueryString["id"] ?? "32", out jourid);
+        int contactaction = 0;
+        using (SqlDataReader reader = Eaztimate.SQL.ExecuteQuery("SELECT a.*,(SELECT TOP 1 timestamp FROM jour_log WHERE jourid=@1 ORDER BY timestamp ASC) timestamp,(SELECT TOP 1 x.image FROM jourimage x WHERE x.jourid=@1 order by image) jourimage FROM jour a WHERE jourid=@1; SELECT a.image,b.journo FROM jourimage a LEFT JOIN jour b ON a.jourid=b.jourid WHERE a.jourid=@1", jourid)) {
+            if (reader.Read()) {
+                insurancenumber.Text = reader.GetString(reader.GetOrdinal("insurancenumber"));
+                insurancetype.Text = reader.GetString(reader.GetOrdinal("insurancetype"));
+                //lccaseid.Text = reader.GetString(reader.GetOrdinal("lccaseid"));
+                damagetype.Value = reader.GetString(reader.GetOrdinal("damagetype"));
+                damagetype_ddl.SelectedValue = reader.GetString(reader.GetOrdinal("damagetype"));
+                //damagetype_ddl.Items.FindByValue(reader.GetString(reader.GetOrdinal("damagetype"))).Selected = true;
+
+                journo.Value = reader.GetString(reader.GetOrdinal("journo"));
+                //damagetype.Text = reader.GetString(reader.GetOrdinal("damagetype"));
+                //jourdate.Text = logdate.Text = reader.GetDateTime(reader.GetOrdinal("timestamp")).ToString("yyyy-MM-dd");
+                clientname.Text = reader.GetString(reader.GetOrdinal("contactname"));
+                clientaddress.Text = reader.GetString(reader.GetOrdinal("contactaddress"));
+                clientno.Text = reader.GetString(reader.GetOrdinal("contactpersonalnumber"));
+                if (reader.GetString(reader.GetOrdinal("contactaddress2")).Length > 1) {
+                    clientaddress2.Text = reader.GetString(reader.GetOrdinal("contactaddress2"));
+                }
+                clientzipcode.Text = reader.GetString(reader.GetOrdinal("contactzipcode"));
+                clientcity.Text = reader.GetString(reader.GetOrdinal("contactcity"));
+                if (reader.GetString(reader.GetOrdinal("contactphone1")).Length > 1) {
+                    clientphone1.Text = reader.GetString(reader.GetOrdinal("contactphone1"));
+                }
+                if (reader.GetString(reader.GetOrdinal("contactphone2")).Length > 1) {
+                    clientphone2.Text = reader.GetString(reader.GetOrdinal("contactphone2"));
+                }
+                //syncemail.Text = reader.GetString(reader.GetOrdinal("syncemail"));
+
+                //string username = Membership.GetUserNameByEmail(reader.GetString(reader.GetOrdinal("syncemail")));
+                //MembershipUser user = Membership.GetUser(username);
+
+                //using (SqlDataReader reader2 = Eaztimate.SQL.ExecuteQuery("SELECT * FROM userdata WHERE userid=@1", user.ProviderUserKey)) {
+                //    if (reader2.Read()) {
+                //        fname.Text = reader2.GetString(reader2.GetOrdinal("fname"));
+                //        lname.Text = reader2.GetString(reader2.GetOrdinal("lname"));
+                //        tel1.Text = reader2.GetString(reader2.GetOrdinal("tel1"));
+                //        tel2.Text = reader2.GetString(reader2.GetOrdinal("tel2"));
+                //    }
+                //}
+
+
+                description.Text = reader.GetString(reader.GetOrdinal("damagedescription"));
+
+                contactaction = reader.GetInt32(reader.GetOrdinal("contactaction"));
+
+                //actiondesc.Text = reader.GetString(reader.GetOrdinal("actiondescription"));
+                //entrepeneur.Text = reader.GetString(reader.GetOrdinal("externalentrepeneur"));
+
+                lcno.Text = reader.GetString(reader.GetOrdinal("lccaseid"));
+
+                skalskydd.Value = (reader.GetBoolean(reader.GetOrdinal("building_lockable")) ? "1" : "0");
+                skalskydd_ddl.Items.FindByValue((reader.GetBoolean(reader.GetOrdinal("building_lockable")) ? "1" : "0")).Selected = true;
+                el_varme.Value = (reader.GetBoolean(reader.GetOrdinal("building_power")) ? "1" : "0");
+                el_varme_ddl.Items.FindByValue((reader.GetBoolean(reader.GetOrdinal("building_power")) ? "1" : "0")).Selected = true;
+                klimatskydd.Value = (reader.GetBoolean(reader.GetOrdinal("building_climatesafe")) ? "1" : "0");
+                klimatskydd_ddl.Items.FindByValue((reader.GetBoolean(reader.GetOrdinal("building_climatesafe")) ? "1" : "0")).Selected = true;
+                funktion.Value = (reader.GetBoolean(reader.GetOrdinal("building_function")) ? "1" : "0");
+                funktion_ddl.Items.FindByValue((reader.GetBoolean(reader.GetOrdinal("building_function")) ? "1" : "0")).Selected = true;
+
+                //StringBuilder sb = new StringBuilder();
+                if (reader.GetBoolean(reader.GetOrdinal("action_otherliving"))) {
+                    otherneeds.Items.FindByValue("1").Selected = true;
+                    //sb.Append("<li>Tillfälligt boende</li>");
+                }
+                if (reader.GetBoolean(reader.GetOrdinal("action_cash"))) {
+                    otherneeds.Items.FindByValue("2").Selected = true;
+                    //sb.Append("<li>Kontanter</li>");
+                }
+                if (reader.GetBoolean(reader.GetOrdinal("action_transport"))) {
+                    otherneeds.Items.FindByValue("3").Selected = true;
+                    //sb.Append("<li>Transport</li>");
+                }
+                if (reader.GetBoolean(reader.GetOrdinal("action_helpcontact"))) {
+                    otherneeds.Items.FindByValue("4").Selected = true;
+                    //sb.Append("<li>Förmedling av kontakt vid ej ersättningsbar skada</li>");
+                }
+                //otherneeds.Text = sb.ToString();
+
+                //switch (contactaction) {
+                //    case 1:
+                //        action.Text = "Telefonsupport";
+                //        break;
+                //    case 2:
+                //        action.Text = "Försäkringstagaren löser problemet";
+                //        break;
+                //    case 3:
+                //        action.Text = "Insats Ocab";
+                //        break;
+                //    case 4:
+                //        action.Text = "Insats annan entrepenör";
+                //        break;
+                //}
+            }
+            reader.NextResult();
+            DataTable dt = new DataTable();
+            dt.Columns.Add(new DataColumn("image", typeof(string)));
+            while (reader.Read()) {
+                string url = AmazonHandler.GetPrivateImageJour(reader.GetString(reader.GetOrdinal("journo")) + "/" + reader.GetString(reader.GetOrdinal("image")));
+                dt.Rows.Add(url);
+            }
+            jourimagerepeater.DataSource = dt;
+            jourimagerepeater.DataBind();
+        }
+
+        using (SqlDataReader reader = Eaztimate.SQL.ExecuteQuery("SELECT * FROM jour_room WHERE jourid=@1 ORDER BY roomid ASC", jourid)) {
+            roomrepeater.DataSource = reader;
+            roomrepeater.DataBind();
+        }
     }
 
     protected void roomrepeater_ItemDataBound(object sender, RepeaterItemEventArgs e) {
@@ -198,18 +208,23 @@ public partial class jour_detail_jour : System.Web.UI.Page
         }
         return sb.ToString();
     }
-    protected void RoomSave_Click(object sender, EventArgs e) {
+    
 
-    }
+
     protected void detailEditButton_Click(object sender, EventArgs e) {
         int id = 0;
         int.TryParse((Request.QueryString["id"] ?? string.Empty), out id);
         if (SaveData(id)) {
-
+            bindData();
         }
     }
     protected void reportEditButton_Click(object sender, EventArgs e) {
-
+        int id = 0;
+        int.TryParse((Request.QueryString["id"] ?? string.Empty), out id);
+        if (SaveData(id)) {
+            JourSyncController.createPdf(id, journo.Value, Membership.GetUser().Email);
+            bindData();
+        }
     }
 
     protected bool SaveData(int id) {
@@ -243,22 +258,44 @@ public partial class jour_detail_jour : System.Web.UI.Page
                     clientphone2.Text,
                     clientno.Text,
                     description.Text,
-                    damagetype.SelectedValue,
+                    damagetype.Value,
                     insurancetype.Text,     
                     insurancenumber.Text,
                     otherneeds.Items.FindByValue("1").Selected,
                     otherneeds.Items.FindByValue("2").Selected,
                     otherneeds.Items.FindByValue("3").Selected,
                     otherneeds.Items.FindByValue("4").Selected,
-                    el_varme.SelectedValue == "1",
-                    skalskydd.SelectedValue == "1",
-                    klimatskydd.SelectedValue == "1",
-                    funktion.SelectedValue == "1"                    
+                    (el_varme.Value == "1" ? true : false),
+                    skalskydd.Value == "1",
+                    klimatskydd.Value == "1",
+                    funktion.Value == "1"                    
                     )) { }
             }
             return true;
         } else {
             return false;
+        }
+    }
+    protected void RoomSave_Click(object sender, EventArgs e) {
+        
+    }
+    protected void roomrepeater_ItemCommand(object source, RepeaterCommandEventArgs e) {
+        switch (e.CommandName) {
+            case "save":
+                TextBox tb = (TextBox)e.Item.FindControl("notes");
+                CheckBoxList cbl = (CheckBoxList)e.Item.FindControl("areadamage");
+                int i = 0;
+                if (int.TryParse(e.CommandArgument.ToString(), out i)) {
+                    using (SQL.ExecuteQuery("UPDATE jour_room SET description=@2, problem_water=@3, problem_humidity=@4, problem_odor=@5, problem_contamination=@6 WHERE roomid=@1", 
+                        i, 
+                        tb.Text,
+                        cbl.Items.FindByValue("1").Selected,
+                        cbl.Items.FindByValue("2").Selected,
+                        cbl.Items.FindByValue("3").Selected,
+                        cbl.Items.FindByValue("4").Selected
+                        )) { }
+                }
+                break;
         }
     }
 }
