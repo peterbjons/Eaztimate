@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="open_klotter.cs" Inherits="openklotter" Theme="Standard" %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="open_klotter.cs" Inherits="openklotter" Theme="Standard" UICulture="Auto" %>
 <%@ Register Src="~/controls/klotterlist.ascx" TagPrefix="uc1" TagName="klotterlist" %>
 
 <asp:Content runat="server" ID="Content1" ContentPlaceHolderID="HeadContent">
@@ -44,7 +44,7 @@
 </asp:Content>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <ajaxToolkit:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></ajaxToolkit:ToolkitScriptManager>
+    <ajaxToolkit:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnableScriptGlobalization="true" EnableScriptLocalization="true"></ajaxToolkit:ToolkitScriptManager>
     <h1>Öppna klotterärenden</h1>
     <div class="whitebox">        
         <div>            
@@ -81,6 +81,17 @@
             <div style="clear: both"></div>
         </div>
         <div style="clear: both"></div>
+    </div>
+    <div class="whitebox">
+        <asp:TextBox ID="Date1" runat="server"></asp:TextBox>
+        <ajaxToolkit:CalendarExtender runat="server"
+            TargetControlID="Date1"
+    CssClass="ajax__calendar"
+            
+    Format="MMMM d, yyyy"
+    PopupButtonID="Image1" />
+        
+        
     </div>
     <div class="whitebox"> 
         <uc1:klotterlist ID="klotterlist" runat="server" />

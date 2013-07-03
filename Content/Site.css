@@ -2,7 +2,7 @@
     margin: 0px;
     padding: 0px;
     font-family: 'Open Sans';
-    font-size: 11pt;
+ 
 }
 
 body {
@@ -462,8 +462,8 @@ li.block p {
     #content h2 {
         font-weight: 300;
         font-size: 20pt;
-        margin-bottom: 10px;
-        margin-top: 20px;
+        margin-bottom: 15px;
+        margin-top: 0px;
     }
 
 
@@ -2397,3 +2397,9 @@ ul.contact {
         width: 225px; 
         margin-right: 10px;
     }
+
+
+    /* CALENDAR */
+.ajax__calendar_container {
+    font-size: 11px!important;
+}
