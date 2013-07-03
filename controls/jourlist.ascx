@@ -81,7 +81,7 @@
                         Datum
                     </div>
                         </asp:LinkButton>
-                        <asp:LinkButton ID="sort2_lb" OnCommand="Sort_Command" CommandName='2' runat="server">
+                       <%-- <asp:LinkButton ID="sort2_lb" OnCommand="Sort_Command" CommandName='2' runat="server">
                     <div class="sort_item white">
                         <div class="<%=(sortorder == 2 ? "sort_up" : sortorder == 3 ? "sort_down" : "sort_none") %>"></div>
                         Grupp
@@ -92,12 +92,13 @@
                         <div class="<%=(sortorder == 4 ? "sort_up" : sortorder == 5 ? "sort_down" : "sort_none") %>"></div>
                         Namn
                     </div>
-                        </asp:LinkButton>
+                        </asp:LinkButton>--%>
                     </div>
                     </ContentTemplate>
                 <Triggers>
                     <asp:AsyncPostBackTrigger ControlID="cat_cblist" EventName="SelectedIndexChanged" />
                     <asp:AsyncPostBackTrigger ControlID="type_cblist" EventName="SelectedIndexChanged" />
+                    <asp:AsyncPostBackTrigger ControlID="city_cblist" EventName="SelectedIndexChanged" />
                 </Triggers>
             </asp:UpdatePanel>
                     <div id="inspection_help">
@@ -118,6 +119,15 @@
                             </div>
                             <div class="sort_row2 row_kategori2" style="display: none">
                                 <asp:CheckBoxList ID="cat_cblist" runat="server" DataValueField="key" DataTextField="value" OnSelectedIndexChanged="cat_cblist_SelectedIndexChanged" AutoPostBack="true"></asp:CheckBoxList>                                
+                            </div>
+                        </div>
+                        <div id="citydiv" runat="server" class="selection_item white">
+                            <div class="sort_row1 row_city1">
+                                <div class="sort_closed"></div>
+                                Ort
+                            </div>
+                            <div class="sort_row2 row_city2" style="display: none">
+                                <asp:CheckBoxList ID="city_cblist" runat="server" DataValueField="city" DataTextField="title" OnSelectedIndexChanged="city_cblist_SelectedIndexChanged" AutoPostBack="true"></asp:CheckBoxList>                                
                             </div>
                         </div>
                     </div>                

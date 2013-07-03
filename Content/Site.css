@@ -2391,3 +2391,9 @@ ul.contact {
     width: 227px;
     margin-right: 10px;
 }
+
+    .jour_images a {
+        text-decoration: none; 
+        width: 225px; 
+        margin-right: 10px;
+    }

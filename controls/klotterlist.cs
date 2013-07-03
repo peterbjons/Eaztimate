@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Eaztimate;
+using ExtensionMethods;
 
 public partial class controls_klotterlist : System.Web.UI.UserControl
 {
@@ -27,19 +28,38 @@ public partial class controls_klotterlist : System.Web.UI.UserControl
     }
 
     public void bindData() {
-        //typeselection = true;
-        //roomdiv.Visible = typeselection;
-        //if (typeselection) {
+        typeselection = true;
+        roomdiv.Visible = typeselection;
+        if (typeselection) {
+
+
+            List<KeyValuePair<string, string>> data = new List<KeyValuePair<string, string>>();
+            data.Add(new KeyValuePair<string, string>("pressurewasher", "<span></span>Högtryckstvätt"));
+            data.Add(new KeyValuePair<string, string>("pwrecycle", "<span></span>HT Recycle"));
+            data.Add(new KeyValuePair<string, string>("handwashing", "<span></span>Handtvätt"));
+
+            type_cblist.DataSource = data;
+            type_cblist.DataBind();
+            //span for styled checkboxes!
+
+
+
         //    //span for styled checkboxes!
         //    using (SqlDataReader reader = SQL.ExecuteQuery("SELECT DISTINCT damagetype, '<span></span>'+damagetype title FROM jour")) {
-        //        type_cblist.DataSource = reader;
-        //        type_cblist.DataBind();
+            //type_cblist.DataSource = reader;
+            //type_cblist.DataBind();
         //    }
-        //}
-        //catselection = true;
+        }
+        catselection = true;
 
-        //catdiv.Visible = catselection;
-        //if (catselection) {
+        catdiv.Visible = catselection;
+        if (catselection) {
+            using (SqlDataReader reader = SQL.ExecuteQuery("SELECT DISTINCT city, '<span></span>'+city title FROM klotter")) {
+                cat_cblist.DataSource = reader;
+                cat_cblist.DataBind();
+            }
+
+
         //    List<KeyValuePair<int, string>> data = new List<KeyValuePair<int, string>>();
         //    data.Add(new KeyValuePair<int, string>(1, "<span></span>Telefonsupport"));
         //    data.Add(new KeyValuePair<int, string>(2, "<span></span>FT löser problemet"));
@@ -50,7 +70,7 @@ public partial class controls_klotterlist : System.Web.UI.UserControl
         //        cat_cblist.DataSource = data;
         //        cat_cblist.DataBind();
         //    //}
-        //}
+        }
         bindListView();
         //room_hf.Value = roomid.ToString();
         //inspection_hf.Value = inspectionid.ToString();
@@ -93,17 +113,17 @@ public partial class controls_klotterlist : System.Web.UI.UserControl
             case 1:
                 sort = "ORDER BY datecreated ASC";
                 break;
-            case 2:
-                sort = "ORDER BY orderno";
-                break;
+            //case 2:
+            //    sort = "ORDER BY orderno";
+            //    break;
         }
 
         int selectedcount = type_cblist.Items.Cast<ListItem>().Where(item => item.Selected).Count();
         if (selectedcount > 0) {
             var s = type_cblist.Items.Cast<ListItem>()
                    .Where(item => item.Selected)
-                   .Aggregate("", (current, item) => current + ("'" + item.Value + "', "));
-            typeselect = " AND a.damagetype IN (" + s.TrimEnd(new[] { ',', ' ' }) + ")";
+                   .Aggregate("AND (", (current, item) => current + (item.Value + "=1 OR "));
+            typeselect = s.TrimEnd("OR ") + ")";
         } else {
             typeselect = string.Empty;
         }
@@ -112,8 +132,8 @@ public partial class controls_klotterlist : System.Web.UI.UserControl
         if (selectedcount > 0) {
             var s = cat_cblist.Items.Cast<ListItem>()
                    .Where(item => item.Selected)
-                   .Aggregate("", (current, item) => current + (item.Value + ", "));
-            catselect = " AND a.contactaction IN (" + s.TrimEnd(new[] { ',', ' ' }) + ")";
+                   .Aggregate("", (current, item) => current + ("'" + item.Value + "'" + ", "));
+            catselect = " AND a.city IN (" + s.TrimEnd(new[] { ',', ' ' }) + ")";
         } else {
             catselect = string.Empty;
         }
@@ -147,4 +167,5 @@ public partial class controls_klotterlist : System.Web.UI.UserControl
     protected void registerScripts() {
         ScriptManager.RegisterStartupScript(Parent.Page, Parent.Page.GetType(), "showhide", "expandList($('.inspection_row_1'), $('.inspection_row_2'));", true);
     }
+    
 }

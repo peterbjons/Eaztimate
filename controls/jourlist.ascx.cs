@@ -18,11 +18,12 @@ public partial class controls_jourlist : System.Web.UI.UserControl
     public string sort = string.Empty;
     public string typeselect = string.Empty;
     public string catselect = string.Empty;
+    public string cityselect = string.Empty;
 
     protected void Page_Load(object sender, EventArgs e) {
         if (!Page.IsPostBack) {
             registerScripts();
-            ScriptManager.RegisterStartupScript(Parent.Page, Parent.Page.GetType(), "showhideurval", "expandSort($('.row_rum1'), $('.row_rum2'));expandSort($('.row_kategori1'), $('.row_kategori2'));", true);
+            ScriptManager.RegisterStartupScript(Parent.Page, Parent.Page.GetType(), "showhideurval", "expandSort($('.row_rum1'), $('.row_rum2'));expandSort($('.row_kategori1'), $('.row_kategori2'));expandSort($('.row_city1'), $('.row_city2'));", true);
         }
     }
 
@@ -51,6 +52,12 @@ public partial class controls_jourlist : System.Web.UI.UserControl
                 cat_cblist.DataBind();
             //}
         }
+
+        using (SqlDataReader reader = SQL.ExecuteQuery("SELECT DISTINCT contactcity city, '<span></span>'+contactcity title FROM jour")) {
+            city_cblist.DataSource = reader;
+            city_cblist.DataBind();
+        }
+
         bindListView();
         //room_hf.Value = roomid.ToString();
         //inspection_hf.Value = inspectionid.ToString();
@@ -118,7 +125,17 @@ public partial class controls_jourlist : System.Web.UI.UserControl
             catselect = string.Empty;
         }
 
-        SqlDataSource1.SelectCommand = "SELECT a.*,a.journo,(SELECT TOP 1 image FROM jourimage x WHERE x.jourid=a.jourid) image FROM jour a WHERE a.datedeleted IS NULL " + catselect + typeselect + sort;
+        selectedcount = city_cblist.Items.Cast<ListItem>().Where(item => item.Selected).Count();
+        if (selectedcount > 0) {
+            var s = city_cblist.Items.Cast<ListItem>()
+                   .Where(item => item.Selected)
+                   .Aggregate("", (current, item) => current + ("'" + item.Value + "'" + ", "));
+            cityselect = " AND a.contactcity IN (" + s.TrimEnd(new[] { ',', ' ' }) + ")";
+        } else {
+            cityselect = string.Empty;
+        }
+
+        SqlDataSource1.SelectCommand = "SELECT a.*,a.journo,(SELECT TOP 1 image FROM jourimage x WHERE x.jourid=a.jourid) image FROM jour a WHERE a.datedeleted IS NULL " + catselect + typeselect + cityselect + sort;
     }
 
     protected void jourlist_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e) {
@@ -140,6 +157,11 @@ public partial class controls_jourlist : System.Web.UI.UserControl
     }
 
     protected void cat_cblist_SelectedIndexChanged(object sender, EventArgs e) {
+        registerScripts();
+        bindListView();
+    }
+
+    protected void city_cblist_SelectedIndexChanged(object sender, EventArgs e) {
         registerScripts();
         bindListView();
     }
