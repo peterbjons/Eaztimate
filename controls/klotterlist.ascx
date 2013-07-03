@@ -83,7 +83,7 @@
                         Datum
                     </div>
                         </asp:LinkButton>
-                        <asp:LinkButton ID="sort2_lb" OnCommand="Sort_Command" CommandName='2' runat="server">
+                        <%--<asp:LinkButton ID="sort2_lb" OnCommand="Sort_Command" CommandName='2' runat="server">
                     <div class="sort_item white">
                         <div class="<%=(sortorder == 2 ? "sort_up" : sortorder == 3 ? "sort_down" : "sort_none") %>"></div>
                         Grupp
@@ -94,7 +94,7 @@
                         <div class="<%=(sortorder == 4 ? "sort_up" : sortorder == 5 ? "sort_down" : "sort_none") %>"></div>
                         Namn
                     </div>
-                        </asp:LinkButton>
+                        </asp:LinkButton>--%>
                     </div>
                     </ContentTemplate>
                 <Triggers>
@@ -107,19 +107,19 @@
                         <div id="roomdiv" class="selection_item white" runat="server">
                             <div class="sort_row1 row_rum1">
                                 <div class="sort_closed"></div>
-                                Skadetyp
+                                Åtgärder
                             </div>
                             <div class="sort_row2 row_rum2" style="display: none">
-                                <asp:CheckBoxList ID="type_cblist" runat="server" DataValueField="damagetype" DataTextField="title" OnSelectedIndexChanged="type_cblist_SelectedIndexChanged" AutoPostBack="true"></asp:CheckBoxList>                                
+                                <asp:CheckBoxList ID="type_cblist" runat="server" DataValueField="key" DataTextField="value" OnSelectedIndexChanged="type_cblist_SelectedIndexChanged" AutoPostBack="true"></asp:CheckBoxList>                                
                             </div>
                         </div>
                         <div id="catdiv" runat="server" class="selection_item white">
                             <div class="sort_row1 row_kategori1">
                                 <div class="sort_closed"></div>
-                                Åtgärder
+                                Ort
                             </div>
                             <div class="sort_row2 row_kategori2" style="display: none">
-                                <asp:CheckBoxList ID="cat_cblist" runat="server" DataValueField="key" DataTextField="value" OnSelectedIndexChanged="cat_cblist_SelectedIndexChanged" AutoPostBack="true"></asp:CheckBoxList>                                
+                                <asp:CheckBoxList ID="cat_cblist" runat="server" DataValueField="city" DataTextField="title" OnSelectedIndexChanged="cat_cblist_SelectedIndexChanged" AutoPostBack="true"></asp:CheckBoxList>                                
                             </div>
                         </div>
                     </div>                

@@ -13,7 +13,8 @@
         });
     </script>
     <script src="../Scripts/jquery.ddslick.js"></script>
-
+    <link href="/Content/lightbox.css" rel="stylesheet">
+    <script src="/Scripts/lightbox.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
 
@@ -53,7 +54,11 @@
             <h2>Bilder före</h2>
             <asp:Repeater ID="beforeimagerepeater" runat="server">
                 <ItemTemplate>
-                    <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" class="klotter_images <%#(Container.ItemIndex) % 2 != 0 ? "last" : "" %>" />
+                    <div class="jour_images <%#(Container.ItemIndex+1) % 2 == 0 ? "last" : "" %>" style="float: left;">
+                        <a href="<%#Eval("image")%>" rel="lightbox">
+                            <img src="<%#Eval("image")%>" class="jour_images <%#(Container.ItemIndex+1) % 2 == 0 ? "last" : "" %>" />
+                        </a>
+                    </div>
                 </ItemTemplate>
             </asp:Repeater>
         </div>
@@ -61,7 +66,11 @@
             <h2>Bilder efter</h2>
             <asp:Repeater ID="afterimagerepeater" runat="server">
                 <ItemTemplate>
-                    <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" class="klotter_images <%#(Container.ItemIndex) % 2 != 0 ? "last" : "" %>" />
+                    <div class="jour_images <%#(Container.ItemIndex+1) % 2 == 0 ? "last" : "" %>" style="float: left;">
+                        <a href="<%#Eval("image")%>" rel="lightbox">
+                            <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" class="jour_images <%#(Container.ItemIndex+1) % 2 == 0 ? "last" : "" %>" />
+                        </a>
+                    </div>
                 </ItemTemplate>
             </asp:Repeater>
         </div>
@@ -138,7 +147,7 @@
         </div><div style="clear: both"></div>
         <h2>Polisrapport</h2>
         <div class="col2">
-
+            <asp:HiddenField ID="policereport_hidden" runat="server" />
             <asp:DropDownList ID="policereport" runat="server" CssClass="dropdown">
                 <asp:ListItem Text="Ja" Value="1"></asp:ListItem>
                 <asp:ListItem Text="Nej" Value="0"></asp:ListItem>
@@ -159,8 +168,10 @@
         <div style="clear: both"></div>
         <div class="col2">
             <h2>Tidsåtgång</h2>
+            <asp:HiddenField ID="hour_hidden" runat="server" />
             <asp:DropDownList ID="hour_ddl" runat="server" Style="width: 100px" CssClass="dropdown2">
             </asp:DropDownList><div style="float:left; width:10px; height: 10px;"></div>
+            <asp:HiddenField ID="minutes_hidden" runat="server" />
             <asp:DropDownList ID="minutes_ddl" runat="server" Style="width: 100px;" CssClass="dropdown3">
             </asp:DropDownList><div style="clear:both"></div>
         </div>
@@ -183,8 +194,8 @@
     </div>
     <script> $('.dropdown').ddslick({
      width:463,
-     onSelected: function (selectedData) {
-
+     onSelected: function (data) {
+         $('#<%=policereport_hidden.ClientID %>').val(data.selectedData.value);
          //callback function: do something with selectedData;
      }
  }
@@ -194,8 +205,8 @@
         $('.dropdown2').ddslick({
             height: 300,
             width: 227,
-            onSelected: function (selectedData) {
-
+            onSelected: function (data) {
+                $('#<%=hour_hidden.ClientID %>').val(data.selectedData.value);
                 //callback function: do something with selectedData;
             }
         }
@@ -205,8 +216,8 @@
         $('.dropdown3').ddslick({
             height: 300,
             width: 227,
-            onSelected: function (selectedData) {
-
+            onSelected: function (data) {
+                $('#<%=minutes_hidden.ClientID %>').val(data.selectedData.value);
                 //callback function: do something with selectedData;
             }
         }

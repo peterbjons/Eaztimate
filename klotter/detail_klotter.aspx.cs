@@ -55,7 +55,9 @@ public partial class klotter_detail_klotter : System.Web.UI.Page
                 policereport.SelectedValue = reader.GetBoolean(reader.GetOrdinal("policereport")) ? "1" : "0";
 
                 hour_ddl.SelectedValue = reader.GetInt32(reader.GetOrdinal("hours")).ToString();
+                hour_hidden.Value = reader.GetInt32(reader.GetOrdinal("hours")).ToString();
                 minutes_ddl.SelectedValue = reader.GetInt32(reader.GetOrdinal("minutes")).ToString();
+                minutes_hidden.Value = reader.GetInt32(reader.GetOrdinal("minutes")).ToString();
             }
         }
 
@@ -98,7 +100,7 @@ public partial class klotter_detail_klotter : System.Web.UI.Page
         int id = 0;
         int.TryParse((Request.QueryString["id"] ?? string.Empty), out id);
         if (SaveData(id)) {
-
+            BindData();
         }
     }
 
@@ -107,8 +109,9 @@ public partial class klotter_detail_klotter : System.Web.UI.Page
         int.TryParse((Request.QueryString["id"] ?? string.Empty), out id);
         if (SaveData(id)) {
             KlotterSyncController.createPdf(id, klotterno.Value, Membership.GetUser().Email);
-            if (policereport.SelectedValue == "1") {
+            if (policereport_hidden.Value == "1") {
                 KlotterSyncController.createpolicereportPdf(id, klotterno.Value, Membership.GetUser().Email);
+                BindData();
             }
         }
     }
@@ -133,8 +136,8 @@ public partial class klotter_detail_klotter : System.Web.UI.Page
 
             if (id > 0) {
                 int hours = 0,minutes = 0;
-                int.TryParse(hour_ddl.SelectedValue, out hours);
-                int.TryParse(minutes_ddl.SelectedValue, out minutes);
+                int.TryParse(hour_hidden.Value, out hours);
+                int.TryParse(minutes_hidden.Value, out minutes);
                 using (SQL.ExecuteQuery("UPDATE klotter SET dateupdated=GETDATE(), orderno=@2, title=@3, address1=@4, zipcode=@5, city=@6, buildingno=@7, description=@8, policereport=@9, policereporttext=@10, client=@11, clientno=@12, clientaddress=@13, clientaddress2=@14, clientzipcode=@15, clientcity=@16, hours=@17, minutes=@18 WHERE klotterid=@1",
                     id,
                     aonr.Text,
@@ -144,7 +147,7 @@ public partial class klotter_detail_klotter : System.Web.UI.Page
                     city.Text,
                     fastbet.Text,
                     description.Text,
-                    (policereport.SelectedValue == "1" ? true : false),
+                    (policereport_hidden.Value == "1" ? true : false),
                     policetext.Text,
                     clientname.Text,
                     clientno.Text,
