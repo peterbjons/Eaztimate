@@ -274,7 +274,7 @@ public class JourSyncController : ApiController
         //return counter;
     }
 
-    private bool createPdf(long jid,string journo,string email) {
+    public static bool createPdf(long jid,string journo,string email) {
         string contents = string.Empty;
 
         MemoryStream ms = new MemoryStream();
