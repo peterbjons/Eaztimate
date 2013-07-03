@@ -46,7 +46,7 @@
                             <RoleGroups>
                                 <asp:RoleGroup Roles="Lösöre">
                                     <ContentTemplate>
-                                        <li><a href="product_description_losore.aspx">Lösöre</a>
+                                        <li><a href="open_inspection.aspx">Lösöre</a>
                                             <ul>
                                                 <li><a href="create_inspection.aspx" runat="server" id="menu2">Skapa</a></li>
                                                 <li><a href="open_inspection.aspx" runat="server" id="menu3">Öppna</a></li>
