@@ -74,7 +74,7 @@
                         <ajaxToolkit:PieChartValue Category="HT Recycling" Data="25" 
                         PieChartValueColor="#549ec4" PieChartValueStrokeColor="#549ec4" />
                         <ajaxToolkit:PieChartValue Category="Handtvätt" Data="17" 
-                        PieChartValueColor="#cccccc" PieChartValueStrokeColor="#cccccc" />                        
+                        PieChartValueColor="#85c8e0" PieChartValueStrokeColor="#85c8e0" />                        
                     </PieChartValues>
                 </ajaxToolkit:PieChart >
             </div>
