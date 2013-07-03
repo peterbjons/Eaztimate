@@ -30,7 +30,7 @@
                 Ärendets arbetsordernummer
             </span>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="aonr"
-                CssClass="field-validation-error" ErrorMessage="The email address field is required." Display="Dynamic" />
+                CssClass="field-validation-error" ErrorMessage="Arbetsordernummer krävs" Display="Dynamic" />
         </div>
         <div class="col2 last">
             <asp:TextBox runat="server" ID="title" placeholder="Titel" CssClass="tooltip" />
@@ -40,14 +40,14 @@
                 Dokumentationens titel.
             </span>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="title"
-                CssClass="field-validation-error" ErrorMessage="The first name field is required." Display="Dynamic" />
+                CssClass="field-validation-error" ErrorMessage="Titel krävs" Display="Dynamic" />
         </div><div style="clear: both"></div>
         <div class="col1">
             <asp:TextBox runat="server" ID="description" placeholder="Jobbeskrivning" CssClass="tooltip" />
             <span>
                 <img class="callout" src="/Images/callout.png" />
-                <strong>Titel</strong><br />
-                Dokumentationens titel.
+                <strong>Jobbeskrivning</strong><br />
+                Beskrivning av jobbet.
             </span>
         </div>
         <div class="col2">
