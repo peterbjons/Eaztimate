@@ -2404,8 +2404,15 @@ ul.contact {
     font-size: 11px!important;
 }
 
+.datepicker {
+    float:right;
+        margin-bottom:5px;
+}
 .datepicker input[type=text] {
     padding: 2px 5px;
     width:90px;
     text-align:center;
+}
+.datepicker input[type=image] {
+    vertical-align:bottom;
 }

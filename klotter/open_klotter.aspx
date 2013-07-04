@@ -61,8 +61,9 @@
             CssClass="ajax__calendar"
             Format="yyyy-MM-dd"
             />
-        <asp:Button ID="updateDate" runat="server" OnClick="updateDate_Click" Text="Uppdatera"/>
-    </div>
+        
+        <asp:ImageButton ID="updateDate" runat="server" OnClick="updateDate_Click" Text="Uppdatera" ImageUrl="~/Images/datepicker_reload.png"/>
+    </div><div style="clear:both"></div>
     <div class="whitebox">        
         <div>            
             <div id="chart1" style="float: left; margin-right: 10px;">
