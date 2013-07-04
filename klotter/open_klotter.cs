@@ -17,6 +17,8 @@ public partial class openklotter : Page
 
         if (!Page.IsPostBack) {
             klotterlist.bindData();
+            datestartExtender.SelectedDate = DateTime.Now.AddMonths(-1);
+            dateendExtender.SelectedDate = DateTime.Now;
         }
     }
     //protected void klotterrepeater_ItemCommand(object source, RepeaterCommandEventArgs e) {
@@ -41,5 +43,15 @@ public partial class openklotter : Page
             default:
                 return "white";
         }
+    }
+    protected void updateDate_Click(object sender, EventArgs e) {
+        DateTime sdate, edate;
+        if (DateTime.TryParse(datestart.Text, out sdate) && DateTime.TryParse(dateend.Text, out edate)) {
+            klotterlist.datestart = sdate;
+            klotterlist.dateend = edate;
+            datestartExtender.SelectedDate = sdate;
+            dateendExtender.SelectedDate = edate;
+            klotterlist.bindData();
+        }        
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="klotterlist.cs" Inherits="controls_klotterlist" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="klotterlist.ascx.cs" Inherits="controls_klotterlist" %>
 <script>
     Modernizr.addTest('csschecked', function () {
         return Modernizr.testStyles("#modernizr input {margin-left:0px;} #modernizr input:checked {margin-left: 20px;}", function (elem) {

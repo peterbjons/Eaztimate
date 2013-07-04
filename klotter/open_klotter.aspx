@@ -46,6 +46,23 @@
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <ajaxToolkit:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnableScriptGlobalization="true" EnableScriptLocalization="true"></ajaxToolkit:ToolkitScriptManager>
     <h1>Öppna klotterärenden</h1>
+    <div style="text-align: right; margin-bottom: 5px;">
+        <asp:TextBox ID="datestart" runat="server"></asp:TextBox>
+        <ajaxToolkit:CalendarExtender runat="server"
+            id="datestartExtender"
+            TargetControlID="datestart"
+            CssClass="ajax__calendar"            
+            Format="yyyy-MM-dd"
+            />
+         - 
+        <asp:TextBox ID="dateend" runat="server"></asp:TextBox>
+        <ajaxToolkit:CalendarExtender ID="dateendExtender" runat="server"
+            TargetControlID="dateend"
+            CssClass="ajax__calendar"
+            Format="yyyy-MM-dd"
+            />
+        <asp:Button ID="updateDate" runat="server" OnClick="updateDate_Click" Text="Uppdatera"/>
+    </div>
     <div class="whitebox">        
         <div>            
             <div id="chart1" style="float: left; margin-right: 10px;">
@@ -81,18 +98,7 @@
             <div style="clear: both"></div>
         </div>
         <div style="clear: both"></div>
-    </div>
-    <div class="whitebox">
-        <asp:TextBox ID="Date1" runat="server"></asp:TextBox>
-        <ajaxToolkit:CalendarExtender runat="server"
-            TargetControlID="Date1"
-    CssClass="ajax__calendar"
-            
-    Format="MMMM d, yyyy"
-    PopupButtonID="Image1" />
-        
-        
-    </div>
+    </div>    
     <div class="whitebox"> 
         <uc1:klotterlist ID="klotterlist" runat="server" />
             <%--<ajaxToolkit:PieChart ID="PieChart1" runat="server"></ajaxToolkit:PieChart>--%>

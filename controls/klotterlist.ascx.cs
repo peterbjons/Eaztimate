@@ -20,6 +20,9 @@ public partial class controls_klotterlist : System.Web.UI.UserControl
     public string typeselect = string.Empty;
     public string catselect = string.Empty;
 
+    public DateTime? datestart { get { DateTime? dt = (DateTime?)ViewState["datestart"]; return ((dt == null) ? DateTime.Now.AddMonths(-1) : dt); } set { ViewState["datestart"] = value; } }
+    public DateTime? dateend { get { DateTime? dt = (DateTime?)ViewState["dateend"]; return ((dt == null) ? DateTime.Now : dt); } set { ViewState["dateend"] = value; } }
+
     protected void Page_Load(object sender, EventArgs e) {
         if (!Page.IsPostBack) {
             registerScripts();
@@ -138,7 +141,10 @@ public partial class controls_klotterlist : System.Web.UI.UserControl
             catselect = string.Empty;
         }
 
-        SqlDataSource1.SelectCommand = "SELECT a.*,(SELECT TOP 1 image FROM klotter_image x WHERE x.klotterid=a.klotterid and type=0) image FROM klotter a WHERE a.datedeleted IS NULL " + catselect + typeselect + sort;
+        SqlDataSource1.SelectParameters.Clear();
+        SqlDataSource1.SelectParameters.Add("StartDate", datestart.ToString());
+        SqlDataSource1.SelectParameters.Add("EndDate", dateend.ToString());
+        SqlDataSource1.SelectCommand = "SELECT a.*,(SELECT TOP 1 image FROM klotter_image x WHERE x.klotterid=a.klotterid and type=0) image FROM klotter a WHERE a.datedeleted IS NULL AND datecreated > @StartDate AND datecreated < @EndDate " + catselect + typeselect + sort;
     }
 
     protected void klotterlist_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e) {
