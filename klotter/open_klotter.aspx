@@ -46,7 +46,7 @@
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <ajaxToolkit:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnableScriptGlobalization="true" EnableScriptLocalization="true"></ajaxToolkit:ToolkitScriptManager>
     <h1>Öppna klotterärenden</h1>
-    <div style="text-align: right; margin-bottom: 5px;">
+    <div class="datepicker">
         <asp:TextBox ID="datestart" runat="server"></asp:TextBox>
         <ajaxToolkit:CalendarExtender runat="server"
             id="datestartExtender"

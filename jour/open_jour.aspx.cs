@@ -17,6 +17,8 @@ public partial class openjour : Page
 
         if (!Page.IsPostBack) {
             jourlist.bindData();
+            datestartExtender.SelectedDate = DateTime.Now.AddMonths(-1);
+            dateendExtender.SelectedDate = DateTime.Now;
         }
     }
     protected void jourrepeater_ItemCommand(object source, RepeaterCommandEventArgs e) {
@@ -41,5 +43,8 @@ public partial class openjour : Page
             default:
                 return "white";
         }
+    }
+    protected void updateDate_Click(object sender, EventArgs e) {
+
     }
 }

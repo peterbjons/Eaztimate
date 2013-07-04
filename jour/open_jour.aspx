@@ -9,6 +9,23 @@
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <asp:ScriptManager ID="ScriptManager1" runat="server" />
     <h1>Open Jour</h1>
+    <div class="datepicker">
+        <asp:TextBox ID="datestart" runat="server"></asp:TextBox>
+        <ajaxToolkit:CalendarExtender runat="server"
+            id="datestartExtender"
+            TargetControlID="datestart"
+            CssClass="ajax__calendar"            
+            Format="yyyy-MM-dd"
+            />
+         - 
+        <asp:TextBox ID="dateend" runat="server"></asp:TextBox>
+        <ajaxToolkit:CalendarExtender ID="dateendExtender" runat="server"
+            TargetControlID="dateend"
+            CssClass="ajax__calendar"
+            Format="yyyy-MM-dd"
+            />
+        <asp:Button ID="updateDate" runat="server" OnClick="updateDate_Click" Text="Uppdatera"/>
+    </div>
     <div class="whitebox">
     <uc1:jourlist ID="jourlist" runat="server" />
    

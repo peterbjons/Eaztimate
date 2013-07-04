@@ -20,6 +20,9 @@ public partial class controls_jourlist : System.Web.UI.UserControl
     public string catselect = string.Empty;
     public string cityselect = string.Empty;
 
+    public DateTime? datestart { get { DateTime? dt = (DateTime?)ViewState["datestart"]; return ((dt == null) ? DateTime.Now.AddMonths(-1) : dt); } set { ViewState["datestart"] = value; } }
+    public DateTime? dateend { get { DateTime? dt = (DateTime?)ViewState["dateend"]; return ((dt == null) ? DateTime.Now : dt); } set { ViewState["dateend"] = value; } }
+
     protected void Page_Load(object sender, EventArgs e) {
         if (!Page.IsPostBack) {
             registerScripts();
@@ -135,7 +138,10 @@ public partial class controls_jourlist : System.Web.UI.UserControl
             cityselect = string.Empty;
         }
 
-        SqlDataSource1.SelectCommand = "SELECT a.*,a.journo,(SELECT TOP 1 image FROM jourimage x WHERE x.jourid=a.jourid) image FROM jour a WHERE a.datedeleted IS NULL " + catselect + typeselect + cityselect + sort;
+        SqlDataSource1.SelectParameters.Clear();
+        SqlDataSource1.SelectParameters.Add("StartDate", datestart.ToString());
+        SqlDataSource1.SelectParameters.Add("EndDate", dateend.ToString());
+        SqlDataSource1.SelectCommand = "SELECT a.*,a.journo,(SELECT TOP 1 image FROM jourimage x WHERE x.jourid=a.jourid) image FROM jour a WHERE a.datedeleted IS NULL AND datecreated > @StartDate AND datecreated < @EndDate " + catselect + typeselect + cityselect + sort;
     }
 
     protected void jourlist_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e) {
