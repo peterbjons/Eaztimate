@@ -2403,3 +2403,9 @@ ul.contact {
 .ajax__calendar_container {
     font-size: 11px!important;
 }
+
+.datepicker input[type=text] {
+    padding: 2px 5px;
+    width:90px;
+    text-align:center;
+}
