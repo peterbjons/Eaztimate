@@ -15,6 +15,10 @@
                 <div class="logo">
                     <img src="../Images/forsak2.png" />
                 </div>
+                <div class="sanerings_company_logo"><b>2013-01-02</b><br />
+                    <%: createdby %>
+                    
+                </div>
             </div>
             <div class="inspection_number">
                 <%: klotterno %>
@@ -48,8 +52,8 @@
                 <%: comment %>
             </div>
             <div class="col col_205 last">
-                <h2 class="dark">Utfört av</h2>
-                <%: createdby %>
+                <h2 class="dark">Taggar</h2>
+                <%: tags %>
             </div>
 
 
@@ -98,6 +102,9 @@
             <div class="header height150">
                 <div class="logo">
                     <img src="../Images/forsak2.png" />
+                </div>                <div class="sanerings_company_logo"><b>2013-01-02</b><br />
+                    <%: createdby %>
+                    
                 </div>
             </div>
             <div class="inspection_number"><%:klotterno %></div>
@@ -108,12 +115,6 @@
             </div>
             <div style="clear: both"></div>
 
-            <div class="col col_430">
-                <h2 class="dark">Taggar</h2>
-                <%: tags %>
-            </div>
-
-
             <div class="col col_880">
                 <h2 class="dark">Bilder före</h2>
                 <asp:Repeater ID="beforeimagerepeater" runat="server">
@@ -122,14 +123,34 @@
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
+
+        </div>
+        <div style="page-break-before: always">&nbsp;</div>
+                <div class="a4_paper ">
+            <div class="header height150">
+                <div class="logo">
+                    <img src="../Images/forsak2.png" />
+                </div>                <div class="sanerings_company_logo"><b>2013-01-02</b><br />
+                    <%: createdby %>
+                    
+                </div>
+            </div>
+            <div class="inspection_number"><%:klotterno %></div>
+
+            <div style="clear: both"></div>
+            <div class="header_text">
+                <%: title %>
+            </div>
+            <div style="clear: both"></div>
             <div class="col col_880">
-                <h2 class="light">Bilder efter</h2>
+                <h2 class="dark">Bilder efter</h2>
                 <asp:Repeater ID="afterimagerepeater" runat="server">
                     <ItemTemplate>                    
                         <img src="<%#DataBinder.Eval(Container.DataItem, "image")%>" class="two_two <%#(Container.ItemIndex) % 2 != 0 ? "last" : "" %>" />
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
+
         </div>
     </form>
 </body>

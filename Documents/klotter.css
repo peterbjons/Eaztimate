@@ -57,10 +57,15 @@ body {
 }
 
 .sanerings_company_logo {
-    height: 150px;
-    width: 300px;
+
     float: right;
+    text-align:right;
+    padding-top:20px;
 }
+.sanerings_company_logo b {
+    font-size:16pt;
+}
+
 
     .ensurance_company_logo img, .sanerings_company_logo img {
         max-width: 300px;
@@ -90,7 +95,7 @@ body {
 .header {
         padding-left: 0px;
     padding-top:20px;
-    padding-right: 40px;
+    
 }
 .header.height150 {
     height: 150px;
