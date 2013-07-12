@@ -27,15 +27,38 @@
                 <li>Storlek: <span style="color: #1c80aa">5.1 MB</span></li>
                 <li>Språk: <span style="color: #1c80aa">Svenska</span></li>
                 <li>Uppdaterad: <span style="color: #1c80aa">2013-06-18</span></li>
+                <li>Platform: <span style="color: #1c80aa">Android +4.0</span></li>
             </ul>
             <h2>Hårdvarukrav</h2>
             <ul class="app_funktioner">
                 <li>Kamera</li>
                 <li>GPS</li>
             </ul>
+            <%--<h2>När</h2>
+            <ul class="app_funktioner">
+                <li>Vid vid tvätt av tak och fasader, klotter och andra missfärgningar</li>
+            </ul>
+            <h2>Hur</h2>
+            <ul class="app_funktioner">
+                <li>Registrera dig hos Eaztimate
+(om du inte redan har ett användarkonto)</li>
+                <li>Ladda ner EZ Klottet till mobiltelefonen</li>
+                <li>Fyll i användaruppgifter </li>
+                <li>Börja använda </li>
+            </ul>
+            <h2>Varför</h2>
+            <ul class="app_funktioner">
+                <li>Dokumentera före och efter insats</li>
+                <li>Skapar arbetsrapporter</li>
+                <li>Förenklar polisanmälan</li>
+                <li>Bra rapportverktyg för 
+Var insatser gjorts</li>
+                <li>Vilka insatser</li>
+                <li>Vilka taggar som tagits bort</li>
+            </ul>--%>
         </div>
         <div class="app_col2">
-            <div class="app_banner" style="background-image: url(images/stock/banner-31.jpg);"></div>
+            <div class="app_banner" style="background-image: url(images/stock/banner-klotter-app.jpg);"></div>
             <h2>Beskrivning</h2>
             <p>EZ klotter utvecklades som namnet antyder för att hantera dokumentation av klotterärenden men när Micke Pettersson på OCAB i Dalarna började använda den så kom det fram fler användningsområden. Som ansvarig för högtryckstvättarbilen använder han i dag EZ Klotter för att dokumentera alla typer av insatser.</p>
             <h2>Så funkar det</h2>
@@ -48,28 +71,43 @@
                 <li>Skriver in eventuella kommentarer.</li>
                 <li>Skapar rapport som skickas till din E-post som en PDF.</li>
             </ul>
-            <div style="width: 350px; margin-right: 20px; float: left;">
+            <div class="varhurvarfor">
                 <h2>När</h2>
-                <p>Jobb där det är viktigt att enkelt kunna dokumentera före och efter insats, exempelvis klottersanering</p>
+                <p>Vid vid tvätt av tak och fasader, klotter och andra missfärgningar</p>
             </div>
-            <div style="width: 360px; float: left;">
-                <h2>Var</h2>
-                <p>I mobilen ute på fältet görs all dokumentation och färdiga debiteringsunderlag</p>
-            </div><div style="width:350px; margin-right:20px;float:left;">
-            <h2>Hur</h2>
-            <p>Smidigare än så här kommer det inte att bli, ta fram mobilen, fota före, fota efter, full i uppgifter och skicka rapport till uppdragsgivare</p></div><div style="width: 360px; float: left;">
-            <h2>Varför</h2>
-            <p>Plocka undan ett omfattande arbetsmoment och samtidigt höja kvalitet och kontroll</p></div>
-            <div style="clear:both"></div>
+            <div class="varhurvarfor">
+                <h2>Hur</h2>
+                <p>
+                    Registrera dig hos Eaztimate
+(om du inte redan har ett användarkonto)
+Ladda ner EZ Klottet till mobiltelefonen
+Fyll i användaruppgifter 
+Börja använda
+                </p>
+            </div>
+            <div class="varhurvarfor last">
+                <h2>Varför</h2>
+                <p>
+                    Dokumentera före och efter insats
+Skapar arbetsrapporter
+Förenklar polisanmälan
+Bra rapportverktyg för 
+Var insatser gjorts
+Vilka insatser
+Vilka taggar som tagits bort
+                </p>
+            </div>
+
+            <div style="clear: both"></div>
             <h2>Skärmdumpar</h2>
             <div class="app_screenshots">
                 <ul style="width: 1100px;">
                     <li>
-                        <img src="Images/screenshot_byggskada1.png" /></li>
+                        <img src="Images/screenshot_klotter1.jpg" /></li>
                     <li>
-                        <img src="Images/screenshot_byggskada2.png" /></li>
-                    <li>
-                        <img src="Images/screenshot_byggskada3.png" /></li>
+                        <img src="Images/screenshot_klotter2.jpg" /></li>
+                    <%--<li>
+                        <img src="Images/screenshot_klotter2.jpg" /></li>--%>
 
                 </ul>
                 <div style="clear: both;"></div>

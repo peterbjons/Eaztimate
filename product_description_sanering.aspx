@@ -45,22 +45,19 @@
             </p><p>Arbetet utgår från att det finns ett bestämt flöde i insamlingen. Ett flöde baserat på erfaren och utarbetade rutiner. EZ Sanering fungerar som en checklista över vilka delar som skall dokumenteras.</p>
         <p>Genom integrationen med bakomliggande ärendehanteringssystem kan all data som samlas in i EZ Sanering synkroniseras och föras vidare under arbetes gång. Experter och skadereglerare kan ta del av viktig  information utan onödiga ledtider.
 </p>
-            <div style="width: 350px; margin-right: 20px; float: left;">
+            <div class="varhurvarfor">
                 <h2>När</h2>
                 <p>Vid dokumentation av sot och brandskador på fastigheter.</p>
             </div>
-            <div style="width: 360px; float: left;">
+            <div class="varhurvarfor">
                 <h2>Var</h2>
                 <p>På platsen för skadan hjälper EZ Sanering (kan köras både i telefon eller padda) dig att skapa nödvändig dokumentation, informationen synkas med befintligt ärendehanteringssystem och rapporten kan kompletteras via PC.</p>
             </div>
-            <div style="width: 350px; margin-right: 20px; float: left;">
+            <div class="varhurvarfor last">
                 <h2>Hur</h2>
                 <p>Ladda hem EZ Byggskada från vår hemsida, EZ Sanering är integreras med bakomliggande  ärendehanteringssystem och använder samma inloggningsuppgifter. EZ Sanering fungerar sedan som en blandning mellan checklista och anteckningsblock, alla uppgifter du behöver för att skapa en rapport samlas in via EZ Byggskada.</p>
             </div>
-            <div style="width: 360px; float: left;">
-                <h2>Varför</h2>
-                <p>Det är mycket att hålla reda på vid dokumentation av sot och brandskador, har du då ett verktyg som både strukturerar arbetet och ser till att inget glöms bort ökar kvaliteten på dokumentationen samtidig som den upplevda administrationen minskar.</p>
-            </div>
+
             <div style="clear: both"></div>
             <h2>Skärmdumpar</h2>
             <div class="app_screenshots">

@@ -72,7 +72,7 @@
             <p>Med fokus på funktionalitet, användarvänlighet och kommunikation har Eaztimate utvecklat mobilappar som gör din mobiltelefon till en uppskattad jobbarkompis.</p>
             <div class="appar">
                 <ul>
-<%--                    <a href="product_description_bygg.aspx">
+                    <a href="product_description_bygg.aspx">
                         <li class="floater_bygg">
                             <p>Byggskada</p>
                         </li>
@@ -95,9 +95,9 @@
                    <a href="product_description_klotter.aspx">
                     <li class="floater_klotter last">
                         <p>Klotter</p>
-                    </li></a>--%>
+                    </li></a>
                         
-                        <li class="floater_bygg">
+<%--                        <li class="floater_bygg">
                             <p>Byggskada</p>
                         </li>
                   
@@ -115,7 +115,7 @@
                     
                     <li class="floater_klotter last">
                         <p>Klotter</p>
-                    </li>
+                    </li>--%>
                        
                 </ul>
                 <div style="clear: both"></div>

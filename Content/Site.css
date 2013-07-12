@@ -463,7 +463,7 @@ li.block p {
         font-weight: 300;
         font-size: 20pt;
         margin-bottom: 15px;
-        margin-top: 0px;
+        margin-top: 10px;
     }
 
 
@@ -2415,4 +2415,8 @@ ul.contact {
 }
 .datepicker input[type=image] {
     vertical-align:bottom;
+}
+
+.varhurvarfor {
+    width: 230px;margin-right: 20px;float:left;display:none;
 }
