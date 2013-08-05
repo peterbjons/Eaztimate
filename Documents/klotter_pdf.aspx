@@ -15,9 +15,9 @@
                 <div class="logo">
                     <img src="../Images/forsak2.png" />
                 </div>
-                <div class="sanerings_company_logo"><b>2013-01-02</b><br />
-                    <%: createdby %>
-                    
+                <div class="sanerings_company_logo"><b><%: datecreated.ToShortDateString() %></b><br />
+                    <%: createdby %><br />
+                    <%: phone1 %>
                 </div>
             </div>
             <div class="inspection_number">

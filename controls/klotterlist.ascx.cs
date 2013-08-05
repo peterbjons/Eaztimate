@@ -24,9 +24,8 @@ public partial class controls_klotterlist : System.Web.UI.UserControl
     public DateTime? dateend { get { DateTime? dt = (DateTime?)ViewState["dateend"]; return ((dt == null) ? DateTime.Now : dt); } set { ViewState["dateend"] = value; } }
 
     protected void Page_Load(object sender, EventArgs e) {
-        if (!Page.IsPostBack) {
-            registerScripts();
-            ScriptManager.RegisterStartupScript(Parent.Page, Parent.Page.GetType(), "showhideurval", "expandSort($('.row_rum1'), $('.row_rum2'));expandSort($('.row_kategori1'), $('.row_kategori2'));", true);
+        registerScripts();    
+        if (!Page.IsPostBack) {                                
         }
     }
 
@@ -171,6 +170,7 @@ public partial class controls_klotterlist : System.Web.UI.UserControl
     }
 
     protected void registerScripts() {
+        ScriptManager.RegisterStartupScript(Parent.Page, Parent.Page.GetType(), "showhideurval", "expandSort($('.row_rum1'), $('.row_rum2'));expandSort($('.row_kategori1'), $('.row_kategori2'));", true);
         ScriptManager.RegisterStartupScript(Parent.Page, Parent.Page.GetType(), "showhide", "expandList($('.inspection_row_1'), $('.inspection_row_2'));", true);
     }
     

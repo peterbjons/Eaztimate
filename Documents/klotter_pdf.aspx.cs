@@ -22,12 +22,14 @@ public partial class Documents_klotter_pdf : System.Web.UI.Page
     public string clientcity;
     public string buildingno;
     public string createdby;
+    public string phone1;
     public string time;
     public string policereport;
     public string comment;
     public string client;
     public string clientno;
     public string tags;
+    public DateTime datecreated;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -42,6 +44,7 @@ public partial class Documents_klotter_pdf : System.Web.UI.Page
                 klotterno = reader.GetString(reader.GetOrdinal("orderno"));
                 title = reader.GetString(reader.GetOrdinal("title"));
                 buildingno = reader.GetString(reader.GetOrdinal("buildingno"));
+                datecreated = reader.GetDateTime(reader.GetOrdinal("datecreated"));
 
                 address = reader.GetString(reader.GetOrdinal("address1"));
                 zipcode = reader.GetString(reader.GetOrdinal("zipcode"));
@@ -53,6 +56,7 @@ public partial class Documents_klotter_pdf : System.Web.UI.Page
                 using (SqlDataReader reader2 = Eaztimate.SQL.ExecuteQuery("SELECT * FROM userdata WHERE userid=@1", user.ProviderUserKey)) {
                     if (reader2.Read()) {
                         createdby = reader2.GetString(reader2.GetOrdinal("fname")) + " " + reader2.GetString(reader2.GetOrdinal("lname"));
+                        phone1 = reader2.GetString(reader2.GetOrdinal("tel1"));
                         //tel1.Text = reader2.GetString(reader2.GetOrdinal("tel1"));
                         //tel2.Text = reader2.GetString(reader2.GetOrdinal("tel2"));
                     }

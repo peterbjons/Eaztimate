@@ -1,4 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="jourlist.ascx.cs" Inherits="controls_jourlist" %>
+<link href="/Content/lightbox.css" rel="stylesheet">
+<script src="/Scripts/lightbox.js"></script>
 <script>
     Modernizr.addTest('csschecked', function () {
         return Modernizr.testStyles("#modernizr input {margin-left:0px;} #modernizr input:checked {margin-left: 20px;}", function (elem) {
