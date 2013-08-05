@@ -79,23 +79,19 @@ Den stora bonusen är att arbetet kan rapporteras till uppdragsgivaren så fort 
             </ul>
             <p>Loggen och dokumentation i forma av formulär, fritexter och bilder sammanställs och rapporteras därefter in till Försäkringsbolaget. Ärendet avslutas och synkroniseras med företagets jourkonto. Jourhavande får en kopia av rapporten via e-post och kan därefter vidarebefordra den till uppdragsgivare. </p>
 
-            <div style="width: 350px; margin-right: 20px; float: left;">
+            <div class="varhurvarfor">
                 <h2>När</h2>
                 <p>Jour inom saneringsärenden  </p>
             </div>
-            <div style="width: 360px; float: left;">
+            <div class="varhurvarfor">
                 <h2>Var</h2>
                 <p>I din telefon, Samsung , S4 eller Note II rekommenderas. Starta appen så fort Larmet kommer och avsluta med skicka rapport direkt från skadeplatsen</p>
             </div>
-            <div style="width: 350px; margin-right: 20px; float: left;">
+            <div class="varhurvarfor last">
                 <h2>Hur</h2>
                 <p>Ladda ner EZ Jour från vår hemsida och registrera dig hos Eaztimate så får du jourrapporterna direkt till din mobil.</p>
             </div>
-            <div style="width: 360px; float: left;">
-                <h2>Varför</h2>
-                <p>EZ Jour, hjälper dig att hitta rätt, snabbkoppla viktiga telefonnummer, logga dina åtgärder, strukturera dokumentationen,
-Och sist men inte minst skapa och skicka rapport över insatsen</p>
-            </div>
+
             <div style="clear: both"></div>
 
             <h2>Skärmdumpar</h2>
