@@ -67,7 +67,7 @@ Den stora bonusen är att arbetet kan rapporteras till uppdragsgivaren så fort 
             <div class="app_banner" style="background-image: url(images/stock/banner-36.jpg);"></div>
             <h2>Beskrivning</h2>
             <p>
-                Ett samtal kommer in till jourhavande som öppnar Jourapplikationen i telefonen och noterar adress och telefonnummer till kontaktperson på skadeplatsen.  Tid och uppgifter om olika steg i jourärendet loggas sedan i kronologisk ordning:
+                Ett samtal kommer in till jourhavande som öppnar Jourapplikationen i telefonen och noterar adress och telefonnummer till kontaktperson på skadeplatsen.  Tid och uppgifter om olika steg i jourärendet loggas sedan i kronologisk ordning: 
             </p>
             <ul class="lista">
                 <li>Samtalet till kontaktpersonen</li>

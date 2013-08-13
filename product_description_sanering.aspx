@@ -40,11 +40,35 @@
         <div class="app_col2">
             <div class="app_banner" style="background-image: url(images/stock/banner-40.jpg);"></div>
             <h2>Beskrivning</h2>
-            <p>EZ Sanering är uppbyggd enligt samma principer som EZ byggskada, skillnaden är att EZ Sanering är till för dig som arbetar med dokumentation och sanering av sot och brandskador.</p>
+          <%--  <p>EZ Sanering är uppbyggd enligt samma principer som EZ byggskada, skillnaden är att EZ Sanering är till för dig som arbetar med dokumentation och sanering av sot och brandskador.</p>
         <p> I applikationen arbetar du efter förutbestämda rutiner. Först beskriver du fastighetens konstruktion sedan lägger du till de utrymmen som är berörda av skadan därefter beskriver du skadans art och omfattning. Du föreslår åtgärder och avslutar dokumentationen  på plats eller synkroniserar med bakomliggande ärendehanteringssystem för att komplettera dokumentationen på kontoret.
             </p><p>Arbetet utgår från att det finns ett bestämt flöde i insamlingen. Ett flöde baserat på erfaren och utarbetade rutiner. EZ Sanering fungerar som en checklista över vilka delar som skall dokumenteras.</p>
         <p>Genom integrationen med bakomliggande ärendehanteringssystem kan all data som samlas in i EZ Sanering synkroniseras och föras vidare under arbetes gång. Experter och skadereglerare kan ta del av viktig  information utan onödiga ledtider.
-</p>
+</p>--%>
+
+
+
+
+            <p>EZ Sanering är uppbyggd enligt samma principer som EZ byggskada, skillnaden är att EZ Sanering är till för dig som arbetar med dokumentation och sanering av sot och brandskador.</p>
+            <p>I applikationen arbetar du efter förutbestämda rutiner. Först beskriver du fastighetens konstruktion sedan lägger du till de utrymmen som är berörda av skadan därefter beskriver du skadans art och omfattning. Du föreslår åtgärder och avslutar dokumentationen  på plats eller synkroniserar med bakomliggande ärendehanteringssystem för att komplettera dokumentationen på kontoret.</p>
+<p>Arbetet utgår från att det finns ett bestämt flöde i insamlingen. Ett flöde baserat på erfaren och utarbetade rutiner. EZ Sanering fungerar som en checklista över vilka delar som skall dokumenteras. </p>
+            <p>Genom integrationen med bakomliggande ärendehanteringssystem kan all data som samlas in i EZ Sanering synkroniseras och föras vidare under arbetes gång. Experter och skadereglerare kan ta del av viktig  information utan onödiga ledtider.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <div class="varhurvarfor">
                 <h2>När</h2>
                 <p>Vid dokumentation av sot och brandskador på fastigheter.</p>
