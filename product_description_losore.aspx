@@ -46,16 +46,16 @@
             <p>Det dynamiska gränssnittet  i applikationen gör det möjligt att:</p>
             <ul class="lista">
                 <li>Anpassa och avgränsa innehållet utifrån fastighet och skadans art och omfattning.</li>
-                <li>Logiskt kategorisera, gruppera och typbestämma objekt</li>
+                <li>Logiskt kategorisera, gruppera och typbestämma objekt.</li>
             </ul>
             <p>Inbyggda mallar leder till att:</p>
             <ul class="lista">
-                <li>Dokumentationen av objekt blir fullständig</li>
-                <li>Objektens egenskaper beskrivs med enhetliga skalor och begrepp</li>
-                <li>Rapporter följer standard</li>
+                <li>Dokumentationen av objekt blir fullständig.</li>
+                <li>Objektens egenskaper beskrivs med enhetliga skalor och begrepp.</li>
+                <li>Rapporter följer en standard och ger en utförlig bild över skadat lösöre.</li>
             </ul>
             <p>
-                Översikt och status vyer ger handläggare en god överblick av arbetet.
+              Översikt och status vyer ger handläggare en god överblick av arbetet.
 Funktionen att kopiera över egenskaper från ett objekt till ett annat spar tid.
             </p>
 

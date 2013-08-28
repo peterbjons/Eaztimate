@@ -63,11 +63,12 @@ EZ Byggskada minskar: Stress, felprocenten, tid i bil och ledtider. </p>
         <div class="app_col2">
             <div class="app_banner" style="background-image: url(images/stock/banner-31.jpg);"></div>
             <h2>Beskrivning</h2>
-            <p>Skador i stora eller små fastigheter, i omfattande eller begränsad skala. Orsakade av brand, vatten, fel i konstruktionen eller av väder och vind. Skador skiljer sig åt men är sällan unika. </p>
+            <p>Skador i stora eller små fastigheter, i omfattande eller begränsad skala, orsakade av läckande vatten, fel i konstruktionen eller av väder och vind, skador skiljer sig åt men är sällan helt unika. </p>
             <p>
-                Eaztimate Bygg är ett insamlingsverktyg för fältet där relevant information samlas till underlag för en tydlig och omfattande rapport.     
+               EZ Byggskada är ett insamlingsverktyg för fältarbete där relevant information systematiskt samlas in till underlag för en tydlig och omfattande rapport.   
             </p>
-            <p>Arbetet utgår från att det finns ett bestämt flöde i insamlingen. Ett flöde baserat på erfaren och utarbetade rutiner. EZ Byggskada fungerar som en checklista över vilka delar som skall dokumenteras. </p>
+            <p>Arbetet utgår från att det finns ett bestämt flöde i insamlingen. Ett flöde baserat på erfaren och utarbetade rutiner. EZ Byggskada fungerar även som en checklista över vilka delar som skall dokumenteras. 
+</p>
             <p>Genom integrationen med OCAB byggskador kan all data som samlas in i EZ Byggskada synkroniseras och föras vidare under arbetes gång. Experter och skadereglerare kan ta del av viktig  information utan onödiga ledtider.</p>
 
             <div class="varhurvarfor">

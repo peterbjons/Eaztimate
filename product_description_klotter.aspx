@@ -60,8 +60,13 @@ Var insatser gjorts</li>
         <div class="app_col2">
             <div class="app_banner" style="background-image: url(images/stock/banner-klotter-app.jpg);"></div>
             <h2>Beskrivning</h2>
-            <p>EZ klotter utvecklades som namnet antyder för att hantera dokumentation av klotterärenden men när Micke Pettersson på OCAB i Dalarna började använda den så kom det fram fler användningsområden. Som ansvarig för högtryckstvättarbilen använder han i dag EZ Klotter för att dokumentera alla typer av insatser.</p>
-            <h2>Så funkar det</h2>
+            <h2>Användningsområde</h2>
+            <p>
+EZ klotter utvecklades som namnet antyder för att hantera dokumentation av klotterärenden men när Micke Pettersson på OCAB i Dalarna började använda den så kom det fram fler användningsområden. Som ansvarig för högtryckstvättsbilen använder han i dag EZ Klotter för att dokumentera alla typer av insatser.</p>
+            <p>EZ Klotter laddar du ner i mobiltelefonen där du enkelt och smidigt har den till hands då situationen före och efter insatsen skall dokumenteras. </p>
+            <p>Dokumentationen fungerar sedan både som rapportunderlag till kund och som fakturaunderlag.</p>
+            <p>För OCAB i Dalarna har vi även utvecklat en rutin för att upprätta en polisanmälan.</p>
+<%--            <h2>Så funkar det</h2>
             <ul class="lista">
                 <li>Förbered ärenden genom att knappa in arbetsorder, dessa hamnar i en att göra lista.</li>
                 <li>Innan du åker klickar du på ”visa vägen” och hittar du inte dit sedan tidigare följer du anvisningen i GPS. </li>
@@ -70,7 +75,7 @@ Var insatser gjorts</li>
                 <li>När åtgärden är utförd tar du kort på resultatet.</li>
                 <li>Skriver in eventuella kommentarer.</li>
                 <li>Skapar rapport som skickas till din E-post som en PDF.</li>
-            </ul>
+            </ul>--%>
             <div class="varhurvarfor">
                 <h2>När</h2>
                 <p>Vid vid tvätt av tak och fasader, klotter och andra missfärgningar</p>
