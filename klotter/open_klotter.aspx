@@ -12,12 +12,21 @@
         .chart2 > div {
             border: none !important;
         }
+
+        #infoWindow {
+            width: 100px;
+            font-size: 0.8em;
+        }
     </style>
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvJakG_LsdMMz4JvpjPp838tHpAJUkQOA&sensor=false">
     </script>
     <script type="text/javascript">
-        var markers = [<%: markers %>];
+        var infowindow = new google.maps.InfoWindow({
+            content: '',
+            maxWidth: 100
+        });
+        var markers = [<%=markers %>];
         function initialize() {
             var mapOptions = {
                 center: new google.maps.LatLng(60.606, 15.649),
@@ -40,7 +49,13 @@
                 var marker = new google.maps.Marker({
                     position: new google.maps.LatLng(mark[0], mark[1]),
                     map: map,
-                    icon: image
+                    icon: image,
+                    content: '<div id="infoWindow">' + mark[2] + '</div>'
+                });
+               
+                google.maps.event.addListener(marker, "click", function () {
+                    infowindow.setContent(this.content);
+                    infowindow.open(map, this);
                 });
                 bounds.extend(marker.position);
 
@@ -63,6 +78,8 @@
     <ajaxToolkit:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnableScriptGlobalization="true" EnableScriptLocalization="true"></ajaxToolkit:ToolkitScriptManager>
     <h1>Öppna klotterärenden</h1>
     <div class="datepicker">
+        <asp:DropDownList ID="person" runat="server" DataTextField="syncemail" DataValueField="syncemail" Visible="false">            
+        </asp:DropDownList>
         <asp:TextBox ID="datestart" runat="server"></asp:TextBox>
         <ajaxToolkit:CalendarExtender runat="server"
             id="datestartExtender"
@@ -94,7 +111,7 @@
                 </ajaxToolkit:BarChart>
             </div>  
             <div style="float: left; margin-right: 10px;">
-                <h2>Placering</h2>
+                <h2><a href="map_klotter.aspx">Placering</a></h2>
                 <div id="map-canvas" style="width: 300px; height: 200px;"></div>
             </div>
             <div id="chart2" style="float: left;">

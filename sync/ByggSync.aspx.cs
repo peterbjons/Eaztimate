@@ -19,6 +19,11 @@ public partial class Sync_ByggSync : System.Web.UI.Page
         if (Request.RequestType == "POST") {
             using (StreamReader sr = new StreamReader(Request.InputStream)) {
                 data = sr.ReadToEnd();
+                JObject constructioncase = JObject.Parse(data);
+                string invid = constructioncase["caseid"].ToString();
+                File.WriteAllText(Server.MapPath("~/files/" + invid + ".txt"), constructioncase.ToString());
+                Response.StatusCode = (int)HttpStatusCode.OK;
+                Response.End();
             }
         }
 
@@ -30,7 +35,7 @@ public partial class Sync_ByggSync : System.Web.UI.Page
             bool error= false;
             var jsonSerializer = new JsonSerializer();
             JObject constructioncase = JObject.Parse(Request.Form["data"]);
-            string invid = constructioncase["inventoryid"].ToString();
+            string invid = constructioncase["inventoryid"].ToString();            
 
             /*
             
