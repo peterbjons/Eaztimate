@@ -17,19 +17,25 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using WebSupergoo.ABCpdf9;
 
-public class JourSyncController : ApiController
+public class GetTextsController : ApiController
 {
 
     private static string SYNCCODE = "sdjfgjkdsgh4y87sh7f783g673gyag";
 
     // GET api/<controller>/5
-    public CounterObject GetById(string id, string date)
+    public JObject GetById(string customerid, string date)
     {
-        CounterObject counter = new CounterObject();
+        GetTextsObject gto = new GetTextsObject();
+        //List<GetTextsResult> list = new List<GetTextsResult>();
+        using (SqlDataReader reader = SQL.ExecuteQuery("SELECT * FROM apptext WHERE (customerid=0 OR customerid=@1) AND apptextid NOT IN(SELECT apptextid FROM apptext_removed WHERE customerid=@1)", customerid)) {
+            while (reader.Read()) {
+               gto.GetTextsResult.Add(new GetTextsObject.Row() {fltCode = reader.GetString(reader.GetOrdinal("code")), fltId = reader.GetInt64(reader.GetOrdinal("apptextid")).ToString(), fltText = reader.GetString(reader.GetOrdinal("text"))});
+            }
+        }
         //int synccount = 0;
         //bool update = false;
 
-
+        JObject jobject = JObject.FromObject(gto);
         
 
         //FormsAuthentication.HashPasswordForStoringInConfigFile((email+caseid+"datum"+SYNCCOUNTERCODE), "SHA1");
@@ -40,7 +46,7 @@ public class JourSyncController : ApiController
         //if (counter == null) {
         //    throw new HttpResponseException(HttpStatusCode.NotFound);
         //}
-        return counter;        
+        return jobject;        
         
     }
 

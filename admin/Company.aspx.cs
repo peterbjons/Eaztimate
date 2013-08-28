@@ -36,7 +36,7 @@ public partial class admin_Company : System.Web.UI.Page
 
             if (!Page.IsPostBack) {
                 if (id > 0) {
-                    using (SqlDataReader reader = SQL.ExecuteQuery("SELECT * FROM customer WHERE customerid = @1;SELECT userid FROM customerusers WHERE customerid=@1", id)) {
+                    using (SqlDataReader reader = SQL.ExecuteQuery("SELECT * FROM customer WHERE customerid = @1", id)) {
                         if (reader.Read()) {
                             if (id > 0) {
                                 titleh2.InnerText = reader.GetString(reader.GetOrdinal("title"));
@@ -52,15 +52,11 @@ public partial class admin_Company : System.Web.UI.Page
                             CompanyPhoneText.Text = reader.GetString(reader.GetOrdinal("phone"));
                             CompanyOrgNo.Text = reader.GetString(reader.GetOrdinal("orgno"));
                         }
-                        List<Guid> guidlist = new List<Guid>();
-                        reader.NextResult();
-                        while (reader.Read()) {
-                            guidlist.Add((Guid)reader.GetSqlGuid(0));
-                        }
 
-                        companylist.DataSource = Membership.GetAllUsers().Cast<MembershipUser>().Where(x => guidlist.Contains((Guid)x.ProviderUserKey)).OrderBy(x => x.UserName).ToList();
-                        companylist.DataBind();
-                        usersheader.Visible = true;
+                        bindCompany();
+                        bindTexts();
+                        
+                        //usersheader.Visible = true;
 
                         updateRoles();
                     }
@@ -69,6 +65,27 @@ public partial class admin_Company : System.Web.UI.Page
         } else {
             Response.Redirect("/", true);
         }
+    }
+
+    protected void bindTexts() {
+        textsSqlDataSource.SelectParameters.Clear();
+        textsSqlDataSource.SelectParameters.Add("1", System.Data.DbType.Int32, id.ToString());
+        textsSqlDataSource.SelectCommand = "SELECT * FROM apptext WHERE (customerid=0 OR customerid=@1) AND apptextid NOT IN(SELECT apptextid FROM apptext_removed WHERE customerid=@1)";
+        //using (SqlDataReader reader = SQL.ExecuteQuery("SELECT * FROM apptext WHERE (customerid=0 OR customerid=@1) AND apptextid NOT IN(SELECT apptextid FROM apptext_removed WHERE customerid=@1)", id)) {
+        //    textslist.DataSource = reader;
+        //    textslist.DataBind();
+        //}
+    }
+
+    protected void bindCompany() {
+        List<Guid> guidlist = new List<Guid>();
+        using (SqlDataReader reader = SQL.ExecuteQuery("SELECT userid FROM customerusers WHERE customerid=@1", id)) {                       
+            while (reader.Read()) {
+                guidlist.Add((Guid)reader.GetSqlGuid(0));
+            }
+        }
+        companylist.DataSource = Membership.GetAllUsers().Cast<MembershipUser>().Where(x => guidlist.Contains((Guid)x.ProviderUserKey)).OrderBy(x => x.UserName).ToList();
+        companylist.DataBind();
     }
 
     protected void updateRoles() {
@@ -153,5 +170,22 @@ public partial class admin_Company : System.Web.UI.Page
             }
             updateRoles();
         }
+    }
+    
+    protected void companylist_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e) {
+        DataPager1.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
+        bindCompany();
+    }
+
+    protected void textslist_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e) {
+        textsDataPager.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
+        bindTexts();
+    }
+    protected void savetextButton_Click(object sender, EventArgs e) {
+        int sortorder = int.Parse(sortorder_tb.Text);
+        using (SQL.ExecuteQuery("INSERT INTO apptext(code, text, sortorder) VALUES(@1,@2,@3)", code_tb.Text, text_tb.Text, sortorder )) { }
+        code_tb.Text = "";
+        text_tb.Text = "";
+        sortorder_tb.Text = "";
     }
 }
