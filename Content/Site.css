@@ -2264,43 +2264,43 @@ ul.contact {
     left: 10px;
 }
 
-.slide0 {
+#uppdrag .slide0 {
     background-image: url(../images/uppdrag.jpg);
 }
 
-.slide1 {
+#uppdrag .slide1 {
     background-image: url(../images/stock/Eaztimate-bygg-20.jpg);
 }
 
-.slide2 {
+#uppdrag .slide2 {
     background-image: url(../images/stock/Eaztimate-namnlos-1.jpg);
 }
 
-.slide3 {
+#uppdrag .slide3 {
     background-image: url(../images/stock/Eaztimate-bygg-1.jpg);
 }
 
-.slide4 {
+#uppdrag .slide4 {
     background-image: url(../images/stock/Eaztimate-bygg-2.jpg);
 }
 
-.slide5 {
+#uppdrag .slide5 {
     background-image: url(../images/stock/Eaztimate-bygg-11.jpg);
 }
 
-.slide6 {
+#uppdrag .slide6 {
     background-image: url(../images/stock/Eaztimate-bygg-13.jpg);
 }
 
-.slide7 {
+#uppdrag .slide7 {
     background-image: url(../images/stock/Eaztimate-bygg-10.jpg);
 }
 
-.slide8 {
+#uppdrag .slide8 {
     background-image: url(../images/stock/Eaztimate-bygg-17.jpg);
 }
 
-.slide9 {
+#uppdrag .slide9 {
     background-image: url(../images/stock/eaztimate-bytut-1.jpg);
 }
 
