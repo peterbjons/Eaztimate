@@ -2248,13 +2248,13 @@ ul.contact {
 
 #uppdrag .bjqs-slide {
     background-position: center center;
-    background-size: auto 100%;
     -o-background-size: auto 100%;
     -moz-background-size: auto 100%;
     -webkit-background-size: auto 100%;
+    background-size: auto 100%;
 }
 
-#uppdrag .uppdrag_desc {
+#uppdrag .uppdrag_desc,.manual .uppdrag_desc {
     position: absolute;
     bottom: 10px;
     width: 900px;
@@ -2304,14 +2304,14 @@ ul.contact {
     background-image: url(../images/stock/eaztimate-bytut-1.jpg);
 }
 
-#uppdrag .bjqs-prev {
+#uppdrag .bjqs-prev,.manual .bjqs-prev {
     height: 50px;
     width: 182px;
     background-image: url(../images/slider-previous.png);
     left: 10px;
 }
 
-#uppdrag .bjqs-next {
+#uppdrag .bjqs-next,.manual .bjqs-next {
     height: 50px;
     width: 182px;
     background-image: url(../images/slider-next.png);
