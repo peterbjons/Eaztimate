@@ -2433,3 +2433,44 @@ ul.contact {
     width: 200px !important;
     padding: 0 !important;
 }
+
+.help ul {
+    list-style-type:none;
+    margin-bottom:20px;
+}
+.help ul ul {
+    list-style-type:disc;
+    list-style-image:none;
+    padding-left:30px;
+    padding-top:5px;
+}
+.help ul li ul li {
+    cursor: pointer;
+}
+
+.help .col1 {
+    width:360px;
+    margin-right:5px;
+    float:left;
+}
+.help .col2 {
+    width:360px;
+    margin-left: 5px;
+    float:left;
+}
+.help .icon_desc img {
+    float:left;
+}
+.help .icon_desc p {
+    float:left;
+    font-style:italic;
+    width:290px;
+    padding-left:10px;
+    margin-bottom: 0px;
+}
+.help .icon_desc {
+    margin-top:10px;
+}
+.vy {
+    display: none;
+}
