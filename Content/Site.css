@@ -2474,3 +2474,6 @@ ul.contact {
 .vy {
     display: none;
 }
+.vy.startvy {
+    display:block;
+}

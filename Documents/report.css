@@ -609,7 +609,7 @@ ul.material {
 /* PDF */
 
 .a4_paper {
-    background-color: #ddd;
+    /*background-color: #ddd;*/
     width: 880px;
     /*height: 1278px;*/
     margin-bottom: 20px;

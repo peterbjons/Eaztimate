@@ -47,6 +47,7 @@
                 <h2 class="dark">Polisanmälan</h2>
                 <%: policereport %>
             </div>
+            <div style="clear:both"></div>
             <div class="col col_655">
                 <h2 class="dark">Kommentar</h2>
                 <%: comment %>
@@ -55,7 +56,7 @@
                 <h2 class="dark">Taggar</h2>
                 <%: tags %>
             </div>
-
+            <div style="clear:both"></div>
 
             <div class="col col_205">
                 <h2 class="light">Kund</h2>
@@ -74,6 +75,7 @@
             <div class="col col_205 last">
                 <h2 class="light">Kontaktperson</h2>
             </div>
+            <div style="clear:both"></div>
             <div class="col col_880">
                 <h2 class="light">Specifikation</h2>
                 <div class="spec_row">

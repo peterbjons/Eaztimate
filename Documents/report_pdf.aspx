@@ -100,16 +100,16 @@
             <ul class="dark">
                 <li>
                     <h4>Saneringsbara objekt</h4>
-                    <p>2140st</p>
+                    <p>2st</p>
                 </li>
                 <li>
                     <h4>Icke saneringsbara object</h4>
-                    <p>901st</p>
+                    <p>1st</p>
                 </li>
                 <li>&nbsp;
                 </li>
                 <li>
-                    <h4>Totalt värde</h4>
+                  <%--  <h4>Totalt värde</h4>
                     <div class="saneringsbara_color red"></div>
                     <div class="saneringsbara_value">21243kr</div>
                     <div style="clear: both"></div>
@@ -119,7 +119,7 @@
                     <div class="line">
                         <div class="saneringsbara_color"></div>
                         <div class="saneringsbara_value">43200kr</div>
-                    </div>
+                    </div>--%>
                 </li>
             </ul>
             <div style="clear: both"></div>
@@ -155,7 +155,7 @@
                 </li>
                 <li>
                     <h4>Antal objekt</h4>
-                    <p>42</p>
+                    <p>3</p>
                 </li>
 
             </ul>
@@ -163,16 +163,16 @@
             <ul class="dark">
                 <li>
                     <h4>Saneringsbara objekt</h4>
-                    <p>2140st</p>
+                    <p>2st</p>
                 </li>
                 <li>
                     <h4>Icke saneringsbara object</h4>
-                    <p>901st</p>
+                    <p>1st</p>
                 </li>
                 <li>&nbsp;
                 </li>
                 <li>
-                    <h4>Totalt värde</h4>
+               <%--     <h4>Totalt värde</h4>
                     <div class="saneringsbara_color red"></div>
                     <div class="saneringsbara_value">21243kr</div>
                     <div style="clear: both"></div>
@@ -182,7 +182,7 @@
                     <div class="line">
                         <div class="saneringsbara_color"></div>
                         <div class="saneringsbara_value">43200kr</div>
-                    </div>
+                    </div>--%>
                 </li>
             </ul>
             <div style="clear: both"></div>
@@ -197,13 +197,13 @@
                         <td style="width: 6px;"></td>
                         <td class="comment">Beskrivning</td>
                         <td style="width: 6px;"></td>
-                        <td>Inköpsår</td>
+                        <td style="width:65px;"><%--Inköpsår--%></td>
                         <td style="width: 6px;"></td>
-                        <td class="price">Pris</td>
+                        <td class="price"><%--Pris--%></td>
                         <td style="width: 6px;"></td>
-                        <td class="price">Pris</td>
+                        <td class="price"><%--Pris--%></td>
                         <td style="width: 6px;"></td>
-                        <td class="price">Pris</td>
+                        <td class="price"><%--Pris--%></td>
                     </tr>
                 </thead>
                 <tbody>
@@ -214,80 +214,42 @@
                         <td></td>
                         <td class="text-align-center">1</td>
                         <td></td>
-                        <td>Ful som fan men säkert skön</td>
+                        <td><!-- beskrivning --></td>
                         <td></td>
-                        <td class="text-align-center">1999</td>
+                        <td class="text-align-center"><%--1999--%></td>
                         <td></td>
-                        <td>1200kr</td>
+                        <td><%--1200kr--%></td>
                         <td></td>
-                        <td>1200kr</td>
+                        <td><%--1200kr--%></td>
                         <td></td>
-                        <td>1200kr</td>
+                        <td><%--1200kr--%></td>
 
                     </tr>
-                    <tr>
-                        <td>001</td>
+                           <tr>
+                        <td>002</td>
                         <td></td>
-                        <td>Stol</td>
+                        <td>Skrivbord</td>
                         <td></td>
                         <td class="text-align-center">1</td>
                         <td></td>
-                        <td>Ful som fan men säkert skön</td>
+                        <td><!-- beskrivning --></td>
                         <td></td>
-                        <td class="text-align-center">1999</td>
+                        <td class="text-align-center"><%--1999--%></td>
                         <td></td>
-                        <td>1200kr</td>
+                        <td><%--1200kr--%></td>
                         <td></td>
-                        <td>1200kr</td>
+                        <td><%--1200kr--%></td>
                         <td></td>
-                        <td>1200kr</td>
-
-
-                    </tr>
-                    <tr>
-                        <td>001</td>
-                        <td></td>
-                        <td>Stol</td>
-                        <td></td>
-                        <td class="text-align-center">1</td>
-                        <td></td>
-                        <td>Ful som fan men säkert skön</td>
-                        <td></td>
-                        <td class="text-align-center">1999</td>
-                        <td></td>
-                        <td>1200kr</td>
-                        <td></td>
-                        <td>1200kr</td>
-                        <td></td>
-                        <td>1200kr</td>
-
+                        <td><%--1200kr--%></td>
 
                     </tr>
-                    <tr>
-                        <td>001</td>
-                        <td></td>
-                        <td>Stol</td>
-                        <td></td>
-                        <td class="text-align-center">1</td>
-                        <td></td>
-                        <td>Ful som fan men säkert skön</td>
-                        <td></td>
-                        <td class="text-align-center">1999</td>
-                        <td></td>
-                        <td>1200kr</td>
-                        <td></td>
-                        <td>1200kr</td>
-                        <td></td>
-                        <td>1200kr</td>
-
-
-                    </tr>
+                  
                 </tbody>
 
                 <tfoot>
                     <tr>
                         <td colspan="14"></td>
-                        <td>1200kr</td>
+                        <td><%--1200kr--%></td>
                     </tr>
                 </tfoot>
             </table>
@@ -302,94 +264,41 @@
                         <td style="width: 6px;"></td>
                         <td class="comment">Beskrivning</td>
                         <td style="width: 6px;"></td>
-                        <td>Inköpsår</td>
+                        <td style="width:65px;"><%--Inköpsår--%></td>
                         <td style="width: 6px;"></td>
-                        <td class="price">Pris</td>
+                        <td class="price"><%--Pris--%></td>
                         <td style="width: 6px;"></td>
-                        <td class="price">Pris</td>
+                        <td class="price"><%--Pris--%></td>
                         <td style="width: 6px;"></td>
-                        <td class="price">Pris</td>
+                        <td class="price"><%--Pris--%></td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>001</td>
+                        <td>003</td>
                         <td></td>
-                        <td>Stol</td>
-                        <td></td>
-                        <td class="text-align-center">1</td>
-                        <td></td>
-                        <td>Ful som fan men säkert skön</td>
-                        <td></td>
-                        <td class="text-align-center">1999</td>
-                        <td></td>
-                        <td>1200kr</td>
-                        <td></td>
-                        <td>1200kr</td>
-                        <td></td>
-                        <td>1200kr</td>
-
-                    </tr>
-                    <tr>
-                        <td>001</td>
-                        <td></td>
-                        <td>Stol</td>
+                        <td>Bordslampa</td>
                         <td></td>
                         <td class="text-align-center">1</td>
                         <td></td>
-                        <td>Ful som fan men säkert skön</td>
+                        <td>Brand startade i lampan</td>
+                          <td></td>
+                        <td class="text-align-center"><%--1999--%></td>
                         <td></td>
-                        <td class="text-align-center">1999</td>
+                      <td><%--1200kr--%></td>
                         <td></td>
-                        <td>1200kr</td>
+                        <td><%--1200kr--%></td>
                         <td></td>
-                        <td>1200kr</td>
-                        <td></td>
-                        <td>1200kr</td>
+                        <td><%--1200kr--%></td>
 
                     </tr>
-                    <tr>
-                        <td>001</td>
-                        <td></td>
-                        <td>Stol</td>
-                        <td></td>
-                        <td class="text-align-center">1</td>
-                        <td></td>
-                        <td>Ful som fan men säkert skön</td>
-                        <td></td>
-                        <td class="text-align-center">1999</td>
-                        <td></td>
-                        <td>1200kr</td>
-                        <td></td>
-                        <td>1200kr</td>
-                        <td></td>
-                        <td>1200kr</td>
-
-                    </tr>
-                    <tr>
-                        <td>001</td>
-                        <td></td>
-                        <td>Stol</td>
-                        <td></td>
-                        <td class="text-align-center">1</td>
-                        <td></td>
-                        <td>Ful som fan men säkert skön</td>
-                        <td></td>
-                        <td class="text-align-center">1999</td>
-                        <td></td>
-                        <td>1200kr</td>
-                        <td></td>
-                        <td>1200kr</td>
-                        <td></td>
-                        <td class="accepted_prize">1200kr</td>
-
-                    </tr>
+               
                 </tbody>
 
                 <tfoot>
                     <tr>
                         <td colspan="14"></td>
-                        <td>1200kr</td>
+                        <td><%--1200kr--%></td>
                     </tr>
                 </tfoot>
             </table>
