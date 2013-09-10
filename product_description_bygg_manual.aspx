@@ -24,6 +24,14 @@
             <div class="app_col1">
                 <h2>Hjälpavsnitt</h2>
                 <ul>
+                    <li>Kom igång
+                        <ul>
+                            <li onclick="show('#laddaner');">Ladda ner</li>
+                            <li onclick="show('#installation');">Installation</li>
+                            <li onclick="show('#android');">Android</li>
+                            <li onclick="show('#kommaigang');">Komma igång</li>
+                        </ul>
+                    </li>
                     <li>Grundläggande
                    <ul>
                        <li onclick="show('#menyfaltet');">Menyfältet</li>
@@ -34,18 +42,43 @@
                     </li>
                 </ul>
                 <ul>
-                    <li>Byggappen
+                    <li>Byggskada
                    <ul>
                        <li onclick="show('#skapanytt');">Skapa nytt ärende</li>
                        <li onclick="show('#laggtillrum');">Lägg till/Ta bort rum</li>
                        <li onclick="show('#olikformatrum');">Olikformat rum</li>
                        <li onclick="show('#laggtillobjekt');">Lägg till objekt</li>
-                       <li onclick="show('#klar');">Klar?</li>
+                       <li onclick="show('#klar');">Synkning</li>
                    </ul>
+                    </li>
+                    <li>Ikoner
+                        <ul>
+                            <li onclick="show('#ikoner');">Ikoner</li>
+                        </ul>
                     </li>
                 </ul>
             </div>
             <div class="app_col2">
+
+                <div class="vy startvy">
+                    <h2>Manual för appen byggskada</h2>
+                    <p>Introtext till manual</p>
+                </div>
+                <div class="vy" id="laddaner">
+                    <img src="Images/help_download2.png" />
+                    <h2>Ladda ner appen</h2>
+                    <p>Logga in med ditt användarnamn och lösenord på Eaztimate-admin via din Android-telefon. Ladda sen ner appen genom att trycka på "ladda ner app" via menyn.</p>
+                </div>
+                <div class="vy" id="installation">
+                    <img src="Images/help_download.png" /><h2>Installation</h2><p>Installera appen genom att följa instruktionerna i telefonen, när appen har installerats hittar du den på en av startpanelerna.</p></div>
+                <p></p>
+                <div class="vy" id="android">
+                    <img src="Images/help_android.png" />
+                    <h2>Android</h2></div>
+                <div class="vy" id="kommaigang">
+                    <img src="Images/help_komigang.png" /><h2>Komma igång</h2><p>När appen är installerad öppnas den via ikonen på startpanelen.</p></div>
+
+
                 <div class="vy" id="menyfaltet">
 
                     <img src="Images/manual_vy1.png" /><h2>Menyfältet</h2>
@@ -110,7 +143,7 @@ Klicka på det rum du vill skapa. Och håll in på det rum du vill ta bort (alte
                     </div>
                     <div class="col2">
                         <div class="icon_desc">
-                            <img src="Images/help_addroom.png" />
+                            <img src="Images/help_addobject.png" />
                             <p>När du är klar med rummet kan du börja lägga in objekt i det genom att klicka på ikonen uppe i höger hörn</p>
                             <div style="clear: both"></div>
                         </div>
@@ -170,13 +203,13 @@ Klicka på det rum du vill skapa. Och håll in på det rum du vill ta bort (alte
                 <div class="vy" id="klar">
 
                     <img src="Images/manual_bygg_vy5.png" />
-                    <h2>Klar?</h2>
+                    <h2>Synka</h2>
                     <p>
                         När du är klar går du tillbaka till översikten och väljer att synka ärendet. I färgmarkeringen på varje ärende ser man snabbt status på sina ärenden. Där Blå färg är “Nytt ärende”, Grön färg är “Synkat ärende” och där gul är “Pågående ärende”.
                         <br />
                         Du kan när som helst gå tillbaka och ändra i ett ärende via Översiktsvyn.
                     </p>
-                    <h2>Synkning</h2>
+                    <h2>Ikoner</h2>
                     <div class="icon_desc">
                         <img src="Images/help_login.png" /><p>Logga in till ditt användarkonto för att kunna synka ärenden med bakomliggande databas</p>
                         <div style="clear: both"></div>
@@ -191,18 +224,63 @@ Klicka på det rum du vill skapa. Och håll in på det rum du vill ta bort (alte
                     <div style="border-left: solid 10px #FFd040; padding: 5px 5px 5px 10px; margin: 5px 0px; width: 200px; float: left;">Gul = Pågående ärende</div>
                 </div>
 
+                <div class="vy" id="ikoner">
+                    <h2>Ikoner</h2>
+                    <p>Hittat en ikon du inte riktigt känner igen? Här förklarar vi de allra vanligaste ikonerna.</p>
+                    <div class="icon_desc">
+                        <img src="Images/help_addobject.png" /><p>När du är klar med rummet kan du börja lägga in objekt i det genom att klicka på ikonen uppe i höger hörn</p>
+                        <div style="clear: Both"></div>
+                    </div>
+                    <div class="icon_desc">
+                        <img src="Images/help_addpoint.png" /><p>Lägg till ny mätpunkt</p>
+                        <div style="clear: Both"></div>
+                    </div>
+                    <div class="icon_desc">
+                        <img src="Images/help_addroom.png" /><p>När du är klar med rummet kan du börja lägga in objekt i det genom att klicka på ikonen uppe i höger hörn</p>
+                        <div style="clear: Both"></div>
+                    </div>
+                    <div class="icon_desc">
+                        <img src="Images/help_blueprint.png" /><p>För att gå till ritningen klicka på “Ritning”-ikonen</p>
+                        <div style="clear: Both"></div>
+                    </div>
+                    <div class="icon_desc">
+                        <img src="Images/help_copyroom.png" /><p>Det finns även möjlighet att kopiera ett rum direkt, detta gör du genom att klicka på “Kopiera rum”-ikonen, välj sedan i den ruta som dyker upp vilket rum du vill kopiera</p>
+                        <div style="clear: Both"></div>
+                    </div>
+
+                    <div class="icon_desc">
+                        <img src="Images/help_login.png" /><p>Logga in till ditt användarkonto för att kunna synka ärenden med bakomliggande databas</p>
+                        <div style="clear: Both"></div>
+                    </div>
+
+                    <div class="icon_desc">
+                        <img src="Images/help_measurepoint.png" /><p>Mätpunkt, håll in för att dra mätpunkten till korrekt placering</p>
+                        <div style="clear: Both"></div>
+                    </div>
+                    <div class="icon_desc">
+                        <img src="Images/help_photo.png" /><p>För att ta foton trycker du bara på fotoikonen</p>
+                        <div style="clear: Both"></div>
+                    </div>
+                    <div class="icon_desc">
+                        <img src="Images/help_removepoint.png" /><p>Ta bort senast tillagda mätpunkt</p>
+                        <div style="clear: Both"></div>
+                    </div>
+                    <div class="icon_desc">
+                        <img src="Images/help_save.png" /><p>Spara när du är klar genom att trycka på “Spara”-ikonen</p>
+                        <div style="clear: Both"></div>
+                    </div>
+                    <div class="icon_desc">
+                        <img src="Images/help_synk.png" /><p>Synka ärendet när du är klar med det, ärendet synkas då med databasen.</p>
+                        <div style="clear: Both"></div>
+                    </div>
 
 
 
-
-
-
-
-
-            </div>
-            <div style="clear: both"></div>
-
+                </div>
         </div>
+        <div style="clear: both"></div>
+
+    </div>
     </div>
 
 
