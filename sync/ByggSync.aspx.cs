@@ -23,6 +23,16 @@ public partial class Sync_ByggSync : System.Web.UI.Page
                 string invid = constructioncase["caseid"].ToString();
                 File.WriteAllText(Server.MapPath("~/files/" + invid + ".txt"), constructioncase.ToString());
                 Response.StatusCode = (int)HttpStatusCode.OK;
+
+                CounterObject counter = new CounterObject();
+                counter.success = "OK";
+                counter.message = "Success";
+
+                JObject jobject = JObject.FromObject(counter);
+
+                Response.ContentType = "application/json";
+                Response.Write(jobject.ToString());
+
                 Response.End();
             }
         }
@@ -221,7 +231,7 @@ public partial class Sync_ByggSync : System.Web.UI.Page
             }
             */
             if (!error) {
-                Response.StatusCode = (int)HttpStatusCode.OK;
+                Response.StatusCode = (int)HttpStatusCode.OK;               
                 Response.End();
             }             
         } 
