@@ -47,6 +47,12 @@
             routeTemplate: "service/{controller}/{customerid}/{date}",
             defaults: new { id = System.Web.Http.RouteParameter.Optional }
         );
+
+        //RouteTable.Routes.MapHttpRoute(
+        //    name: "GcmApi",
+        //    routeTemplate: "service/{controller}/{email}/{app}/{sha}",
+        //    defaults: new { sha = System.Web.Http.RouteParameter.Optional }           
+        //);
     }
     
     void Application_End(object sender, EventArgs e)
