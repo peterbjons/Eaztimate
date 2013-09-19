@@ -32,7 +32,7 @@
                             <li onclick="show('#kommaigang');">Komma igång</li>
                         </ul>
                     </li>
-                    <li>Grundläggande
+                    <li onclick="show('#grundlaggande');">Grundläggande
                    <ul>
                        <li onclick="show('#menyfaltet');">Menyfältet</li>
                        <li onclick="show('#verktygsfaltet');">Verktygsfältet</li>
@@ -78,7 +78,10 @@
                 <div class="vy" id="kommaigang">
                     <img src="Images/help_komigang.png" /><h2>Komma igång</h2><p>När appen är installerad öppnas den via ikonen på startpanelen.</p></div>
 
-
+                <div class="vy" id="grundlaggande">
+                    <h2>Grundläggande</h2>
+                    <p>Halla</p>
+                </div>
                 <div class="vy" id="menyfaltet">
 
                     <img src="Images/manual_vy1.png" /><h2>Menyfältet</h2>
