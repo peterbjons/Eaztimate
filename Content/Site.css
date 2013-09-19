@@ -2156,6 +2156,7 @@ ul.app_funktioner {
 }
 
 .app_screenshots {
+    
     overflow-x: scroll;
     height: 220px;
     overflow-y: hidden;

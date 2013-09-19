@@ -83,7 +83,7 @@
             </div>
 
             <div style="clear: both"></div>
-            <h2>Skärmdumpar</h2>
+            <%--<h2>Skärmdumpar</h2>
             <div class="app_screenshots">
                 <ul style="width: 1100px;">
                     <li>
@@ -95,7 +95,7 @@
                     
                 </ul><div style="clear: both;"></div>
                
-            </div> <h2>Våra andra appar</h2>
+            </div>--%> <h2>Våra andra appar</h2>
             <div class="app_appar">
                 <ul>
                     <a href="product_description_bygg.aspx">
@@ -121,7 +121,7 @@
                     </a>
                 </ul><div style="clear: both"></div>
             </div>
-            <div class="big_button">Beställ</div>
+<%--            <div class="big_button">Beställ</div>--%>
         </div>
         <div style="clear: both"></div>
     </div>

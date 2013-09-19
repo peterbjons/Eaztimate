@@ -94,7 +94,7 @@ Den stora bonusen är att arbetet kan rapporteras till uppdragsgivaren så fort 
 
             <div style="clear: both"></div>
 
-            <h2>Skärmdumpar</h2>
+           <%-- <h2>Skärmdumpar</h2>
             <div class="app_screenshots">
                 <ul style="width: 1100px;">
                     <li>
@@ -107,7 +107,7 @@ Den stora bonusen är att arbetet kan rapporteras till uppdragsgivaren så fort 
                 </ul>
                 <div style="clear: both;"></div>
 
-            </div>
+            </div>--%>
             <h2>Våra andra appar</h2>
             <div class="app_appar">
                 <ul>
@@ -135,7 +135,7 @@ Den stora bonusen är att arbetet kan rapporteras till uppdragsgivaren så fort 
                 </ul>
                 <div style="clear: both"></div>
             </div>
-            <div class="big_button">Beställ</div>
+          <%--  <div class="big_button">Beställ</div>--%>
         </div>
         <div style="clear: both"></div>
     </div>
