@@ -33,7 +33,7 @@
         </div>--%>
         <div style="float: left; width: 560px; margin-right: 30px">
             <h2>Kontakt</h2>
-            <p>Ni kan nå oss på telefon vardagar mellan 09.00 - 11.00 samt 14.00 - 16.00.  Annars går det bra att maila, vi är grymt snabba på att svara!  </p>
+            <p>Ni kan nå oss på telefon vardagar mellan 09.00 - 11.00 samt 14.00 - 16.00.  Annars går det bra att maila, vi är snabba på att svara!  </p>
             <%--<div class="formbox">
                 Namn *
                 <input type="text" />
